@@ -7,19 +7,19 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 
-<title>mono缓存的使用 - WeitangLi</title>
+<title>flux发生错误时的处理方式 - WeitangLi</title>
 
 
-    <meta name="description" content="方式一:  本地缓存 1分钟后过期">
+    <meta name="description" content="方式一:  发生错误时, 忽略此数据, 进入下一轮处理  1234567891011121314@Testpublic void onErrorContinue() throws Exception &amp;#123;    Flux&amp;lt;Integer&amp;gt; flux = Flux.just(-2, -1, 0, 1, 2)            .map(n -&amp;gt; 10 &#x2F; n)">
 <meta name="keywords" content="reactor">
 <meta property="og:type" content="article">
-<meta property="og:title" content="mono缓存的使用">
-<meta property="og:url" content="https:&#x2F;&#x2F;weitangli.github.io&#x2F;java&#x2F;reactor-mono-cache&#x2F;index.html">
+<meta property="og:title" content="flux发生错误时的处理方式">
+<meta property="og:url" content="https:&#x2F;&#x2F;weitangli.github.io&#x2F;java&#x2F;reactor-flux-error&#x2F;index.html">
 <meta property="og:site_name" content="WeitangLi">
-<meta property="og:description" content="方式一:  本地缓存 1分钟后过期">
+<meta property="og:description" content="方式一:  发生错误时, 忽略此数据, 进入下一轮处理  1234567891011121314@Testpublic void onErrorContinue() throws Exception &amp;#123;    Flux&amp;lt;Integer&amp;gt; flux = Flux.just(-2, -1, 0, 1, 2)            .map(n -&amp;gt; 10 &#x2F; n)">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https:&#x2F;&#x2F;weitangli.github.io&#x2F;images&#x2F;og_image.png">
-<meta property="og:updated_time" content="2019-11-25T02:14:15.570Z">
+<meta property="og:updated_time" content="2019-11-25T02:20:14.754Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https:&#x2F;&#x2F;weitangli.github.io&#x2F;images&#x2F;og_image.png">
 
@@ -79,7 +79,7 @@
         <div class="navbar-brand is-flex-center">
             <a class="navbar-item navbar-logo" href="/">
             
-                <img src="/images/logo.svg" alt="mono缓存的使用" height="28">
+                <img src="/images/logo.svg" alt="flux发生错误时的处理方式" height="28">
             
             </a>
         </div>
@@ -132,7 +132,7 @@
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-11-25T01:45:50.000Z">2019-11-25</time>
+                <time class="level-item has-text-grey" datetime="2019-11-25T02:10:45.000Z">2019-11-25</time>
                 
                 <div class="level-item">
                 <a class="has-link-grey -link" href="/categories/java/">java</a>
@@ -142,7 +142,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    几秒 读完 (大约 68 个字)
+                    1 分钟 读完 (大约 139 个字)
                 </span>
                 
                 
@@ -156,20 +156,25 @@
         
         <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
             
-                mono缓存的使用
+                flux发生错误时的处理方式
             
         </h1>
         <div class="content">
             <p>方式一:</p>
 <ul>
-<li>本地缓存</li>
-<li>1分钟后过期</li>
+<li>发生错误时, 忽略此数据, 进入下一轮处理</li>
 </ul>
+<figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-meta">@Test</span></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">onErrorContinue</span><span class="hljs-params">()</span> <span class="hljs-keyword">throws</span> Exception </span>&#123;</span><br><span class="line">    Flux&lt;Integer&gt; flux = Flux.just(-<span class="hljs-number">2</span>, -<span class="hljs-number">1</span>, <span class="hljs-number">0</span>, <span class="hljs-number">1</span>, <span class="hljs-number">2</span>)</span><br><span class="line">            .map(n -&gt; <span class="hljs-number">10</span> / n)</span><br><span class="line">            <span class="hljs-comment">// 忽略此数据</span></span><br><span class="line">            .onErrorContinue((err, num) -&gt; log.info(<span class="hljs-string">"invalid num: &#123;&#125;"</span>, num));</span><br><span class="line"></span><br><span class="line">    StepVerifier.create(flux)</span><br><span class="line">            .expectNext(-<span class="hljs-number">5</span>)</span><br><span class="line">            .expectNext(-<span class="hljs-number">10</span>)</span><br><span class="line">            .expectNext(<span class="hljs-number">10</span>)</span><br><span class="line">            .expectNext(<span class="hljs-number">5</span>)</span><br><span class="line">            .verifyComplete();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <a id="more"></a>
 
-<figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-meta">@Test</span></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">cache</span><span class="hljs-params">()</span> <span class="hljs-keyword">throws</span> Exception </span>&#123;</span><br><span class="line">    String cacheKey = <span class="hljs-string">"mykey"</span>;</span><br><span class="line"></span><br><span class="line">    Cache&lt;String, Signal&lt;? extends Integer&gt;&gt; cache = CacheBuilder</span><br><span class="line">            .newBuilder()</span><br><span class="line">            .expireAfterWrite(<span class="hljs-number">1</span>, TimeUnit.MINUTES)</span><br><span class="line">            .build();</span><br><span class="line"></span><br><span class="line">    Mono&lt;Integer&gt; mono = CacheMono</span><br><span class="line">            .lookup(cache.asMap(), cacheKey)</span><br><span class="line">            .onCacheMissResume(Mono.just(<span class="hljs-number">1</span>));</span><br><span class="line"></span><br><span class="line">    StepVerifier.create(mono)</span><br><span class="line">            .expectNext(<span class="hljs-number">1</span>)</span><br><span class="line">            .verifyComplete();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>方式二:</p>
+<ul>
+<li>发生错误时, 忽略此数据, 然后使用[10, 20]继续接下来的操作</li>
+</ul>
+<figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-meta">@Test</span></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">onErrorResume</span><span class="hljs-params">()</span> <span class="hljs-keyword">throws</span> Exception </span>&#123;</span><br><span class="line">    Flux&lt;Integer&gt; flux = Flux.just(-<span class="hljs-number">2</span>, -<span class="hljs-number">1</span>, <span class="hljs-number">0</span>, <span class="hljs-number">1</span>, <span class="hljs-number">2</span>)</span><br><span class="line">            .map(n -&gt; <span class="hljs-number">10</span> / n)</span><br><span class="line">            <span class="hljs-comment">// 使用[10, 20]继续接下来的操作</span></span><br><span class="line">            .onErrorResume(e -&gt; Flux.just(<span class="hljs-number">10</span>, <span class="hljs-number">20</span>));</span><br><span class="line"></span><br><span class="line">    StepVerifier.create(flux)</span><br><span class="line">            .expectNext(-<span class="hljs-number">5</span>)</span><br><span class="line">            .expectNext(-<span class="hljs-number">10</span>)</span><br><span class="line">            .expectNext(<span class="hljs-number">10</span>)</span><br><span class="line">            .expectNext(<span class="hljs-number">20</span>)</span><br><span class="line">            .verifyComplete();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p>源代码: <a href="https://github.com/weitangli/java-sample/blob/master/reactor-sample/src/test/java/com/sample/MonoCacheTests.java" target="_blank" rel="noopener">MonoCacheTests.java</a></p>
+<p>源代码: <a href="https://github.com/weitangli/java-sample/blob/master/reactor-sample/src/test/java/com/sample/FluxErrorTests.java" target="_blank" rel="noopener">FluxErrorTests.java</a></p>
 
         </div>
         
@@ -223,17 +228,10 @@
 <div class="card card-transparent">
     <div class="level post-navigation is-flex-wrap is-mobile">
         
-        <div class="level-start">
-            <a class="level level-item has-link-grey  article-nav-prev" href="/java/reactor-flux-error/">
-                <i class="level-item fas fa-chevron-left"></i>
-                <span class="level-item">flux发生错误时的处理方式</span>
-            </a>
-        </div>
-        
         
         <div class="level-end">
-            <a class="level level-item has-link-grey  article-nav-next" href="/java/reactor-flux-subscribe/">
-                <span class="level-item">flux的不同订阅方式</span>
+            <a class="level level-item has-link-grey  article-nav-next" href="/java/reactor-mono-cache/">
+                <span class="level-item">mono缓存的使用</span>
                 <i class="level-item fas fa-chevron-right"></i>
             </a>
         </div>
@@ -254,7 +252,7 @@
     var gitalk = new Gitalk({
         clientID: 'a221d93af82dc4967493',
         clientSecret: '14cbb6054ee2e9bd2b68b59f52af0caadb62f934',
-        id: '919cf0713a2da5c013d51a232ba4f65d',
+        id: '7fa92952b5332322c3623912e1a9b2ac',
         repo: 'weitangli.github.io',
         owner: 'weitangli',
         admin: "weitangli",
@@ -798,7 +796,7 @@
             <div class="level-start has-text-centered-mobile">
                 <a class="footer-logo is-block has-mb-6" href="/">
                 
-                    <img src="/images/logo.svg" alt="mono缓存的使用" height="28">
+                    <img src="/images/logo.svg" alt="flux发生错误时的处理方式" height="28">
                 
                 </a>
                 <p class="is-size-7">
