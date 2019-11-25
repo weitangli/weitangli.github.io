@@ -7,17 +7,19 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 
-<title>分类: java - WeitangLi</title>
+<title>ActiveMQ之发布订阅模型 - WeitangLi</title>
 
 
-    <meta name="description" content="记录工作中遇到的问题">
-<meta property="og:type" content="website">
-<meta property="og:title" content="WeitangLi">
-<meta property="og:url" content="https:&#x2F;&#x2F;weitangli.github.io&#x2F;categories&#x2F;java&#x2F;index.html">
+    <meta name="description" content="发布订阅模型(Pub&#x2F;Sub)使用主题(Topic)作为消息通信载体, 类似于广播模式. 发布者发布一条消息, 该消息通过主题传递给所有的订阅者, 在一条消息广播之后才订阅的用户则是收不到该条消息的.">
+<meta name="keywords" content="activemq">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ActiveMQ之发布订阅模型">
+<meta property="og:url" content="https:&#x2F;&#x2F;weitangli.github.io&#x2F;java&#x2F;activemq-topic&#x2F;index.html">
 <meta property="og:site_name" content="WeitangLi">
-<meta property="og:description" content="记录工作中遇到的问题">
+<meta property="og:description" content="发布订阅模型(Pub&#x2F;Sub)使用主题(Topic)作为消息通信载体, 类似于广播模式. 发布者发布一条消息, 该消息通过主题传递给所有的订阅者, 在一条消息广播之后才订阅的用户则是收不到该条消息的.">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https:&#x2F;&#x2F;weitangli.github.io&#x2F;images&#x2F;og_image.png">
+<meta property="og:updated_time" content="2019-11-25T08:35:48.879Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https:&#x2F;&#x2F;weitangli.github.io&#x2F;images&#x2F;og_image.png">
 
@@ -77,7 +79,7 @@
         <div class="navbar-brand is-flex-center">
             <a class="navbar-item navbar-logo" href="/">
             
-                <img src="/images/logo.svg" alt="WeitangLi" height="28">
+                <img src="/images/logo.svg" alt="ActiveMQ之发布订阅模型" height="28">
             
             </a>
         </div>
@@ -123,19 +125,7 @@
     <section class="section">
         <div class="container">
             <div class="columns">
-                <div class="column is-8-tablet is-8-desktop is-6-widescreen has-order-2 column-main"><div class="card">
-    <div class="card-content">
-        <nav class="breadcrumb" aria-label="breadcrumbs">
-        <ul>
-            <li><a href="/categories">分类</a></li>
-            
-            <li class="is-active"><a href="#" aria-current="page">java</a></li>
-        </ul>
-        </nav>
-    </div>
-</div>
-
-    
+                <div class="column is-8-tablet is-8-desktop is-6-widescreen has-order-2 column-main">
 <div class="card">
     
     <div class="card-content article ">
@@ -156,27 +146,42 @@
                 </span>
                 
                 
+                <span class="level-item has-text-grey" id="busuanzi_container_page_pv">
+                    <i class="far fa-eye"></i>
+                    <span id="busuanzi_value_page_pv">0</span>次访问
+                </span>
+                
             </div>
         </div>
         
         <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
             
-                <a class="has-link-black-ter" href="/java/activemq-topic/">ActiveMQ之发布订阅模型</a>
+                ActiveMQ之发布订阅模型
             
         </h1>
         <div class="content">
             <p>发布订阅模型(Pub/Sub)使用主题(Topic)作为消息通信载体, 类似于广播模式.</p>
 <p>发布者发布一条消息, 该消息通过主题传递给所有的订阅者, 在一条消息广播之后才订阅的用户则是收不到该条消息的.</p>
+<a id="more"></a>
+
+<p>生产者:</p>
+<figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-meta">@Test</span></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">produceMessage</span><span class="hljs-params">()</span> <span class="hljs-keyword">throws</span> Exception </span>&#123;</span><br><span class="line">    <span class="hljs-comment">// 连接服务端</span></span><br><span class="line">    ActiveMQConnectionFactory connectionFactory = <span class="hljs-keyword">new</span> ActiveMQConnectionFactory(<span class="hljs-string">"tcp://localhost:61616"</span>);</span><br><span class="line">    Connection connection = connectionFactory.createConnection();</span><br><span class="line">    connection.start();</span><br><span class="line"></span><br><span class="line">    <span class="hljs-comment">// 创建会话</span></span><br><span class="line">    Session session = connection.createSession(<span class="hljs-keyword">false</span>, Session.AUTO_ACKNOWLEDGE);</span><br><span class="line"></span><br><span class="line">    <span class="hljs-comment">// 创建生产者</span></span><br><span class="line">    Destination destination = session.createTopic(<span class="hljs-string">"mytopic"</span>);</span><br><span class="line">    MessageProducer producer = session.createProducer(destination);</span><br><span class="line"></span><br><span class="line">    <span class="hljs-comment">// 发送消息</span></span><br><span class="line">    TextMessage message = session.createTextMessage(<span class="hljs-string">"hello world!"</span>);</span><br><span class="line">    producer.send(message);</span><br><span class="line">    log.info(<span class="hljs-string">"send message: queue=&#123;&#125; message=&#123;&#125;"</span>, <span class="hljs-string">"mytopic"</span>, message.getText());</span><br><span class="line"></span><br><span class="line">    <span class="hljs-comment">// 关闭会话</span></span><br><span class="line">    session.close();</span><br><span class="line"></span><br><span class="line">    <span class="hljs-comment">// 关闭连接</span></span><br><span class="line">    connection.close();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>消费者:</p>
+<figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-meta">@Test</span></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">consumeMessage</span><span class="hljs-params">()</span> <span class="hljs-keyword">throws</span> Exception </span>&#123;</span><br><span class="line">    <span class="hljs-comment">// 连接服务端</span></span><br><span class="line">    ActiveMQConnectionFactory connectionFactory = <span class="hljs-keyword">new</span> ActiveMQConnectionFactory(<span class="hljs-string">"tcp://localhost:61616"</span>);</span><br><span class="line">    Connection connection = connectionFactory.createConnection();</span><br><span class="line">    connection.start();</span><br><span class="line"></span><br><span class="line">    <span class="hljs-comment">// 创建会话</span></span><br><span class="line">    Session session = connection.createSession(<span class="hljs-keyword">false</span>, Session.AUTO_ACKNOWLEDGE);</span><br><span class="line"></span><br><span class="line">    <span class="hljs-comment">// 创建消费者</span></span><br><span class="line">    Destination destination = session.createTopic(<span class="hljs-string">"mytopic"</span>);</span><br><span class="line">    MessageConsumer consumer = session.createConsumer(destination);</span><br><span class="line"></span><br><span class="line">    MessageListener listener = <span class="hljs-keyword">new</span> MessageListener() &#123;</span><br><span class="line">        <span class="hljs-meta">@Override</span></span><br><span class="line">        <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">onMessage</span><span class="hljs-params">(Message message)</span> </span>&#123;</span><br><span class="line">            <span class="hljs-keyword">try</span> &#123;</span><br><span class="line">                TextMessage textMessage = (TextMessage) message;</span><br><span class="line">                log.info(<span class="hljs-string">"receive message: queue=&#123;&#125; message=&#123;&#125;"</span>, <span class="hljs-string">"mytopic"</span>, textMessage.getText());</span><br><span class="line">            &#125; <span class="hljs-keyword">catch</span> (JMSException e) &#123;</span><br><span class="line">                log.error(<span class="hljs-string">"消费异常"</span>, e);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;;</span><br><span class="line">    consumer.setMessageListener(listener);</span><br><span class="line"></span><br><span class="line">    <span class="hljs-keyword">while</span> (<span class="hljs-keyword">true</span>) &#123;</span><br><span class="line">        Thread.yield();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>源代码: <a href="https://github.com/weitangli/java-sample/blob/master/activemq-sample/src/test/java/com/sample/TopicTests.java" target="_blank" rel="noopener">TopicTests.java</a></p>
+
         </div>
         
-        
-        <div class="level is-mobile">
+        <div class="level is-size-7 is-uppercase">
             <div class="level-start">
                 <div class="level-item">
-                <a class="button is-size-7 is-light" href="/java/activemq-topic/#more">阅读更多</a>
+                    <span class="is-size-6 has-text-grey has-mr-7">#</span>
+                    <a class="has-link-grey -link" href="/tags/activemq/" rel="tag">activemq</a>
                 </div>
             </div>
         </div>
+        
         
         
     </div>
@@ -184,351 +189,76 @@
 
 
 
-
-
-
-
-
-    
 <div class="card">
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-11-25T06:00:13.000Z">2019-11-25</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/java/">java</a>
-                </div>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    2 分钟 读完 (大约 331 个字)
-                </span>
-                
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+    <div class="card-content">
+        <h3 class="menu-label has-text-centered">喜欢这篇文章？打赏一下作者吧</h3>
+        <div class="buttons is-centered">
             
-                <a class="has-link-black-ter" href="/java/activemq-install/">ActiveMQ的简易安装</a>
-            
-        </h1>
-        <div class="content">
-            <p>安装ActiveMQ之前, 我们得先安装Java运行环境.</p>
-<p>Linux安装包下载地址: <a href="https://archive.apache.org/dist/activemq/5.14.5/apache-activemq-5.14.5-bin.tar.gz" target="_blank" rel="noopener">apache-activemq-5.14.5-bin.tar.gz</a></p>
+                
+<a class="button is-info donate">
+    <span class="icon is-small">
+        <i class="fab fa-alipay"></i>
+    </span>
+    <span>支付宝</span>
+    <div class="qrcode"><img src="/images/alipay.jpg" alt="支付宝"></div>
+</a>
+
+                
+                
+<a class="button is-success donate">
+    <span class="icon is-small">
+        <i class="fab fa-weixin"></i>
+    </span>
+    <span>微信</span>
+    <div class="qrcode"><img src="/images/wechat.jpg" alt="微信"></div>
+</a>
+
+                
         </div>
+    </div>
+</div>
+
+
+
+<div class="card card-transparent">
+    <div class="level post-navigation is-flex-wrap is-mobile">
         
         
-        <div class="level is-mobile">
-            <div class="level-start">
-                <div class="level-item">
-                <a class="button is-size-7 is-light" href="/java/activemq-install/#more">阅读更多</a>
-                </div>
-            </div>
+        <div class="level-end">
+            <a class="level level-item has-link-grey  article-nav-next" href="/java/activemq-install/">
+                <span class="level-item">ActiveMQ的简易安装</span>
+                <i class="level-item fas fa-chevron-right"></i>
+            </a>
         </div>
-        
         
     </div>
 </div>
 
 
 
-
-
-
-
-
-    
 <div class="card">
-    
-    <div class="card-content article ">
+    <div class="card-content">
+        <h3 class="title is-5 has-text-weight-normal">评论</h3>
         
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-11-25T03:46:05.000Z">2019-11-25</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/java/">java</a>
-                </div>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    几秒 读完 (大约 88 个字)
-                </span>
-                
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/java/reactor-processor/">reactor是如何推送数据的?</a>
-            
-        </h1>
-        <div class="content">
-            <p>方式一: <code>UnicastProcessor</code></p>
-<ul>
-<li>直接推送</li>
-<li>线程安全</li>
-</ul>
-        </div>
-        
-        
-        <div class="level is-mobile">
-            <div class="level-start">
-                <div class="level-item">
-                <a class="button is-size-7 is-light" href="/java/reactor-processor/#more">阅读更多</a>
-                </div>
-            </div>
-        </div>
-        
-        
+<div id="comment-container"></div>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1.4.1/dist/gitalk.css">
+<script src="https://cdn.jsdelivr.net/npm/gitalk@1.4.1/dist/gitalk.min.js"></script>
+<script>
+    var gitalk = new Gitalk({
+        clientID: 'a221d93af82dc4967493',
+        clientSecret: '14cbb6054ee2e9bd2b68b59f52af0caadb62f934',
+        id: '792c99f30004c5bf6449c58328eeffc0',
+        repo: 'weitangli.github.io',
+        owner: 'weitangli',
+        admin: "weitangli",
+        createIssueManually: false,
+        distractionFreeMode: false
+    })
+    gitalk.render('comment-container')
+</script>
+
     </div>
 </div>
-
-
-
-
-
-
-
-
-    
-<div class="card">
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-11-25T02:10:45.000Z">2019-11-25</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/java/">java</a>
-                </div>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    1 分钟 读完 (大约 139 个字)
-                </span>
-                
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/java/reactor-flux-error/">flux发生错误时的处理方式</a>
-            
-        </h1>
-        <div class="content">
-            <p>方式一:</p>
-<ul>
-<li>发生错误时, 忽略此数据, 进入下一轮处理</li>
-</ul>
-<figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-meta">@Test</span></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">onErrorContinue</span><span class="hljs-params">()</span> <span class="hljs-keyword">throws</span> Exception </span>&#123;</span><br><span class="line">    Flux&lt;Integer&gt; flux = Flux.just(-<span class="hljs-number">2</span>, -<span class="hljs-number">1</span>, <span class="hljs-number">0</span>, <span class="hljs-number">1</span>, <span class="hljs-number">2</span>)</span><br><span class="line">            .map(n -&gt; <span class="hljs-number">10</span> / n)</span><br><span class="line">            <span class="hljs-comment">// 忽略此数据</span></span><br><span class="line">            .onErrorContinue((err, num) -&gt; log.info(<span class="hljs-string">"invalid num: &#123;&#125;"</span>, num));</span><br><span class="line"></span><br><span class="line">    StepVerifier.create(flux)</span><br><span class="line">            .expectNext(-<span class="hljs-number">5</span>)</span><br><span class="line">            .expectNext(-<span class="hljs-number">10</span>)</span><br><span class="line">            .expectNext(<span class="hljs-number">10</span>)</span><br><span class="line">            .expectNext(<span class="hljs-number">5</span>)</span><br><span class="line">            .verifyComplete();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-        </div>
-        
-        
-        <div class="level is-mobile">
-            <div class="level-start">
-                <div class="level-item">
-                <a class="button is-size-7 is-light" href="/java/reactor-flux-error/#more">阅读更多</a>
-                </div>
-            </div>
-        </div>
-        
-        
-    </div>
-</div>
-
-
-
-
-
-
-
-
-    
-<div class="card">
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-11-25T01:45:50.000Z">2019-11-25</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/java/">java</a>
-                </div>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    几秒 读完 (大约 68 个字)
-                </span>
-                
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/java/reactor-mono-cache/">mono缓存的使用</a>
-            
-        </h1>
-        <div class="content">
-            <p>方式一:</p>
-<ul>
-<li>本地缓存</li>
-<li>1分钟后过期</li>
-</ul>
-        </div>
-        
-        
-        <div class="level is-mobile">
-            <div class="level-start">
-                <div class="level-item">
-                <a class="button is-size-7 is-light" href="/java/reactor-mono-cache/#more">阅读更多</a>
-                </div>
-            </div>
-        </div>
-        
-        
-    </div>
-</div>
-
-
-
-
-
-
-
-
-    
-<div class="card">
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-11-24T15:18:44.000Z">2019-11-24</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/java/">java</a>
-                </div>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    1 分钟 读完 (大约 127 个字)
-                </span>
-                
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/java/reactor-flux-subscribe/">flux的不同订阅方式</a>
-            
-        </h1>
-        <div class="content">
-            <p>方式一:</p>
-<ul>
-<li>异步执行</li>
-</ul>
-<figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-meta">@Test</span></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">subscribeOn</span><span class="hljs-params">()</span> <span class="hljs-keyword">throws</span> Exception </span>&#123;</span><br><span class="line">    Flux&lt;Integer&gt; flux = Flux.just(<span class="hljs-number">1</span>)</span><br><span class="line">            <span class="hljs-comment">// 指定线程池</span></span><br><span class="line">            .subscribeOn(Schedulers.elastic());</span><br><span class="line"></span><br><span class="line">    StepVerifier.create(flux)</span><br><span class="line">            .expectNext(<span class="hljs-number">1</span>)</span><br><span class="line">            .verifyComplete();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-        </div>
-        
-        
-        <div class="level is-mobile">
-            <div class="level-start">
-                <div class="level-item">
-                <a class="button is-size-7 is-light" href="/java/reactor-flux-subscribe/#more">阅读更多</a>
-                </div>
-            </div>
-        </div>
-        
-        
-    </div>
-</div>
-
-
-
-
-
-
-
-
-    
-<div class="card">
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-11-24T04:22:55.000Z">2019-11-24</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/java/">java</a>
-                </div>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    1 分钟 读完 (大约 144 个字)
-                </span>
-                
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/java/reactor-flux-repeat/">让flux重复执行的案例</a>
-            
-        </h1>
-        <div class="content">
-            <p>案例一:</p>
-<ul>
-<li>当数据为空时, 重复执行</li>
-<li>最多重复执行3次, 每次间隔1秒</li>
-<li>默认值为-1</li>
-</ul>
-        </div>
-        
-        
-        <div class="level is-mobile">
-            <div class="level-start">
-                <div class="level-item">
-                <a class="button is-size-7 is-light" href="/java/reactor-flux-repeat/#more">阅读更多</a>
-                </div>
-            </div>
-        </div>
-        
-        
-    </div>
-</div>
-
-
-
-
-
-
-
-
 </div>
                 
 
@@ -1075,7 +805,7 @@
             <div class="level-start has-text-centered-mobile">
                 <a class="footer-logo is-block has-mb-6" href="/">
                 
-                    <img src="/images/logo.svg" alt="WeitangLi" height="28">
+                    <img src="/images/logo.svg" alt="ActiveMQ之发布订阅模型" height="28">
                 
                 </a>
                 <p class="is-size-7">
