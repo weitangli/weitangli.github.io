@@ -7,19 +7,19 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 
-<title>ActiveMQ的简易安装 - WeitangLi</title>
+<title>STS临时授权访问OSS - WeitangLi</title>
 
 
-    <meta name="description" content="安装ActiveMQ之前, 我们得先安装Java运行环境. Linux安装包下载地址: apache-activemq-5.14.5-bin.tar.gz">
-<meta name="keywords" content="activemq">
+    <meta name="description" content="https:&#x2F;&#x2F;help.aliyun.com&#x2F;document_detail&#x2F;100624.html  OSS可以通过阿里云STS（Security Token Service）进行临时授权访问。 阿里云STS是为云计算用户提供临时访问令牌的Web服务。 通过STS，您可以为第三方应用或子用户（即用户身份由您自己管理的用户）颁发一个自定义时效和权限的访问凭证。">
+<meta name="keywords" content="aliyun">
 <meta property="og:type" content="article">
-<meta property="og:title" content="ActiveMQ的简易安装">
-<meta property="og:url" content="https:&#x2F;&#x2F;weitangli.github.io&#x2F;java&#x2F;activemq-install&#x2F;index.html">
+<meta property="og:title" content="STS临时授权访问OSS">
+<meta property="og:url" content="https:&#x2F;&#x2F;weitangli.github.io&#x2F;java&#x2F;aliyun-oss-sts&#x2F;index.html">
 <meta property="og:site_name" content="WeitangLi">
-<meta property="og:description" content="安装ActiveMQ之前, 我们得先安装Java运行环境. Linux安装包下载地址: apache-activemq-5.14.5-bin.tar.gz">
+<meta property="og:description" content="https:&#x2F;&#x2F;help.aliyun.com&#x2F;document_detail&#x2F;100624.html  OSS可以通过阿里云STS（Security Token Service）进行临时授权访问。 阿里云STS是为云计算用户提供临时访问令牌的Web服务。 通过STS，您可以为第三方应用或子用户（即用户身份由您自己管理的用户）颁发一个自定义时效和权限的访问凭证。">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https:&#x2F;&#x2F;weitangli.github.io&#x2F;images&#x2F;og_image.png">
-<meta property="og:updated_time" content="2019-11-25T06:43:26.448Z">
+<meta property="og:updated_time" content="2019-11-26T07:45:54.067Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https:&#x2F;&#x2F;weitangli.github.io&#x2F;images&#x2F;og_image.png">
 
@@ -79,7 +79,7 @@
         <div class="navbar-brand is-flex-center">
             <a class="navbar-item navbar-logo" href="/">
             
-                <img src="/images/logo.svg" alt="ActiveMQ的简易安装" height="28">
+                <img src="/images/logo.svg" alt="STS临时授权访问OSS" height="28">
             
             </a>
         </div>
@@ -132,7 +132,7 @@
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-11-25T06:00:13.000Z">2019-11-25</time>
+                <time class="level-item has-text-grey" datetime="2019-11-26T07:19:19.000Z">2019-11-26</time>
                 
                 <div class="level-item">
                 <a class="has-link-grey -link" href="/categories/java/">java</a>
@@ -142,7 +142,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    2 分钟 读完 (大约 331 个字)
+                    2 分钟 读完 (大约 243 个字)
                 </span>
                 
                 
@@ -156,26 +156,22 @@
         
         <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
             
-                ActiveMQ的简易安装
+                STS临时授权访问OSS
             
         </h1>
         <div class="content">
-            <p>安装ActiveMQ之前, 我们得先安装Java运行环境.</p>
-<p>Linux安装包下载地址: <a href="https://archive.apache.org/dist/activemq/5.14.5/apache-activemq-5.14.5-bin.tar.gz" target="_blank" rel="noopener">apache-activemq-5.14.5-bin.tar.gz</a></p>
+            <blockquote>
+<p><a href="https://help.aliyun.com/document_detail/100624.html" target="_blank" rel="noopener">https://help.aliyun.com/document_detail/100624.html</a></p>
+</blockquote>
+<p>OSS可以通过阿里云STS（Security Token Service）进行临时授权访问。</p>
+<p>阿里云STS是为云计算用户提供临时访问令牌的Web服务。</p>
+<p>通过STS，您可以为第三方应用或子用户（即用户身份由您自己管理的用户）颁发一个自定义时效和权限的访问凭证。</p>
 <a id="more"></a>
 
-<p>解压后的目录结构如下:</p>
-<figure class="highlight shell hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">├── activemq-all-5.14.5.jar</span><br><span class="line">├── bin</span><br><span class="line">│   ├── activemq</span><br><span class="line">│   ├── activemq-diag</span><br><span class="line">│   ├── activemq.jar</span><br><span class="line">│   ├── env</span><br><span class="line">│   ├── linux-x86-32</span><br><span class="line">│   │   ├── activemq</span><br><span class="line">│   │   ├── libwrapper.so</span><br><span class="line">│   │   ├── wrapper</span><br><span class="line">│   │   └── wrapper.conf</span><br><span class="line">│   ├── linux-x86-64</span><br><span class="line">│   │   ├── activemq</span><br><span class="line">│   │   ├── ActiveMQ.pid</span><br><span class="line">│   │   ├── libwrapper.so</span><br><span class="line">│   │   ├── wrapper</span><br><span class="line">│   │   └── wrapper.conf</span><br><span class="line">│   ├── macosx</span><br><span class="line">│   │   ├── activemq</span><br><span class="line">│   │   ├── libwrapper.jnilib</span><br><span class="line">│   │   ├── wrapper</span><br><span class="line">│   │   └── wrapper.conf</span><br><span class="line">│   └── wrapper.jar</span><br><span class="line">├── conf</span><br><span class="line">├── data</span><br><span class="line">├── docs</span><br><span class="line">├── examples</span><br><span class="line">├── LICENSE</span><br><span class="line">├── NOTICE</span><br><span class="line">├── README.txt</span><br><span class="line">├── webapps</span><br><span class="line">└── webapps-demo</span><br></pre></td></tr></table></figure>
+<p>获取临时凭证：</p>
+<figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-meta">@Test</span></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">credentials</span><span class="hljs-params">()</span> <span class="hljs-keyword">throws</span> Exception </span>&#123;</span><br><span class="line">    String region = <span class="hljs-string">"&lt;region&gt;"</span>;</span><br><span class="line">    String accessKeyId = <span class="hljs-string">"&lt;access-key-id&gt;"</span>;</span><br><span class="line">    String accessKeySecret = <span class="hljs-string">"&lt;access-key-secret&gt;"</span>;</span><br><span class="line">    String roleArn = <span class="hljs-string">"&lt;role-arn&gt;"</span>;</span><br><span class="line">    String roleSessionName = <span class="hljs-string">"test"</span>;</span><br><span class="line">    String policy = <span class="hljs-string">"&#123;\"Version\":\"1\",\"Statement\":[&#123;\"Effect\":\"Allow\",\"Action\":[\"oss:PutObject\"],\"Resource\":[\"acs:oss:*:*:&lt;bucket-name&gt;/*\"]&#125;]&#125;"</span>;</span><br><span class="line"></span><br><span class="line">    IClientProfile clientProfile = DefaultProfile.getProfile(region, accessKeyId, accessKeySecret);</span><br><span class="line">    IAcsClient acsClient = <span class="hljs-keyword">new</span> DefaultAcsClient(clientProfile);</span><br><span class="line"></span><br><span class="line">    AssumeRoleRequest assumeRoleRequest = <span class="hljs-keyword">new</span> AssumeRoleRequest();</span><br><span class="line">    assumeRoleRequest.setMethod(MethodType.POST);</span><br><span class="line">    assumeRoleRequest.setProtocol(ProtocolType.HTTPS);</span><br><span class="line">    assumeRoleRequest.setRoleArn(roleArn);</span><br><span class="line">    assumeRoleRequest.setRoleSessionName(roleSessionName);</span><br><span class="line">    assumeRoleRequest.setPolicy(policy);</span><br><span class="line">    assumeRoleRequest.setDurationSeconds(<span class="hljs-number">60L</span>);</span><br><span class="line"></span><br><span class="line">    AssumeRoleResponse assumeRoleResponse = acsClient.getAcsResponse(assumeRoleRequest);</span><br><span class="line">    log.info(<span class="hljs-string">"assumeRoleResponse: &#123;&#125;"</span>, assumeRoleResponse);</span><br><span class="line"></span><br><span class="line">    <span class="hljs-comment">// 临时凭证</span></span><br><span class="line">    <span class="hljs-keyword">if</span> (assumeRoleResponse.getCredentials() != <span class="hljs-keyword">null</span>) &#123;</span><br><span class="line">        log.info(<span class="hljs-string">"accessKeyId: &#123;&#125;"</span>, assumeRoleResponse.getCredentials().getAccessKeyId());</span><br><span class="line">        log.info(<span class="hljs-string">"accessKeySecret: &#123;&#125;"</span>, assumeRoleResponse.getCredentials().getAccessKeySecret());</span><br><span class="line">        log.info(<span class="hljs-string">"securityToken: &#123;&#125;"</span>, assumeRoleResponse.getCredentials().getSecurityToken());</span><br><span class="line">        log.info(<span class="hljs-string">"expiration: &#123;&#125;"</span>, assumeRoleResponse.getCredentials().getExpiration());</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p><code>bin</code>目录下根据不同的操作系统, 提供了不同的启动脚本, 包括: <code>linux-x86-32</code>, <code>linux-x86-64</code>, <code>macosx</code>.</p>
-<p>我的服务器是<code>centos7.1</code>系统, 使用的是<code>bin/linux-x86-64/activemq</code>脚本.</p>
-<figure class="highlight shell hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[root@centos apache-activemq-5.14.5]# bin/linux-x86-64/activemq</span><br><span class="line">Usage: bin/linux-x86-64/activemq &#123; console | start | stop | restart | status | dump &#125;</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>启动服务 <code>bin/linux-x86-64/activemq start</code></li>
-<li>查看状态 <code>bin/linux-x86-64/activemq status</code></li>
-</ul>
-<p>管理后台: <code>http://localhost:8161</code><br>默认账号/密码: <code>admin/admin</code></p>
+<p>源代码: <a href="https://github.com/weitangli/java-sample/blob/master/aliyun-oss-sample/src/test/java/com/sample/STSTests.java" target="_blank" rel="noopener">STSTests.java</a></p>
 
         </div>
         
@@ -183,7 +179,7 @@
             <div class="level-start">
                 <div class="level-item">
                     <span class="is-size-6 has-text-grey has-mr-7">#</span>
-                    <a class="has-link-grey -link" href="/tags/activemq/" rel="tag">activemq</a>
+                    <a class="has-link-grey -link" href="/tags/aliyun/" rel="tag">aliyun</a>
                 </div>
             </div>
         </div>
@@ -229,17 +225,10 @@
 <div class="card card-transparent">
     <div class="level post-navigation is-flex-wrap is-mobile">
         
-        <div class="level-start">
-            <a class="level level-item has-link-grey  article-nav-prev" href="/java/activemq-topic/">
-                <i class="level-item fas fa-chevron-left"></i>
-                <span class="level-item">ActiveMQ之发布订阅模型</span>
-            </a>
-        </div>
-        
         
         <div class="level-end">
-            <a class="level level-item has-link-grey  article-nav-next" href="/java/reactor-processor/">
-                <span class="level-item">reactor是如何推送数据的?</span>
+            <a class="level level-item has-link-grey  article-nav-next" href="/java/aliyun-oss/">
+                <span class="level-item">快速入门对象存储OSS</span>
                 <i class="level-item fas fa-chevron-right"></i>
             </a>
         </div>
@@ -260,7 +249,7 @@
     var gitalk = new Gitalk({
         clientID: 'a221d93af82dc4967493',
         clientSecret: '14cbb6054ee2e9bd2b68b59f52af0caadb62f934',
-        id: '4dc6cce04e4b6c664d4ee6a97a6710bf',
+        id: '8a6fc771a8e013652cbeca98254a22b6',
         repo: 'weitangli.github.io',
         owner: 'weitangli',
         admin: "weitangli",
@@ -832,7 +821,7 @@
             <div class="level-start has-text-centered-mobile">
                 <a class="footer-logo is-block has-mb-6" href="/">
                 
-                    <img src="/images/logo.svg" alt="ActiveMQ的简易安装" height="28">
+                    <img src="/images/logo.svg" alt="STS临时授权访问OSS" height="28">
                 
                 </a>
                 <p class="is-size-7">
