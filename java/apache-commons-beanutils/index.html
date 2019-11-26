@@ -7,19 +7,19 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 
-<title>reactor是如何推送数据的? - WeitangLi</title>
+<title>Apache Commons之JavaBeans工具包beanutils - WeitangLi</title>
 
 
-    <meta name="description" content="方式一: UnicastProcessor  直接推送 线程安全">
-<meta name="keywords" content="reactor">
+    <meta name="description" content="commons-beanutils是Apache开源组织提供的用于操作JavaBeans的工具包. 使用它, 我们可以很方便的在对象之间复制数据. User对象如下: 123456789101112131415161718192021222324252627282930public class User &amp;#123;    private String id;    private String">
+<meta name="keywords" content="apache-commons">
 <meta property="og:type" content="article">
-<meta property="og:title" content="reactor是如何推送数据的?">
-<meta property="og:url" content="https:&#x2F;&#x2F;weitangli.github.io&#x2F;java&#x2F;reactor-processor&#x2F;index.html">
+<meta property="og:title" content="Apache Commons之JavaBeans工具包beanutils">
+<meta property="og:url" content="https:&#x2F;&#x2F;weitangli.github.io&#x2F;java&#x2F;apache-commons-beanutils&#x2F;index.html">
 <meta property="og:site_name" content="WeitangLi">
-<meta property="og:description" content="方式一: UnicastProcessor  直接推送 线程安全">
+<meta property="og:description" content="commons-beanutils是Apache开源组织提供的用于操作JavaBeans的工具包. 使用它, 我们可以很方便的在对象之间复制数据. User对象如下: 123456789101112131415161718192021222324252627282930public class User &amp;#123;    private String id;    private String">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https:&#x2F;&#x2F;weitangli.github.io&#x2F;images&#x2F;og_image.png">
-<meta property="og:updated_time" content="2019-11-25T03:49:07.884Z">
+<meta property="og:updated_time" content="2019-11-26T11:00:17.565Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https:&#x2F;&#x2F;weitangli.github.io&#x2F;images&#x2F;og_image.png">
 
@@ -79,7 +79,7 @@
         <div class="navbar-brand is-flex-center">
             <a class="navbar-item navbar-logo" href="/">
             
-                <img src="/images/logo.svg" alt="reactor是如何推送数据的?" height="28">
+                <img src="/images/logo.svg" alt="Apache Commons之JavaBeans工具包beanutils" height="28">
             
             </a>
         </div>
@@ -132,7 +132,7 @@
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-11-25T03:46:05.000Z">2019-11-25</time>
+                <time class="level-item has-text-grey" datetime="2019-11-26T09:27:06.000Z">2019-11-26</time>
                 
                 <div class="level-item">
                 <a class="has-link-grey -link" href="/categories/java/">java</a>
@@ -142,7 +142,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    几秒 读完 (大约 88 个字)
+                    2 分钟 读完 (大约 300 个字)
                 </span>
                 
                 
@@ -156,20 +156,22 @@
         
         <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
             
-                reactor是如何推送数据的?
+                Apache Commons之JavaBeans工具包beanutils
             
         </h1>
         <div class="content">
-            <p>方式一: <code>UnicastProcessor</code></p>
-<ul>
-<li>直接推送</li>
-<li>线程安全</li>
-</ul>
-<a id="more"></a>
+            <p><code>commons-beanutils</code>是Apache开源组织提供的用于操作JavaBeans的工具包.</p>
+<p>使用它, 我们可以很方便的在对象之间复制数据.</p>
+<p><code>User</code>对象如下:</p>
+<figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">User</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="hljs-keyword">private</span> String id;</span><br><span class="line">    <span class="hljs-keyword">private</span> String username;</span><br><span class="line">    <span class="hljs-keyword">private</span> String password;</span><br><span class="line"></span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">public</span> String <span class="hljs-title">getId</span><span class="hljs-params">()</span> </span>&#123;</span><br><span class="line">        <span class="hljs-keyword">return</span> id;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">setId</span><span class="hljs-params">(String id)</span> </span>&#123;</span><br><span class="line">        <span class="hljs-keyword">this</span>.id = id;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">public</span> String <span class="hljs-title">getUsername</span><span class="hljs-params">()</span> </span>&#123;</span><br><span class="line">        <span class="hljs-keyword">return</span> username;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">setUsername</span><span class="hljs-params">(String username)</span> </span>&#123;</span><br><span class="line">        <span class="hljs-keyword">this</span>.username = username;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">public</span> String <span class="hljs-title">getPassword</span><span class="hljs-params">()</span> </span>&#123;</span><br><span class="line">        <span class="hljs-keyword">return</span> password;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">setPassword</span><span class="hljs-params">(String password)</span> </span>&#123;</span><br><span class="line">        <span class="hljs-keyword">this</span>.password = password;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-meta">@Test</span></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">unicastProcessor</span><span class="hljs-params">()</span> <span class="hljs-keyword">throws</span> Exception </span>&#123;</span><br><span class="line">    UnicastProcessor&lt;Integer&gt; processor = UnicastProcessor.create();</span><br><span class="line"></span><br><span class="line">    <span class="hljs-comment">// 用于推送数据</span></span><br><span class="line">    FluxSink&lt;Integer&gt; sink = processor.sink();</span><br><span class="line"></span><br><span class="line">    <span class="hljs-comment">// 消息发布者</span></span><br><span class="line">    Flux&lt;Integer&gt; publisher = processor.publish().autoConnect();</span><br><span class="line"></span><br><span class="line">    <span class="hljs-comment">// 推送数据[1, 2, 3]后关闭</span></span><br><span class="line">    sink.next(<span class="hljs-number">1</span>);</span><br><span class="line">    sink.next(<span class="hljs-number">2</span>);</span><br><span class="line">    sink.next(<span class="hljs-number">3</span>);</span><br><span class="line">    sink.complete();</span><br><span class="line"></span><br><span class="line">    StepVerifier.create(publisher)</span><br><span class="line">            .expectNext(<span class="hljs-number">1</span>)</span><br><span class="line">            .expectNext(<span class="hljs-number">2</span>)</span><br><span class="line">            .expectNext(<span class="hljs-number">3</span>)</span><br><span class="line">            .verifyComplete();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>支持属性类型自动转换的功能:</p>
+<figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-meta">@Test</span></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">copyProperties</span><span class="hljs-params">()</span> <span class="hljs-keyword">throws</span> Exception </span>&#123;</span><br><span class="line">    HashMap&lt;String, Object&gt; properties = <span class="hljs-keyword">new</span> HashMap&lt;&gt;();</span><br><span class="line">    properties.put(<span class="hljs-string">"id"</span>, <span class="hljs-number">1</span>);</span><br><span class="line">    properties.put(<span class="hljs-string">"username"</span>, <span class="hljs-string">"weitangli"</span>);</span><br><span class="line"></span><br><span class="line">    <span class="hljs-comment">// User.id是String类型, BeanUtils会自动转换</span></span><br><span class="line">    User user = <span class="hljs-keyword">new</span> User();</span><br><span class="line">    BeanUtils.copyProperties(user, properties);</span><br><span class="line">    BeanUtils.setProperty(user, <span class="hljs-string">"password"</span>, <span class="hljs-string">"123456"</span>);</span><br><span class="line"></span><br><span class="line">    log.info(<span class="hljs-string">"user: id=&#123;&#125; username=&#123;&#125; password=&#123;&#125;"</span>, user.getId(), user.getUsername(), user.getPassword());</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p>源代码: <a href="https://github.com/weitangli/java-sample/blob/master/reactor-sample/src/test/java/com/sample/ProcessorTests.java" target="_blank" rel="noopener">ProcessorTests.java</a></p>
+<p>不支持属性类型自动转换的功能:</p>
+<figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-meta">@Test</span></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">copyProperties</span><span class="hljs-params">()</span> <span class="hljs-keyword">throws</span> Exception </span>&#123;</span><br><span class="line">    HashMap&lt;String, Object&gt; properties = <span class="hljs-keyword">new</span> HashMap&lt;&gt;();</span><br><span class="line">    properties.put(<span class="hljs-string">"id"</span>, <span class="hljs-string">"1"</span>);</span><br><span class="line">    properties.put(<span class="hljs-string">"username"</span>, <span class="hljs-string">"weitangli"</span>);</span><br><span class="line"></span><br><span class="line">    <span class="hljs-comment">// 严格的数据类型, 否则会抛出异常</span></span><br><span class="line">    User user = <span class="hljs-keyword">new</span> User();</span><br><span class="line">    PropertyUtils.copyProperties(user, properties);</span><br><span class="line">    PropertyUtils.setProperty(user, <span class="hljs-string">"password"</span>, <span class="hljs-string">"123456"</span>);</span><br><span class="line"></span><br><span class="line">    log.info(<span class="hljs-string">"user: id=&#123;&#125; username=&#123;&#125; password=&#123;&#125;"</span>, user.getId(), user.getUsername(), user.getPassword());</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>源代码:<br><a href="https://github.com/weitangli/java-sample/blob/master/apache-commons-beanutils-sample/src/test/java/com/sample/User.java" target="_blank" rel="noopener">User.java</a><br><a href="https://github.com/weitangli/java-sample/blob/master/apache-commons-beanutils-sample/src/test/java/com/sample/BeanUtilsTests.java" target="_blank" rel="noopener">BeanUtilsTests.java</a><br><a href="https://github.com/weitangli/java-sample/blob/master/apache-commons-beanutils-sample/src/test/java/com/sample/PropertyUtilsTests.java" target="_blank" rel="noopener">PropertyUtilsTests.java</a></p>
 
         </div>
         
@@ -177,7 +179,7 @@
             <div class="level-start">
                 <div class="level-item">
                     <span class="is-size-6 has-text-grey has-mr-7">#</span>
-                    <a class="has-link-grey -link" href="/tags/reactor/" rel="tag">reactor</a>
+                    <a class="has-link-grey -link" href="/tags/apache-commons/" rel="tag">apache-commons</a>
                 </div>
             </div>
         </div>
@@ -223,17 +225,10 @@
 <div class="card card-transparent">
     <div class="level post-navigation is-flex-wrap is-mobile">
         
-        <div class="level-start">
-            <a class="level level-item has-link-grey  article-nav-prev" href="/java/activemq-install/">
-                <i class="level-item fas fa-chevron-left"></i>
-                <span class="level-item">ActiveMQ的简易安装</span>
-            </a>
-        </div>
-        
         
         <div class="level-end">
-            <a class="level level-item has-link-grey  article-nav-next" href="/java/reactor-flux-error/">
-                <span class="level-item">flux发生错误时的处理方式</span>
+            <a class="level level-item has-link-grey  article-nav-next" href="/java/maven-assembly/">
+                <span class="level-item">Apache Maven打包插件Assembly</span>
                 <i class="level-item fas fa-chevron-right"></i>
             </a>
         </div>
@@ -254,7 +249,7 @@
     var gitalk = new Gitalk({
         clientID: 'a221d93af82dc4967493',
         clientSecret: '14cbb6054ee2e9bd2b68b59f52af0caadb62f934',
-        id: '955e50f0163877530e0f2ed6287ec09b',
+        id: 'b24c61a61d6cf564a9531328585e6868',
         repo: 'weitangli.github.io',
         owner: 'weitangli',
         admin: "weitangli",
@@ -854,7 +849,7 @@
             <div class="level-start has-text-centered-mobile">
                 <a class="footer-logo is-block has-mb-6" href="/">
                 
-                    <img src="/images/logo.svg" alt="reactor是如何推送数据的?" height="28">
+                    <img src="/images/logo.svg" alt="Apache Commons之JavaBeans工具包beanutils" height="28">
                 
                 </a>
                 <p class="is-size-7">
