@@ -7,19 +7,19 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 
-<title>ActiveMQ之发布订阅模型 - WeitangLi</title>
+<title>日志服务之通过消费组消费日志 - WeitangLi</title>
 
 
-    <meta name="description" content="发布订阅模型(Pub&#x2F;Sub)使用主题(Topic)作为消息通信载体, 类似于广播模式. 发布者发布一条消息, 该消息通过主题传递给所有的订阅者, 在一条消息广播之后才订阅的用户则是收不到该条消息的.">
-<meta name="keywords" content="activemq">
+    <meta name="description" content="https:&#x2F;&#x2F;help.aliyun.com&#x2F;document_detail&#x2F;28998.html  与使用SDK消费数据相比，使用消费组（ConsumerGroup）消费日志数据的优点在于，用户无需关心日志服务的实现细节和消费者之间的负载均衡、failover等，只需要专注于业务逻辑即可。">
+<meta name="keywords" content="aliyun">
 <meta property="og:type" content="article">
-<meta property="og:title" content="ActiveMQ之发布订阅模型">
-<meta property="og:url" content="https:&#x2F;&#x2F;weitangli.github.io&#x2F;java&#x2F;activemq-topic&#x2F;index.html">
+<meta property="og:title" content="日志服务之通过消费组消费日志">
+<meta property="og:url" content="https:&#x2F;&#x2F;weitangli.github.io&#x2F;java&#x2F;aliyun-loghub&#x2F;index.html">
 <meta property="og:site_name" content="WeitangLi">
-<meta property="og:description" content="发布订阅模型(Pub&#x2F;Sub)使用主题(Topic)作为消息通信载体, 类似于广播模式. 发布者发布一条消息, 该消息通过主题传递给所有的订阅者, 在一条消息广播之后才订阅的用户则是收不到该条消息的.">
+<meta property="og:description" content="https:&#x2F;&#x2F;help.aliyun.com&#x2F;document_detail&#x2F;28998.html  与使用SDK消费数据相比，使用消费组（ConsumerGroup）消费日志数据的优点在于，用户无需关心日志服务的实现细节和消费者之间的负载均衡、failover等，只需要专注于业务逻辑即可。">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https:&#x2F;&#x2F;weitangli.github.io&#x2F;images&#x2F;og_image.png">
-<meta property="og:updated_time" content="2019-11-26T01:35:47.183Z">
+<meta property="og:updated_time" content="2019-11-26T05:42:54.582Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https:&#x2F;&#x2F;weitangli.github.io&#x2F;images&#x2F;og_image.png">
 
@@ -79,7 +79,7 @@
         <div class="navbar-brand is-flex-center">
             <a class="navbar-item navbar-logo" href="/">
             
-                <img src="/images/logo.svg" alt="ActiveMQ之发布订阅模型" height="28">
+                <img src="/images/logo.svg" alt="日志服务之通过消费组消费日志" height="28">
             
             </a>
         </div>
@@ -132,7 +132,7 @@
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-11-25T08:34:36.000Z">2019-11-25</time>
+                <time class="level-item has-text-grey" datetime="2019-11-26T05:14:46.000Z">2019-11-26</time>
                 
                 <div class="level-item">
                 <a class="has-link-grey -link" href="/categories/java/">java</a>
@@ -142,7 +142,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    2 分钟 读完 (大约 282 个字)
+                    2 分钟 读完 (大约 351 个字)
                 </span>
                 
                 
@@ -156,20 +156,19 @@
         
         <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
             
-                ActiveMQ之发布订阅模型
+                日志服务之通过消费组消费日志
             
         </h1>
         <div class="content">
-            <p>发布订阅模型(Pub/Sub)使用主题(Topic)作为消息通信载体, 类似于广播模式.</p>
-<p>发布者发布一条消息, 该消息通过主题传递给所有的订阅者, 在一条消息广播之后才订阅的用户则是收不到该条消息的.</p>
+            <blockquote>
+<p><a href="https://help.aliyun.com/document_detail/28998.html" target="_blank" rel="noopener">https://help.aliyun.com/document_detail/28998.html</a></p>
+</blockquote>
+<p>与使用SDK消费数据相比，使用消费组（ConsumerGroup）消费日志数据的优点在于，用户无需关心日志服务的实现细节和消费者之间的负载均衡、failover等，只需要专注于业务逻辑即可。</p>
 <a id="more"></a>
 
-<p>生产者:</p>
-<figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-meta">@Test</span></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">produceMessage</span><span class="hljs-params">()</span> <span class="hljs-keyword">throws</span> Exception </span>&#123;</span><br><span class="line">    <span class="hljs-comment">// 连接服务端</span></span><br><span class="line">    ActiveMQConnectionFactory connectionFactory = <span class="hljs-keyword">new</span> ActiveMQConnectionFactory(<span class="hljs-string">"tcp://localhost:61616"</span>);</span><br><span class="line">    Connection connection = connectionFactory.createConnection();</span><br><span class="line">    connection.start();</span><br><span class="line"></span><br><span class="line">    <span class="hljs-comment">// 创建会话</span></span><br><span class="line">    Session session = connection.createSession(<span class="hljs-keyword">false</span>, Session.AUTO_ACKNOWLEDGE);</span><br><span class="line"></span><br><span class="line">    <span class="hljs-comment">// 创建生产者</span></span><br><span class="line">    Destination destination = session.createTopic(<span class="hljs-string">"mytopic"</span>);</span><br><span class="line">    MessageProducer producer = session.createProducer(destination);</span><br><span class="line"></span><br><span class="line">    <span class="hljs-comment">// 发送消息</span></span><br><span class="line">    TextMessage message = session.createTextMessage(<span class="hljs-string">"hello world!"</span>);</span><br><span class="line">    producer.send(message);</span><br><span class="line">    log.info(<span class="hljs-string">"send message: queue=&#123;&#125; message=&#123;&#125;"</span>, <span class="hljs-string">"mytopic"</span>, message.getText());</span><br><span class="line"></span><br><span class="line">    <span class="hljs-comment">// 关闭会话</span></span><br><span class="line">    session.close();</span><br><span class="line"></span><br><span class="line">    <span class="hljs-comment">// 关闭连接</span></span><br><span class="line">    connection.close();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>消费者:</p>
-<figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-meta">@Test</span></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">consumeMessage</span><span class="hljs-params">()</span> <span class="hljs-keyword">throws</span> Exception </span>&#123;</span><br><span class="line">    <span class="hljs-comment">// 连接服务端</span></span><br><span class="line">    ActiveMQConnectionFactory connectionFactory = <span class="hljs-keyword">new</span> ActiveMQConnectionFactory(<span class="hljs-string">"tcp://localhost:61616"</span>);</span><br><span class="line">    Connection connection = connectionFactory.createConnection();</span><br><span class="line">    connection.start();</span><br><span class="line"></span><br><span class="line">    <span class="hljs-comment">// 创建会话</span></span><br><span class="line">    Session session = connection.createSession(<span class="hljs-keyword">false</span>, Session.AUTO_ACKNOWLEDGE);</span><br><span class="line"></span><br><span class="line">    <span class="hljs-comment">// 创建消费者</span></span><br><span class="line">    Destination destination = session.createTopic(<span class="hljs-string">"mytopic"</span>);</span><br><span class="line">    MessageConsumer consumer = session.createConsumer(destination);</span><br><span class="line"></span><br><span class="line">    MessageListener listener = <span class="hljs-keyword">new</span> MessageListener() &#123;</span><br><span class="line">        <span class="hljs-meta">@Override</span></span><br><span class="line">        <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">onMessage</span><span class="hljs-params">(Message message)</span> </span>&#123;</span><br><span class="line">            <span class="hljs-keyword">try</span> &#123;</span><br><span class="line">                TextMessage textMessage = (TextMessage) message;</span><br><span class="line">                log.info(<span class="hljs-string">"receive message: queue=&#123;&#125; message=&#123;&#125;"</span>, <span class="hljs-string">"mytopic"</span>, textMessage.getText());</span><br><span class="line">            &#125; <span class="hljs-keyword">catch</span> (JMSException e) &#123;</span><br><span class="line">                log.error(<span class="hljs-string">"consume error"</span>, e);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;;</span><br><span class="line">    consumer.setMessageListener(listener);</span><br><span class="line"></span><br><span class="line">    <span class="hljs-keyword">while</span> (<span class="hljs-keyword">true</span>) &#123;</span><br><span class="line">        Thread.yield();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-meta">@Test</span></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">processor</span><span class="hljs-params">()</span> <span class="hljs-keyword">throws</span> Exception </span>&#123;</span><br><span class="line">    <span class="hljs-comment">// 第2个参数是消费者名称, 同一个消费组下面的消费者名称必须不同, 可以使用相同的消费组名称,</span></span><br><span class="line">    <span class="hljs-comment">// 不同的消费者名称在多台机器上启动多个进程, 来均衡消费一个Logstore, 这个时候消费组名称可以使用机器ip来区分.</span></span><br><span class="line">    <span class="hljs-comment">// 第9个参数（maxFetchLogGroupSize）是每次从服务端获取的LogGroup数目, 使用默认值即可, 如有调整请注意取值范围(0,1000].</span></span><br><span class="line">    LogHubConfig config = <span class="hljs-keyword">new</span> LogHubConfig(consumerGroup, consumerName, endpoint, project, logstore, accessKeyId, accessKeySecret, LogHubConfig.ConsumePosition.END_CURSOR);</span><br><span class="line">    ClientWorker worker = <span class="hljs-keyword">new</span> ClientWorker(<span class="hljs-keyword">new</span> LogHubProcessorFactory(), config);</span><br><span class="line">    Thread thread = <span class="hljs-keyword">new</span> Thread(worker);</span><br><span class="line"></span><br><span class="line">    <span class="hljs-comment">// Thread运行之后, Client Worker会自动运行, ClientWorker扩展了Runnable接口.</span></span><br><span class="line">    thread.start();</span><br><span class="line">    Thread.sleep(<span class="hljs-number">60</span> * <span class="hljs-number">60</span> * <span class="hljs-number">1000</span>);</span><br><span class="line"></span><br><span class="line">    <span class="hljs-comment">// 调用worker的shutdown函数, 退出消费实例, 关联的线程也会自动停止.</span></span><br><span class="line">    worker.shutdown();</span><br><span class="line"></span><br><span class="line">    <span class="hljs-comment">// ClientWorker运行过程中会生成多个异步的Task, shutdown之后最好等待还在执行的Task安全退出, 建议sleep 30s.</span></span><br><span class="line">    Thread.sleep(<span class="hljs-number">30</span> * <span class="hljs-number">1000</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p>源代码: <a href="https://github.com/weitangli/java-sample/blob/master/activemq-sample/src/test/java/com/sample/TopicTests.java" target="_blank" rel="noopener">TopicTests.java</a></p>
+<p>源代码: <a href="https://github.com/weitangli/java-sample/blob/master/aliyun-log-sample/src/test/java/com/sample/LogHubTests.java" target="_blank" rel="noopener">LogHubTests.java</a></p>
 
         </div>
         
@@ -177,7 +176,7 @@
             <div class="level-start">
                 <div class="level-item">
                     <span class="is-size-6 has-text-grey has-mr-7">#</span>
-                    <a class="has-link-grey -link" href="/tags/activemq/" rel="tag">activemq</a>
+                    <a class="has-link-grey -link" href="/tags/aliyun/" rel="tag">aliyun</a>
                 </div>
             </div>
         </div>
@@ -223,17 +222,10 @@
 <div class="card card-transparent">
     <div class="level post-navigation is-flex-wrap is-mobile">
         
-        <div class="level-start">
-            <a class="level level-item has-link-grey  article-nav-prev" href="/java/activemq-queue/">
-                <i class="level-item fas fa-chevron-left"></i>
-                <span class="level-item">ActiveMQ之点对点模型</span>
-            </a>
-        </div>
-        
         
         <div class="level-end">
-            <a class="level level-item has-link-grey  article-nav-next" href="/java/activemq-install/">
-                <span class="level-item">ActiveMQ的简易安装</span>
+            <a class="level level-item has-link-grey  article-nav-next" href="/java/activemq-queue/">
+                <span class="level-item">ActiveMQ之点对点模型</span>
                 <i class="level-item fas fa-chevron-right"></i>
             </a>
         </div>
@@ -254,7 +246,7 @@
     var gitalk = new Gitalk({
         clientID: 'a221d93af82dc4967493',
         clientSecret: '14cbb6054ee2e9bd2b68b59f52af0caadb62f934',
-        id: '792c99f30004c5bf6449c58328eeffc0',
+        id: '18be06a4d18f31903bfaf53cd2306b36',
         repo: 'weitangli.github.io',
         owner: 'weitangli',
         admin: "weitangli",
@@ -826,7 +818,7 @@
             <div class="level-start has-text-centered-mobile">
                 <a class="footer-logo is-block has-mb-6" href="/">
                 
-                    <img src="/images/logo.svg" alt="ActiveMQ之发布订阅模型" height="28">
+                    <img src="/images/logo.svg" alt="日志服务之通过消费组消费日志" height="28">
                 
                 </a>
                 <p class="is-size-7">

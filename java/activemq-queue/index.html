@@ -7,19 +7,19 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 
-<title>ActiveMQ之发布订阅模型 - WeitangLi</title>
+<title>ActiveMQ之点对点模型 - WeitangLi</title>
 
 
-    <meta name="description" content="发布订阅模型(Pub&#x2F;Sub)使用主题(Topic)作为消息通信载体, 类似于广播模式. 发布者发布一条消息, 该消息通过主题传递给所有的订阅者, 在一条消息广播之后才订阅的用户则是收不到该条消息的.">
+    <meta name="description" content="点对点模型(Point to Point)使用队列(Queue)作为消息通信载体, 满足生产者与消费者模式. 一条消息只能被一个消费者使用, 未被消费的消息在队列中保留直到被消费或超时.">
 <meta name="keywords" content="activemq">
 <meta property="og:type" content="article">
-<meta property="og:title" content="ActiveMQ之发布订阅模型">
-<meta property="og:url" content="https:&#x2F;&#x2F;weitangli.github.io&#x2F;java&#x2F;activemq-topic&#x2F;index.html">
+<meta property="og:title" content="ActiveMQ之点对点模型">
+<meta property="og:url" content="https:&#x2F;&#x2F;weitangli.github.io&#x2F;java&#x2F;activemq-queue&#x2F;index.html">
 <meta property="og:site_name" content="WeitangLi">
-<meta property="og:description" content="发布订阅模型(Pub&#x2F;Sub)使用主题(Topic)作为消息通信载体, 类似于广播模式. 发布者发布一条消息, 该消息通过主题传递给所有的订阅者, 在一条消息广播之后才订阅的用户则是收不到该条消息的.">
+<meta property="og:description" content="点对点模型(Point to Point)使用队列(Queue)作为消息通信载体, 满足生产者与消费者模式. 一条消息只能被一个消费者使用, 未被消费的消息在队列中保留直到被消费或超时.">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https:&#x2F;&#x2F;weitangli.github.io&#x2F;images&#x2F;og_image.png">
-<meta property="og:updated_time" content="2019-11-26T01:35:47.183Z">
+<meta property="og:updated_time" content="2019-11-26T01:35:37.384Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https:&#x2F;&#x2F;weitangli.github.io&#x2F;images&#x2F;og_image.png">
 
@@ -79,7 +79,7 @@
         <div class="navbar-brand is-flex-center">
             <a class="navbar-item navbar-logo" href="/">
             
-                <img src="/images/logo.svg" alt="ActiveMQ之发布订阅模型" height="28">
+                <img src="/images/logo.svg" alt="ActiveMQ之点对点模型" height="28">
             
             </a>
         </div>
@@ -132,7 +132,7 @@
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-11-25T08:34:36.000Z">2019-11-25</time>
+                <time class="level-item has-text-grey" datetime="2019-11-25T13:14:58.000Z">2019-11-25</time>
                 
                 <div class="level-item">
                 <a class="has-link-grey -link" href="/categories/java/">java</a>
@@ -142,7 +142,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    2 分钟 读完 (大约 282 个字)
+                    2 分钟 读完 (大约 271 个字)
                 </span>
                 
                 
@@ -156,20 +156,20 @@
         
         <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
             
-                ActiveMQ之发布订阅模型
+                ActiveMQ之点对点模型
             
         </h1>
         <div class="content">
-            <p>发布订阅模型(Pub/Sub)使用主题(Topic)作为消息通信载体, 类似于广播模式.</p>
-<p>发布者发布一条消息, 该消息通过主题传递给所有的订阅者, 在一条消息广播之后才订阅的用户则是收不到该条消息的.</p>
+            <p>点对点模型(Point to Point)使用队列(Queue)作为消息通信载体, 满足生产者与消费者模式.</p>
+<p>一条消息只能被一个消费者使用, 未被消费的消息在队列中保留直到被消费或超时.</p>
 <a id="more"></a>
 
 <p>生产者:</p>
-<figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-meta">@Test</span></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">produceMessage</span><span class="hljs-params">()</span> <span class="hljs-keyword">throws</span> Exception </span>&#123;</span><br><span class="line">    <span class="hljs-comment">// 连接服务端</span></span><br><span class="line">    ActiveMQConnectionFactory connectionFactory = <span class="hljs-keyword">new</span> ActiveMQConnectionFactory(<span class="hljs-string">"tcp://localhost:61616"</span>);</span><br><span class="line">    Connection connection = connectionFactory.createConnection();</span><br><span class="line">    connection.start();</span><br><span class="line"></span><br><span class="line">    <span class="hljs-comment">// 创建会话</span></span><br><span class="line">    Session session = connection.createSession(<span class="hljs-keyword">false</span>, Session.AUTO_ACKNOWLEDGE);</span><br><span class="line"></span><br><span class="line">    <span class="hljs-comment">// 创建生产者</span></span><br><span class="line">    Destination destination = session.createTopic(<span class="hljs-string">"mytopic"</span>);</span><br><span class="line">    MessageProducer producer = session.createProducer(destination);</span><br><span class="line"></span><br><span class="line">    <span class="hljs-comment">// 发送消息</span></span><br><span class="line">    TextMessage message = session.createTextMessage(<span class="hljs-string">"hello world!"</span>);</span><br><span class="line">    producer.send(message);</span><br><span class="line">    log.info(<span class="hljs-string">"send message: queue=&#123;&#125; message=&#123;&#125;"</span>, <span class="hljs-string">"mytopic"</span>, message.getText());</span><br><span class="line"></span><br><span class="line">    <span class="hljs-comment">// 关闭会话</span></span><br><span class="line">    session.close();</span><br><span class="line"></span><br><span class="line">    <span class="hljs-comment">// 关闭连接</span></span><br><span class="line">    connection.close();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-meta">@Test</span></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">produceMessage</span><span class="hljs-params">()</span> <span class="hljs-keyword">throws</span> Exception </span>&#123;</span><br><span class="line">    <span class="hljs-comment">// 连接服务端</span></span><br><span class="line">    ActiveMQConnectionFactory connectionFactory = <span class="hljs-keyword">new</span> ActiveMQConnectionFactory(<span class="hljs-string">"tcp://localhost:61616"</span>);</span><br><span class="line">    Connection connection = connectionFactory.createConnection();</span><br><span class="line">    connection.start();</span><br><span class="line"></span><br><span class="line">    <span class="hljs-comment">// 创建会话</span></span><br><span class="line">    Session session = connection.createSession(<span class="hljs-keyword">false</span>, Session.AUTO_ACKNOWLEDGE);</span><br><span class="line"></span><br><span class="line">    <span class="hljs-comment">// 创建生产者</span></span><br><span class="line">    Destination destination = session.createQueue(<span class="hljs-string">"myqueue"</span>);</span><br><span class="line">    MessageProducer producer = session.createProducer(destination);</span><br><span class="line"></span><br><span class="line">    <span class="hljs-comment">// 发送消息</span></span><br><span class="line">    TextMessage message = session.createTextMessage(<span class="hljs-string">"hello world!"</span>);</span><br><span class="line">    producer.send(message);</span><br><span class="line">    log.info(<span class="hljs-string">"send message: queue=&#123;&#125; message=&#123;&#125;"</span>, <span class="hljs-string">"myqueue"</span>, message.getText());</span><br><span class="line"></span><br><span class="line">    <span class="hljs-comment">// 关闭会话</span></span><br><span class="line">    session.close();</span><br><span class="line"></span><br><span class="line">    <span class="hljs-comment">// 关闭连接</span></span><br><span class="line">    connection.close();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>消费者:</p>
-<figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-meta">@Test</span></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">consumeMessage</span><span class="hljs-params">()</span> <span class="hljs-keyword">throws</span> Exception </span>&#123;</span><br><span class="line">    <span class="hljs-comment">// 连接服务端</span></span><br><span class="line">    ActiveMQConnectionFactory connectionFactory = <span class="hljs-keyword">new</span> ActiveMQConnectionFactory(<span class="hljs-string">"tcp://localhost:61616"</span>);</span><br><span class="line">    Connection connection = connectionFactory.createConnection();</span><br><span class="line">    connection.start();</span><br><span class="line"></span><br><span class="line">    <span class="hljs-comment">// 创建会话</span></span><br><span class="line">    Session session = connection.createSession(<span class="hljs-keyword">false</span>, Session.AUTO_ACKNOWLEDGE);</span><br><span class="line"></span><br><span class="line">    <span class="hljs-comment">// 创建消费者</span></span><br><span class="line">    Destination destination = session.createTopic(<span class="hljs-string">"mytopic"</span>);</span><br><span class="line">    MessageConsumer consumer = session.createConsumer(destination);</span><br><span class="line"></span><br><span class="line">    MessageListener listener = <span class="hljs-keyword">new</span> MessageListener() &#123;</span><br><span class="line">        <span class="hljs-meta">@Override</span></span><br><span class="line">        <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">onMessage</span><span class="hljs-params">(Message message)</span> </span>&#123;</span><br><span class="line">            <span class="hljs-keyword">try</span> &#123;</span><br><span class="line">                TextMessage textMessage = (TextMessage) message;</span><br><span class="line">                log.info(<span class="hljs-string">"receive message: queue=&#123;&#125; message=&#123;&#125;"</span>, <span class="hljs-string">"mytopic"</span>, textMessage.getText());</span><br><span class="line">            &#125; <span class="hljs-keyword">catch</span> (JMSException e) &#123;</span><br><span class="line">                log.error(<span class="hljs-string">"consume error"</span>, e);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;;</span><br><span class="line">    consumer.setMessageListener(listener);</span><br><span class="line"></span><br><span class="line">    <span class="hljs-keyword">while</span> (<span class="hljs-keyword">true</span>) &#123;</span><br><span class="line">        Thread.yield();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-meta">@Test</span></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">consumeMessage</span><span class="hljs-params">()</span> <span class="hljs-keyword">throws</span> Exception </span>&#123;</span><br><span class="line">    <span class="hljs-comment">// 连接服务端</span></span><br><span class="line">    ActiveMQConnectionFactory connectionFactory = <span class="hljs-keyword">new</span> ActiveMQConnectionFactory(<span class="hljs-string">"tcp://localhost:61616"</span>);</span><br><span class="line">    Connection connection = connectionFactory.createConnection();</span><br><span class="line">    connection.start();</span><br><span class="line"></span><br><span class="line">    <span class="hljs-comment">// 创建会话</span></span><br><span class="line">    Session session = connection.createSession(<span class="hljs-keyword">false</span>, Session.AUTO_ACKNOWLEDGE);</span><br><span class="line"></span><br><span class="line">    <span class="hljs-comment">// 创建消费者</span></span><br><span class="line">    Destination destination = session.createQueue(<span class="hljs-string">"myqueue"</span>);</span><br><span class="line">    MessageConsumer consumer = session.createConsumer(destination);</span><br><span class="line"></span><br><span class="line">    MessageListener listener = <span class="hljs-keyword">new</span> MessageListener() &#123;</span><br><span class="line">        <span class="hljs-meta">@Override</span></span><br><span class="line">        <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">onMessage</span><span class="hljs-params">(Message message)</span> </span>&#123;</span><br><span class="line">            <span class="hljs-keyword">try</span> &#123;</span><br><span class="line">                TextMessage textMessage = (TextMessage) message;</span><br><span class="line">                log.info(<span class="hljs-string">"receive message: queue=&#123;&#125; message=&#123;&#125;"</span>, <span class="hljs-string">"myqueue"</span>, textMessage.getText());</span><br><span class="line">            &#125; <span class="hljs-keyword">catch</span> (JMSException e) &#123;</span><br><span class="line">                log.error(<span class="hljs-string">"consume error"</span>, e);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;;</span><br><span class="line">    consumer.setMessageListener(listener);</span><br><span class="line"></span><br><span class="line">    <span class="hljs-keyword">while</span> (<span class="hljs-keyword">true</span>) &#123;</span><br><span class="line">        Thread.yield();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p>源代码: <a href="https://github.com/weitangli/java-sample/blob/master/activemq-sample/src/test/java/com/sample/TopicTests.java" target="_blank" rel="noopener">TopicTests.java</a></p>
+<p>源代码: <a href="https://github.com/weitangli/java-sample/blob/master/activemq-sample/src/test/java/com/sample/QueueTests.java" target="_blank" rel="noopener">QueueTests.java</a></p>
 
         </div>
         
@@ -224,16 +224,16 @@
     <div class="level post-navigation is-flex-wrap is-mobile">
         
         <div class="level-start">
-            <a class="level level-item has-link-grey  article-nav-prev" href="/java/activemq-queue/">
+            <a class="level level-item has-link-grey  article-nav-prev" href="/java/aliyun-loghub/">
                 <i class="level-item fas fa-chevron-left"></i>
-                <span class="level-item">ActiveMQ之点对点模型</span>
+                <span class="level-item">日志服务之通过消费组消费日志</span>
             </a>
         </div>
         
         
         <div class="level-end">
-            <a class="level level-item has-link-grey  article-nav-next" href="/java/activemq-install/">
-                <span class="level-item">ActiveMQ的简易安装</span>
+            <a class="level level-item has-link-grey  article-nav-next" href="/java/activemq-topic/">
+                <span class="level-item">ActiveMQ之发布订阅模型</span>
                 <i class="level-item fas fa-chevron-right"></i>
             </a>
         </div>
@@ -254,7 +254,7 @@
     var gitalk = new Gitalk({
         clientID: 'a221d93af82dc4967493',
         clientSecret: '14cbb6054ee2e9bd2b68b59f52af0caadb62f934',
-        id: '792c99f30004c5bf6449c58328eeffc0',
+        id: '742d189a1a2e3fe11f493f0569cb3071',
         repo: 'weitangli.github.io',
         owner: 'weitangli',
         admin: "weitangli",
@@ -826,7 +826,7 @@
             <div class="level-start has-text-centered-mobile">
                 <a class="footer-logo is-block has-mb-6" href="/">
                 
-                    <img src="/images/logo.svg" alt="ActiveMQ之发布订阅模型" height="28">
+                    <img src="/images/logo.svg" alt="ActiveMQ之点对点模型" height="28">
                 
                 </a>
                 <p class="is-size-7">
