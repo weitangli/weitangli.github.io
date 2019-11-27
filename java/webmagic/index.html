@@ -7,19 +7,19 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 
-<title>网络请求工具okhttp - WeitangLi</title>
+<title>爬虫框架webmagic - WeitangLi</title>
 
 
-    <meta name="description" content="官方示例 https:&#x2F;&#x2F;github.com&#x2F;square&#x2F;okhttp  发送Get请求12345678910@Testpublic void get() throws Exception &amp;#123;    String url = &quot;https:&#x2F;&#x2F;api.github.com&#x2F;repos&#x2F;square&#x2F;okhttp&#x2F;contributors&quot;;    Request request =">
-<meta name="keywords" content="okhttp">
+    <meta name="description" content="官方文档 https:&#x2F;&#x2F;webmagic.io  WebMagic是一个简单灵活的Java爬虫框架。基于WebMagic，你可以快速开发出一个高效、易维护的爬虫。 特性：  简单的API，可快速上手 模块化的结构，可轻松扩展 提供多线程和分布式支持">
+<meta name="keywords" content="webmagic">
 <meta property="og:type" content="article">
-<meta property="og:title" content="网络请求工具okhttp">
-<meta property="og:url" content="https:&#x2F;&#x2F;weitangli.github.io&#x2F;java&#x2F;okhttp&#x2F;index.html">
+<meta property="og:title" content="爬虫框架webmagic">
+<meta property="og:url" content="https:&#x2F;&#x2F;weitangli.github.io&#x2F;java&#x2F;webmagic&#x2F;index.html">
 <meta property="og:site_name" content="WeitangLi">
-<meta property="og:description" content="官方示例 https:&#x2F;&#x2F;github.com&#x2F;square&#x2F;okhttp  发送Get请求12345678910@Testpublic void get() throws Exception &amp;#123;    String url = &quot;https:&#x2F;&#x2F;api.github.com&#x2F;repos&#x2F;square&#x2F;okhttp&#x2F;contributors&quot;;    Request request =">
+<meta property="og:description" content="官方文档 https:&#x2F;&#x2F;webmagic.io  WebMagic是一个简单灵活的Java爬虫框架。基于WebMagic，你可以快速开发出一个高效、易维护的爬虫。 特性：  简单的API，可快速上手 模块化的结构，可轻松扩展 提供多线程和分布式支持">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https:&#x2F;&#x2F;weitangli.github.io&#x2F;images&#x2F;og_image.png">
-<meta property="og:updated_time" content="2019-11-27T09:28:50.012Z">
+<meta property="og:updated_time" content="2019-11-27T09:51:08.258Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https:&#x2F;&#x2F;weitangli.github.io&#x2F;images&#x2F;og_image.png">
 
@@ -79,7 +79,7 @@
         <div class="navbar-brand is-flex-center">
             <a class="navbar-item navbar-logo" href="/">
             
-                <img src="/images/logo.svg" alt="网络请求工具okhttp" height="28">
+                <img src="/images/logo.svg" alt="爬虫框架webmagic" height="28">
             
             </a>
         </div>
@@ -112,10 +112,6 @@
                     
                 
                 
-                <a class="navbar-item is-hidden-tablet catalogue" title="目录" href="javascript:;">
-                    <i class="fas fa-list-ul"></i>
-                </a>
-                
                 
                 <a class="navbar-item search" title="搜索" href="javascript:;">
                     <i class="fas fa-search"></i>
@@ -136,7 +132,7 @@
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-11-27T09:27:07.000Z">2019-11-27</time>
+                <time class="level-item has-text-grey" datetime="2019-11-27T09:46:52.000Z">2019-11-27</time>
                 
                 <div class="level-item">
                 <a class="has-link-grey -link" href="/categories/java/">java</a>
@@ -146,7 +142,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    1 分钟 读完 (大约 142 个字)
+                    2 分钟 读完 (大约 249 个字)
                 </span>
                 
                 
@@ -160,20 +156,28 @@
         
         <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
             
-                网络请求工具okhttp
+                爬虫框架webmagic
             
         </h1>
         <div class="content">
             <ul>
-<li>官方示例 <a href="https://github.com/square/okhttp" target="_blank" rel="noopener">https://github.com/square/okhttp</a></li>
+<li>官方文档 <a href="https://webmagic.io" target="_blank" rel="noopener">https://webmagic.io</a></li>
 </ul>
-<h2 id="发送Get请求"><a href="#发送Get请求" class="headerlink" title="发送Get请求"></a>发送Get请求</h2><figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-meta">@Test</span></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">get</span><span class="hljs-params">()</span> <span class="hljs-keyword">throws</span> Exception </span>&#123;</span><br><span class="line">    String url = <span class="hljs-string">"https://api.github.com/repos/square/okhttp/contributors"</span>;</span><br><span class="line"></span><br><span class="line">    Request request = <span class="hljs-keyword">new</span> Request.Builder().url(url).build();</span><br><span class="line">    Response response = <span class="hljs-keyword">new</span> OkHttpClient().newCall(request).execute();</span><br><span class="line"></span><br><span class="line">    ResponseBody responseBody = response.body();</span><br><span class="line">    log.info(<span class="hljs-string">"responseBody: &#123;&#125;"</span>, responseBody.string());</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
+<p>WebMagic是一个简单灵活的Java爬虫框架。基于WebMagic，你可以快速开发出一个高效、易维护的爬虫。</p>
+<p>特性：</p>
+<ul>
+<li>简单的API，可快速上手</li>
+<li>模块化的结构，可轻松扩展</li>
+<li>提供多线程和分布式支持</li>
+</ul>
 <a id="more"></a>
 
-<h2 id="发送Post请求"><a href="#发送Post请求" class="headerlink" title="发送Post请求"></a>发送Post请求</h2><figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-meta">@Test</span></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">post</span><span class="hljs-params">()</span> <span class="hljs-keyword">throws</span> Exception </span>&#123;</span><br><span class="line">    String url = <span class="hljs-string">"https://api.github.com/repos/square/okhttp/contributors"</span>;</span><br><span class="line">    MediaType contentType = MediaType.parse(<span class="hljs-string">"application/json; charset=utf-8"</span>);</span><br><span class="line">    String content = <span class="hljs-string">"&#123;&#125;"</span>;</span><br><span class="line"></span><br><span class="line">    RequestBody requestBody = RequestBody.create(contentType, content);</span><br><span class="line"></span><br><span class="line">    Request request = <span class="hljs-keyword">new</span> Request.Builder().url(url).post(requestBody).build();</span><br><span class="line">    Response response = <span class="hljs-keyword">new</span> OkHttpClient().newCall(request).execute();</span><br><span class="line"></span><br><span class="line">    ResponseBody responseBody = response.body();</span><br><span class="line">    log.info(<span class="hljs-string">"responseBody: &#123;&#125;"</span>, responseBody.string());</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>一个爬取Github的示例：</p>
+<figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-meta">@Test</span></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">run</span><span class="hljs-params">()</span> <span class="hljs-keyword">throws</span> Exception </span>&#123;</span><br><span class="line">    Spider.create(<span class="hljs-keyword">new</span> GithubRepoPageProcessor())</span><br><span class="line">            .addUrl(<span class="hljs-string">"https://github.com/code4craft"</span>)</span><br><span class="line">            .thread(<span class="hljs-number">5</span>)</span><br><span class="line">            .run();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p>源代码: <a href="https://github.com/weitangli/java-sample/blob/master/okhttp-sample/src/test/java/com/sample/OkHttpTests.java" target="_blank" rel="noopener">OkHttpTests.java</a></p>
+<figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">GithubRepoPageProcessor</span> <span class="hljs-keyword">implements</span> <span class="hljs-title">PageProcessor</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="hljs-keyword">private</span> Site site = Site.me().setRetryTimes(<span class="hljs-number">3</span>).setSleepTime(<span class="hljs-number">1000</span>).setTimeOut(<span class="hljs-number">10000</span>);</span><br><span class="line"></span><br><span class="line">    <span class="hljs-meta">@Override</span></span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">process</span><span class="hljs-params">(Page page)</span> </span>&#123;</span><br><span class="line">        page.addTargetRequests(page.getHtml().links().regex(<span class="hljs-string">"(https://github\\.com/[\\w\\-]+/[\\w\\-]+)"</span>).all());</span><br><span class="line">        page.addTargetRequests(page.getHtml().links().regex(<span class="hljs-string">"(https://github\\.com/[\\w\\-])"</span>).all());</span><br><span class="line">        page.putField(<span class="hljs-string">"author"</span>, page.getUrl().regex(<span class="hljs-string">"https://github\\.com/(\\w+)/.*"</span>).toString());</span><br><span class="line">        page.putField(<span class="hljs-string">"name"</span>, page.getHtml().xpath(<span class="hljs-string">"//h1[@class='entry-title public']/strong/a/text()"</span>).toString());</span><br><span class="line">        <span class="hljs-keyword">if</span> (page.getResultItems().get(<span class="hljs-string">"name"</span>) == <span class="hljs-keyword">null</span>) &#123;</span><br><span class="line">            <span class="hljs-comment">// skip this page</span></span><br><span class="line">            page.setSkip(<span class="hljs-keyword">true</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        page.putField(<span class="hljs-string">"readme"</span>, page.getHtml().xpath(<span class="hljs-string">"//div[@id='readme']/tidyText()"</span>));</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="hljs-meta">@Override</span></span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">public</span> Site <span class="hljs-title">getSite</span><span class="hljs-params">()</span> </span>&#123;</span><br><span class="line">        <span class="hljs-keyword">return</span> site;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>源代码:<br><a href="https://github.com/weitangli/java-sample/blob/master/webmagic-sample/src/test/java/com/sample/SpiderTests.java" target="_blank" rel="noopener">SpiderTests.java</a><br><a href="https://github.com/weitangli/java-sample/blob/master/webmagic-sample/src/test/java/com/sample/GithubRepoPageProcessor.java" target="_blank" rel="noopener">GithubRepoPageProcessor.java</a></p>
 
         </div>
         
@@ -181,7 +185,7 @@
             <div class="level-start">
                 <div class="level-item">
                     <span class="is-size-6 has-text-grey has-mr-7">#</span>
-                    <a class="has-link-grey -link" href="/tags/okhttp/" rel="tag">okhttp</a>
+                    <a class="has-link-grey -link" href="/tags/webmagic/" rel="tag">webmagic</a>
                 </div>
             </div>
         </div>
@@ -227,17 +231,10 @@
 <div class="card card-transparent">
     <div class="level post-navigation is-flex-wrap is-mobile">
         
-        <div class="level-start">
-            <a class="level level-item has-link-grey  article-nav-prev" href="/java/webmagic/">
-                <i class="level-item fas fa-chevron-left"></i>
-                <span class="level-item">爬虫框架webmagic</span>
-            </a>
-        </div>
-        
         
         <div class="level-end">
-            <a class="level level-item has-link-grey  article-nav-next" href="/java/jiguang-push/">
-                <span class="level-item">极光推送</span>
+            <a class="level level-item has-link-grey  article-nav-next" href="/java/okhttp/">
+                <span class="level-item">网络请求工具okhttp</span>
                 <i class="level-item fas fa-chevron-right"></i>
             </a>
         </div>
@@ -258,7 +255,7 @@
     var gitalk = new Gitalk({
         clientID: 'a221d93af82dc4967493',
         clientSecret: '14cbb6054ee2e9bd2b68b59f52af0caadb62f934',
-        id: '024ae7213bab903d29bc28307d355e09',
+        id: 'f571c7a08532354a086bcb7ab4c9209b',
         repo: 'weitangli.github.io',
         owner: 'weitangli',
         admin: "weitangli",
@@ -390,24 +387,6 @@
 </div>
     
         
-<div class="card widget" id="toc">
-    <div class="card-content">
-        <div class="menu">
-            <h3 class="menu-label">
-                目录
-            </h3>
-            <ul class="menu-list"><li>
-        <a class="is-flex" href="#发送Get请求">
-        <span class="has-mr-6">1</span>
-        <span>发送Get请求</span>
-        </a></li><li>
-        <a class="is-flex" href="#发送Post请求">
-        <span class="has-mr-6">2</span>
-        <span>发送Post请求</span>
-        </a></li></ul>
-        </div>
-    </div>
-</div>
     
         <div class="card widget">
     <div class="card-content">
@@ -946,7 +925,7 @@
             <div class="level-start has-text-centered-mobile">
                 <a class="footer-logo is-block has-mb-6" href="/">
                 
-                    <img src="/images/logo.svg" alt="网络请求工具okhttp" height="28">
+                    <img src="/images/logo.svg" alt="爬虫框架webmagic" height="28">
                 
                 </a>
                 <p class="is-size-7">
