@@ -214,7 +214,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    1 分钟 读完 (大约 142 个字)
+                    1 分钟 读完 (大约 138 个字)
                 </span>
                 
                 
@@ -227,9 +227,9 @@
             
         </h1>
         <div class="content">
-            <ul>
-<li>官方示例 <a href="https://github.com/square/okhttp" target="_blank" rel="noopener">https://github.com/square/okhttp</a></li>
-</ul>
+            <blockquote>
+<p><a href="https://github.com/square/okhttp" target="_blank" rel="noopener">https://github.com/square/okhttp</a></p>
+</blockquote>
 <h2 id="发送Get请求"><a href="#发送Get请求" class="headerlink" title="发送Get请求"></a>发送Get请求</h2><figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-meta">@Test</span></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">get</span><span class="hljs-params">()</span> <span class="hljs-keyword">throws</span> Exception </span>&#123;</span><br><span class="line">    String url = <span class="hljs-string">"https://api.github.com/repos/square/okhttp/contributors"</span>;</span><br><span class="line"></span><br><span class="line">    Request request = <span class="hljs-keyword">new</span> Request.Builder().url(url).build();</span><br><span class="line">    Response response = <span class="hljs-keyword">new</span> OkHttpClient().newCall(request).execute();</span><br><span class="line"></span><br><span class="line">    ResponseBody responseBody = response.body();</span><br><span class="line">    log.info(<span class="hljs-string">"responseBody: &#123;&#125;"</span>, responseBody.string());</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
         </div>
         
