@@ -19,7 +19,7 @@
 <meta property="og:description" content="commons-beanutils是Apache开源组织提供的用于操作JavaBeans的工具包. 使用它, 我们可以很方便的在对象之间复制数据.">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https:&#x2F;&#x2F;weitangli.github.io&#x2F;images&#x2F;og_image.png">
-<meta property="og:updated_time" content="2019-11-26T11:13:12.916Z">
+<meta property="og:updated_time" content="2019-11-27T01:07:53.176Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https:&#x2F;&#x2F;weitangli.github.io&#x2F;images&#x2F;og_image.png">
 
@@ -142,7 +142,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    2 分钟 读完 (大约 265 个字)
+                    2 分钟 读完 (大约 269 个字)
                 </span>
                 
                 
@@ -165,7 +165,7 @@
 <a id="more"></a>
 
 <p><code>User</code>对象如下:</p>
-<figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">User</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="hljs-keyword">private</span> String id;</span><br><span class="line">    <span class="hljs-keyword">private</span> String username;</span><br><span class="line">    <span class="hljs-keyword">private</span> String password;</span><br><span class="line"></span><br><span class="line">    <span class="hljs-comment">// Getter and Setter</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">User</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="hljs-keyword">private</span> String id;</span><br><span class="line">    <span class="hljs-keyword">private</span> String username;</span><br><span class="line">    <span class="hljs-keyword">private</span> String password;</span><br><span class="line"></span><br><span class="line">    <span class="hljs-comment">// 省略Getter和Setter方法</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p>支持属性类型自动转换的功能:</p>
 <figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-meta">@Test</span></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">copyProperties</span><span class="hljs-params">()</span> <span class="hljs-keyword">throws</span> Exception </span>&#123;</span><br><span class="line">    HashMap&lt;String, Object&gt; properties = <span class="hljs-keyword">new</span> HashMap&lt;&gt;();</span><br><span class="line">    properties.put(<span class="hljs-string">"id"</span>, <span class="hljs-number">1</span>);</span><br><span class="line">    properties.put(<span class="hljs-string">"username"</span>, <span class="hljs-string">"weitangli"</span>);</span><br><span class="line"></span><br><span class="line">    <span class="hljs-comment">// User.id是String类型, BeanUtils会自动转换</span></span><br><span class="line">    User user = <span class="hljs-keyword">new</span> User();</span><br><span class="line">    BeanUtils.copyProperties(user, properties);</span><br><span class="line">    BeanUtils.setProperty(user, <span class="hljs-string">"password"</span>, <span class="hljs-string">"123456"</span>);</span><br><span class="line"></span><br><span class="line">    log.info(<span class="hljs-string">"user: id=&#123;&#125; username=&#123;&#125; password=&#123;&#125;"</span>, user.getId(), user.getUsername(), user.getPassword());</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
