@@ -142,6 +142,63 @@
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2019-11-25T02:10:45.000Z">2019-11-25</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/java/">java</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    1 分钟 读完 (大约 139 个字)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/java/reactor-flux-error/">flux发生错误时的处理方式</a>
+            
+        </h1>
+        <div class="content">
+            <p>方式一:</p>
+<ul>
+<li>发生错误时, 忽略此数据, 进入下一轮处理</li>
+</ul>
+<figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-meta">@Test</span></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">onErrorContinue</span><span class="hljs-params">()</span> <span class="hljs-keyword">throws</span> Exception </span>&#123;</span><br><span class="line">    Flux&lt;Integer&gt; flux = Flux.just(-<span class="hljs-number">2</span>, -<span class="hljs-number">1</span>, <span class="hljs-number">0</span>, <span class="hljs-number">1</span>, <span class="hljs-number">2</span>)</span><br><span class="line">            .map(n -&gt; <span class="hljs-number">10</span> / n)</span><br><span class="line">            <span class="hljs-comment">// 忽略此数据</span></span><br><span class="line">            .onErrorContinue((err, num) -&gt; log.info(<span class="hljs-string">"invalid num: &#123;&#125;"</span>, num));</span><br><span class="line"></span><br><span class="line">    StepVerifier.create(flux)</span><br><span class="line">            .expectNext(-<span class="hljs-number">5</span>)</span><br><span class="line">            .expectNext(-<span class="hljs-number">10</span>)</span><br><span class="line">            .expectNext(<span class="hljs-number">10</span>)</span><br><span class="line">            .expectNext(<span class="hljs-number">5</span>)</span><br><span class="line">            .verifyComplete();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        </div>
+        
+        
+        <div class="level is-mobile">
+            <div class="level-start">
+                <div class="level-item">
+                <a class="button is-size-7 is-light" href="/java/reactor-flux-error/#more">阅读更多</a>
+                </div>
+            </div>
+        </div>
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+    
+<div class="card">
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
                 <time class="level-item has-text-grey" datetime="2019-11-25T01:45:50.000Z">2019-11-25</time>
                 
                 <div class="level-item">
@@ -370,7 +427,7 @@
                         文章
                     </p>
                     <p class="title has-text-weight-normal">
-                        14
+                        15
                     </p>
                 </div>
             </div>
@@ -390,7 +447,7 @@
                         标签
                     </p>
                     <p class="title has-text-weight-normal">
-                        6
+                        7
                     </p>
                 </div>
             </div>
@@ -497,7 +554,7 @@
                 <span class="level-item">java</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">13</span>
+                <span class="level-item tag">14</span>
             </span>
         </a></li><li>
         <a class="level is-marginless" href="/categories/windows10/">
@@ -518,7 +575,7 @@
         <h3 class="menu-label">
             标签云
         </h3>
-        <a href="/tags/activemq/" style="font-size: 15px;">activemq</a> <a href="/tags/aliyun/" style="font-size: 15px;">aliyun</a> <a href="/tags/apache-commons/" style="font-size: 10px;">apache-commons</a> <a href="/tags/cmd/" style="font-size: 10px;">cmd</a> <a href="/tags/maven/" style="font-size: 10px;">maven</a> <a href="/tags/reactor/" style="font-size: 20px;">reactor</a>
+        <a href="/tags/activemq/" style="font-size: 15px;">activemq</a> <a href="/tags/alibaba/" style="font-size: 10px;">alibaba</a> <a href="/tags/aliyun/" style="font-size: 15px;">aliyun</a> <a href="/tags/apache-commons/" style="font-size: 10px;">apache-commons</a> <a href="/tags/cmd/" style="font-size: 10px;">cmd</a> <a href="/tags/maven/" style="font-size: 10px;">maven</a> <a href="/tags/reactor/" style="font-size: 20px;">reactor</a>
     </div>
 </div>
     
@@ -530,6 +587,25 @@
         <h3 class="menu-label">
             最新文章
         </h3>
+        
+        <article class="media">
+            
+            <a href="/java/alibaba-canal/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="MySQL binlog增量订阅与消费组件">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-11-27T05:15:14.000Z">2019-11-27</time></div>
+                    <a href="/java/alibaba-canal/" class="title has-link-black-ter is-size-6 has-text-weight-normal">MySQL binlog增量订阅与消费组件</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/java/">java</a>
+                    </p>
+                </div>
+            </div>
+        </article>
         
         <article class="media">
             
@@ -607,25 +683,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/java/aliyun-loghub/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="日志服务之通过消费组消费日志">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-11-26T05:14:46.000Z">2019-11-26</time></div>
-                    <a href="/java/aliyun-loghub/" class="title has-link-black-ter is-size-6 has-text-weight-normal">日志服务之通过消费组消费日志</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/java/">java</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
         
@@ -643,7 +700,7 @@
                     <span class="level-item">十一月 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">14</span>
+                    <span class="level-item tag">15</span>
                 </span>
             </a>
         </li>
@@ -665,6 +722,13 @@
                     <a class="tags has-addons" href="/tags/activemq/">
                         <span class="tag">activemq</span>
                         <span class="tag is-grey">3</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/alibaba/">
+                        <span class="tag">alibaba</span>
+                        <span class="tag is-grey">1</span>
                     </a>
                 </div>
                 
@@ -727,6 +791,25 @@
         
         <article class="media">
             
+            <a href="/java/alibaba-canal/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="MySQL binlog增量订阅与消费组件">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-11-27T05:15:14.000Z">2019-11-27</time></div>
+                    <a href="/java/alibaba-canal/" class="title has-link-black-ter is-size-6 has-text-weight-normal">MySQL binlog增量订阅与消费组件</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/java/">java</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
             <a href="/java/apache-commons-beanutils/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="/images/thumbnail.svg" alt="Apache Commons之JavaBeans工具包beanutils">
@@ -801,25 +884,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/java/aliyun-loghub/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="日志服务之通过消费组消费日志">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-11-26T05:14:46.000Z">2019-11-26</time></div>
-                    <a href="/java/aliyun-loghub/" class="title has-link-black-ter is-size-6 has-text-weight-normal">日志服务之通过消费组消费日志</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/java/">java</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
     
@@ -837,7 +901,7 @@
                     <span class="level-item">十一月 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">14</span>
+                    <span class="level-item tag">15</span>
                 </span>
             </a>
         </li>
@@ -859,6 +923,13 @@
                     <a class="tags has-addons" href="/tags/activemq/">
                         <span class="tag">activemq</span>
                         <span class="tag is-grey">3</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/alibaba/">
+                        <span class="tag">alibaba</span>
+                        <span class="tag is-grey">1</span>
                     </a>
                 </div>
                 

@@ -7,19 +7,19 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 
-<title>ActiveMQ的简易安装 - WeitangLi</title>
+<title>MySQL binlog增量订阅与消费组件 - WeitangLi</title>
 
 
-    <meta name="description" content="安装ActiveMQ之前, 我们得先安装Java运行环境. Linux安装包下载地址: apache-activemq-5.14.5-bin.tar.gz">
-<meta name="keywords" content="activemq">
+    <meta name="description" content="https:&#x2F;&#x2F;github.com&#x2F;alibaba&#x2F;canal&#x2F;wiki  canal [kə’næl]，译意为水道&#x2F;管道&#x2F;沟渠，主要用途是基于 MySQL 数据库增量日志解析，提供增量数据订阅和消费 工作原理：  canal 模拟 MySQL slave 的交互协议，伪装自己为 MySQL slave ，向 MySQL master 发送 dump 协议 MySQL master 收到 du">
+<meta name="keywords" content="alibaba">
 <meta property="og:type" content="article">
-<meta property="og:title" content="ActiveMQ的简易安装">
-<meta property="og:url" content="https:&#x2F;&#x2F;weitangli.github.io&#x2F;java&#x2F;activemq-install&#x2F;index.html">
+<meta property="og:title" content="MySQL binlog增量订阅与消费组件">
+<meta property="og:url" content="https:&#x2F;&#x2F;weitangli.github.io&#x2F;java&#x2F;alibaba-canal&#x2F;index.html">
 <meta property="og:site_name" content="WeitangLi">
-<meta property="og:description" content="安装ActiveMQ之前, 我们得先安装Java运行环境. Linux安装包下载地址: apache-activemq-5.14.5-bin.tar.gz">
+<meta property="og:description" content="https:&#x2F;&#x2F;github.com&#x2F;alibaba&#x2F;canal&#x2F;wiki  canal [kə’næl]，译意为水道&#x2F;管道&#x2F;沟渠，主要用途是基于 MySQL 数据库增量日志解析，提供增量数据订阅和消费 工作原理：  canal 模拟 MySQL slave 的交互协议，伪装自己为 MySQL slave ，向 MySQL master 发送 dump 协议 MySQL master 收到 du">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https:&#x2F;&#x2F;weitangli.github.io&#x2F;images&#x2F;og_image.png">
-<meta property="og:updated_time" content="2019-11-25T06:43:26.448Z">
+<meta property="og:updated_time" content="2019-11-27T05:20:37.649Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https:&#x2F;&#x2F;weitangli.github.io&#x2F;images&#x2F;og_image.png">
 
@@ -79,7 +79,7 @@
         <div class="navbar-brand is-flex-center">
             <a class="navbar-item navbar-logo" href="/">
             
-                <img src="/images/logo.svg" alt="ActiveMQ的简易安装" height="28">
+                <img src="/images/logo.svg" alt="MySQL binlog增量订阅与消费组件" height="28">
             
             </a>
         </div>
@@ -132,7 +132,7 @@
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-11-25T06:00:13.000Z">2019-11-25</time>
+                <time class="level-item has-text-grey" datetime="2019-11-27T05:15:14.000Z">2019-11-27</time>
                 
                 <div class="level-item">
                 <a class="has-link-grey -link" href="/categories/java/">java</a>
@@ -142,7 +142,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    2 分钟 读完 (大约 331 个字)
+                    2 分钟 读完 (大约 290 个字)
                 </span>
                 
                 
@@ -156,26 +156,26 @@
         
         <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
             
-                ActiveMQ的简易安装
+                MySQL binlog增量订阅与消费组件
             
         </h1>
         <div class="content">
-            <p>安装ActiveMQ之前, 我们得先安装Java运行环境.</p>
-<p>Linux安装包下载地址: <a href="https://archive.apache.org/dist/activemq/5.14.5/apache-activemq-5.14.5-bin.tar.gz" target="_blank" rel="noopener">apache-activemq-5.14.5-bin.tar.gz</a></p>
+            <blockquote>
+<p><a href="https://github.com/alibaba/canal/wiki" target="_blank" rel="noopener">https://github.com/alibaba/canal/wiki</a></p>
+</blockquote>
+<p>canal [kə’næl]，译意为水道/管道/沟渠，主要用途是基于 MySQL 数据库增量日志解析，提供增量数据订阅和消费</p>
+<p>工作原理：</p>
+<ul>
+<li>canal 模拟 MySQL slave 的交互协议，伪装自己为 MySQL slave ，向 MySQL master 发送 dump 协议</li>
+<li>MySQL master 收到 dump 请求，开始推送 binary log 给 slave (即 canal )</li>
+<li>canal 解析 binary log 对象(原始为 byte 流)</li>
+</ul>
 <a id="more"></a>
 
-<p>解压后的目录结构如下:</p>
-<figure class="highlight shell hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">├── activemq-all-5.14.5.jar</span><br><span class="line">├── bin</span><br><span class="line">│   ├── activemq</span><br><span class="line">│   ├── activemq-diag</span><br><span class="line">│   ├── activemq.jar</span><br><span class="line">│   ├── env</span><br><span class="line">│   ├── linux-x86-32</span><br><span class="line">│   │   ├── activemq</span><br><span class="line">│   │   ├── libwrapper.so</span><br><span class="line">│   │   ├── wrapper</span><br><span class="line">│   │   └── wrapper.conf</span><br><span class="line">│   ├── linux-x86-64</span><br><span class="line">│   │   ├── activemq</span><br><span class="line">│   │   ├── ActiveMQ.pid</span><br><span class="line">│   │   ├── libwrapper.so</span><br><span class="line">│   │   ├── wrapper</span><br><span class="line">│   │   └── wrapper.conf</span><br><span class="line">│   ├── macosx</span><br><span class="line">│   │   ├── activemq</span><br><span class="line">│   │   ├── libwrapper.jnilib</span><br><span class="line">│   │   ├── wrapper</span><br><span class="line">│   │   └── wrapper.conf</span><br><span class="line">│   └── wrapper.jar</span><br><span class="line">├── conf</span><br><span class="line">├── data</span><br><span class="line">├── docs</span><br><span class="line">├── examples</span><br><span class="line">├── LICENSE</span><br><span class="line">├── NOTICE</span><br><span class="line">├── README.txt</span><br><span class="line">├── webapps</span><br><span class="line">└── webapps-demo</span><br></pre></td></tr></table></figure>
+<p>以下是canal的增量订阅与消费示例:</p>
+<figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-meta">@Test</span></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">subscribe</span><span class="hljs-params">()</span> <span class="hljs-keyword">throws</span> Exception </span>&#123;</span><br><span class="line">    String host = <span class="hljs-string">"localhost"</span>;</span><br><span class="line">    Integer port = <span class="hljs-number">11111</span>;</span><br><span class="line">    String destination = <span class="hljs-string">"example"</span>;</span><br><span class="line">    String username = <span class="hljs-string">""</span>;</span><br><span class="line">    String password = <span class="hljs-string">""</span>;</span><br><span class="line">    String subscribe = <span class="hljs-string">".*\\..*"</span>;</span><br><span class="line">    Integer maxBatchSize = <span class="hljs-number">5</span> * <span class="hljs-number">1024</span>;</span><br><span class="line"></span><br><span class="line">    <span class="hljs-comment">// 创建链接</span></span><br><span class="line">    CanalConnector connector = CanalConnectors.newSingleConnector(<span class="hljs-keyword">new</span> InetSocketAddress(host, port), destination, username, password);</span><br><span class="line">    <span class="hljs-keyword">try</span> &#123;</span><br><span class="line">        connector.connect();</span><br><span class="line">        connector.subscribe(subscribe);</span><br><span class="line">        <span class="hljs-keyword">while</span> (<span class="hljs-keyword">true</span>) &#123;</span><br><span class="line">            <span class="hljs-comment">// 获取指定数量的数据</span></span><br><span class="line">            Message message = connector.getWithoutAck(maxBatchSize);</span><br><span class="line">            <span class="hljs-keyword">long</span> batchId = message.getId();</span><br><span class="line">            <span class="hljs-keyword">int</span> batchSize = message.getEntries().size();</span><br><span class="line">            <span class="hljs-keyword">if</span> (batchId == -<span class="hljs-number">1</span> || batchSize == <span class="hljs-number">0</span>) &#123;</span><br><span class="line">                Thread.sleep(<span class="hljs-number">3000</span>);</span><br><span class="line">                <span class="hljs-keyword">continue</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="hljs-keyword">try</span> &#123;</span><br><span class="line">                CanalPrinter.printSummary(message);</span><br><span class="line">                CanalPrinter.printEntry(message);</span><br><span class="line"></span><br><span class="line">                <span class="hljs-comment">// 提交确认</span></span><br><span class="line">                connector.ack(batchId);</span><br><span class="line">            &#125; <span class="hljs-keyword">catch</span> (Exception e) &#123;</span><br><span class="line">                <span class="hljs-comment">// 处理失败, 回滚数据</span></span><br><span class="line">                connector.rollback(batchId);</span><br><span class="line">                log.error(<span class="hljs-string">"process error"</span>, e);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125; <span class="hljs-keyword">catch</span> (Exception e) &#123;</span><br><span class="line">        log.error(<span class="hljs-string">"connect error"</span>, e);</span><br><span class="line">    &#125; <span class="hljs-keyword">finally</span> &#123;</span><br><span class="line">        connector.disconnect();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p><code>bin</code>目录下根据不同的操作系统, 提供了不同的启动脚本, 包括: <code>linux-x86-32</code>, <code>linux-x86-64</code>, <code>macosx</code>.</p>
-<p>我的服务器是<code>centos7.1</code>系统, 使用的是<code>bin/linux-x86-64/activemq</code>脚本.</p>
-<figure class="highlight shell hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[root@centos apache-activemq-5.14.5]# bin/linux-x86-64/activemq</span><br><span class="line">Usage: bin/linux-x86-64/activemq &#123; console | start | stop | restart | status | dump &#125;</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>启动服务 <code>bin/linux-x86-64/activemq start</code></li>
-<li>查看状态 <code>bin/linux-x86-64/activemq status</code></li>
-</ul>
-<p>管理后台: <code>http://localhost:8161</code><br>默认账号/密码: <code>admin/admin</code></p>
+<p>源代码:<br><a href="https://github.com/weitangli/java-sample/blob/master/alibaba-canal-sample/src/test/java/com/sample/CanalClientTests.java" target="_blank" rel="noopener">CanalClientTests.java</a><br><a href="https://github.com/weitangli/java-sample/blob/master/alibaba-canal-sample/src/test/java/com/sample/CanalPrinter.java" target="_blank" rel="noopener">CanalPrinter.java</a></p>
 
         </div>
         
@@ -183,7 +183,7 @@
             <div class="level-start">
                 <div class="level-item">
                     <span class="is-size-6 has-text-grey has-mr-7">#</span>
-                    <a class="has-link-grey -link" href="/tags/activemq/" rel="tag">activemq</a>
+                    <a class="has-link-grey -link" href="/tags/alibaba/" rel="tag">alibaba</a>
                 </div>
             </div>
         </div>
@@ -229,17 +229,10 @@
 <div class="card card-transparent">
     <div class="level post-navigation is-flex-wrap is-mobile">
         
-        <div class="level-start">
-            <a class="level level-item has-link-grey  article-nav-prev" href="/java/activemq-topic/">
-                <i class="level-item fas fa-chevron-left"></i>
-                <span class="level-item">ActiveMQ之发布订阅模型</span>
-            </a>
-        </div>
-        
         
         <div class="level-end">
-            <a class="level level-item has-link-grey  article-nav-next" href="/java/reactor-processor/">
-                <span class="level-item">reactor是如何推送数据的?</span>
+            <a class="level level-item has-link-grey  article-nav-next" href="/java/apache-commons-beanutils/">
+                <span class="level-item">Apache Commons之JavaBeans工具包beanutils</span>
                 <i class="level-item fas fa-chevron-right"></i>
             </a>
         </div>
@@ -260,7 +253,7 @@
     var gitalk = new Gitalk({
         clientID: 'a221d93af82dc4967493',
         clientSecret: '14cbb6054ee2e9bd2b68b59f52af0caadb62f934',
-        id: '4dc6cce04e4b6c664d4ee6a97a6710bf',
+        id: '1fc596c6dd9fe6b100263fe0c8aa3d45',
         repo: 'weitangli.github.io',
         owner: 'weitangli',
         admin: "weitangli",
@@ -874,7 +867,7 @@
             <div class="level-start has-text-centered-mobile">
                 <a class="footer-logo is-block has-mb-6" href="/">
                 
-                    <img src="/images/logo.svg" alt="ActiveMQ的简易安装" height="28">
+                    <img src="/images/logo.svg" alt="MySQL binlog增量订阅与消费组件" height="28">
                 
                 </a>
                 <p class="is-size-7">
