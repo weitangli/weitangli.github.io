@@ -7,19 +7,17 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 
-<title>日志服务之通过消费组消费日志 - WeitangLi</title>
+<title>标签: jackson - WeitangLi</title>
 
 
-    <meta name="description" content="https:&#x2F;&#x2F;help.aliyun.com&#x2F;document_detail&#x2F;28998.html  与使用SDK消费数据相比，使用消费组（ConsumerGroup）消费日志数据的优点在于，用户无需关心日志服务的实现细节和消费者之间的负载均衡、failover等，只需要专注于业务逻辑即可。">
-<meta name="keywords" content="aliyun">
-<meta property="og:type" content="article">
-<meta property="og:title" content="日志服务之通过消费组消费日志">
-<meta property="og:url" content="https:&#x2F;&#x2F;weitangli.github.io&#x2F;java&#x2F;aliyun-loghub&#x2F;index.html">
+    <meta name="description" content="记录工作中遇到的问题">
+<meta property="og:type" content="website">
+<meta property="og:title" content="WeitangLi">
+<meta property="og:url" content="https:&#x2F;&#x2F;weitangli.github.io&#x2F;tags&#x2F;jackson&#x2F;index.html">
 <meta property="og:site_name" content="WeitangLi">
-<meta property="og:description" content="https:&#x2F;&#x2F;help.aliyun.com&#x2F;document_detail&#x2F;28998.html  与使用SDK消费数据相比，使用消费组（ConsumerGroup）消费日志数据的优点在于，用户无需关心日志服务的实现细节和消费者之间的负载均衡、failover等，只需要专注于业务逻辑即可。">
+<meta property="og:description" content="记录工作中遇到的问题">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https:&#x2F;&#x2F;weitangli.github.io&#x2F;images&#x2F;og_image.png">
-<meta property="og:updated_time" content="2019-11-26T05:57:37.262Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https:&#x2F;&#x2F;weitangli.github.io&#x2F;images&#x2F;og_image.png">
 
@@ -79,7 +77,7 @@
         <div class="navbar-brand is-flex-center">
             <a class="navbar-item navbar-logo" href="/">
             
-                <img src="/images/logo.svg" alt="日志服务之通过消费组消费日志" height="28">
+                <img src="/images/logo.svg" alt="WeitangLi" height="28">
             
             </a>
         </div>
@@ -125,14 +123,25 @@
     <section class="section">
         <div class="container">
             <div class="columns">
-                <div class="column is-8-tablet is-8-desktop is-6-widescreen has-order-2 column-main">
+                <div class="column is-8-tablet is-8-desktop is-6-widescreen has-order-2 column-main"><div class="card">
+    <div class="card-content">
+        <nav class="breadcrumb" aria-label="breadcrumbs">
+        <ul>
+            <li><a href="/tags">标签</a></li>
+            <li class="is-active"><a href="#" aria-current="page">jackson</a></li>
+        </ul>
+        </nav>
+    </div>
+</div>
+
+    
 <div class="card">
     
     <div class="card-content article ">
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-11-26T05:14:46.000Z">2019-11-26</time>
+                <time class="level-item has-text-grey" datetime="2019-11-28T03:26:12.000Z">2019-11-28</time>
                 
                 <div class="level-item">
                 <a class="has-link-grey -link" href="/categories/java/">java</a>
@@ -142,133 +151,44 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    5 分钟 读完 (大约 676 个字)
+                    2 分钟 读完 (大约 373 个字)
                 </span>
                 
-                
-                <span class="level-item has-text-grey" id="busuanzi_container_page_pv">
-                    <i class="far fa-eye"></i>
-                    <span id="busuanzi_value_page_pv">0</span>次访问
-                </span>
                 
             </div>
         </div>
         
         <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
             
-                日志服务之通过消费组消费日志
+                <a class="has-link-black-ter" href="/java/jackson/">JSON解析工具jackson</a>
             
         </h1>
         <div class="content">
             <blockquote>
-<p><a href="https://help.aliyun.com/document_detail/28998.html" target="_blank" rel="noopener">https://help.aliyun.com/document_detail/28998.html</a></p>
+<p><a href="https://github.com/FasterXML/jackson-databind" target="_blank" rel="noopener">https://github.com/FasterXML/jackson-databind</a></p>
 </blockquote>
-<p>与使用SDK消费数据相比，使用消费组（ConsumerGroup）消费日志数据的优点在于，用户无需关心日志服务的实现细节和消费者之间的负载均衡、failover等，只需要专注于业务逻辑即可。</p>
-<a id="more"></a>
-
-<p>启动worker:</p>
-<figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-meta">@Test</span></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">processor</span><span class="hljs-params">()</span> <span class="hljs-keyword">throws</span> Exception </span>&#123;</span><br><span class="line">    <span class="hljs-comment">// 第2个参数是消费者名称, 同一个消费组下面的消费者名称必须不同, 可以使用相同的消费组名称,</span></span><br><span class="line">    <span class="hljs-comment">// 不同的消费者名称在多台机器上启动多个进程, 来均衡消费一个Logstore, 这个时候消费组名称可以使用机器ip来区分.</span></span><br><span class="line">    <span class="hljs-comment">// 第9个参数（maxFetchLogGroupSize）是每次从服务端获取的LogGroup数目, 使用默认值即可, 如有调整请注意取值范围(0,1000].</span></span><br><span class="line">    LogHubConfig config = <span class="hljs-keyword">new</span> LogHubConfig(consumerGroup, consumerName, endpoint, project, logstore, accessKeyId, accessKeySecret, LogHubConfig.ConsumePosition.END_CURSOR);</span><br><span class="line">    ClientWorker worker = <span class="hljs-keyword">new</span> ClientWorker(<span class="hljs-keyword">new</span> LogHubProcessorFactory(), config);</span><br><span class="line">    Thread thread = <span class="hljs-keyword">new</span> Thread(worker);</span><br><span class="line"></span><br><span class="line">    <span class="hljs-comment">// Thread运行之后, Client Worker会自动运行, ClientWorker扩展了Runnable接口.</span></span><br><span class="line">    thread.start();</span><br><span class="line">    Thread.sleep(<span class="hljs-number">60</span> * <span class="hljs-number">60</span> * <span class="hljs-number">1000</span>);</span><br><span class="line"></span><br><span class="line">    <span class="hljs-comment">// 调用worker的shutdown函数, 退出消费实例, 关联的线程也会自动停止.</span></span><br><span class="line">    worker.shutdown();</span><br><span class="line"></span><br><span class="line">    <span class="hljs-comment">// ClientWorker运行过程中会生成多个异步的Task, shutdown之后最好等待还在执行的Task安全退出, 建议sleep 30s.</span></span><br><span class="line">    Thread.sleep(<span class="hljs-number">30</span> * <span class="hljs-number">1000</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>具体处理过程:</p>
-<figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-meta">@Override</span></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">public</span> String <span class="hljs-title">process</span><span class="hljs-params">(List&lt;LogGroupData&gt; logGroups,</span></span></span><br><span class="line"><span class="hljs-function"><span class="hljs-params">                      ILogHubCheckPointTracker checkPointTracker)</span> </span>&#123;</span><br><span class="line">    <span class="hljs-comment">// 这里简单的将获取到的数据打印出来</span></span><br><span class="line">    <span class="hljs-keyword">for</span> (LogGroupData logGroup : logGroups) &#123;</span><br><span class="line">        FastLogGroup fastLogGroup = logGroup.GetFastLogGroup();</span><br><span class="line"></span><br><span class="line">        log.info(<span class="hljs-string">"----------------------------- log group -----------------------------"</span>);</span><br><span class="line"></span><br><span class="line">        log.info(String.format(<span class="hljs-string">"category: %s"</span>, fastLogGroup.getCategory()));</span><br><span class="line">        log.info(String.format(<span class="hljs-string">"source: %s"</span>, fastLogGroup.getSource()));</span><br><span class="line">        log.info(String.format(<span class="hljs-string">"topic: %s"</span>, fastLogGroup.getTopic()));</span><br><span class="line">        log.info(String.format(<span class="hljs-string">"machineUUID: %s"</span>, fastLogGroup.getMachineUUID()));</span><br><span class="line"></span><br><span class="line">        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> logTagsIndex = <span class="hljs-number">0</span>; logTagsIndex &lt; fastLogGroup.getLogTagsCount(); logTagsIndex++) &#123;</span><br><span class="line">            FastLogTag fastLogTag = fastLogGroup.getLogTags(logTagsIndex);</span><br><span class="line"></span><br><span class="line">            log.info(String.format(<span class="hljs-string">"tag: %s=%s"</span>, fastLogTag.getKey(), fastLogTag.getValue()));</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> logsIndex = <span class="hljs-number">0</span>; logsIndex &lt; fastLogGroup.getLogsCount(); logsIndex++) &#123;</span><br><span class="line">            FastLog fastLog = fastLogGroup.getLogs(logsIndex);</span><br><span class="line"></span><br><span class="line">            log.info(String.format(<span class="hljs-string">"time: %s"</span>, fastLog.getTime()));</span><br><span class="line">            log.info(String.format(<span class="hljs-string">"contentsCount: %s"</span>, fastLog.getContentsCount()));</span><br><span class="line"></span><br><span class="line">            <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> contentsIndex = <span class="hljs-number">0</span>; contentsIndex &lt; fastLog.getContentsCount(); contentsIndex++) &#123;</span><br><span class="line">                FastLogContent fastLogContent = fastLog.getContents(contentsIndex);</span><br><span class="line"></span><br><span class="line">                log.info(String.format(<span class="hljs-string">"content: %s=%s"</span>, fastLogContent.getKey(), fastLogContent.getValue()));</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="hljs-comment">// 每隔30秒, 写一次check point到服务端, 如果30秒内, worker crash,</span></span><br><span class="line">    <span class="hljs-comment">// 新启动的worker会从上一个check point其消费数据, 有可能有少量的重复数据.</span></span><br><span class="line">    <span class="hljs-keyword">long</span> currentTime = System.currentTimeMillis();</span><br><span class="line">    <span class="hljs-keyword">if</span> (currentTime - lastCheckTime &gt; <span class="hljs-number">30</span> * <span class="hljs-number">1000</span>) &#123;</span><br><span class="line">        <span class="hljs-keyword">try</span> &#123;</span><br><span class="line">            <span class="hljs-comment">// 参数true表示立即将check point更新到服务端,</span></span><br><span class="line">            <span class="hljs-comment">// 为false会将check point缓存在本地, 后台默认隔60s会将check point刷新到服务端.</span></span><br><span class="line">            checkPointTracker.saveCheckPoint(<span class="hljs-keyword">true</span>);</span><br><span class="line">        &#125; <span class="hljs-keyword">catch</span> (LogHubCheckPointException e) &#123;</span><br><span class="line">            log.error(<span class="hljs-string">"check point error"</span>, e);</span><br><span class="line">        &#125;</span><br><span class="line">        lastCheckTime = currentTime;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="hljs-keyword">return</span> <span class="hljs-keyword">null</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>源代码:<br><a href="https://github.com/weitangli/java-sample/blob/master/aliyun-log-sample/src/test/java/com/sample/LogHubTests.java" target="_blank" rel="noopener">LogHubTests.java</a><br><a href="https://github.com/weitangli/java-sample/blob/master/aliyun-log-sample/src/test/java/com/sample/LogHubProcessor.java" target="_blank" rel="noopener">LogHubProcessor.java</a><br><a href="https://github.com/weitangli/java-sample/blob/master/aliyun-log-sample/src/test/java/com/sample/LogHubProcessorFactory.java" target="_blank" rel="noopener">LogHubProcessorFactory.java</a><br><a href="https://github.com/weitangli/java-sample/blob/master/aliyun-log-sample/src/test/resources/log4j.properties" target="_blank" rel="noopener">log4j.properties</a></p>
-
         </div>
         
-        <div class="level is-size-7 is-uppercase">
+        
+        <div class="level is-mobile">
             <div class="level-start">
                 <div class="level-item">
-                    <span class="is-size-6 has-text-grey has-mr-7">#</span>
-                    <a class="has-link-grey -link" href="/tags/aliyun/" rel="tag">aliyun</a>
+                <a class="button is-size-7 is-light" href="/java/jackson/#more">阅读更多</a>
                 </div>
             </div>
         </div>
         
         
-        
     </div>
 </div>
 
 
 
-<div class="card">
-    <div class="card-content">
-        <h3 class="menu-label has-text-centered">喜欢这篇文章？打赏一下作者吧</h3>
-        <div class="buttons is-centered">
-            
-                
-<a class="button is-info donate">
-    <span class="icon is-small">
-        <i class="fab fa-alipay"></i>
-    </span>
-    <span>支付宝</span>
-    <div class="qrcode"><img src="/images/alipay.jpg" alt="支付宝"></div>
-</a>
-
-                
-                
-<a class="button is-success donate">
-    <span class="icon is-small">
-        <i class="fab fa-weixin"></i>
-    </span>
-    <span>微信</span>
-    <div class="qrcode"><img src="/images/wechat.jpg" alt="微信"></div>
-</a>
-
-                
-        </div>
-    </div>
-</div>
 
 
 
-<div class="card card-transparent">
-    <div class="level post-navigation is-flex-wrap is-mobile">
-        
-        <div class="level-start">
-            <a class="level level-item has-link-grey  article-nav-prev" href="/java/aliyun-oss/">
-                <i class="level-item fas fa-chevron-left"></i>
-                <span class="level-item">快速入门对象存储OSS</span>
-            </a>
-        </div>
-        
-        
-        <div class="level-end">
-            <a class="level level-item has-link-grey  article-nav-next" href="/java/activemq-queue/">
-                <span class="level-item">ActiveMQ之点对点模型</span>
-                <i class="level-item fas fa-chevron-right"></i>
-            </a>
-        </div>
-        
-    </div>
-</div>
 
 
-
-<div class="card">
-    <div class="card-content">
-        <h3 class="title is-5 has-text-weight-normal">评论</h3>
-        
-<div id="comment-container"></div>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1.4.1/dist/gitalk.css">
-<script src="https://cdn.jsdelivr.net/npm/gitalk@1.4.1/dist/gitalk.min.js"></script>
-<script>
-    var gitalk = new Gitalk({
-        clientID: 'a221d93af82dc4967493',
-        clientSecret: '14cbb6054ee2e9bd2b68b59f52af0caadb62f934',
-        id: '18be06a4d18f31903bfaf53cd2306b36',
-        repo: 'weitangli.github.io',
-        owner: 'weitangli',
-        admin: "weitangli",
-        createIssueManually: false,
-        distractionFreeMode: false
-    })
-    gitalk.render('comment-container')
-</script>
-
-    </div>
-</div>
 </div>
                 
 
@@ -941,7 +861,7 @@
             <div class="level-start has-text-centered-mobile">
                 <a class="footer-logo is-block has-mb-6" href="/">
                 
-                    <img src="/images/logo.svg" alt="日志服务之通过消费组消费日志" height="28">
+                    <img src="/images/logo.svg" alt="WeitangLi" height="28">
                 
                 </a>
                 <p class="is-size-7">
