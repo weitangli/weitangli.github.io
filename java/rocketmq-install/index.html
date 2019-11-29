@@ -7,17 +7,19 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 
-<title>标签: apache-commons - WeitangLi</title>
+<title>RocketMQ的简易安装 - WeitangLi</title>
 
 
-    <meta name="description" content="记录工作中遇到的问题">
-<meta property="og:type" content="website">
-<meta property="og:title" content="WeitangLi">
-<meta property="og:url" content="https:&#x2F;&#x2F;weitangli.github.io&#x2F;tags&#x2F;apache-commons&#x2F;index.html">
+    <meta name="description" content="安装RocketMQ之前, 我们得先安装Java运行环境. Linux安装包下载地址: rocketmq-all-4.2.0-bin-release.zip">
+<meta name="keywords" content="rocketmq">
+<meta property="og:type" content="article">
+<meta property="og:title" content="RocketMQ的简易安装">
+<meta property="og:url" content="https:&#x2F;&#x2F;weitangli.github.io&#x2F;java&#x2F;rocketmq-install&#x2F;index.html">
 <meta property="og:site_name" content="WeitangLi">
-<meta property="og:description" content="记录工作中遇到的问题">
+<meta property="og:description" content="安装RocketMQ之前, 我们得先安装Java运行环境. Linux安装包下载地址: rocketmq-all-4.2.0-bin-release.zip">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https:&#x2F;&#x2F;weitangli.github.io&#x2F;images&#x2F;og_image.png">
+<meta property="og:updated_time" content="2019-11-29T09:15:13.774Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https:&#x2F;&#x2F;weitangli.github.io&#x2F;images&#x2F;og_image.png">
 
@@ -77,7 +79,7 @@
         <div class="navbar-brand is-flex-center">
             <a class="navbar-item navbar-logo" href="/">
             
-                <img src="/images/logo.svg" alt="WeitangLi" height="28">
+                <img src="/images/logo.svg" alt="RocketMQ的简易安装" height="28">
             
             </a>
         </div>
@@ -110,6 +112,10 @@
                     
                 
                 
+                <a class="navbar-item is-hidden-tablet catalogue" title="目录" href="javascript:;">
+                    <i class="fas fa-list-ul"></i>
+                </a>
+                
                 
                 <a class="navbar-item search" title="搜索" href="javascript:;">
                     <i class="fas fa-search"></i>
@@ -123,25 +129,14 @@
     <section class="section">
         <div class="container">
             <div class="columns">
-                <div class="column is-8-tablet is-8-desktop is-6-widescreen has-order-2 column-main"><div class="card">
-    <div class="card-content">
-        <nav class="breadcrumb" aria-label="breadcrumbs">
-        <ul>
-            <li><a href="/tags">标签</a></li>
-            <li class="is-active"><a href="#" aria-current="page">apache-commons</a></li>
-        </ul>
-        </nav>
-    </div>
-</div>
-
-    
+                <div class="column is-8-tablet is-8-desktop is-6-widescreen has-order-2 column-main">
 <div class="card">
     
     <div class="card-content article ">
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-11-26T09:27:06.000Z">2019-11-26</time>
+                <time class="level-item has-text-grey" datetime="2019-11-29T09:14:39.000Z">2019-11-29</time>
                 
                 <div class="level-item">
                 <a class="has-link-grey -link" href="/categories/java/">java</a>
@@ -151,31 +146,51 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    2 分钟 读完 (大约 269 个字)
+                    3 分钟 读完 (大约 470 个字)
                 </span>
                 
+                
+                <span class="level-item has-text-grey" id="busuanzi_container_page_pv">
+                    <i class="far fa-eye"></i>
+                    <span id="busuanzi_value_page_pv">0</span>次访问
+                </span>
                 
             </div>
         </div>
         
         <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
             
-                <a class="has-link-black-ter" href="/java/apache-commons-beanutils/">Apache Commons之JavaBeans工具包beanutils</a>
+                RocketMQ的简易安装
             
         </h1>
         <div class="content">
-            <p><code>commons-beanutils</code>是Apache开源组织提供的用于操作JavaBeans的工具包.</p>
-<p>使用它, 我们可以很方便的在对象之间复制数据.</p>
+            <p>安装RocketMQ之前, 我们得先安装Java运行环境.</p>
+<p>Linux安装包下载地址: <a href="https://archive.apache.org/dist/rocketmq/4.2.0/rocketmq-all-4.2.0-bin-release.zip" target="_blank" rel="noopener">rocketmq-all-4.2.0-bin-release.zip</a></p>
+<a id="more"></a>
+
+<h2 id="目录结构"><a href="#目录结构" class="headerlink" title="目录结构"></a>目录结构</h2><figure class="highlight shell hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line">├── benchmark</span><br><span class="line">├── bin</span><br><span class="line">│   ├── cachedog.sh</span><br><span class="line">│   ├── cleancache.sh</span><br><span class="line">│   ├── cleancache.v1.sh</span><br><span class="line">│   ├── mqadmin</span><br><span class="line">│   ├── mqadmin.cmd</span><br><span class="line">│   ├── mqadmin.xml</span><br><span class="line">│   ├── mqbroker</span><br><span class="line">│   ├── mqbroker.cmd</span><br><span class="line">│   ├── mqbroker.numanode0</span><br><span class="line">│   ├── mqbroker.numanode1</span><br><span class="line">│   ├── mqbroker.numanode2</span><br><span class="line">│   ├── mqbroker.numanode3</span><br><span class="line">│   ├── mqbroker.xml</span><br><span class="line">│   ├── mqfiltersrv</span><br><span class="line">│   ├── mqfiltersrv.cmd</span><br><span class="line">│   ├── mqfiltersrv.xml</span><br><span class="line">│   ├── mqnamesrv</span><br><span class="line">│   ├── mqnamesrv.cmd</span><br><span class="line">│   ├── mqnamesrv.xml</span><br><span class="line">│   ├── mqshutdown</span><br><span class="line">│   ├── mqshutdown.cmd</span><br><span class="line">│   ├── os.sh</span><br><span class="line">│   ├── play.cmd</span><br><span class="line">│   ├── play.sh</span><br><span class="line">│   ├── README.md</span><br><span class="line">│   ├── runbroker</span><br><span class="line">│   ├── runbroker.cmd</span><br><span class="line">│   ├── runbroker.sh</span><br><span class="line">│   ├── runserver.cmd</span><br><span class="line">│   ├── runserver.sh</span><br><span class="line">│   ├── setcache.sh</span><br><span class="line">│   ├── startfsrv.sh</span><br><span class="line">│   ├── tools.cmd</span><br><span class="line">│   └── tools.sh</span><br><span class="line">├── conf</span><br><span class="line">│   ├── 2m-2s-async</span><br><span class="line">│   ├── 2m-2s-sync</span><br><span class="line">│   ├── 2m-noslave</span><br><span class="line">│   ├── broker.conf</span><br><span class="line">│   ├── logback_broker.xml</span><br><span class="line">│   ├── logback_filtersrv.xml</span><br><span class="line">│   ├── logback_namesrv.xml</span><br><span class="line">│   └── logback_tools.xml</span><br><span class="line">├── lib</span><br><span class="line">├── LICENSE</span><br><span class="line">├── NOTICE</span><br><span class="line">└── README.md</span><br></pre></td></tr></table></figure>
+
+<p><code>bin</code>目录下提供了启动脚本, 包括了<code>cmd</code>和<code>shell</code>版本.</p>
+<h2 id="配置修改"><a href="#配置修改" class="headerlink" title="配置修改"></a>配置修改</h2><p>修改<code>conf/broker.conf</code>, 内容如下:</p>
+<figure class="highlight shell hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-meta">#</span><span class="hljs-bash"> brokerClusterName = DefaultCluster</span></span><br><span class="line"><span class="hljs-meta">#</span><span class="hljs-bash"> brokerName = broker<span class="hljs-_">-a</span></span></span><br><span class="line"><span class="hljs-meta">#</span><span class="hljs-bash"> brokerId = 0</span></span><br><span class="line"><span class="hljs-meta">#</span><span class="hljs-bash"> deleteWhen = 04</span></span><br><span class="line"><span class="hljs-meta">#</span><span class="hljs-bash"> fileReservedTime = 48</span></span><br><span class="line"><span class="hljs-meta">#</span><span class="hljs-bash"> brokerRole = ASYNC_MASTER</span></span><br><span class="line"><span class="hljs-meta">#</span><span class="hljs-bash"> flushDiskType = ASYNC_FLUSH</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-meta">#</span><span class="hljs-bash"> 如果不是部署在本地, 得配置具体的IP地址</span></span><br><span class="line">brokerIP1 = localhost</span><br><span class="line">brokerIP2 = localhost</span><br></pre></td></tr></table></figure>
+
+<h2 id="启动NameServer"><a href="#启动NameServer" class="headerlink" title="启动NameServer"></a>启动NameServer</h2><figure class="highlight shell hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">nohup bin/mqnamesrv &amp;</span><br><span class="line">tail -f ~/logs/rocketmqlogs/namesrv.log</span><br><span class="line"></span><br><span class="line"><span class="hljs-meta">#</span><span class="hljs-bash"> 关闭</span></span><br><span class="line"><span class="hljs-meta">#</span><span class="hljs-bash"> bin/mqshutdown namesrv</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="启动Broker"><a href="#启动Broker" class="headerlink" title="启动Broker"></a>启动Broker</h2><figure class="highlight shell hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">nohup bin/mqbroker -n localhost:9876 -c conf/broker.conf &amp;</span><br><span class="line">tail -f ~/logs/rocketmqlogs/broker.log</span><br><span class="line"></span><br><span class="line"><span class="hljs-meta">#</span><span class="hljs-bash"> 关闭</span></span><br><span class="line"><span class="hljs-meta">#</span><span class="hljs-bash"> bin/mqshutdown broker</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h2><figure class="highlight shell hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">export NAMESRV_ADDR=localhost:9876</span><br><span class="line"></span><br><span class="line"><span class="hljs-meta">#</span><span class="hljs-bash"> 生产者</span></span><br><span class="line">bin/tools.sh org.apache.rocketmq.example.quickstart.Producer</span><br><span class="line"></span><br><span class="line"><span class="hljs-meta">#</span><span class="hljs-bash"> 消费者</span></span><br><span class="line">bin/tools.sh org.apache.rocketmq.example.quickstart.Consumer</span><br></pre></td></tr></table></figure>
+
         </div>
         
-        
-        <div class="level is-mobile">
+        <div class="level is-size-7 is-uppercase">
             <div class="level-start">
                 <div class="level-item">
-                <a class="button is-size-7 is-light" href="/java/apache-commons-beanutils/#more">阅读更多</a>
+                    <span class="is-size-6 has-text-grey has-mr-7">#</span>
+                    <a class="has-link-grey -link" href="/tags/rocketmq/" rel="tag">rocketmq</a>
                 </div>
             </div>
         </div>
+        
         
         
     </div>
@@ -183,11 +198,76 @@
 
 
 
+<div class="card">
+    <div class="card-content">
+        <h3 class="menu-label has-text-centered">喜欢这篇文章？打赏一下作者吧</h3>
+        <div class="buttons is-centered">
+            
+                
+<a class="button is-info donate">
+    <span class="icon is-small">
+        <i class="fab fa-alipay"></i>
+    </span>
+    <span>支付宝</span>
+    <div class="qrcode"><img src="/images/alipay.jpg" alt="支付宝"></div>
+</a>
+
+                
+                
+<a class="button is-success donate">
+    <span class="icon is-small">
+        <i class="fab fa-weixin"></i>
+    </span>
+    <span>微信</span>
+    <div class="qrcode"><img src="/images/wechat.jpg" alt="微信"></div>
+</a>
+
+                
+        </div>
+    </div>
+</div>
 
 
 
+<div class="card card-transparent">
+    <div class="level post-navigation is-flex-wrap is-mobile">
+        
+        
+        <div class="level-end">
+            <a class="level level-item has-link-grey  article-nav-next" href="/java/jooq/">
+                <span class="level-item">ORM框架jooq</span>
+                <i class="level-item fas fa-chevron-right"></i>
+            </a>
+        </div>
+        
+    </div>
+</div>
 
 
+
+<div class="card">
+    <div class="card-content">
+        <h3 class="title is-5 has-text-weight-normal">评论</h3>
+        
+<div id="comment-container"></div>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1.4.1/dist/gitalk.css">
+<script src="https://cdn.jsdelivr.net/npm/gitalk@1.4.1/dist/gitalk.min.js"></script>
+<script>
+    var gitalk = new Gitalk({
+        clientID: 'a221d93af82dc4967493',
+        clientSecret: '14cbb6054ee2e9bd2b68b59f52af0caadb62f934',
+        id: '21156cdb2eb529c2d136dd44a2a34dd9',
+        repo: 'weitangli.github.io',
+        owner: 'weitangli',
+        admin: "weitangli",
+        createIssueManually: false,
+        distractionFreeMode: false
+    })
+    gitalk.render('comment-container')
+</script>
+
+    </div>
+</div>
 </div>
                 
 
@@ -308,6 +388,36 @@
 </div>
     
         
+<div class="card widget" id="toc">
+    <div class="card-content">
+        <div class="menu">
+            <h3 class="menu-label">
+                目录
+            </h3>
+            <ul class="menu-list"><li>
+        <a class="is-flex" href="#目录结构">
+        <span class="has-mr-6">1</span>
+        <span>目录结构</span>
+        </a></li><li>
+        <a class="is-flex" href="#配置修改">
+        <span class="has-mr-6">2</span>
+        <span>配置修改</span>
+        </a></li><li>
+        <a class="is-flex" href="#启动NameServer">
+        <span class="has-mr-6">3</span>
+        <span>启动NameServer</span>
+        </a></li><li>
+        <a class="is-flex" href="#启动Broker">
+        <span class="has-mr-6">4</span>
+        <span>启动Broker</span>
+        </a></li><li>
+        <a class="is-flex" href="#测试">
+        <span class="has-mr-6">5</span>
+        <span>测试</span>
+        </a></li></ul>
+        </div>
+    </div>
+</div>
     
         <div class="card widget">
     <div class="card-content">
@@ -888,7 +998,7 @@
             <div class="level-start has-text-centered-mobile">
                 <a class="footer-logo is-block has-mb-6" href="/">
                 
-                    <img src="/images/logo.svg" alt="WeitangLi" height="28">
+                    <img src="/images/logo.svg" alt="RocketMQ的简易安装" height="28">
                 
                 </a>
                 <p class="is-size-7">
