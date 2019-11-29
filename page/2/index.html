@@ -131,6 +131,68 @@
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2019-11-27T05:15:14.000Z">2019-11-27</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/java/">java</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    2 分钟 读完 (大约 290 个字)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/java/alibaba-canal/">MySQL binlog增量订阅与消费组件</a>
+            
+        </h1>
+        <div class="content">
+            <blockquote>
+<p><a href="https://github.com/alibaba/canal/wiki" target="_blank" rel="noopener">https://github.com/alibaba/canal/wiki</a></p>
+</blockquote>
+<p>canal [kə’næl]，译意为水道/管道/沟渠，主要用途是基于 MySQL 数据库增量日志解析，提供增量数据订阅和消费</p>
+<p>工作原理：</p>
+<ul>
+<li>canal 模拟 MySQL slave 的交互协议，伪装自己为 MySQL slave ，向 MySQL master 发送 dump 协议</li>
+<li>MySQL master 收到 dump 请求，开始推送 binary log 给 slave (即 canal )</li>
+<li>canal 解析 binary log 对象(原始为 byte 流)</li>
+</ul>
+        </div>
+        
+        
+        <div class="level is-mobile">
+            <div class="level-start">
+                <div class="level-item">
+                <a class="button is-size-7 is-light" href="/java/alibaba-canal/#more">阅读更多</a>
+                </div>
+            </div>
+        </div>
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+    
+<div class="card">
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
                 <time class="level-item has-text-grey" datetime="2019-11-26T09:27:06.000Z">2019-11-26</time>
                 
                 <div class="level-item">
@@ -620,63 +682,6 @@
 
 
 
-    
-<div class="card">
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-11-25T02:10:45.000Z">2019-11-25</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/java/">java</a>
-                </div>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    1 分钟 读完 (大约 139 个字)
-                </span>
-                
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/java/reactor-flux-error/">flux发生错误时的处理方式</a>
-            
-        </h1>
-        <div class="content">
-            <p>方式一:</p>
-<ul>
-<li>发生错误时, 忽略此数据, 进入下一轮处理</li>
-</ul>
-<figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-meta">@Test</span></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">onErrorContinue</span><span class="hljs-params">()</span> <span class="hljs-keyword">throws</span> Exception </span>&#123;</span><br><span class="line">    Flux&lt;Integer&gt; flux = Flux.just(-<span class="hljs-number">2</span>, -<span class="hljs-number">1</span>, <span class="hljs-number">0</span>, <span class="hljs-number">1</span>, <span class="hljs-number">2</span>)</span><br><span class="line">            .map(n -&gt; <span class="hljs-number">10</span> / n)</span><br><span class="line">            <span class="hljs-comment">// 忽略此数据</span></span><br><span class="line">            .onErrorContinue((err, num) -&gt; log.info(<span class="hljs-string">"invalid num: &#123;&#125;"</span>, num));</span><br><span class="line"></span><br><span class="line">    StepVerifier.create(flux)</span><br><span class="line">            .expectNext(-<span class="hljs-number">5</span>)</span><br><span class="line">            .expectNext(-<span class="hljs-number">10</span>)</span><br><span class="line">            .expectNext(<span class="hljs-number">10</span>)</span><br><span class="line">            .expectNext(<span class="hljs-number">5</span>)</span><br><span class="line">            .verifyComplete();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-        </div>
-        
-        
-        <div class="level is-mobile">
-            <div class="level-start">
-                <div class="level-item">
-                <a class="button is-size-7 is-light" href="/java/reactor-flux-error/#more">阅读更多</a>
-                </div>
-            </div>
-        </div>
-        
-        
-    </div>
-</div>
-
-
-
-
-
-
-
-
 
     
 <div class="card card-transparent">
@@ -742,7 +747,7 @@
                         文章
                     </p>
                     <p class="title has-text-weight-normal">
-                        24
+                        25
                     </p>
                 </div>
             </div>
@@ -762,7 +767,7 @@
                         标签
                     </p>
                     <p class="title has-text-weight-normal">
-                        14
+                        15
                     </p>
                 </div>
             </div>
@@ -869,7 +874,7 @@
                 <span class="level-item">java</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">23</span>
+                <span class="level-item tag">24</span>
             </span>
         </a></li><li>
         <a class="level is-marginless" href="/categories/windows10/">
@@ -890,7 +895,7 @@
         <h3 class="menu-label">
             标签云
         </h3>
-        <a href="/tags/activemq/" style="font-size: 15px;">activemq</a> <a href="/tags/alibaba/" style="font-size: 10px;">alibaba</a> <a href="/tags/aliyun/" style="font-size: 15px;">aliyun</a> <a href="/tags/apache-commons/" style="font-size: 10px;">apache-commons</a> <a href="/tags/cmd/" style="font-size: 10px;">cmd</a> <a href="/tags/easemob/" style="font-size: 10px;">easemob</a> <a href="/tags/jackson/" style="font-size: 10px;">jackson</a> <a href="/tags/jiguang/" style="font-size: 10px;">jiguang</a> <a href="/tags/jooq/" style="font-size: 10px;">jooq</a> <a href="/tags/maven/" style="font-size: 10px;">maven</a> <a href="/tags/okhttp/" style="font-size: 10px;">okhttp</a> <a href="/tags/reactor/" style="font-size: 20px;">reactor</a> <a href="/tags/rocketmq/" style="font-size: 15px;">rocketmq</a> <a href="/tags/webmagic/" style="font-size: 10px;">webmagic</a>
+        <a href="/tags/activemq/" style="font-size: 15px;">activemq</a> <a href="/tags/alibaba/" style="font-size: 10px;">alibaba</a> <a href="/tags/aliyun/" style="font-size: 15px;">aliyun</a> <a href="/tags/apache-commons/" style="font-size: 10px;">apache-commons</a> <a href="/tags/cmd/" style="font-size: 10px;">cmd</a> <a href="/tags/easemob/" style="font-size: 10px;">easemob</a> <a href="/tags/jackson/" style="font-size: 10px;">jackson</a> <a href="/tags/jiguang/" style="font-size: 10px;">jiguang</a> <a href="/tags/jooq/" style="font-size: 10px;">jooq</a> <a href="/tags/jwt/" style="font-size: 10px;">jwt</a> <a href="/tags/maven/" style="font-size: 10px;">maven</a> <a href="/tags/okhttp/" style="font-size: 10px;">okhttp</a> <a href="/tags/reactor/" style="font-size: 20px;">reactor</a> <a href="/tags/rocketmq/" style="font-size: 15px;">rocketmq</a> <a href="/tags/webmagic/" style="font-size: 10px;">webmagic</a>
     </div>
 </div>
     
@@ -902,6 +907,25 @@
         <h3 class="menu-label">
             最新文章
         </h3>
+        
+        <article class="media">
+            
+            <a href="/java/jsonwebtoken/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="Json Web Token工具">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-11-29T10:24:41.000Z">2019-11-29</time></div>
+                    <a href="/java/jsonwebtoken/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Json Web Token工具</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/java/">java</a>
+                    </p>
+                </div>
+            </div>
+        </article>
         
         <article class="media">
             
@@ -979,25 +1003,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/java/jackson/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="JSON解析工具jackson">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-11-28T03:26:12.000Z">2019-11-28</time></div>
-                    <a href="/java/jackson/" class="title has-link-black-ter is-size-6 has-text-weight-normal">JSON解析工具jackson</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/java/">java</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
         
@@ -1015,7 +1020,7 @@
                     <span class="level-item">十一月 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">24</span>
+                    <span class="level-item tag">25</span>
                 </span>
             </a>
         </li>
@@ -1092,6 +1097,13 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/jooq/">
                         <span class="tag">jooq</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/jwt/">
+                        <span class="tag">jwt</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>
@@ -1155,6 +1167,25 @@
         
         <article class="media">
             
+            <a href="/java/jsonwebtoken/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="Json Web Token工具">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-11-29T10:24:41.000Z">2019-11-29</time></div>
+                    <a href="/java/jsonwebtoken/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Json Web Token工具</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/java/">java</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
             <a href="/java/rocketmq-console/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="/images/thumbnail.svg" alt="RocketMQ Web管理工具">
@@ -1229,25 +1260,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/java/jackson/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="JSON解析工具jackson">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-11-28T03:26:12.000Z">2019-11-28</time></div>
-                    <a href="/java/jackson/" class="title has-link-black-ter is-size-6 has-text-weight-normal">JSON解析工具jackson</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/java/">java</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
     
@@ -1265,7 +1277,7 @@
                     <span class="level-item">十一月 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">24</span>
+                    <span class="level-item tag">25</span>
                 </span>
             </a>
         </li>
@@ -1342,6 +1354,13 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/jooq/">
                         <span class="tag">jooq</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/jwt/">
+                        <span class="tag">jwt</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>
