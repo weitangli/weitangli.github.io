@@ -7,19 +7,19 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 
-<title>使用RocketMQ收发信息 - WeitangLi</title>
+<title>排序算法 - WeitangLi</title>
 
 
-    <meta name="description" content="https:&#x2F;&#x2F;rocketmq.apache.org&#x2F;docs&#x2F;simple-example">
-<meta name="keywords" content="rocketmq">
+    <meta name="description" content="冒泡排序12345678910111213141516171819202122232425262728293031@Testpublic void bubble() &amp;#123;    int[] numbers = &amp;#123;3, 2, 1, 5, 4&amp;#125;;    log.info(&quot;numbers: &amp;#123;&amp;#125;&quot;, numbers);    sort(numbers">
+<meta name="keywords" content="sorting-algorithms">
 <meta property="og:type" content="article">
-<meta property="og:title" content="使用RocketMQ收发信息">
-<meta property="og:url" content="https:&#x2F;&#x2F;weitangli.github.io&#x2F;java&#x2F;rocketmq-simple&#x2F;index.html">
+<meta property="og:title" content="排序算法">
+<meta property="og:url" content="https:&#x2F;&#x2F;weitangli.github.io&#x2F;java&#x2F;sorting-algorithms&#x2F;index.html">
 <meta property="og:site_name" content="WeitangLi">
-<meta property="og:description" content="https:&#x2F;&#x2F;rocketmq.apache.org&#x2F;docs&#x2F;simple-example">
+<meta property="og:description" content="冒泡排序12345678910111213141516171819202122232425262728293031@Testpublic void bubble() &amp;#123;    int[] numbers = &amp;#123;3, 2, 1, 5, 4&amp;#125;;    log.info(&quot;numbers: &amp;#123;&amp;#125;&quot;, numbers);    sort(numbers">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https:&#x2F;&#x2F;weitangli.github.io&#x2F;images&#x2F;og_image.png">
-<meta property="og:updated_time" content="2019-11-29T09:32:44.435Z">
+<meta property="og:updated_time" content="2019-12-02T01:48:53.425Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https:&#x2F;&#x2F;weitangli.github.io&#x2F;images&#x2F;og_image.png">
 
@@ -79,7 +79,7 @@
         <div class="navbar-brand is-flex-center">
             <a class="navbar-item navbar-logo" href="/">
             
-                <img src="/images/logo.svg" alt="使用RocketMQ收发信息" height="28">
+                <img src="/images/logo.svg" alt="排序算法" height="28">
             
             </a>
         </div>
@@ -132,7 +132,7 @@
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-11-29T09:32:40.000Z">2019-11-29</time>
+                <time class="level-item has-text-grey" datetime="2019-12-02T01:42:40.000Z">2019-12-02</time>
                 
                 <div class="level-item">
                 <a class="has-link-grey -link" href="/categories/java/">java</a>
@@ -142,7 +142,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    1 分钟 读完 (大约 196 个字)
+                    4 分钟 读完 (大约 622 个字)
                 </span>
                 
                 
@@ -156,22 +156,19 @@
         
         <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
             
-                使用RocketMQ收发信息
+                排序算法
             
         </h1>
         <div class="content">
-            <blockquote>
-<p><a href="https://rocketmq.apache.org/docs/simple-example" target="_blank" rel="noopener">https://rocketmq.apache.org/docs/simple-example</a></p>
-</blockquote>
-<a id="more"></a>
+            <a id="more"></a>
 
-<p>生产者:</p>
-<figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-meta">@Test</span></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">produceMessage</span><span class="hljs-params">()</span> <span class="hljs-keyword">throws</span> Exception </span>&#123;</span><br><span class="line">    <span class="hljs-comment">// 初始化</span></span><br><span class="line">    DefaultMQProducer producer = <span class="hljs-keyword">new</span> DefaultMQProducer();</span><br><span class="line">    producer.setNamesrvAddr(namesrvAddr);</span><br><span class="line">    producer.setProducerGroup(producerGroup);</span><br><span class="line"></span><br><span class="line">    <span class="hljs-comment">// 启动</span></span><br><span class="line">    producer.start();</span><br><span class="line"></span><br><span class="line">    <span class="hljs-comment">// 发送消息</span></span><br><span class="line">    String topic = <span class="hljs-string">"default-mq"</span>;</span><br><span class="line">    String tags = <span class="hljs-string">"test"</span>;</span><br><span class="line">    String content = <span class="hljs-string">"hello world!"</span>;</span><br><span class="line">    Message message = <span class="hljs-keyword">new</span> Message(topic, tags, content.getBytes(Charset.forName(<span class="hljs-string">"UTF-8"</span>)));</span><br><span class="line"></span><br><span class="line">    SendResult sendResult = producer.send(message);</span><br><span class="line">    log.info(<span class="hljs-string">"send message: topic=&#123;&#125; tags=&#123;&#125; content=&#123;&#125; status=&#123;&#125;"</span>, topic, tags, content, sendResult.getSendStatus().name());</span><br><span class="line"></span><br><span class="line">    <span class="hljs-comment">// 关闭</span></span><br><span class="line">    producer.shutdown();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="冒泡排序"><a href="#冒泡排序" class="headerlink" title="冒泡排序"></a>冒泡排序</h2><figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-meta">@Test</span></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">bubble</span><span class="hljs-params">()</span> </span>&#123;</span><br><span class="line">    <span class="hljs-keyword">int</span>[] numbers = &#123;<span class="hljs-number">3</span>, <span class="hljs-number">2</span>, <span class="hljs-number">1</span>, <span class="hljs-number">5</span>, <span class="hljs-number">4</span>&#125;;</span><br><span class="line">    log.info(<span class="hljs-string">"numbers: &#123;&#125;"</span>, numbers);</span><br><span class="line"></span><br><span class="line">    sort(numbers);</span><br><span class="line">    log.info(<span class="hljs-string">"after sort: &#123;&#125;"</span>, numbers);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">/**</span></span><br><span class="line"><span class="hljs-comment"> * 冒泡法排序 O(n2)</span></span><br><span class="line"><span class="hljs-comment"> * 比较相邻的元素。如果第一个比第二个大，就交换他们两个。</span></span><br><span class="line"><span class="hljs-comment"> * 对每一对相邻元素作同样的工作，从开始第一对到结尾的最后一对。在这一点，最后的元素应该会是最大的数。</span></span><br><span class="line"><span class="hljs-comment"> * 针对所有的元素重复以上的步骤，除了最后一个。</span></span><br><span class="line"><span class="hljs-comment"> * 持续每次对越来越少的元素重复上面的步骤，直到没有任何一对数字需要比较。</span></span><br><span class="line"><span class="hljs-comment"> *</span></span><br><span class="line"><span class="hljs-comment"> * <span class="hljs-doctag">@param</span> numbers 需要排序的整型数组</span></span><br><span class="line"><span class="hljs-comment"> */</span></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">sort</span><span class="hljs-params">(<span class="hljs-keyword">int</span>[] numbers)</span> </span>&#123;</span><br><span class="line">    <span class="hljs-keyword">int</span> temp; <span class="hljs-comment">// 记录临时中间值</span></span><br><span class="line">    <span class="hljs-keyword">int</span> size = numbers.length; <span class="hljs-comment">// 数组大小</span></span><br><span class="line">    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; size - <span class="hljs-number">1</span>; i++) &#123;</span><br><span class="line">        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> j = i + <span class="hljs-number">1</span>; j &lt; size; j++) &#123;</span><br><span class="line">            <span class="hljs-keyword">if</span> (numbers[i] &lt; numbers[j]) &#123; <span class="hljs-comment">// 交换两数的位置</span></span><br><span class="line">                temp = numbers[i];</span><br><span class="line">                numbers[i] = numbers[j];</span><br><span class="line">                numbers[j] = temp;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p>消费者:</p>
-<figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-meta">@Test</span></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">consumeMessage</span><span class="hljs-params">()</span> <span class="hljs-keyword">throws</span> Exception </span>&#123;</span><br><span class="line">    <span class="hljs-comment">// 初始化</span></span><br><span class="line">    DefaultMQPushConsumer consumer = <span class="hljs-keyword">new</span> DefaultMQPushConsumer();</span><br><span class="line">    consumer.setNamesrvAddr(namesrvAddr);</span><br><span class="line">    consumer.setConsumerGroup(consumerGroup);</span><br><span class="line">    consumer.setConsumeFromWhere(ConsumeFromWhere.CONSUME_FROM_FIRST_OFFSET);</span><br><span class="line"></span><br><span class="line">    <span class="hljs-comment">// 订阅消息</span></span><br><span class="line">    String topic = <span class="hljs-string">"default-mq"</span>;</span><br><span class="line">    String subExpression = <span class="hljs-string">"*"</span>;</span><br><span class="line">    consumer.subscribe(topic, subExpression);</span><br><span class="line"></span><br><span class="line">    <span class="hljs-comment">// 监听消息</span></span><br><span class="line">    consumer.registerMessageListener(<span class="hljs-keyword">new</span> MessageListenerConcurrently() &#123;</span><br><span class="line">        <span class="hljs-meta">@Override</span></span><br><span class="line">        <span class="hljs-function"><span class="hljs-keyword">public</span> ConsumeConcurrentlyStatus <span class="hljs-title">consumeMessage</span><span class="hljs-params">(List&lt;MessageExt&gt; messages, ConsumeConcurrentlyContext context)</span> </span>&#123;</span><br><span class="line">            messages.forEach(message -&gt; &#123;</span><br><span class="line">                log.info(<span class="hljs-string">"receive message: topic=&#123;&#125; tags=&#123;&#125; message=&#123;&#125;"</span>, message.getTopic(), message.getTags(), <span class="hljs-keyword">new</span> String(message.getBody()));</span><br><span class="line">            &#125;);</span><br><span class="line">            <span class="hljs-keyword">return</span> ConsumeConcurrentlyStatus.CONSUME_SUCCESS;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;);</span><br><span class="line"></span><br><span class="line">    <span class="hljs-comment">// 启动</span></span><br><span class="line">    consumer.start();</span><br><span class="line"></span><br><span class="line">    <span class="hljs-keyword">while</span> (<span class="hljs-keyword">true</span>) &#123;</span><br><span class="line">        Thread.yield();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="插入排序"><a href="#插入排序" class="headerlink" title="插入排序"></a>插入排序</h2><figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-meta">@Test</span></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">insertion</span><span class="hljs-params">()</span> </span>&#123;</span><br><span class="line">    <span class="hljs-keyword">int</span>[] numbers = &#123;<span class="hljs-number">3</span>, <span class="hljs-number">2</span>, <span class="hljs-number">1</span>, <span class="hljs-number">5</span>, <span class="hljs-number">4</span>&#125;;</span><br><span class="line">    log.info(<span class="hljs-string">"numbers: &#123;&#125;"</span>, numbers);</span><br><span class="line"></span><br><span class="line">    sort(numbers);</span><br><span class="line">    log.info(<span class="hljs-string">"after sort: &#123;&#125;"</span>, numbers);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">/**</span></span><br><span class="line"><span class="hljs-comment"> * 插入排序 O(n2)</span></span><br><span class="line"><span class="hljs-comment"> * 从第一个元素开始，该元素可以认为已经被排序</span></span><br><span class="line"><span class="hljs-comment"> * 取出下一个元素，在已经排序的元素序列中从后向前扫描</span></span><br><span class="line"><span class="hljs-comment"> * 如果该元素（已排序）大于新元素，将该元素移到下一位置</span></span><br><span class="line"><span class="hljs-comment"> * 重复步骤3，直到找到已排序的元素小于或者等于新元素的位置</span></span><br><span class="line"><span class="hljs-comment"> * 将新元素插入到该位置中</span></span><br><span class="line"><span class="hljs-comment"> * 重复步骤2</span></span><br><span class="line"><span class="hljs-comment"> *</span></span><br><span class="line"><span class="hljs-comment"> * <span class="hljs-doctag">@param</span> numbers</span></span><br><span class="line"><span class="hljs-comment"> */</span></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">sort</span><span class="hljs-params">(<span class="hljs-keyword">int</span>[] numbers)</span> </span>&#123;</span><br><span class="line">    <span class="hljs-keyword">int</span> size = numbers.length, temp, j;</span><br><span class="line">    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>; i &lt; size; i++) &#123;</span><br><span class="line">        temp = numbers[i];</span><br><span class="line">        <span class="hljs-keyword">for</span> (j = i; j &gt; <span class="hljs-number">0</span> &amp;&amp; temp &lt; numbers[j - <span class="hljs-number">1</span>]; j--)</span><br><span class="line">            numbers[j] = numbers[j - <span class="hljs-number">1</span>];</span><br><span class="line">        numbers[j] = temp;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p>源代码: <a href="https://github.com/weitangli/java-sample/blob/master/rocketmq-sample/src/test/java/com/sample/DefaultMQTests.java" target="_blank" rel="noopener">DefaultMQTests.java</a></p>
+<h2 id="选择排序"><a href="#选择排序" class="headerlink" title="选择排序"></a>选择排序</h2><figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-meta">@Test</span></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">selection</span><span class="hljs-params">()</span> </span>&#123;</span><br><span class="line">    <span class="hljs-keyword">int</span>[] numbers = &#123;<span class="hljs-number">3</span>, <span class="hljs-number">2</span>, <span class="hljs-number">1</span>, <span class="hljs-number">5</span>, <span class="hljs-number">4</span>&#125;;</span><br><span class="line">    log.info(<span class="hljs-string">"numbers: &#123;&#125;"</span>, numbers);</span><br><span class="line"></span><br><span class="line">    sort(numbers);</span><br><span class="line">    log.info(<span class="hljs-string">"after sort: &#123;&#125;"</span>, numbers);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">/**</span></span><br><span class="line"><span class="hljs-comment"> * 选择排序 O(n2)</span></span><br><span class="line"><span class="hljs-comment"> * 在未排序序列中找到最小元素，存放到排序序列的起始位置</span></span><br><span class="line"><span class="hljs-comment"> * 再从剩余未排序元素中继续寻找最小元素，然后放到排序序列末尾。</span></span><br><span class="line"><span class="hljs-comment"> * 以此类推，直到所有元素均排序完毕。</span></span><br><span class="line"><span class="hljs-comment"> *</span></span><br><span class="line"><span class="hljs-comment"> * <span class="hljs-doctag">@param</span> numbers</span></span><br><span class="line"><span class="hljs-comment"> */</span></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">sort</span><span class="hljs-params">(<span class="hljs-keyword">int</span>[] numbers)</span> </span>&#123;</span><br><span class="line">    <span class="hljs-keyword">int</span> size = numbers.length, temp;</span><br><span class="line">    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; size; i++) &#123;</span><br><span class="line">        <span class="hljs-keyword">int</span> k = i;</span><br><span class="line">        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> j = size - <span class="hljs-number">1</span>; j &gt; i; j--) &#123;</span><br><span class="line">            <span class="hljs-keyword">if</span> (numbers[j] &lt; numbers[k])</span><br><span class="line">                k = j;</span><br><span class="line">        &#125;</span><br><span class="line">        temp = numbers[i];</span><br><span class="line">        numbers[i] = numbers[k];</span><br><span class="line">        numbers[k] = temp;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>源代码:<br><a href="https://github.com/weitangli/java-sample/blob/master/sorting-algorithms-sample/src/test/java/com/sample/BubbleSortTests.java" target="_blank" rel="noopener">BubbleSortTests.java</a><br><a href="https://github.com/weitangli/java-sample/blob/master/sorting-algorithms-sample/src/test/java/com/sample/InsertionSortTests.java" target="_blank" rel="noopener">InsertionSortTests.java</a><br><a href="https://github.com/weitangli/java-sample/blob/master/sorting-algorithms-sample/src/test/java/com/sample/SelectionSortTests.java" target="_blank" rel="noopener">SelectionSortTests.java</a></p>
 
         </div>
         
@@ -179,7 +176,7 @@
             <div class="level-start">
                 <div class="level-item">
                     <span class="is-size-6 has-text-grey has-mr-7">#</span>
-                    <a class="has-link-grey -link" href="/tags/rocketmq/" rel="tag">rocketmq</a>
+                    <a class="has-link-grey -link" href="/tags/sorting-algorithms/" rel="tag">sorting-algorithms</a>
                 </div>
             </div>
         </div>
@@ -225,17 +222,10 @@
 <div class="card card-transparent">
     <div class="level post-navigation is-flex-wrap is-mobile">
         
-        <div class="level-start">
-            <a class="level level-item has-link-grey  article-nav-prev" href="/java/rocketmq-console/">
-                <i class="level-item fas fa-chevron-left"></i>
-                <span class="level-item">RocketMQ Web管理工具</span>
-            </a>
-        </div>
-        
         
         <div class="level-end">
-            <a class="level level-item has-link-grey  article-nav-next" href="/java/rocketmq-install/">
-                <span class="level-item">快速安装RocketMQ</span>
+            <a class="level level-item has-link-grey  article-nav-next" href="/java/vertx/">
+                <span class="level-item">JVM应用平台vertx</span>
                 <i class="level-item fas fa-chevron-right"></i>
             </a>
         </div>
@@ -256,7 +246,7 @@
     var gitalk = new Gitalk({
         clientID: 'a221d93af82dc4967493',
         clientSecret: '14cbb6054ee2e9bd2b68b59f52af0caadb62f934',
-        id: 'a6e1037c04f9a492fb5786834586776c',
+        id: '3947eb705576af1afe966b6fe678c40e',
         repo: 'weitangli.github.io',
         owner: 'weitangli',
         admin: "weitangli",
@@ -1032,7 +1022,7 @@
             <div class="level-start has-text-centered-mobile">
                 <a class="footer-logo is-block has-mb-6" href="/">
                 
-                    <img src="/images/logo.svg" alt="使用RocketMQ收发信息" height="28">
+                    <img src="/images/logo.svg" alt="排序算法" height="28">
                 
                 </a>
                 <p class="is-size-7">
