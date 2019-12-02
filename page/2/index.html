@@ -131,6 +131,62 @@
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2019-11-27T09:27:07.000Z">2019-11-27</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/java/">java</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    1 分钟 读完 (大约 138 个字)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/java/okhttp/">网络请求工具okhttp</a>
+            
+        </h1>
+        <div class="content">
+            <blockquote>
+<p><a href="https://github.com/square/okhttp" target="_blank" rel="noopener">https://github.com/square/okhttp</a></p>
+</blockquote>
+<h2 id="发送Get请求"><a href="#发送Get请求" class="headerlink" title="发送Get请求"></a>发送Get请求</h2><figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-meta">@Test</span></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">get</span><span class="hljs-params">()</span> <span class="hljs-keyword">throws</span> Exception </span>&#123;</span><br><span class="line">    String url = <span class="hljs-string">"https://api.github.com/repos/square/okhttp/contributors"</span>;</span><br><span class="line"></span><br><span class="line">    Request request = <span class="hljs-keyword">new</span> Request.Builder().url(url).build();</span><br><span class="line">    Response response = <span class="hljs-keyword">new</span> OkHttpClient().newCall(request).execute();</span><br><span class="line"></span><br><span class="line">    ResponseBody responseBody = response.body();</span><br><span class="line">    log.info(<span class="hljs-string">"responseBody: &#123;&#125;"</span>, responseBody.string());</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        </div>
+        
+        
+        <div class="level is-mobile">
+            <div class="level-start">
+                <div class="level-item">
+                <a class="button is-size-7 is-light" href="/java/okhttp/#more">阅读更多</a>
+                </div>
+            </div>
+        </div>
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+    
+<div class="card">
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
                 <time class="level-item has-text-grey" datetime="2019-11-27T09:04:26.000Z">2019-11-27</time>
                 
                 <div class="level-item">
@@ -629,60 +685,6 @@
 
 
 
-    
-<div class="card">
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-11-25T08:34:36.000Z">2019-11-25</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/java/">java</a>
-                </div>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    2 分钟 读完 (大约 280 个字)
-                </span>
-                
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/java/activemq-topic/">ActiveMQ之发布订阅模型</a>
-            
-        </h1>
-        <div class="content">
-            <p>发布订阅模型(Pub/Sub)使用主题(Topic)作为消息通信载体, 类似于广播模式.</p>
-<p>发布者发布一条消息, 该消息通过主题传递给所有的订阅者, 在一条消息广播之后才订阅的用户则是收不到该条消息的.</p>
-        </div>
-        
-        
-        <div class="level is-mobile">
-            <div class="level-start">
-                <div class="level-item">
-                <a class="button is-size-7 is-light" href="/java/activemq-topic/#more">阅读更多</a>
-                </div>
-            </div>
-        </div>
-        
-        
-    </div>
-</div>
-
-
-
-
-
-
-
-
 
     
 <div class="card card-transparent">
@@ -748,7 +750,7 @@
                         文章
                     </p>
                     <p class="title has-text-weight-normal">
-                        27
+                        28
                     </p>
                 </div>
             </div>
@@ -768,7 +770,7 @@
                         标签
                     </p>
                     <p class="title has-text-weight-normal">
-                        17
+                        18
                     </p>
                 </div>
             </div>
@@ -875,7 +877,7 @@
                 <span class="level-item">java</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">26</span>
+                <span class="level-item tag">27</span>
             </span>
         </a></li><li>
         <a class="level is-marginless" href="/categories/windows10/">
@@ -896,7 +898,7 @@
         <h3 class="menu-label">
             标签云
         </h3>
-        <a href="/tags/activemq/" style="font-size: 15px;">activemq</a> <a href="/tags/alibaba/" style="font-size: 10px;">alibaba</a> <a href="/tags/aliyun/" style="font-size: 15px;">aliyun</a> <a href="/tags/apache-commons/" style="font-size: 10px;">apache-commons</a> <a href="/tags/cmd/" style="font-size: 10px;">cmd</a> <a href="/tags/easemob/" style="font-size: 10px;">easemob</a> <a href="/tags/jackson/" style="font-size: 10px;">jackson</a> <a href="/tags/jiguang/" style="font-size: 10px;">jiguang</a> <a href="/tags/jooq/" style="font-size: 10px;">jooq</a> <a href="/tags/jwt/" style="font-size: 10px;">jwt</a> <a href="/tags/maven/" style="font-size: 10px;">maven</a> <a href="/tags/okhttp/" style="font-size: 10px;">okhttp</a> <a href="/tags/reactor/" style="font-size: 20px;">reactor</a> <a href="/tags/rocketmq/" style="font-size: 15px;">rocketmq</a> <a href="/tags/sorting-algorithms/" style="font-size: 10px;">sorting-algorithms</a> <a href="/tags/vertx/" style="font-size: 10px;">vertx</a> <a href="/tags/webmagic/" style="font-size: 10px;">webmagic</a>
+        <a href="/tags/activemq/" style="font-size: 15px;">activemq</a> <a href="/tags/alibaba/" style="font-size: 10px;">alibaba</a> <a href="/tags/aliyun/" style="font-size: 15px;">aliyun</a> <a href="/tags/apache-commons/" style="font-size: 10px;">apache-commons</a> <a href="/tags/cmd/" style="font-size: 10px;">cmd</a> <a href="/tags/easemob/" style="font-size: 10px;">easemob</a> <a href="/tags/jackson/" style="font-size: 10px;">jackson</a> <a href="/tags/jiguang/" style="font-size: 10px;">jiguang</a> <a href="/tags/jooq/" style="font-size: 10px;">jooq</a> <a href="/tags/jwt/" style="font-size: 10px;">jwt</a> <a href="/tags/maven/" style="font-size: 10px;">maven</a> <a href="/tags/okhttp/" style="font-size: 10px;">okhttp</a> <a href="/tags/reactor/" style="font-size: 20px;">reactor</a> <a href="/tags/rocketmq/" style="font-size: 15px;">rocketmq</a> <a href="/tags/sorting-algorithms/" style="font-size: 10px;">sorting-algorithms</a> <a href="/tags/vertx/" style="font-size: 10px;">vertx</a> <a href="/tags/webmagic/" style="font-size: 10px;">webmagic</a> <a href="/tags/wechat-api/" style="font-size: 10px;">wechat-api</a>
     </div>
 </div>
     
@@ -908,6 +910,25 @@
         <h3 class="menu-label">
             最新文章
         </h3>
+        
+        <article class="media">
+            
+            <a href="/java/wechat-api/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="微信个人号API">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-12-02T02:19:07.000Z">2019-12-02</time></div>
+                    <a href="/java/wechat-api/" class="title has-link-black-ter is-size-6 has-text-weight-normal">微信个人号API</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/java/">java</a>
+                    </p>
+                </div>
+            </div>
+        </article>
         
         <article class="media">
             
@@ -985,25 +1006,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/java/rocketmq-simple/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="使用RocketMQ收发信息">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-11-29T09:32:40.000Z">2019-11-29</time></div>
-                    <a href="/java/rocketmq-simple/" class="title has-link-black-ter is-size-6 has-text-weight-normal">使用RocketMQ收发信息</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/java/">java</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
         
@@ -1021,7 +1023,7 @@
                     <span class="level-item">十二月 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">2</span>
+                    <span class="level-item tag">3</span>
                 </span>
             </a>
         </li>
@@ -1165,6 +1167,13 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/webmagic/">
                         <span class="tag">webmagic</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/wechat-api/">
+                        <span class="tag">wechat-api</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>
@@ -1193,6 +1202,25 @@
         
         <article class="media">
             
+            <a href="/java/wechat-api/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="微信个人号API">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-12-02T02:19:07.000Z">2019-12-02</time></div>
+                    <a href="/java/wechat-api/" class="title has-link-black-ter is-size-6 has-text-weight-normal">微信个人号API</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/java/">java</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
             <a href="/java/sorting-algorithms/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="/images/thumbnail.svg" alt="排序算法">
@@ -1267,25 +1295,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/java/rocketmq-simple/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="使用RocketMQ收发信息">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-11-29T09:32:40.000Z">2019-11-29</time></div>
-                    <a href="/java/rocketmq-simple/" class="title has-link-black-ter is-size-6 has-text-weight-normal">使用RocketMQ收发信息</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/java/">java</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
     
@@ -1303,7 +1312,7 @@
                     <span class="level-item">十二月 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">2</span>
+                    <span class="level-item tag">3</span>
                 </span>
             </a>
         </li>
@@ -1447,6 +1456,13 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/webmagic/">
                         <span class="tag">webmagic</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/wechat-api/">
+                        <span class="tag">wechat-api</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>
