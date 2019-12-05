@@ -10,16 +10,16 @@
 <title>快速安装Redis - WeitangLi</title>
 
 
-    <meta name="description" content="https:&#x2F;&#x2F;redis.io  Redis是一种高级的Key-Value存储系统, 其中Value支持五种数据类型:  string 字符串 list 列表 set 集合 sorted set 有序集合 hash 哈希  Linux安装包下载地址: redis-4.0.14.tar.gz">
+    <meta name="description" content="官方网站 https:&#x2F;&#x2F;redis.io 中文网站 http:&#x2F;&#x2F;www.redis.cn  Redis是一种高级的Key-Value存储系统, 其中Value支持五种数据类型:  string 字符串 list 列表 set 集合 sorted set 有序集合 hash 哈希  Linux安装包下载地址: redis-4.0.14.tar.gz">
 <meta name="keywords" content="redis">
 <meta property="og:type" content="article">
 <meta property="og:title" content="快速安装Redis">
 <meta property="og:url" content="https:&#x2F;&#x2F;weitangli.github.io&#x2F;redis-install&#x2F;index.html">
 <meta property="og:site_name" content="WeitangLi">
-<meta property="og:description" content="https:&#x2F;&#x2F;redis.io  Redis是一种高级的Key-Value存储系统, 其中Value支持五种数据类型:  string 字符串 list 列表 set 集合 sorted set 有序集合 hash 哈希  Linux安装包下载地址: redis-4.0.14.tar.gz">
+<meta property="og:description" content="官方网站 https:&#x2F;&#x2F;redis.io 中文网站 http:&#x2F;&#x2F;www.redis.cn  Redis是一种高级的Key-Value存储系统, 其中Value支持五种数据类型:  string 字符串 list 列表 set 集合 sorted set 有序集合 hash 哈希  Linux安装包下载地址: redis-4.0.14.tar.gz">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https:&#x2F;&#x2F;weitangli.github.io&#x2F;images&#x2F;og_image.png">
-<meta property="og:updated_time" content="2019-12-05T10:05:22.372Z">
+<meta property="og:updated_time" content="2019-12-05T10:26:54.374Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https:&#x2F;&#x2F;weitangli.github.io&#x2F;images&#x2F;og_image.png">
 
@@ -146,7 +146,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    1 分钟 读完 (大约 173 个字)
+                    1 分钟 读完 (大约 186 个字)
                 </span>
                 
                 
@@ -164,9 +164,10 @@
             
         </h1>
         <div class="content">
-            <blockquote>
-<p><a href="https://redis.io" target="_blank" rel="noopener">https://redis.io</a></p>
-</blockquote>
+            <ul>
+<li>官方网站 <a href="https://redis.io" target="_blank" rel="noopener">https://redis.io</a></li>
+<li>中文网站 <a href="http://www.redis.cn" target="_blank" rel="noopener">http://www.redis.cn</a></li>
+</ul>
 <p>Redis是一种高级的Key-Value存储系统, 其中Value支持五种数据类型:</p>
 <ul>
 <li>string 字符串</li>
@@ -184,7 +185,7 @@
 
 <h2 id="启动Server"><a href="#启动Server" class="headerlink" title="启动Server"></a>启动Server</h2><figure class="highlight shell hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[root@centos redis-4.0.14]# src/redis-server</span><br></pre></td></tr></table></figure>
 
-<h2 id="打开Client"><a href="#打开Client" class="headerlink" title="打开Client"></a>打开Client</h2><figure class="highlight shell hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[root@centos redis-4.0.14]# src/redis-cli</span><br></pre></td></tr></table></figure>
+<h2 id="打开Client"><a href="#打开Client" class="headerlink" title="打开Client"></a>打开Client</h2><figure class="highlight shell hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[root@centos redis-4.0.14]# src/redis-cli</span><br><span class="line">127.0.0.1:6379&gt; keys *</span><br></pre></td></tr></table></figure>
 
         </div>
         
