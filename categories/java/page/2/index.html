@@ -142,179 +142,6 @@
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-11-28T03:26:12.000Z">2019-11-28</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/java/">java</a>
-                </div>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    2 分钟 读完 (大约 373 个字)
-                </span>
-                
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/jackson/">JSON解析工具jackson</a>
-            
-        </h1>
-        <div class="content">
-            <blockquote>
-<p><a href="https://github.com/FasterXML/jackson-databind" target="_blank" rel="noopener">https://github.com/FasterXML/jackson-databind</a></p>
-</blockquote>
-        </div>
-        
-        
-        <div class="level is-mobile">
-            <div class="level-start">
-                <div class="level-item">
-                <a class="button is-size-7 is-light" href="/jackson/#more">阅读更多</a>
-                </div>
-            </div>
-        </div>
-        
-        
-    </div>
-</div>
-
-
-
-
-
-
-
-
-    
-<div class="card">
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-11-27T09:46:52.000Z">2019-11-27</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/java/">java</a>
-                </div>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    2 分钟 读完 (大约 247 个字)
-                </span>
-                
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/webmagic/">爬虫框架webmagic</a>
-            
-        </h1>
-        <div class="content">
-            <blockquote>
-<p><a href="https://webmagic.io" target="_blank" rel="noopener">https://webmagic.io</a></p>
-</blockquote>
-<p>WebMagic是一个简单灵活的Java爬虫框架。基于WebMagic，你可以快速开发出一个高效、易维护的爬虫。</p>
-<p>特性：</p>
-<ul>
-<li>简单的API，可快速上手</li>
-<li>模块化的结构，可轻松扩展</li>
-<li>提供多线程和分布式支持</li>
-</ul>
-        </div>
-        
-        
-        <div class="level is-mobile">
-            <div class="level-start">
-                <div class="level-item">
-                <a class="button is-size-7 is-light" href="/webmagic/#more">阅读更多</a>
-                </div>
-            </div>
-        </div>
-        
-        
-    </div>
-</div>
-
-
-
-
-
-
-
-
-    
-<div class="card">
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-11-27T09:27:07.000Z">2019-11-27</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/java/">java</a>
-                </div>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    1 分钟 读完 (大约 138 个字)
-                </span>
-                
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/okhttp/">网络请求工具okhttp</a>
-            
-        </h1>
-        <div class="content">
-            <blockquote>
-<p><a href="https://github.com/square/okhttp" target="_blank" rel="noopener">https://github.com/square/okhttp</a></p>
-</blockquote>
-<h2 id="发送Get请求"><a href="#发送Get请求" class="headerlink" title="发送Get请求"></a>发送Get请求</h2><figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-meta">@Test</span></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">get</span><span class="hljs-params">()</span> <span class="hljs-keyword">throws</span> Exception </span>&#123;</span><br><span class="line">    String url = <span class="hljs-string">"https://api.github.com/repos/square/okhttp/contributors"</span>;</span><br><span class="line"></span><br><span class="line">    Request request = <span class="hljs-keyword">new</span> Request.Builder().url(url).build();</span><br><span class="line">    Response response = <span class="hljs-keyword">new</span> OkHttpClient().newCall(request).execute();</span><br><span class="line"></span><br><span class="line">    ResponseBody responseBody = response.body();</span><br><span class="line">    log.info(<span class="hljs-string">"responseBody: &#123;&#125;"</span>, responseBody.string());</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-        </div>
-        
-        
-        <div class="level is-mobile">
-            <div class="level-start">
-                <div class="level-item">
-                <a class="button is-size-7 is-light" href="/okhttp/#more">阅读更多</a>
-                </div>
-            </div>
-        </div>
-        
-        
-    </div>
-</div>
-
-
-
-
-
-
-
-
-    
-<div class="card">
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
                 <time class="level-item has-text-grey" datetime="2019-11-27T09:04:26.000Z">2019-11-27</time>
                 
                 <div class="level-item">
@@ -405,68 +232,6 @@
             <div class="level-start">
                 <div class="level-item">
                 <a class="button is-size-7 is-light" href="/easemob-im/#more">阅读更多</a>
-                </div>
-            </div>
-        </div>
-        
-        
-    </div>
-</div>
-
-
-
-
-
-
-
-
-    
-<div class="card">
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-11-27T05:15:14.000Z">2019-11-27</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/java/">java</a>
-                </div>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    2 分钟 读完 (大约 290 个字)
-                </span>
-                
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/alibaba-canal/">MySQL binlog增量订阅与消费组件</a>
-            
-        </h1>
-        <div class="content">
-            <blockquote>
-<p><a href="https://github.com/alibaba/canal/wiki" target="_blank" rel="noopener">https://github.com/alibaba/canal/wiki</a></p>
-</blockquote>
-<p>canal [kə’næl]，译意为水道/管道/沟渠，主要用途是基于 MySQL 数据库增量日志解析，提供增量数据订阅和消费</p>
-<p>工作原理：</p>
-<ul>
-<li>canal 模拟 MySQL slave 的交互协议，伪装自己为 MySQL slave ，向 MySQL master 发送 dump 协议</li>
-<li>MySQL master 收到 dump 请求，开始推送 binary log 给 slave (即 canal )</li>
-<li>canal 解析 binary log 对象(原始为 byte 流)</li>
-</ul>
-        </div>
-        
-        
-        <div class="level is-mobile">
-            <div class="level-start">
-                <div class="level-item">
-                <a class="button is-size-7 is-light" href="/alibaba-canal/#more">阅读更多</a>
                 </div>
             </div>
         </div>
@@ -596,7 +361,7 @@
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-11-26T07:19:19.000Z">2019-11-26</time>
+                <time class="level-item has-text-grey" datetime="2019-11-25T03:46:05.000Z">2019-11-25</time>
                 
                 <div class="level-item">
                 <a class="has-link-grey -link" href="/categories/java/">java</a>
@@ -606,7 +371,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    2 分钟 读完 (大约 243 个字)
+                    几秒 读完 (大约 88 个字)
                 </span>
                 
                 
@@ -615,23 +380,22 @@
         
         <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
             
-                <a class="has-link-black-ter" href="/aliyun-oss-sts/">STS临时授权访问OSS</a>
+                <a class="has-link-black-ter" href="/reactor-processor/">reactor是如何推送数据的?</a>
             
         </h1>
         <div class="content">
-            <blockquote>
-<p><a href="https://help.aliyun.com/document_detail/100624.html" target="_blank" rel="noopener">https://help.aliyun.com/document_detail/100624.html</a></p>
-</blockquote>
-<p>OSS可以通过阿里云STS（Security Token Service）进行临时授权访问。</p>
-<p>阿里云STS是为云计算用户提供临时访问令牌的Web服务。</p>
-<p>通过STS，您可以为第三方应用或子用户（即用户身份由您自己管理的用户）颁发一个自定义时效和权限的访问凭证。</p>
+            <p>方式一: <code>UnicastProcessor</code></p>
+<ul>
+<li>直接推送</li>
+<li>线程安全</li>
+</ul>
         </div>
         
         
         <div class="level is-mobile">
             <div class="level-start">
                 <div class="level-item">
-                <a class="button is-size-7 is-light" href="/aliyun-oss-sts/#more">阅读更多</a>
+                <a class="button is-size-7 is-light" href="/reactor-processor/#more">阅读更多</a>
                 </div>
             </div>
         </div>
@@ -654,7 +418,7 @@
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-11-26T07:05:27.000Z">2019-11-26</time>
+                <time class="level-item has-text-grey" datetime="2019-11-25T02:10:45.000Z">2019-11-25</time>
                 
                 <div class="level-item">
                 <a class="has-link-grey -link" href="/categories/java/">java</a>
@@ -664,7 +428,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    3 分钟 读完 (大约 402 个字)
+                    1 分钟 读完 (大约 139 个字)
                 </span>
                 
                 
@@ -673,21 +437,194 @@
         
         <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
             
-                <a class="has-link-black-ter" href="/aliyun-oss/">快速入门对象存储OSS</a>
+                <a class="has-link-black-ter" href="/reactor-flux-error/">flux发生错误时的处理方式</a>
             
         </h1>
         <div class="content">
-            <blockquote>
-<p><a href="https://help.aliyun.com/document_detail/32011.html" target="_blank" rel="noopener">https://help.aliyun.com/document_detail/32011.html</a></p>
-</blockquote>
-<p>介绍如何快速使用OSS Java SDK完成常见操作，如创建存储空间（Bucket）、上传/下载文件（Object）等。</p>
+            <p>方式一:</p>
+<ul>
+<li>发生错误时, 忽略此数据, 进入下一轮处理</li>
+</ul>
+<figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-meta">@Test</span></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">onErrorContinue</span><span class="hljs-params">()</span> <span class="hljs-keyword">throws</span> Exception </span>&#123;</span><br><span class="line">    Flux&lt;Integer&gt; flux = Flux.just(-<span class="hljs-number">2</span>, -<span class="hljs-number">1</span>, <span class="hljs-number">0</span>, <span class="hljs-number">1</span>, <span class="hljs-number">2</span>)</span><br><span class="line">            .map(n -&gt; <span class="hljs-number">10</span> / n)</span><br><span class="line">            <span class="hljs-comment">// 忽略此数据</span></span><br><span class="line">            .onErrorContinue((err, num) -&gt; log.info(<span class="hljs-string">"invalid num: &#123;&#125;"</span>, num));</span><br><span class="line"></span><br><span class="line">    StepVerifier.create(flux)</span><br><span class="line">            .expectNext(-<span class="hljs-number">5</span>)</span><br><span class="line">            .expectNext(-<span class="hljs-number">10</span>)</span><br><span class="line">            .expectNext(<span class="hljs-number">10</span>)</span><br><span class="line">            .expectNext(<span class="hljs-number">5</span>)</span><br><span class="line">            .verifyComplete();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
         </div>
         
         
         <div class="level is-mobile">
             <div class="level-start">
                 <div class="level-item">
-                <a class="button is-size-7 is-light" href="/aliyun-oss/#more">阅读更多</a>
+                <a class="button is-size-7 is-light" href="/reactor-flux-error/#more">阅读更多</a>
+                </div>
+            </div>
+        </div>
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+    
+<div class="card">
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2019-11-25T01:45:50.000Z">2019-11-25</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/java/">java</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    几秒 读完 (大约 68 个字)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/reactor-mono-cache/">mono缓存的使用</a>
+            
+        </h1>
+        <div class="content">
+            <p>方式一:</p>
+<ul>
+<li>本地缓存</li>
+<li>1分钟后过期</li>
+</ul>
+        </div>
+        
+        
+        <div class="level is-mobile">
+            <div class="level-start">
+                <div class="level-item">
+                <a class="button is-size-7 is-light" href="/reactor-mono-cache/#more">阅读更多</a>
+                </div>
+            </div>
+        </div>
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+    
+<div class="card">
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2019-11-24T15:18:44.000Z">2019-11-24</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/java/">java</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    1 分钟 读完 (大约 127 个字)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/reactor-flux-subscribe/">flux的不同订阅方式</a>
+            
+        </h1>
+        <div class="content">
+            <p>方式一:</p>
+<ul>
+<li>异步执行</li>
+</ul>
+<figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-meta">@Test</span></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">subscribeOn</span><span class="hljs-params">()</span> <span class="hljs-keyword">throws</span> Exception </span>&#123;</span><br><span class="line">    Flux&lt;Integer&gt; flux = Flux.just(<span class="hljs-number">1</span>)</span><br><span class="line">            <span class="hljs-comment">// 指定线程池</span></span><br><span class="line">            .subscribeOn(Schedulers.elastic());</span><br><span class="line"></span><br><span class="line">    StepVerifier.create(flux)</span><br><span class="line">            .expectNext(<span class="hljs-number">1</span>)</span><br><span class="line">            .verifyComplete();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        </div>
+        
+        
+        <div class="level is-mobile">
+            <div class="level-start">
+                <div class="level-item">
+                <a class="button is-size-7 is-light" href="/reactor-flux-subscribe/#more">阅读更多</a>
+                </div>
+            </div>
+        </div>
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+    
+<div class="card">
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2019-11-24T04:22:55.000Z">2019-11-24</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/java/">java</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    1 分钟 读完 (大约 144 个字)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/reactor-flux-repeat/">让flux重复执行的案例</a>
+            
+        </h1>
+        <div class="content">
+            <p>案例一:</p>
+<ul>
+<li>当数据为空时, 重复执行</li>
+<li>最多重复执行3次, 每次间隔1秒</li>
+<li>默认值为-1</li>
+</ul>
+        </div>
+        
+        
+        <div class="level is-mobile">
+            <div class="level-start">
+                <div class="level-item">
+                <a class="button is-size-7 is-light" href="/reactor-flux-repeat/#more">阅读更多</a>
                 </div>
             </div>
         </div>
@@ -710,7 +647,7 @@
         <div class="pagination-previous">
             <a class="is-flex-grow has-text-black-ter" href="/categories/java/">上一页</a>
         </div>
-        <div class="pagination-next">
+        <div class="pagination-next is-invisible is-hidden-mobile">
             <a class="is-flex-grow has-text-black-ter" href="/categories/java/page/3/">下一页</a>
         </div>
         <ul class="pagination-list is-hidden-mobile">
@@ -718,8 +655,6 @@
             <li><a class="pagination-link has-text-black-ter" href="/categories/java/">1</a></li>
             
             <li><a class="pagination-link is-current" href="/categories/java/page/2/">2</a></li>
-            
-            <li><a class="pagination-link has-text-black-ter" href="/categories/java/page/3/">3</a></li>
             
         </ul>
     </nav>
@@ -778,7 +713,7 @@
                         分类
                     </p>
                     <p class="title has-text-weight-normal">
-                        3
+                        8
                     </p>
                 </div>
             </div>
@@ -788,7 +723,7 @@
                         标签
                     </p>
                     <p class="title has-text-weight-normal">
-                        20
+                        21
                     </p>
                 </div>
             </div>
@@ -890,12 +825,52 @@
             </h3>
             <ul class="menu-list">
             <li>
+        <a class="level is-marginless" href="/categories/activemq/">
+            <span class="level-start">
+                <span class="level-item">activemq</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">3</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/alibaba/">
+            <span class="level-start">
+                <span class="level-item">alibaba</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/aliyun/">
+            <span class="level-start">
+                <span class="level-item">aliyun</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">3</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/cmd/">
+            <span class="level-start">
+                <span class="level-item">cmd</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/flume/">
+            <span class="level-start">
+                <span class="level-item">flume</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">2</span>
+            </span>
+        </a></li><li>
         <a class="level is-marginless" href="/categories/java/">
             <span class="level-start">
                 <span class="level-item">java</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">29</span>
+                <span class="level-item tag">19</span>
             </span>
         </a></li><li>
         <a class="level is-marginless" href="/categories/redis/">
@@ -906,9 +881,9 @@
                 <span class="level-item tag">1</span>
             </span>
         </a></li><li>
-        <a class="level is-marginless" href="/categories/windows10/">
+        <a class="level is-marginless" href="/categories/rocketmq/">
             <span class="level-start">
-                <span class="level-item">windows10</span>
+                <span class="level-item">rocketmq</span>
             </span>
             <span class="level-end">
                 <span class="level-item tag">1</span>
@@ -924,7 +899,7 @@
         <h3 class="menu-label">
             标签云
         </h3>
-        <a href="/tags/activemq/" style="font-size: 16.67px;">activemq</a> <a href="/tags/alibaba/" style="font-size: 10px;">alibaba</a> <a href="/tags/aliyun/" style="font-size: 16.67px;">aliyun</a> <a href="/tags/apache-commons/" style="font-size: 10px;">apache-commons</a> <a href="/tags/cmd/" style="font-size: 10px;">cmd</a> <a href="/tags/easemob/" style="font-size: 10px;">easemob</a> <a href="/tags/flume/" style="font-size: 13.33px;">flume</a> <a href="/tags/jackson/" style="font-size: 10px;">jackson</a> <a href="/tags/jiguang/" style="font-size: 10px;">jiguang</a> <a href="/tags/jooq/" style="font-size: 10px;">jooq</a> <a href="/tags/jwt/" style="font-size: 10px;">jwt</a> <a href="/tags/maven/" style="font-size: 10px;">maven</a> <a href="/tags/okhttp/" style="font-size: 10px;">okhttp</a> <a href="/tags/reactor/" style="font-size: 20px;">reactor</a> <a href="/tags/redis/" style="font-size: 10px;">redis</a> <a href="/tags/rocketmq/" style="font-size: 16.67px;">rocketmq</a> <a href="/tags/sorting-algorithms/" style="font-size: 10px;">sorting-algorithms</a> <a href="/tags/vertx/" style="font-size: 10px;">vertx</a> <a href="/tags/webmagic/" style="font-size: 10px;">webmagic</a> <a href="/tags/wechat-api/" style="font-size: 10px;">wechat-api</a>
+        <a href="/tags/activemq/" style="font-size: 16.67px;">activemq</a> <a href="/tags/alibaba-canal/" style="font-size: 10px;">alibaba-canal</a> <a href="/tags/aliyun-log/" style="font-size: 10px;">aliyun-log</a> <a href="/tags/aliyun-oss/" style="font-size: 13.33px;">aliyun-oss</a> <a href="/tags/apache-commons/" style="font-size: 10px;">apache-commons</a> <a href="/tags/chcp/" style="font-size: 10px;">chcp</a> <a href="/tags/easemob-im/" style="font-size: 10px;">easemob-im</a> <a href="/tags/flume/" style="font-size: 13.33px;">flume</a> <a href="/tags/jackson/" style="font-size: 10px;">jackson</a> <a href="/tags/jiguang-push/" style="font-size: 10px;">jiguang-push</a> <a href="/tags/jooq/" style="font-size: 10px;">jooq</a> <a href="/tags/jwt/" style="font-size: 10px;">jwt</a> <a href="/tags/maven/" style="font-size: 10px;">maven</a> <a href="/tags/okhttp/" style="font-size: 10px;">okhttp</a> <a href="/tags/reactor/" style="font-size: 20px;">reactor</a> <a href="/tags/redis/" style="font-size: 10px;">redis</a> <a href="/tags/rocketmq/" style="font-size: 16.67px;">rocketmq</a> <a href="/tags/sorting-algorithms/" style="font-size: 10px;">sorting-algorithms</a> <a href="/tags/vertx/" style="font-size: 10px;">vertx</a> <a href="/tags/webmagic/" style="font-size: 10px;">webmagic</a> <a href="/tags/wechat-api/" style="font-size: 10px;">wechat-api</a>
     </div>
 </div>
     
@@ -969,7 +944,7 @@
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-12-05T05:13:18.000Z">2019-12-05</time></div>
                     <a href="/flume-simple/" class="title has-link-black-ter is-size-6 has-text-weight-normal">输出日志到Flume</a>
                     <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/java/">java</a>
+                        <a class="has-link-grey -link" href="/categories/flume/">flume</a>
                     </p>
                 </div>
             </div>
@@ -988,7 +963,7 @@
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-12-05T04:59:01.000Z">2019-12-05</time></div>
                     <a href="/flume-install/" class="title has-link-black-ter is-size-6 has-text-weight-normal">快速安装Flume</a>
                     <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/java/">java</a>
+                        <a class="has-link-grey -link" href="/categories/flume/">flume</a>
                     </p>
                 </div>
             </div>
@@ -1086,16 +1061,23 @@
                 </div>
                 
                 <div class="control">
-                    <a class="tags has-addons" href="/tags/alibaba/">
-                        <span class="tag">alibaba</span>
+                    <a class="tags has-addons" href="/tags/alibaba-canal/">
+                        <span class="tag">alibaba-canal</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>
                 
                 <div class="control">
-                    <a class="tags has-addons" href="/tags/aliyun/">
-                        <span class="tag">aliyun</span>
-                        <span class="tag is-grey">3</span>
+                    <a class="tags has-addons" href="/tags/aliyun-log/">
+                        <span class="tag">aliyun-log</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/aliyun-oss/">
+                        <span class="tag">aliyun-oss</span>
+                        <span class="tag is-grey">2</span>
                     </a>
                 </div>
                 
@@ -1107,15 +1089,15 @@
                 </div>
                 
                 <div class="control">
-                    <a class="tags has-addons" href="/tags/cmd/">
-                        <span class="tag">cmd</span>
+                    <a class="tags has-addons" href="/tags/chcp/">
+                        <span class="tag">chcp</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>
                 
                 <div class="control">
-                    <a class="tags has-addons" href="/tags/easemob/">
-                        <span class="tag">easemob</span>
+                    <a class="tags has-addons" href="/tags/easemob-im/">
+                        <span class="tag">easemob-im</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>
@@ -1135,8 +1117,8 @@
                 </div>
                 
                 <div class="control">
-                    <a class="tags has-addons" href="/tags/jiguang/">
-                        <span class="tag">jiguang</span>
+                    <a class="tags has-addons" href="/tags/jiguang-push/">
+                        <span class="tag">jiguang-push</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>
@@ -1272,7 +1254,7 @@
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-12-05T05:13:18.000Z">2019-12-05</time></div>
                     <a href="/flume-simple/" class="title has-link-black-ter is-size-6 has-text-weight-normal">输出日志到Flume</a>
                     <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/java/">java</a>
+                        <a class="has-link-grey -link" href="/categories/flume/">flume</a>
                     </p>
                 </div>
             </div>
@@ -1291,7 +1273,7 @@
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-12-05T04:59:01.000Z">2019-12-05</time></div>
                     <a href="/flume-install/" class="title has-link-black-ter is-size-6 has-text-weight-normal">快速安装Flume</a>
                     <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/java/">java</a>
+                        <a class="has-link-grey -link" href="/categories/flume/">flume</a>
                     </p>
                 </div>
             </div>
@@ -1389,16 +1371,23 @@
                 </div>
                 
                 <div class="control">
-                    <a class="tags has-addons" href="/tags/alibaba/">
-                        <span class="tag">alibaba</span>
+                    <a class="tags has-addons" href="/tags/alibaba-canal/">
+                        <span class="tag">alibaba-canal</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>
                 
                 <div class="control">
-                    <a class="tags has-addons" href="/tags/aliyun/">
-                        <span class="tag">aliyun</span>
-                        <span class="tag is-grey">3</span>
+                    <a class="tags has-addons" href="/tags/aliyun-log/">
+                        <span class="tag">aliyun-log</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/aliyun-oss/">
+                        <span class="tag">aliyun-oss</span>
+                        <span class="tag is-grey">2</span>
                     </a>
                 </div>
                 
@@ -1410,15 +1399,15 @@
                 </div>
                 
                 <div class="control">
-                    <a class="tags has-addons" href="/tags/cmd/">
-                        <span class="tag">cmd</span>
+                    <a class="tags has-addons" href="/tags/chcp/">
+                        <span class="tag">chcp</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>
                 
                 <div class="control">
-                    <a class="tags has-addons" href="/tags/easemob/">
-                        <span class="tag">easemob</span>
+                    <a class="tags has-addons" href="/tags/easemob-im/">
+                        <span class="tag">easemob-im</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>
@@ -1438,8 +1427,8 @@
                 </div>
                 
                 <div class="control">
-                    <a class="tags has-addons" href="/tags/jiguang/">
-                        <span class="tag">jiguang</span>
+                    <a class="tags has-addons" href="/tags/jiguang-push/">
+                        <span class="tag">jiguang-push</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>
