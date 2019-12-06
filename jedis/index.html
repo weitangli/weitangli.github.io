@@ -7,19 +7,19 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 
-<title>微信个人号API - WeitangLi</title>
+<title>redis客户端jedis - WeitangLi</title>
 
 
-    <meta name="description" content="https:&#x2F;&#x2F;biezhi.github.io&#x2F;wechat-api&#x2F;  wechat-api一个基于微信Web协议的Java版本封装，提供了发送消息、接受消息、群操作等功能。">
-<meta name="keywords" content="wechat-api">
+    <meta name="description" content="https:&#x2F;&#x2F;github.com&#x2F;xetorthio&#x2F;jedis">
+<meta name="keywords" content="jedis">
 <meta property="og:type" content="article">
-<meta property="og:title" content="微信个人号API">
-<meta property="og:url" content="https:&#x2F;&#x2F;weitangli.github.io&#x2F;wechat-api&#x2F;index.html">
+<meta property="og:title" content="redis客户端jedis">
+<meta property="og:url" content="https:&#x2F;&#x2F;weitangli.github.io&#x2F;jedis&#x2F;index.html">
 <meta property="og:site_name" content="WeitangLi">
-<meta property="og:description" content="https:&#x2F;&#x2F;biezhi.github.io&#x2F;wechat-api&#x2F;  wechat-api一个基于微信Web协议的Java版本封装，提供了发送消息、接受消息、群操作等功能。">
+<meta property="og:description" content="https:&#x2F;&#x2F;github.com&#x2F;xetorthio&#x2F;jedis">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https:&#x2F;&#x2F;weitangli.github.io&#x2F;images&#x2F;og_image.png">
-<meta property="og:updated_time" content="2019-12-02T02:22:46.983Z">
+<meta property="og:updated_time" content="2019-12-06T01:21:22.752Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https:&#x2F;&#x2F;weitangli.github.io&#x2F;images&#x2F;og_image.png">
 
@@ -79,7 +79,7 @@
         <div class="navbar-brand is-flex-center">
             <a class="navbar-item navbar-logo" href="/">
             
-                <img src="/images/logo.svg" alt="微信个人号API" height="28">
+                <img src="/images/logo.svg" alt="redis客户端jedis" height="28">
             
             </a>
         </div>
@@ -112,6 +112,10 @@
                     
                 
                 
+                <a class="navbar-item is-hidden-tablet catalogue" title="目录" href="javascript:;">
+                    <i class="fas fa-list-ul"></i>
+                </a>
+                
                 
                 <a class="navbar-item search" title="搜索" href="javascript:;">
                     <i class="fas fa-search"></i>
@@ -132,7 +136,7 @@
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-12-02T02:19:07.000Z">2019-12-02</time>
+                <time class="level-item has-text-grey" datetime="2019-12-05T13:21:46.000Z">2019-12-05</time>
                 
                 <div class="level-item">
                 <a class="has-link-grey -link" href="/categories/java/">java</a>
@@ -142,7 +146,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    1 分钟 读完 (大约 164 个字)
+                    2 分钟 读完 (大约 271 个字)
                 </span>
                 
                 
@@ -156,23 +160,22 @@
         
         <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
             
-                微信个人号API
+                redis客户端jedis
             
         </h1>
         <div class="content">
             <blockquote>
-<p><a href="https://biezhi.github.io/wechat-api/" target="_blank" rel="noopener">https://biezhi.github.io/wechat-api/</a></p>
+<p><a href="https://github.com/xetorthio/jedis" target="_blank" rel="noopener">https://github.com/xetorthio/jedis</a></p>
 </blockquote>
-<p><code>wechat-api</code>一个基于微信Web协议的Java版本封装，提供了发送消息、接受消息、群操作等功能。</p>
 <a id="more"></a>
 
-<p>一个例子:</p>
-<figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-meta">@Test</span></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">start</span><span class="hljs-params">()</span> </span>&#123;</span><br><span class="line">    <span class="hljs-keyword">new</span> HelloBot(Config.me().autoLogin(<span class="hljs-keyword">true</span>).showTerminal(<span class="hljs-keyword">true</span>)).start();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="单连接"><a href="#单连接" class="headerlink" title="单连接"></a>单连接</h2><figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-meta">@Test</span></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">jedis</span><span class="hljs-params">()</span> </span>&#123;</span><br><span class="line">    <span class="hljs-comment">// 创建实例</span></span><br><span class="line">    Jedis jedis = <span class="hljs-keyword">new</span> Jedis(<span class="hljs-string">"127.0.0.1"</span>, <span class="hljs-number">6379</span>);</span><br><span class="line"></span><br><span class="line">    <span class="hljs-comment">// 获取所有keys</span></span><br><span class="line">    Set&lt;String&gt; keys = jedis.keys(<span class="hljs-string">"*"</span>);</span><br><span class="line">    keys.forEach(key -&gt; log.info(<span class="hljs-string">"key: &#123;&#125;"</span>, key));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p>机器人:</p>
-<figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">HelloBot</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">WeChatBot</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="hljs-keyword">private</span> Logger log = LoggerFactory.getLogger(<span class="hljs-keyword">this</span>.getClass());</span><br><span class="line"></span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">HelloBot</span><span class="hljs-params">(Config config)</span> </span>&#123;</span><br><span class="line">        <span class="hljs-keyword">super</span>(config);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="hljs-meta">@Bind</span>(msgType = MsgType.TEXT)</span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">handleText</span><span class="hljs-params">(WeChatMessage message)</span> </span>&#123;</span><br><span class="line">        <span class="hljs-keyword">if</span> (StringUtils.isNotEmpty(message.getName())) &#123;</span><br><span class="line">            log.info(<span class="hljs-string">"接收到 [&#123;&#125;] 的消息: &#123;&#125;"</span>, message.getName(), message.getText());</span><br><span class="line">            <span class="hljs-keyword">this</span>.sendMsg(message.getFromUserName(), <span class="hljs-string">"自动回复: "</span> + message.getText());</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="连接池"><a href="#连接池" class="headerlink" title="连接池"></a>连接池</h2><figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-meta">@Test</span></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">jedisPool</span><span class="hljs-params">()</span> </span>&#123;</span><br><span class="line">    <span class="hljs-comment">// 连接池配置</span></span><br><span class="line">    JedisPoolConfig config = <span class="hljs-keyword">new</span> JedisPoolConfig();</span><br><span class="line">    config.setMaxIdle(<span class="hljs-number">10</span>);<span class="hljs-comment">// 对象最大空闲时间</span></span><br><span class="line">    config.setMaxTotal(<span class="hljs-number">30</span>);<span class="hljs-comment">// 最大活动的对象个数</span></span><br><span class="line">    config.setMaxWaitMillis(<span class="hljs-number">3</span> * <span class="hljs-number">1000</span>);<span class="hljs-comment">// 获取对象时最大等待时间</span></span><br><span class="line">    config.setTestOnBorrow(<span class="hljs-keyword">true</span>);<span class="hljs-comment">// 打开连接时检查是否可用</span></span><br><span class="line"></span><br><span class="line">    <span class="hljs-comment">// 创建连接池</span></span><br><span class="line">    JedisPool pool = <span class="hljs-keyword">new</span> JedisPool(config, <span class="hljs-string">"127.0.0.1"</span>, <span class="hljs-number">6379</span>);</span><br><span class="line"></span><br><span class="line">    <span class="hljs-comment">// 获取实例</span></span><br><span class="line">    Jedis jedis = pool.getResource();</span><br><span class="line"></span><br><span class="line">    <span class="hljs-comment">// 获取所有keys</span></span><br><span class="line">    Set&lt;String&gt; keys = jedis.keys(<span class="hljs-string">"*"</span>);</span><br><span class="line">    keys.forEach(key -&gt; log.info(<span class="hljs-string">"key: &#123;&#125;"</span>, key));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p>源代码:<br><a href="https://github.com/weitangli/java-sample/blob/master/wechat-api-sample/src/test/java/com/sample/HelloBotTests.java" target="_blank" rel="noopener">HelloBotTests.java</a><br><a href="https://github.com/weitangli/java-sample/blob/master/wechat-api-sample/src/test/java/com/sample/HelloBot.java" target="_blank" rel="noopener">HelloBot.java</a></p>
+<h2 id="多机连接池"><a href="#多机连接池" class="headerlink" title="多机连接池"></a>多机连接池</h2><figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-meta">@Test</span></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">shardedJedisPool</span><span class="hljs-params">()</span> </span>&#123;</span><br><span class="line">    <span class="hljs-comment">// 多机</span></span><br><span class="line">    List&lt;JedisShardInfo&gt; shards = <span class="hljs-keyword">new</span> ArrayList&lt;JedisShardInfo&gt;();</span><br><span class="line">    shards.add(<span class="hljs-keyword">new</span> JedisShardInfo(<span class="hljs-string">"127.0.0.1"</span>, <span class="hljs-number">6379</span>));</span><br><span class="line">    shards.add(<span class="hljs-keyword">new</span> JedisShardInfo(<span class="hljs-string">"127.0.0.1"</span>, <span class="hljs-number">6389</span>));</span><br><span class="line"></span><br><span class="line">    <span class="hljs-comment">// 连接池配置</span></span><br><span class="line">    JedisPoolConfig config = <span class="hljs-keyword">new</span> JedisPoolConfig();</span><br><span class="line">    config.setMaxIdle(<span class="hljs-number">10</span>);<span class="hljs-comment">// 对象最大空闲时间</span></span><br><span class="line">    config.setMaxTotal(<span class="hljs-number">30</span>);<span class="hljs-comment">// 最大活动的对象个数</span></span><br><span class="line">    config.setMaxWaitMillis(<span class="hljs-number">3</span> * <span class="hljs-number">1000</span>);<span class="hljs-comment">// 获取对象时最大等待时间</span></span><br><span class="line">    config.setTestOnBorrow(<span class="hljs-keyword">true</span>);<span class="hljs-comment">// 打开连接时检查是否可用</span></span><br><span class="line"></span><br><span class="line">    <span class="hljs-comment">// 创建连接池</span></span><br><span class="line">    ShardedJedisPool pool = <span class="hljs-keyword">new</span> ShardedJedisPool(config, shards);</span><br><span class="line"></span><br><span class="line">    <span class="hljs-comment">// 获取实例</span></span><br><span class="line">    ShardedJedis jedis = pool.getResource();</span><br><span class="line"></span><br><span class="line">    <span class="hljs-comment">// 获取值</span></span><br><span class="line">    String value = jedis.get(<span class="hljs-string">"name"</span>);</span><br><span class="line">    log.info(<span class="hljs-string">"value: &#123;&#125;"</span>, value);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>源代码: <a href="https://github.com/weitangli/java-sample/blob/master/jedis-sample/src/test/java/com/sample/JedisTests.java" target="_blank" rel="noopener">JedisTests.java</a></p>
 
         </div>
         
@@ -180,7 +183,7 @@
             <div class="level-start">
                 <div class="level-item">
                     <span class="is-size-6 has-text-grey has-mr-7">#</span>
-                    <a class="has-link-grey -link" href="/tags/wechat-api/" rel="tag">wechat-api</a>
+                    <a class="has-link-grey -link" href="/tags/jedis/" rel="tag">jedis</a>
                 </div>
             </div>
         </div>
@@ -227,16 +230,16 @@
     <div class="level post-navigation is-flex-wrap is-mobile">
         
         <div class="level-start">
-            <a class="level level-item has-link-grey  article-nav-prev" href="/flume-install/">
+            <a class="level level-item has-link-grey  article-nav-prev" href="/jar-manifest/">
                 <i class="level-item fas fa-chevron-left"></i>
-                <span class="level-item">快速安装Flume</span>
+                <span class="level-item">manifest配置信息</span>
             </a>
         </div>
         
         
         <div class="level-end">
-            <a class="level level-item has-link-grey  article-nav-next" href="/sorting-algorithms/">
-                <span class="level-item">排序算法</span>
+            <a class="level level-item has-link-grey  article-nav-next" href="/redis-questions/">
+                <span class="level-item">Redis常见问题</span>
                 <i class="level-item fas fa-chevron-right"></i>
             </a>
         </div>
@@ -257,7 +260,7 @@
     var gitalk = new Gitalk({
         clientID: 'a221d93af82dc4967493',
         clientSecret: '14cbb6054ee2e9bd2b68b59f52af0caadb62f934',
-        id: '040b4d8fa99543e06a647762cced3b9a',
+        id: '17653dbfe719d2e3afd79017aade8ccd',
         repo: 'weitangli.github.io',
         owner: 'weitangli',
         admin: "weitangli",
@@ -389,6 +392,28 @@
 </div>
     
         
+<div class="card widget" id="toc">
+    <div class="card-content">
+        <div class="menu">
+            <h3 class="menu-label">
+                目录
+            </h3>
+            <ul class="menu-list"><li>
+        <a class="is-flex" href="#单连接">
+        <span class="has-mr-6">1</span>
+        <span>单连接</span>
+        </a></li><li>
+        <a class="is-flex" href="#连接池">
+        <span class="has-mr-6">2</span>
+        <span>连接池</span>
+        </a></li><li>
+        <a class="is-flex" href="#多机连接池">
+        <span class="has-mr-6">3</span>
+        <span>多机连接池</span>
+        </a></li></ul>
+        </div>
+    </div>
+</div>
     
         <div class="card widget">
     <div class="card-content">
@@ -1165,7 +1190,7 @@
             <div class="level-start has-text-centered-mobile">
                 <a class="footer-logo is-block has-mb-6" href="/">
                 
-                    <img src="/images/logo.svg" alt="微信个人号API" height="28">
+                    <img src="/images/logo.svg" alt="redis客户端jedis" height="28">
                 
                 </a>
                 <p class="is-size-7">
