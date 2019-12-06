@@ -7,19 +7,19 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 
-<title>快速安装Flume - WeitangLi</title>
+<title>Java Servlet - WeitangLi</title>
 
 
-    <meta name="description" content="https:&#x2F;&#x2F;flume.apache.org  安装Flume之前, 我们得先安装Java运行环境. Linux安装包下载地址: apache-flume-1.6.0-bin.tar.gz">
-<meta name="keywords" content="flume">
+    <meta name="description" content="生命周期启动时: filter init –&amp;gt;  运行时: servlet init(第一次访问) –&amp;gt; filter doFilter –&amp;gt; servlet service –&amp;gt;  关闭时: servlet destroy –&amp;gt; filter destroy">
+<meta name="keywords" content="java-servlet">
 <meta property="og:type" content="article">
-<meta property="og:title" content="快速安装Flume">
-<meta property="og:url" content="https:&#x2F;&#x2F;weitangli.github.io&#x2F;flume-install&#x2F;index.html">
+<meta property="og:title" content="Java Servlet">
+<meta property="og:url" content="https:&#x2F;&#x2F;weitangli.github.io&#x2F;servlet&#x2F;index.html">
 <meta property="og:site_name" content="WeitangLi">
-<meta property="og:description" content="https:&#x2F;&#x2F;flume.apache.org  安装Flume之前, 我们得先安装Java运行环境. Linux安装包下载地址: apache-flume-1.6.0-bin.tar.gz">
+<meta property="og:description" content="生命周期启动时: filter init –&amp;gt;  运行时: servlet init(第一次访问) –&amp;gt; filter doFilter –&amp;gt; servlet service –&amp;gt;  关闭时: servlet destroy –&amp;gt; filter destroy">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https:&#x2F;&#x2F;weitangli.github.io&#x2F;images&#x2F;og_image.png">
-<meta property="og:updated_time" content="2019-12-05T09:26:45.325Z">
+<meta property="og:updated_time" content="2019-12-06T03:54:56.961Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https:&#x2F;&#x2F;weitangli.github.io&#x2F;images&#x2F;og_image.png">
 
@@ -79,7 +79,7 @@
         <div class="navbar-brand is-flex-center">
             <a class="navbar-item navbar-logo" href="/">
             
-                <img src="/images/logo.svg" alt="快速安装Flume" height="28">
+                <img src="/images/logo.svg" alt="Java Servlet" height="28">
             
             </a>
         </div>
@@ -112,10 +112,6 @@
                     
                 
                 
-                <a class="navbar-item is-hidden-tablet catalogue" title="目录" href="javascript:;">
-                    <i class="fas fa-list-ul"></i>
-                </a>
-                
                 
                 <a class="navbar-item search" title="搜索" href="javascript:;">
                     <i class="fas fa-search"></i>
@@ -136,17 +132,17 @@
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-12-05T04:59:01.000Z">2019-12-05</time>
+                <time class="level-item has-text-grey" datetime="2019-12-06T03:31:26.000Z">2019-12-06</time>
                 
                 <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/flume/">flume</a>
+                <a class="has-link-grey -link" href="/categories/java/">java</a>
                 </div>
                 
                 
                 <span class="level-item has-text-grey">
                     
                     
-                    2 分钟 读完 (大约 261 个字)
+                    3 分钟 读完 (大约 395 个字)
                 </span>
                 
                 
@@ -160,24 +156,47 @@
         
         <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
             
-                快速安装Flume
+                Java Servlet
             
         </h1>
         <div class="content">
-            <blockquote>
-<p><a href="https://flume.apache.org" target="_blank" rel="noopener">https://flume.apache.org</a></p>
-</blockquote>
-<p>安装Flume之前, 我们得先安装Java运行环境.</p>
-<p>Linux安装包下载地址: <a href="http://archive.apache.org/dist/flume/1.6.0/apache-flume-1.6.0-bin.tar.gz" target="_blank" rel="noopener">apache-flume-1.6.0-bin.tar.gz</a></p>
+            <h2 id="生命周期"><a href="#生命周期" class="headerlink" title="生命周期"></a>生命周期</h2><p>启动时: filter init –&gt; </p>
+<p>运行时: servlet init(第一次访问) –&gt; filter doFilter –&gt; servlet service –&gt; </p>
+<p>关闭时: servlet destroy –&gt; filter destroy</p>
 <a id="more"></a>
 
-<h2 id="目录结构"><a href="#目录结构" class="headerlink" title="目录结构"></a>目录结构</h2><figure class="highlight shell hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">├── bin</span><br><span class="line">│   ├── flume-ng</span><br><span class="line">│   ├── flume-ng.cmd</span><br><span class="line">│   └── flume-ng.ps1</span><br><span class="line">├── conf</span><br><span class="line">│   ├── flume-conf.properties.template</span><br><span class="line">│   ├── flume-env.ps1.template</span><br><span class="line">│   ├── flume-env.sh.template</span><br><span class="line">│   └── log4j.properties</span><br><span class="line">├── docs</span><br><span class="line">├── lib</span><br><span class="line">├── tools</span><br><span class="line">├── CHANGELOG</span><br><span class="line">├── DEVNOTES</span><br><span class="line">├── LICENSE</span><br><span class="line">├── NOTICE</span><br><span class="line">├── README</span><br><span class="line">└── RELEASE-NOTES</span><br></pre></td></tr></table></figure>
+<p>Servlet:</p>
+<ul>
+<li>单例</li>
+<li>当客户端第一次访问Servlet的时候, 服务器就会创建Servlet实例, 执行init方法</li>
+<li>每次请求, 服务器会开一个新的线程访问Servlet中得service方法</li>
+<li>当服务器关闭时候, Servlet对象就会被销毁, 执行destory方法</li>
+</ul>
+<p>Filter:</p>
+<ul>
+<li>单例</li>
+<li>当服务器启动的时候, 服务器就会创建Filter实例</li>
+<li>当Filter拦截到资源的时候, 就会执行doFilter方法</li>
+<li>当服务器关闭的时候, Filter对象就会被销毁, 执行destroy方法</li>
+</ul>
+<h2 id="工程结构"><a href="#工程结构" class="headerlink" title="工程结构"></a>工程结构</h2><figure class="highlight shell hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">├── src</span><br><span class="line">│   ├── main</span><br><span class="line">│   │   ├── java</span><br><span class="line">│   │   │   └── com</span><br><span class="line">│   │   │       └── sample</span><br><span class="line">│   │   │           ├── GlobalFilter.java</span><br><span class="line">│   │   │           ├── HelloServlet.java</span><br><span class="line">│   │   │           └── WebInitializer.java</span><br><span class="line">│   │   ├── resources</span><br><span class="line">│   │   │   └── META-INF</span><br><span class="line">│   │   │       └── services</span><br><span class="line">│   │   │           └── javax.servlet.ServletContainerInitializer</span><br><span class="line">│   │   └── webapp</span><br><span class="line">│   │       └── index.html</span><br><span class="line">│   └── test</span><br><span class="line">│       ├── java</span><br><span class="line">│       │   └── com</span><br><span class="line">│       │       └── sample</span><br><span class="line">│       └── resources</span><br><span class="line">├── pom.xml</span><br><span class="line">└── README.md</span><br></pre></td></tr></table></figure>
 
-<p><code>bin</code>目录下提供了启动脚本, 包括了<code>cmd</code>和<code>shell</code>版本.</p>
-<h2 id="添加配置"><a href="#添加配置" class="headerlink" title="添加配置"></a>添加配置</h2><p>添加<code>conf/example-conf.properties</code>, 内容如下:</p>
-<figure class="highlight shell hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">example.sources = avro</span><br><span class="line">example.channels = memory</span><br><span class="line">example.sinks = file_roll</span><br><span class="line"></span><br><span class="line">example.sources.avro.type = avro</span><br><span class="line">example.sources.avro.bind = 0.0.0.0</span><br><span class="line">example.sources.avro.port = 5555</span><br><span class="line">example.sources.avro.channels = memory</span><br><span class="line"></span><br><span class="line">example.sinks.file_roll.type = file_roll</span><br><span class="line">example.sinks.file_roll.sink.directory = /var/flume</span><br><span class="line">example.sinks.file_roll.channel = memory</span><br><span class="line"></span><br><span class="line">example.channels.memory.type = memory</span><br><span class="line">example.channels.memory.capacity = 100</span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>javax.servlet.ServletContainerInitializer</code>文件声明<code>Servlet</code>启动类<code>WebInitializer</code></li>
+<li><code>GlobalFilter</code>全局过滤器</li>
+<li><code>HelloServlet</code>业务处理类</li>
+</ul>
+<h2 id="调试运行"><a href="#调试运行" class="headerlink" title="调试运行"></a>调试运行</h2><p>项目中集成<code>Jetty</code>环境: <code>https://www.eclipse.org/jetty</code></p>
+<figure class="highlight shell hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mvn jetty:run</span><br></pre></td></tr></table></figure>
 
-<h2 id="启动Flume"><a href="#启动Flume" class="headerlink" title="启动Flume"></a>启动Flume</h2><figure class="highlight shell hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bin/flume-ng agent --name example --conf conf --conf-file conf/example-conf.properties -Dflume.root.logger=DEBUG,console</span><br></pre></td></tr></table></figure>
+<ul>
+<li>访问页面 <code>curl http://localhost:8080/index.html</code></li>
+<li>访问接口 <code>curl http://localhost:8080/hello</code></li>
+</ul>
+<h2 id="编译打包"><a href="#编译打包" class="headerlink" title="编译打包"></a>编译打包</h2><p>打包成<code>war</code>包</p>
+<figure class="highlight shell hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mvn clean package</span><br></pre></td></tr></table></figure>
+
+<p>源代码:<br><a href="https://github.com/weitangli/java-sample/blob/master/servlet-sample" target="_blank" rel="noopener">servlet-sample</a></p>
 
         </div>
         
@@ -185,7 +204,7 @@
             <div class="level-start">
                 <div class="level-item">
                     <span class="is-size-6 has-text-grey has-mr-7">#</span>
-                    <a class="has-link-grey -link" href="/tags/flume/" rel="tag">flume</a>
+                    <a class="has-link-grey -link" href="/tags/java-servlet/" rel="tag">java-servlet</a>
                 </div>
             </div>
         </div>
@@ -231,17 +250,10 @@
 <div class="card card-transparent">
     <div class="level post-navigation is-flex-wrap is-mobile">
         
-        <div class="level-start">
-            <a class="level level-item has-link-grey  article-nav-prev" href="/flume-simple/">
-                <i class="level-item fas fa-chevron-left"></i>
-                <span class="level-item">输出日志到Flume</span>
-            </a>
-        </div>
-        
         
         <div class="level-end">
-            <a class="level level-item has-link-grey  article-nav-next" href="/wechat-api/">
-                <span class="level-item">微信个人号API</span>
+            <a class="level level-item has-link-grey  article-nav-next" href="/jar-manifest/">
+                <span class="level-item">manifest配置信息</span>
                 <i class="level-item fas fa-chevron-right"></i>
             </a>
         </div>
@@ -262,7 +274,7 @@
     var gitalk = new Gitalk({
         clientID: 'a221d93af82dc4967493',
         clientSecret: '14cbb6054ee2e9bd2b68b59f52af0caadb62f934',
-        id: '8f8d356ed9c6d987ccbda6435103fb82',
+        id: '3d9bd6008102f96cad909108cd26764e',
         repo: 'weitangli.github.io',
         owner: 'weitangli',
         admin: "weitangli",
@@ -394,28 +406,6 @@
 </div>
     
         
-<div class="card widget" id="toc">
-    <div class="card-content">
-        <div class="menu">
-            <h3 class="menu-label">
-                目录
-            </h3>
-            <ul class="menu-list"><li>
-        <a class="is-flex" href="#目录结构">
-        <span class="has-mr-6">1</span>
-        <span>目录结构</span>
-        </a></li><li>
-        <a class="is-flex" href="#添加配置">
-        <span class="has-mr-6">2</span>
-        <span>添加配置</span>
-        </a></li><li>
-        <a class="is-flex" href="#启动Flume">
-        <span class="has-mr-6">3</span>
-        <span>启动Flume</span>
-        </a></li></ul>
-        </div>
-    </div>
-</div>
     
         <div class="card widget">
     <div class="card-content">
@@ -1206,7 +1196,7 @@
             <div class="level-start has-text-centered-mobile">
                 <a class="footer-logo is-block has-mb-6" href="/">
                 
-                    <img src="/images/logo.svg" alt="快速安装Flume" height="28">
+                    <img src="/images/logo.svg" alt="Java Servlet" height="28">
                 
                 </a>
                 <p class="is-size-7">
