@@ -7,17 +7,19 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 
-<title>标签: okhttp - WeitangLi</title>
+<title>RSA-1024加解密 - WeitangLi</title>
 
 
-    <meta name="description" content="记录工作中遇到的问题">
-<meta property="og:type" content="website">
-<meta property="og:title" content="WeitangLi">
-<meta property="og:url" content="https:&#x2F;&#x2F;weitangli.github.io&#x2F;tags&#x2F;okhttp&#x2F;index.html">
+    <meta name="description" content="密钥对转字符串1234567891011121314151617@Testpublic void encodeKey() throws Exception &amp;#123;    String algorithm = &quot;RSA&quot;;    Integer keySize = 1024;    Base64.Encoder encoder = Base64.getEncoder();    KeyPair">
+<meta name="keywords" content="rsa-1024">
+<meta property="og:type" content="article">
+<meta property="og:title" content="RSA-1024加解密">
+<meta property="og:url" content="https:&#x2F;&#x2F;weitangli.github.io&#x2F;rsa-1024&#x2F;index.html">
 <meta property="og:site_name" content="WeitangLi">
-<meta property="og:description" content="记录工作中遇到的问题">
+<meta property="og:description" content="密钥对转字符串1234567891011121314151617@Testpublic void encodeKey() throws Exception &amp;#123;    String algorithm = &quot;RSA&quot;;    Integer keySize = 1024;    Base64.Encoder encoder = Base64.getEncoder();    KeyPair">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https:&#x2F;&#x2F;weitangli.github.io&#x2F;images&#x2F;og_image.png">
+<meta property="og:updated_time" content="2019-12-09T02:06:50.636Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https:&#x2F;&#x2F;weitangli.github.io&#x2F;images&#x2F;og_image.png">
 
@@ -77,7 +79,7 @@
         <div class="navbar-brand is-flex-center">
             <a class="navbar-item navbar-logo" href="/">
             
-                <img src="/images/logo.svg" alt="WeitangLi" height="28">
+                <img src="/images/logo.svg" alt="RSA-1024加解密" height="28">
             
             </a>
         </div>
@@ -110,6 +112,10 @@
                     
                 
                 
+                <a class="navbar-item is-hidden-tablet catalogue" title="目录" href="javascript:;">
+                    <i class="fas fa-list-ul"></i>
+                </a>
+                
                 
                 <a class="navbar-item search" title="搜索" href="javascript:;">
                     <i class="fas fa-search"></i>
@@ -123,25 +129,14 @@
     <section class="section">
         <div class="container">
             <div class="columns">
-                <div class="column is-8-tablet is-8-desktop is-6-widescreen has-order-2 column-main"><div class="card">
-    <div class="card-content">
-        <nav class="breadcrumb" aria-label="breadcrumbs">
-        <ul>
-            <li><a href="/tags">标签</a></li>
-            <li class="is-active"><a href="#" aria-current="page">okhttp</a></li>
-        </ul>
-        </nav>
-    </div>
-</div>
-
-    
+                <div class="column is-8-tablet is-8-desktop is-6-widescreen has-order-2 column-main">
 <div class="card">
     
     <div class="card-content article ">
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-11-27T09:27:07.000Z">2019-11-27</time>
+                <time class="level-item has-text-grey" datetime="2019-12-09T02:04:35.000Z">2019-12-09</time>
                 
                 <div class="level-item">
                 <a class="has-link-grey -link" href="/categories/java/">java</a>
@@ -151,33 +146,47 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    1 分钟 读完 (大约 138 个字)
+                    3 分钟 读完 (大约 485 个字)
                 </span>
                 
+                
+                <span class="level-item has-text-grey" id="busuanzi_container_page_pv">
+                    <i class="far fa-eye"></i>
+                    <span id="busuanzi_value_page_pv">0</span>次访问
+                </span>
                 
             </div>
         </div>
         
         <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
             
-                <a class="has-link-black-ter" href="/okhttp/">网络请求工具okhttp</a>
+                RSA-1024加解密
             
         </h1>
         <div class="content">
-            <blockquote>
-<p><a href="https://github.com/square/okhttp" target="_blank" rel="noopener">https://github.com/square/okhttp</a></p>
-</blockquote>
-<h2 id="发送Get请求"><a href="#发送Get请求" class="headerlink" title="发送Get请求"></a>发送Get请求</h2><figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-meta">@Test</span></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">get</span><span class="hljs-params">()</span> <span class="hljs-keyword">throws</span> Exception </span>&#123;</span><br><span class="line">    String url = <span class="hljs-string">"https://api.github.com/repos/square/okhttp/contributors"</span>;</span><br><span class="line"></span><br><span class="line">    Request request = <span class="hljs-keyword">new</span> Request.Builder().url(url).build();</span><br><span class="line">    Response response = <span class="hljs-keyword">new</span> OkHttpClient().newCall(request).execute();</span><br><span class="line"></span><br><span class="line">    ResponseBody responseBody = response.body();</span><br><span class="line">    log.info(<span class="hljs-string">"responseBody: &#123;&#125;"</span>, responseBody.string());</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+            <h2 id="密钥对转字符串"><a href="#密钥对转字符串" class="headerlink" title="密钥对转字符串"></a>密钥对转字符串</h2><figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-meta">@Test</span></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">encodeKey</span><span class="hljs-params">()</span> <span class="hljs-keyword">throws</span> Exception </span>&#123;</span><br><span class="line">    String algorithm = <span class="hljs-string">"RSA"</span>;</span><br><span class="line">    Integer keySize = <span class="hljs-number">1024</span>;</span><br><span class="line"></span><br><span class="line">    Base64.Encoder encoder = Base64.getEncoder();</span><br><span class="line"></span><br><span class="line">    KeyPairGenerator generator = KeyPairGenerator.getInstance(algorithm);</span><br><span class="line">    generator.initialize(keySize);</span><br><span class="line">    KeyPair keyPair = generator.generateKeyPair();</span><br><span class="line"></span><br><span class="line">    String encodedPublicKey = encoder.encodeToString(keyPair.getPublic().getEncoded());</span><br><span class="line">    log.info(<span class="hljs-string">"encodedPublicKey: &#123;&#125;"</span>, encodedPublicKey);</span><br><span class="line"></span><br><span class="line">    String encodedPrivateKey = encoder.encodeToString(keyPair.getPrivate().getEncoded());</span><br><span class="line">    log.info(<span class="hljs-string">"encodedPrivateKey: &#123;&#125;"</span>, encodedPrivateKey);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<a id="more"></a>
+
+<h2 id="字符串转密钥对"><a href="#字符串转密钥对" class="headerlink" title="字符串转密钥对"></a>字符串转密钥对</h2><figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-meta">@Test</span></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">decodeKey</span><span class="hljs-params">()</span> <span class="hljs-keyword">throws</span> Exception </span>&#123;</span><br><span class="line">    String algorithm = <span class="hljs-string">"RSA"</span>;</span><br><span class="line">    String encodedPublicKey = <span class="hljs-string">"MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCFvVg0HGnNdzE8EseyNd+FEpvwR8QHdhZoRG9DzCqmrnNVfrUAZ45YZ3orq942DDJZHh/0gH75O9hnGaC5tEjIH46FoTounBHXPBqVLTtr8Q2hmGtI29hnwo6D7whnCPcqB8QN9sTC+Gr6MEu4l7BU404FDZPWVld1GeTIZpV7zQIDAQAB"</span>;</span><br><span class="line">    String encodedPrivateKey = <span class="hljs-string">"MIICdwIBADANBgkqhkiG9w0BAQEFAASCAmEwggJdAgEAAoGBAIW9WDQcac13MTwSx7I134USm/BHxAd2FmhEb0PMKqauc1V+tQBnjlhneiur3jYMMlkeH/SAfvk72GcZoLm0SMgfjoWhOi6cEdc8GpUtO2vxDaGYa0jb2GfCjoPvCGcI9yoHxA32xML4avowS7iXsFTjTgUNk9ZWV3UZ5MhmlXvNAgMBAAECgYEAhI/pnb2MIdzDMIhs6Hf91ilb6A86fyrNiwxKPSliHVVNfLDbOEttDLOEpUT2PRxZy3vQsMmtEd3/4jHE3k2U1VZEkPsFM7HXeVbhbU79ygCj2I2nGc7xLJ5iZtUdfW9Y1ns3ImW3kLajh/eemTQd7csuBnmyOwJpVc8BKao+wAECQQDT2NglWGn97+8LSGH29Lqvd40rqiM2KVtbqE0oIgkpgfK9EJy3W4NKc8yf2bED7Dc1DZOUUnaf5oCfjiICfuTBAkEAoZ0O11ljC4ztzxuUH+lGEf0jHEx3qCmkrfcXiRb4rvHJwC4nvSo7dkWfdY733bNWA+VSzIQA7IZMR41o7mVeDQJBAKVP8JNr5AIR6mLOkAvLO6bTTulE8gdAzJbAxbzMmoO2cPpSbUiz88b0iDgxAu5BtW8D8ibrFsB+ed6IZke2R8ECQAithUF89DuHirFnOrHn9bI7lGoNlRM7gTMyJFphGGNUak/eapXWsbCtFl3ammaWHZVB+AsxP1dz8p6Y8jxyxvUCQCHp9C9VqzqI1IrlK7xnhtoHDHmeE7bL675B2UFzigmXXH6RluVRIPm2cjrJPKcl8E//IaQsJNvYci+1gP8cuDM="</span>;</span><br><span class="line"></span><br><span class="line">    Base64.Decoder decoder = Base64.getDecoder();</span><br><span class="line"></span><br><span class="line">    KeyFactory keyFactory = KeyFactory.getInstance(algorithm);</span><br><span class="line"></span><br><span class="line">    X509EncodedKeySpec publicKeySpec = <span class="hljs-keyword">new</span> X509EncodedKeySpec(decoder.decode(encodedPublicKey));</span><br><span class="line">    PublicKey publicKey = keyFactory.generatePublic(publicKeySpec);</span><br><span class="line">    log.info(<span class="hljs-string">"publicKey: &#123;&#125;"</span>, publicKey);</span><br><span class="line"></span><br><span class="line">    PKCS8EncodedKeySpec privateKeySpec = <span class="hljs-keyword">new</span> PKCS8EncodedKeySpec(decoder.decode(encodedPrivateKey));</span><br><span class="line">    PrivateKey privateKey = keyFactory.generatePrivate(privateKeySpec);</span><br><span class="line">    log.info(<span class="hljs-string">"privateKey: &#123;&#125;"</span>, privateKey);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="加密"><a href="#加密" class="headerlink" title="加密"></a>加密</h2><figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-meta">@Test</span></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">encrypt</span><span class="hljs-params">()</span> <span class="hljs-keyword">throws</span> Exception </span>&#123;</span><br><span class="line">    String algorithm = <span class="hljs-string">"RSA"</span>;</span><br><span class="line">    Integer keySize = <span class="hljs-number">1024</span>;</span><br><span class="line">    String seed = <span class="hljs-string">"abc"</span>;</span><br><span class="line">    String content = <span class="hljs-string">"123456"</span>;</span><br><span class="line"></span><br><span class="line">    Base64.Encoder encoder = Base64.getEncoder();</span><br><span class="line"></span><br><span class="line">    SecureRandom random = <span class="hljs-keyword">new</span> SecureRandom();</span><br><span class="line">    random.setSeed(seed.getBytes(<span class="hljs-string">"UTF-8"</span>));</span><br><span class="line"></span><br><span class="line">    KeyPairGenerator generator = KeyPairGenerator.getInstance(algorithm);</span><br><span class="line">    generator.initialize(keySize, random);</span><br><span class="line">    KeyPair keyPair = generator.generateKeyPair();</span><br><span class="line"></span><br><span class="line">    Cipher cipher = Cipher.getInstance(algorithm);</span><br><span class="line">    cipher.init(Cipher.ENCRYPT_MODE, keyPair.getPublic());</span><br><span class="line"></span><br><span class="line">    <span class="hljs-keyword">byte</span>[] encrypted = cipher.doFinal(content.getBytes(<span class="hljs-string">"UTF-8"</span>));</span><br><span class="line"></span><br><span class="line">    String cipherText = encoder.encodeToString(encrypted);</span><br><span class="line">    log.info(<span class="hljs-string">"cipherText: &#123;&#125;"</span>, cipherText);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="解密"><a href="#解密" class="headerlink" title="解密"></a>解密</h2><figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-meta">@Test</span></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">decrypt</span><span class="hljs-params">()</span> <span class="hljs-keyword">throws</span> Exception </span>&#123;</span><br><span class="line">    String algorithm = <span class="hljs-string">"RSA"</span>;</span><br><span class="line">    Integer keySize = <span class="hljs-number">1024</span>;</span><br><span class="line">    String seed = <span class="hljs-string">"abc"</span>;</span><br><span class="line">    String cipherText = <span class="hljs-string">"Gvw4zRVwgM9PsnlGwJRf1ZqGPA0+JQ04O1kt6azj7k3gSDaDwiDgKT+i184MV2XJbZ1RyW62e+85gOb0yl+sslxBG1o9I3gRuwv7+fYi0HqZjI+twN9P0X+uKv0ZKfxRMOvmS1gal1gAa+NTORC9+S3pD8z54+oA5W/zAvweYv4="</span>;</span><br><span class="line"></span><br><span class="line">    Base64.Decoder decoder = Base64.getDecoder();</span><br><span class="line"></span><br><span class="line">    SecureRandom random = <span class="hljs-keyword">new</span> SecureRandom();</span><br><span class="line">    random.setSeed(seed.getBytes(<span class="hljs-string">"UTF-8"</span>));</span><br><span class="line"></span><br><span class="line">    KeyPairGenerator generator = KeyPairGenerator.getInstance(algorithm);</span><br><span class="line">    generator.initialize(keySize, random);</span><br><span class="line">    KeyPair keyPair = generator.generateKeyPair();</span><br><span class="line"></span><br><span class="line">    Cipher cipher = Cipher.getInstance(algorithm);</span><br><span class="line">    cipher.init(Cipher.DECRYPT_MODE, keyPair.getPrivate());</span><br><span class="line"></span><br><span class="line">    <span class="hljs-keyword">byte</span>[] decrypted = cipher.doFinal(decoder.decode(cipherText));</span><br><span class="line">    log.info(<span class="hljs-string">"content: &#123;&#125;"</span>, <span class="hljs-keyword">new</span> String(decrypted, <span class="hljs-string">"UTF-8"</span>));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>源代码: <a href="https://github.com/weitangli/java-sample/blob/master/crypto-sample/src/test/java/com/sample/RSA1024Tests.java" target="_blank" rel="noopener">RSA1024Tests.java</a></p>
+
         </div>
         
-        
-        <div class="level is-mobile">
+        <div class="level is-size-7 is-uppercase">
             <div class="level-start">
                 <div class="level-item">
-                <a class="button is-size-7 is-light" href="/okhttp/#more">阅读更多</a>
+                    <span class="is-size-6 has-text-grey has-mr-7">#</span>
+                    <a class="has-link-grey -link" href="/tags/rsa-1024/" rel="tag">rsa-1024</a>
                 </div>
             </div>
         </div>
+        
         
         
     </div>
@@ -185,11 +194,76 @@
 
 
 
+<div class="card">
+    <div class="card-content">
+        <h3 class="menu-label has-text-centered">喜欢这篇文章？打赏一下作者吧</h3>
+        <div class="buttons is-centered">
+            
+                
+<a class="button is-info donate">
+    <span class="icon is-small">
+        <i class="fab fa-alipay"></i>
+    </span>
+    <span>支付宝</span>
+    <div class="qrcode"><img src="/images/alipay.jpg" alt="支付宝"></div>
+</a>
+
+                
+                
+<a class="button is-success donate">
+    <span class="icon is-small">
+        <i class="fab fa-weixin"></i>
+    </span>
+    <span>微信</span>
+    <div class="qrcode"><img src="/images/wechat.jpg" alt="微信"></div>
+</a>
+
+                
+        </div>
+    </div>
+</div>
 
 
 
+<div class="card card-transparent">
+    <div class="level post-navigation is-flex-wrap is-mobile">
+        
+        
+        <div class="level-end">
+            <a class="level level-item has-link-grey  article-nav-next" href="/aliyun-ons-transaction/">
+                <span class="level-item">收发事务消息</span>
+                <i class="level-item fas fa-chevron-right"></i>
+            </a>
+        </div>
+        
+    </div>
+</div>
 
 
+
+<div class="card">
+    <div class="card-content">
+        <h3 class="title is-5 has-text-weight-normal">评论</h3>
+        
+<div id="comment-container"></div>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1.4.1/dist/gitalk.css">
+<script src="https://cdn.jsdelivr.net/npm/gitalk@1.4.1/dist/gitalk.min.js"></script>
+<script>
+    var gitalk = new Gitalk({
+        clientID: 'a221d93af82dc4967493',
+        clientSecret: '14cbb6054ee2e9bd2b68b59f52af0caadb62f934',
+        id: '585a3b52be20a57eaf6ce32bc81cc646',
+        repo: 'weitangli.github.io',
+        owner: 'weitangli',
+        admin: "weitangli",
+        createIssueManually: false,
+        distractionFreeMode: false
+    })
+    gitalk.render('comment-container')
+</script>
+
+    </div>
+</div>
 </div>
                 
 
@@ -310,6 +384,32 @@
 </div>
     
         
+<div class="card widget" id="toc">
+    <div class="card-content">
+        <div class="menu">
+            <h3 class="menu-label">
+                目录
+            </h3>
+            <ul class="menu-list"><li>
+        <a class="is-flex" href="#密钥对转字符串">
+        <span class="has-mr-6">1</span>
+        <span>密钥对转字符串</span>
+        </a></li><li>
+        <a class="is-flex" href="#字符串转密钥对">
+        <span class="has-mr-6">2</span>
+        <span>字符串转密钥对</span>
+        </a></li><li>
+        <a class="is-flex" href="#加密">
+        <span class="has-mr-6">3</span>
+        <span>加密</span>
+        </a></li><li>
+        <a class="is-flex" href="#解密">
+        <span class="has-mr-6">4</span>
+        <span>解密</span>
+        </a></li></ul>
+        </div>
+    </div>
+</div>
     
         <div class="card widget">
     <div class="card-content">
@@ -1128,7 +1228,7 @@
             <div class="level-start has-text-centered-mobile">
                 <a class="footer-logo is-block has-mb-6" href="/">
                 
-                    <img src="/images/logo.svg" alt="WeitangLi" height="28">
+                    <img src="/images/logo.svg" alt="RSA-1024加解密" height="28">
                 
                 </a>
                 <p class="is-size-7">
