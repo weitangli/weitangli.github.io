@@ -7,19 +7,19 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 
-<title>AES-128加解密 - WeitangLi</title>
+<title>AES-128加密解密 - WeitangLi</title>
 
 
-    <meta name="description" content="密钥对转字符串1234567891011121314@Testpublic void encodeKey() throws Exception &amp;#123;    String algorithm = &quot;AES&quot;;    Integer keySize = 128;    Base64.Encoder encoder = Base64.getEncoder();    KeyGenerator g">
+    <meta name="description" content="https:&#x2F;&#x2F;www.it399.com&#x2F;blog&#x2F;web&#x2F;201805211243  密钥对转字符串1234567891011121314@Testpublic void encodeKey() throws Exception &amp;#123;    String algorithm = &quot;AES&quot;;    Integer keySize = 128;    Base64.Encoder en">
 <meta name="keywords" content="aes-128">
 <meta property="og:type" content="article">
-<meta property="og:title" content="AES-128加解密">
+<meta property="og:title" content="AES-128加密解密">
 <meta property="og:url" content="https:&#x2F;&#x2F;weitangli.github.io&#x2F;aes-128&#x2F;index.html">
 <meta property="og:site_name" content="WeitangLi">
-<meta property="og:description" content="密钥对转字符串1234567891011121314@Testpublic void encodeKey() throws Exception &amp;#123;    String algorithm = &quot;AES&quot;;    Integer keySize = 128;    Base64.Encoder encoder = Base64.getEncoder();    KeyGenerator g">
+<meta property="og:description" content="https:&#x2F;&#x2F;www.it399.com&#x2F;blog&#x2F;web&#x2F;201805211243  密钥对转字符串1234567891011121314@Testpublic void encodeKey() throws Exception &amp;#123;    String algorithm = &quot;AES&quot;;    Integer keySize = 128;    Base64.Encoder en">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https:&#x2F;&#x2F;weitangli.github.io&#x2F;images&#x2F;og_image.png">
-<meta property="og:updated_time" content="2019-12-12T06:31:39.606Z">
+<meta property="og:updated_time" content="2019-12-12T09:54:28.255Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https:&#x2F;&#x2F;weitangli.github.io&#x2F;images&#x2F;og_image.png">
 
@@ -79,7 +79,7 @@
         <div class="navbar-brand is-flex-center">
             <a class="navbar-item navbar-logo" href="/">
             
-                <img src="/images/logo.svg" alt="AES-128加解密" height="28">
+                <img src="/images/logo.svg" alt="AES-128加密解密" height="28">
             
             </a>
         </div>
@@ -146,7 +146,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    2 分钟 读完 (大约 262 个字)
+                    3 分钟 读完 (大约 522 个字)
                 </span>
                 
                 
@@ -160,19 +160,40 @@
         
         <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
             
-                AES-128加解密
+                AES-128加密解密
             
         </h1>
         <div class="content">
-            <h2 id="密钥对转字符串"><a href="#密钥对转字符串" class="headerlink" title="密钥对转字符串"></a>密钥对转字符串</h2><figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-meta">@Test</span></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">encodeKey</span><span class="hljs-params">()</span> <span class="hljs-keyword">throws</span> Exception </span>&#123;</span><br><span class="line">    String algorithm = <span class="hljs-string">"AES"</span>;</span><br><span class="line">    Integer keySize = <span class="hljs-number">128</span>;</span><br><span class="line"></span><br><span class="line">    Base64.Encoder encoder = Base64.getEncoder();</span><br><span class="line"></span><br><span class="line">    KeyGenerator generator = KeyGenerator.getInstance(algorithm);</span><br><span class="line">    generator.init(keySize);</span><br><span class="line">    SecretKey secretKey = generator.generateKey();</span><br><span class="line"></span><br><span class="line">    String encodedSecretKey = encoder.encodeToString(secretKey.getEncoded());</span><br><span class="line">    log.info(<span class="hljs-string">"encodedSecretKey: &#123;&#125;"</span>, encodedSecretKey);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+            <blockquote>
+<p><a href="https://www.it399.com/blog/web/201805211243" target="_blank" rel="noopener">https://www.it399.com/blog/web/201805211243</a></p>
+</blockquote>
+<h2 id="密钥对转字符串"><a href="#密钥对转字符串" class="headerlink" title="密钥对转字符串"></a>密钥对转字符串</h2><figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-meta">@Test</span></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">encodeKey</span><span class="hljs-params">()</span> <span class="hljs-keyword">throws</span> Exception </span>&#123;</span><br><span class="line">    String algorithm = <span class="hljs-string">"AES"</span>;</span><br><span class="line">    Integer keySize = <span class="hljs-number">128</span>;</span><br><span class="line"></span><br><span class="line">    Base64.Encoder encoder = Base64.getEncoder();</span><br><span class="line"></span><br><span class="line">    KeyGenerator generator = KeyGenerator.getInstance(algorithm);</span><br><span class="line">    generator.init(keySize);</span><br><span class="line">    SecretKey secretKey = generator.generateKey();</span><br><span class="line"></span><br><span class="line">    String encodedSecretKey = encoder.encodeToString(secretKey.getEncoded());</span><br><span class="line">    log.info(<span class="hljs-string">"encodedSecretKey: &#123;&#125;"</span>, encodedSecretKey);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <a id="more"></a>
 
 <h2 id="字符串转密钥对"><a href="#字符串转密钥对" class="headerlink" title="字符串转密钥对"></a>字符串转密钥对</h2><figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-meta">@Test</span></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">decodeKey</span><span class="hljs-params">()</span> <span class="hljs-keyword">throws</span> Exception </span>&#123;</span><br><span class="line">    String algorithm = <span class="hljs-string">"AES"</span>;</span><br><span class="line">    String encodedSecretKey = <span class="hljs-string">"C00t1uPWrisI2Fwm7MU76g=="</span>;</span><br><span class="line"></span><br><span class="line">    Base64.Decoder decoder = Base64.getDecoder();</span><br><span class="line"></span><br><span class="line">    SecretKeySpec secretKey = <span class="hljs-keyword">new</span> SecretKeySpec(decoder.decode(encodedSecretKey), algorithm);</span><br><span class="line">    log.info(<span class="hljs-string">"secretKey: &#123;&#125;"</span>, secretKey);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<h2 id="加密"><a href="#加密" class="headerlink" title="加密"></a>加密</h2><figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-meta">@Test</span></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">encrypt</span><span class="hljs-params">()</span> <span class="hljs-keyword">throws</span> Exception </span>&#123;</span><br><span class="line">    String algorithm = <span class="hljs-string">"AES"</span>;</span><br><span class="line">    Integer keySize = <span class="hljs-number">128</span>;</span><br><span class="line">    String seed = <span class="hljs-string">"abc"</span>;</span><br><span class="line">    String content = <span class="hljs-string">"123456"</span>;</span><br><span class="line"></span><br><span class="line">    Base64.Encoder encoder = Base64.getEncoder();</span><br><span class="line"></span><br><span class="line">    SecureRandom random = <span class="hljs-keyword">new</span> SecureRandom();</span><br><span class="line">    random.setSeed(seed.getBytes(<span class="hljs-string">"UTF-8"</span>));</span><br><span class="line"></span><br><span class="line">    KeyGenerator generator = KeyGenerator.getInstance(algorithm);</span><br><span class="line">    generator.init(keySize, random);</span><br><span class="line">    SecretKey secretKey = generator.generateKey();</span><br><span class="line"></span><br><span class="line">    Cipher cipher = Cipher.getInstance(algorithm);</span><br><span class="line">    cipher.init(Cipher.ENCRYPT_MODE, secretKey);</span><br><span class="line"></span><br><span class="line">    <span class="hljs-keyword">byte</span>[] encrypted = cipher.doFinal(content.getBytes(<span class="hljs-string">"UTF-8"</span>));</span><br><span class="line"></span><br><span class="line">    String cipherText = encoder.encodeToString(encrypted);</span><br><span class="line">    log.info(<span class="hljs-string">"cipherText: &#123;&#125;"</span>, cipherText);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="加密"><a href="#加密" class="headerlink" title="加密"></a>加密</h2><ul>
+<li>不指定模式和填充, 默认为ECB/PKCS5Padding</li>
+</ul>
+<figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-meta">@Test</span></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">encrypt</span><span class="hljs-params">()</span> <span class="hljs-keyword">throws</span> Exception </span>&#123;</span><br><span class="line">    String algorithm = <span class="hljs-string">"AES"</span>;</span><br><span class="line">    Integer keySize = <span class="hljs-number">128</span>;</span><br><span class="line">    String seed = <span class="hljs-string">"abc"</span>;</span><br><span class="line">    String content = <span class="hljs-string">"123456"</span>;</span><br><span class="line"></span><br><span class="line">    Base64.Encoder encoder = Base64.getEncoder();</span><br><span class="line"></span><br><span class="line">    SecureRandom random = <span class="hljs-keyword">new</span> SecureRandom();</span><br><span class="line">    random.setSeed(seed.getBytes(<span class="hljs-string">"UTF-8"</span>));</span><br><span class="line"></span><br><span class="line">    KeyGenerator generator = KeyGenerator.getInstance(algorithm);</span><br><span class="line">    generator.init(keySize, random);</span><br><span class="line">    SecretKey secretKey = generator.generateKey();</span><br><span class="line"></span><br><span class="line">    Cipher cipher = Cipher.getInstance(algorithm);</span><br><span class="line">    cipher.init(Cipher.ENCRYPT_MODE, secretKey);</span><br><span class="line"></span><br><span class="line">    <span class="hljs-keyword">byte</span>[] encrypted = cipher.doFinal(content.getBytes(<span class="hljs-string">"UTF-8"</span>));</span><br><span class="line"></span><br><span class="line">    String cipherText = encoder.encodeToString(encrypted);</span><br><span class="line">    log.info(<span class="hljs-string">"cipherText: &#123;&#125;"</span>, cipherText);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<h2 id="解密"><a href="#解密" class="headerlink" title="解密"></a>解密</h2><figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-meta">@Test</span></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">decrypt</span><span class="hljs-params">()</span> <span class="hljs-keyword">throws</span> Exception </span>&#123;</span><br><span class="line">    String algorithm = <span class="hljs-string">"AES"</span>;</span><br><span class="line">    Integer keySize = <span class="hljs-number">128</span>;</span><br><span class="line">    String seed = <span class="hljs-string">"abc"</span>;</span><br><span class="line">    String cipherText = <span class="hljs-string">"t988Lq2E/lEH8oTBjGoZOQ=="</span>;</span><br><span class="line"></span><br><span class="line">    Base64.Decoder decoder = Base64.getDecoder();</span><br><span class="line"></span><br><span class="line">    SecureRandom random = <span class="hljs-keyword">new</span> SecureRandom();</span><br><span class="line">    random.setSeed(seed.getBytes(<span class="hljs-string">"UTF-8"</span>));</span><br><span class="line"></span><br><span class="line">    KeyGenerator generator = KeyGenerator.getInstance(algorithm);</span><br><span class="line">    generator.init(keySize, random);</span><br><span class="line">    SecretKey secretKey = generator.generateKey();</span><br><span class="line"></span><br><span class="line">    Cipher cipher = Cipher.getInstance(algorithm);</span><br><span class="line">    cipher.init(Cipher.DECRYPT_MODE, secretKey);</span><br><span class="line"></span><br><span class="line">    <span class="hljs-keyword">byte</span>[] decrypted = cipher.doFinal(decoder.decode(cipherText));</span><br><span class="line">    log.info(<span class="hljs-string">"content: &#123;&#125;"</span>, <span class="hljs-keyword">new</span> String(decrypted, <span class="hljs-string">"UTF-8"</span>));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="解密"><a href="#解密" class="headerlink" title="解密"></a>解密</h2><ul>
+<li>不指定模式和填充, 默认为ECB/PKCS5Padding</li>
+</ul>
+<figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-meta">@Test</span></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">decrypt</span><span class="hljs-params">()</span> <span class="hljs-keyword">throws</span> Exception </span>&#123;</span><br><span class="line">    String algorithm = <span class="hljs-string">"AES"</span>;</span><br><span class="line">    Integer keySize = <span class="hljs-number">128</span>;</span><br><span class="line">    String seed = <span class="hljs-string">"abc"</span>;</span><br><span class="line">    String cipherText = <span class="hljs-string">"t988Lq2E/lEH8oTBjGoZOQ=="</span>;</span><br><span class="line"></span><br><span class="line">    Base64.Decoder decoder = Base64.getDecoder();</span><br><span class="line"></span><br><span class="line">    SecureRandom random = <span class="hljs-keyword">new</span> SecureRandom();</span><br><span class="line">    random.setSeed(seed.getBytes(<span class="hljs-string">"UTF-8"</span>));</span><br><span class="line"></span><br><span class="line">    KeyGenerator generator = KeyGenerator.getInstance(algorithm);</span><br><span class="line">    generator.init(keySize, random);</span><br><span class="line">    SecretKey secretKey = generator.generateKey();</span><br><span class="line"></span><br><span class="line">    Cipher cipher = Cipher.getInstance(algorithm);</span><br><span class="line">    cipher.init(Cipher.DECRYPT_MODE, secretKey);</span><br><span class="line"></span><br><span class="line">    <span class="hljs-keyword">byte</span>[] decrypted = cipher.doFinal(decoder.decode(cipherText));</span><br><span class="line">    log.info(<span class="hljs-string">"content: &#123;&#125;"</span>, <span class="hljs-keyword">new</span> String(decrypted, <span class="hljs-string">"UTF-8"</span>));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="IV加密"><a href="#IV加密" class="headerlink" title="IV加密"></a>IV加密</h2><ul>
+<li>指定模式和填充为CBC/PKCS5Padding</li>
+<li>初始化向量Initialization Vector, 必须为16位</li>
+</ul>
+<figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-meta">@Test</span></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">ivEncrypt</span><span class="hljs-params">()</span> <span class="hljs-keyword">throws</span> Exception </span>&#123;</span><br><span class="line">    String algorithm = <span class="hljs-string">"AES"</span>;</span><br><span class="line">    Integer keySize = <span class="hljs-number">128</span>;</span><br><span class="line">    String seed = <span class="hljs-string">"abc"</span>;</span><br><span class="line">    String iv = <span class="hljs-string">"123456789abcdefg"</span>;</span><br><span class="line">    String ivAlgorithm = <span class="hljs-string">"AES/CBC/PKCS5Padding"</span>;</span><br><span class="line">    String content = <span class="hljs-string">"123456"</span>;</span><br><span class="line"></span><br><span class="line">    Base64.Encoder encoder = Base64.getEncoder();</span><br><span class="line"></span><br><span class="line">    SecureRandom random = <span class="hljs-keyword">new</span> SecureRandom();</span><br><span class="line">    random.setSeed(seed.getBytes(<span class="hljs-string">"UTF-8"</span>));</span><br><span class="line"></span><br><span class="line">    KeyGenerator generator = KeyGenerator.getInstance(algorithm);</span><br><span class="line">    generator.init(keySize, random);</span><br><span class="line">    SecretKey secretKey = generator.generateKey();</span><br><span class="line"></span><br><span class="line">    AlgorithmParameterSpec parameterSpec = <span class="hljs-keyword">new</span> IvParameterSpec(iv.getBytes(<span class="hljs-string">"UTF-8"</span>));</span><br><span class="line"></span><br><span class="line">    Cipher cipher = Cipher.getInstance(ivAlgorithm);</span><br><span class="line">    cipher.init(Cipher.ENCRYPT_MODE, secretKey, parameterSpec);</span><br><span class="line"></span><br><span class="line">    <span class="hljs-keyword">byte</span>[] encrypted = cipher.doFinal(content.getBytes(<span class="hljs-string">"UTF-8"</span>));</span><br><span class="line"></span><br><span class="line">    String cipherText = encoder.encodeToString(encrypted);</span><br><span class="line">    log.info(<span class="hljs-string">"cipherText: &#123;&#125;"</span>, cipherText);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="IV解密"><a href="#IV解密" class="headerlink" title="IV解密"></a>IV解密</h2><ul>
+<li>指定模式和填充为CBC/PKCS5Padding</li>
+<li>初始化向量Initialization Vector, 必须为16位</li>
+</ul>
+<figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-meta">@Test</span></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">ivDecrypt</span><span class="hljs-params">()</span> <span class="hljs-keyword">throws</span> Exception </span>&#123;</span><br><span class="line">    String algorithm = <span class="hljs-string">"AES"</span>;</span><br><span class="line">    Integer keySize = <span class="hljs-number">128</span>;</span><br><span class="line">    String seed = <span class="hljs-string">"abc"</span>;</span><br><span class="line">    String iv = <span class="hljs-string">"123456789abcdefg"</span>;</span><br><span class="line">    String ivAlgorithm = <span class="hljs-string">"AES/CBC/PKCS5Padding"</span>;</span><br><span class="line">    String cipherText = <span class="hljs-string">"jQBfjxGWOMICDHSo6+FBXQ=="</span>;</span><br><span class="line"></span><br><span class="line">    Base64.Decoder decoder = Base64.getDecoder();</span><br><span class="line"></span><br><span class="line">    SecureRandom random = <span class="hljs-keyword">new</span> SecureRandom();</span><br><span class="line">    random.setSeed(seed.getBytes(<span class="hljs-string">"UTF-8"</span>));</span><br><span class="line"></span><br><span class="line">    KeyGenerator generator = KeyGenerator.getInstance(algorithm);</span><br><span class="line">    generator.init(keySize, random);</span><br><span class="line">    SecretKey secretKey = generator.generateKey();</span><br><span class="line"></span><br><span class="line">    AlgorithmParameterSpec parameterSpec = <span class="hljs-keyword">new</span> IvParameterSpec(iv.getBytes(<span class="hljs-string">"UTF-8"</span>));</span><br><span class="line"></span><br><span class="line">    Cipher cipher = Cipher.getInstance(ivAlgorithm);</span><br><span class="line">    cipher.init(Cipher.DECRYPT_MODE, secretKey, parameterSpec);</span><br><span class="line"></span><br><span class="line">    <span class="hljs-keyword">byte</span>[] decrypted = cipher.doFinal(decoder.decode(cipherText));</span><br><span class="line">    log.info(<span class="hljs-string">"content: &#123;&#125;"</span>, <span class="hljs-keyword">new</span> String(decrypted, <span class="hljs-string">"UTF-8"</span>));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p>源代码: <a href="https://github.com/weitangli/java-sample/blob/master/crypto-sample/src/test/java/com/sample/AES128Tests.java" target="_blank" rel="noopener">AES128Tests.java</a></p>
 
@@ -231,7 +252,7 @@
         
         <div class="level-end">
             <a class="level level-item has-link-grey  article-nav-next" href="/rsa-1024/">
-                <span class="level-item">RSA-1024加解密</span>
+                <span class="level-item">RSA-1024加密解密</span>
                 <i class="level-item fas fa-chevron-right"></i>
             </a>
         </div>
@@ -406,6 +427,14 @@
         <a class="is-flex" href="#解密">
         <span class="has-mr-6">4</span>
         <span>解密</span>
+        </a></li><li>
+        <a class="is-flex" href="#IV加密">
+        <span class="has-mr-6">5</span>
+        <span>IV加密</span>
+        </a></li><li>
+        <a class="is-flex" href="#IV解密">
+        <span class="has-mr-6">6</span>
+        <span>IV解密</span>
         </a></li></ul>
         </div>
     </div>
@@ -547,14 +576,14 @@
             
             <a href="/aes-128/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="AES-128加解密">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="AES-128加密解密">
                 </p>
             </a>
             
             <div class="media-content">
                 <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-12-12T06:30:05.000Z">2019-12-12</time></div>
-                    <a href="/aes-128/" class="title has-link-black-ter is-size-6 has-text-weight-normal">AES-128加解密</a>
+                    <a href="/aes-128/" class="title has-link-black-ter is-size-6 has-text-weight-normal">AES-128加密解密</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/java/">java</a>
                     </p>
@@ -566,14 +595,14 @@
             
             <a href="/rsa-1024/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="RSA-1024加解密">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="RSA-1024加密解密">
                 </p>
             </a>
             
             <div class="media-content">
                 <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-12-09T02:04:35.000Z">2019-12-09</time></div>
-                    <a href="/rsa-1024/" class="title has-link-black-ter is-size-6 has-text-weight-normal">RSA-1024加解密</a>
+                    <a href="/rsa-1024/" class="title has-link-black-ter is-size-6 has-text-weight-normal">RSA-1024加密解密</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/java/">java</a>
                     </p>
@@ -899,14 +928,14 @@
             
             <a href="/aes-128/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="AES-128加解密">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="AES-128加密解密">
                 </p>
             </a>
             
             <div class="media-content">
                 <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-12-12T06:30:05.000Z">2019-12-12</time></div>
-                    <a href="/aes-128/" class="title has-link-black-ter is-size-6 has-text-weight-normal">AES-128加解密</a>
+                    <a href="/aes-128/" class="title has-link-black-ter is-size-6 has-text-weight-normal">AES-128加密解密</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/java/">java</a>
                     </p>
@@ -918,14 +947,14 @@
             
             <a href="/rsa-1024/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="RSA-1024加解密">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="RSA-1024加密解密">
                 </p>
             </a>
             
             <div class="media-content">
                 <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-12-09T02:04:35.000Z">2019-12-09</time></div>
-                    <a href="/rsa-1024/" class="title has-link-black-ter is-size-6 has-text-weight-normal">RSA-1024加解密</a>
+                    <a href="/rsa-1024/" class="title has-link-black-ter is-size-6 has-text-weight-normal">RSA-1024加密解密</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/java/">java</a>
                     </p>
@@ -1242,7 +1271,7 @@
             <div class="level-start has-text-centered-mobile">
                 <a class="footer-logo is-block has-mb-6" href="/">
                 
-                    <img src="/images/logo.svg" alt="AES-128加解密" height="28">
+                    <img src="/images/logo.svg" alt="AES-128加密解密" height="28">
                 
                 </a>
                 <p class="is-size-7">
