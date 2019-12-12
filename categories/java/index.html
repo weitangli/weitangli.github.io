@@ -142,6 +142,59 @@
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2019-12-12T06:30:05.000Z">2019-12-12</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/java/">java</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    2 分钟 读完 (大约 262 个字)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/aes-128/">AES-128加解密</a>
+            
+        </h1>
+        <div class="content">
+            <h2 id="密钥对转字符串"><a href="#密钥对转字符串" class="headerlink" title="密钥对转字符串"></a>密钥对转字符串</h2><figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-meta">@Test</span></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">encodeKey</span><span class="hljs-params">()</span> <span class="hljs-keyword">throws</span> Exception </span>&#123;</span><br><span class="line">    String algorithm = <span class="hljs-string">"AES"</span>;</span><br><span class="line">    Integer keySize = <span class="hljs-number">128</span>;</span><br><span class="line"></span><br><span class="line">    Base64.Encoder encoder = Base64.getEncoder();</span><br><span class="line"></span><br><span class="line">    KeyGenerator generator = KeyGenerator.getInstance(algorithm);</span><br><span class="line">    generator.init(keySize);</span><br><span class="line">    SecretKey secretKey = generator.generateKey();</span><br><span class="line"></span><br><span class="line">    String encodedSecretKey = encoder.encodeToString(secretKey.getEncoded());</span><br><span class="line">    log.info(<span class="hljs-string">"encodedSecretKey: &#123;&#125;"</span>, encodedSecretKey);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        </div>
+        
+        
+        <div class="level is-mobile">
+            <div class="level-start">
+                <div class="level-item">
+                <a class="button is-size-7 is-light" href="/aes-128/#more">阅读更多</a>
+                </div>
+            </div>
+        </div>
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+    
+<div class="card">
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
                 <time class="level-item has-text-grey" datetime="2019-12-09T02:04:35.000Z">2019-12-09</time>
                 
                 <div class="level-item">
@@ -620,61 +673,6 @@
 
 
 
-    
-<div class="card">
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-11-28T03:26:12.000Z">2019-11-28</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/java/">java</a>
-                </div>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    2 分钟 读完 (大约 373 个字)
-                </span>
-                
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/jackson/">JSON解析工具jackson</a>
-            
-        </h1>
-        <div class="content">
-            <blockquote>
-<p><a href="https://github.com/FasterXML/jackson-databind" target="_blank" rel="noopener">https://github.com/FasterXML/jackson-databind</a></p>
-</blockquote>
-        </div>
-        
-        
-        <div class="level is-mobile">
-            <div class="level-start">
-                <div class="level-item">
-                <a class="button is-size-7 is-light" href="/jackson/#more">阅读更多</a>
-                </div>
-            </div>
-        </div>
-        
-        
-    </div>
-</div>
-
-
-
-
-
-
-
-
 
     
 <div class="card card-transparent">
@@ -740,7 +738,7 @@
                         文章
                     </p>
                     <p class="title has-text-weight-normal">
-                        38
+                        39
                     </p>
                 </div>
             </div>
@@ -760,7 +758,7 @@
                         标签
                     </p>
                     <p class="title has-text-weight-normal">
-                        26
+                        27
                     </p>
                 </div>
             </div>
@@ -907,7 +905,7 @@
                 <span class="level-item">java</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">21</span>
+                <span class="level-item tag">22</span>
             </span>
         </a></li><li>
         <a class="level is-marginless" href="/categories/redis/">
@@ -936,7 +934,7 @@
         <h3 class="menu-label">
             标签云
         </h3>
-        <a href="/tags/activemq/" style="font-size: 16.67px;">activemq</a> <a href="/tags/alibaba-canal/" style="font-size: 10px;">alibaba-canal</a> <a href="/tags/aliyun-log/" style="font-size: 10px;">aliyun-log</a> <a href="/tags/aliyun-ons/" style="font-size: 13.33px;">aliyun-ons</a> <a href="/tags/aliyun-oss/" style="font-size: 13.33px;">aliyun-oss</a> <a href="/tags/apache-commons/" style="font-size: 10px;">apache-commons</a> <a href="/tags/chcp/" style="font-size: 10px;">chcp</a> <a href="/tags/easemob-im/" style="font-size: 10px;">easemob-im</a> <a href="/tags/flume/" style="font-size: 13.33px;">flume</a> <a href="/tags/jackson/" style="font-size: 10px;">jackson</a> <a href="/tags/jar-manifest/" style="font-size: 10px;">jar-manifest</a> <a href="/tags/java-servlet/" style="font-size: 10px;">java-servlet</a> <a href="/tags/jedis/" style="font-size: 10px;">jedis</a> <a href="/tags/jiguang-push/" style="font-size: 10px;">jiguang-push</a> <a href="/tags/jooq/" style="font-size: 10px;">jooq</a> <a href="/tags/jwt/" style="font-size: 10px;">jwt</a> <a href="/tags/maven/" style="font-size: 10px;">maven</a> <a href="/tags/okhttp/" style="font-size: 10px;">okhttp</a> <a href="/tags/reactor/" style="font-size: 20px;">reactor</a> <a href="/tags/redis/" style="font-size: 13.33px;">redis</a> <a href="/tags/rocketmq/" style="font-size: 16.67px;">rocketmq</a> <a href="/tags/rsa-1024/" style="font-size: 10px;">rsa-1024</a> <a href="/tags/sorting-algorithms/" style="font-size: 10px;">sorting-algorithms</a> <a href="/tags/vertx/" style="font-size: 10px;">vertx</a> <a href="/tags/webmagic/" style="font-size: 10px;">webmagic</a> <a href="/tags/wechat-api/" style="font-size: 10px;">wechat-api</a>
+        <a href="/tags/activemq/" style="font-size: 16.67px;">activemq</a> <a href="/tags/aes-128/" style="font-size: 10px;">aes-128</a> <a href="/tags/alibaba-canal/" style="font-size: 10px;">alibaba-canal</a> <a href="/tags/aliyun-log/" style="font-size: 10px;">aliyun-log</a> <a href="/tags/aliyun-ons/" style="font-size: 13.33px;">aliyun-ons</a> <a href="/tags/aliyun-oss/" style="font-size: 13.33px;">aliyun-oss</a> <a href="/tags/apache-commons/" style="font-size: 10px;">apache-commons</a> <a href="/tags/chcp/" style="font-size: 10px;">chcp</a> <a href="/tags/easemob-im/" style="font-size: 10px;">easemob-im</a> <a href="/tags/flume/" style="font-size: 13.33px;">flume</a> <a href="/tags/jackson/" style="font-size: 10px;">jackson</a> <a href="/tags/jar-manifest/" style="font-size: 10px;">jar-manifest</a> <a href="/tags/java-servlet/" style="font-size: 10px;">java-servlet</a> <a href="/tags/jedis/" style="font-size: 10px;">jedis</a> <a href="/tags/jiguang-push/" style="font-size: 10px;">jiguang-push</a> <a href="/tags/jooq/" style="font-size: 10px;">jooq</a> <a href="/tags/jwt/" style="font-size: 10px;">jwt</a> <a href="/tags/maven/" style="font-size: 10px;">maven</a> <a href="/tags/okhttp/" style="font-size: 10px;">okhttp</a> <a href="/tags/reactor/" style="font-size: 20px;">reactor</a> <a href="/tags/redis/" style="font-size: 13.33px;">redis</a> <a href="/tags/rocketmq/" style="font-size: 16.67px;">rocketmq</a> <a href="/tags/rsa-1024/" style="font-size: 10px;">rsa-1024</a> <a href="/tags/sorting-algorithms/" style="font-size: 10px;">sorting-algorithms</a> <a href="/tags/vertx/" style="font-size: 10px;">vertx</a> <a href="/tags/webmagic/" style="font-size: 10px;">webmagic</a> <a href="/tags/wechat-api/" style="font-size: 10px;">wechat-api</a>
     </div>
 </div>
     
@@ -948,6 +946,25 @@
         <h3 class="menu-label">
             最新文章
         </h3>
+        
+        <article class="media">
+            
+            <a href="/aes-128/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="AES-128加解密">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-12-12T06:30:05.000Z">2019-12-12</time></div>
+                    <a href="/aes-128/" class="title has-link-black-ter is-size-6 has-text-weight-normal">AES-128加解密</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/java/">java</a>
+                    </p>
+                </div>
+            </div>
+        </article>
         
         <article class="media">
             
@@ -1025,25 +1042,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/jar-manifest/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="manifest配置信息">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-12-06T02:56:12.000Z">2019-12-06</time></div>
-                    <a href="/jar-manifest/" class="title has-link-black-ter is-size-6 has-text-weight-normal">manifest配置信息</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/java/">java</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
         
@@ -1061,7 +1059,7 @@
                     <span class="level-item">十二月 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">13</span>
+                    <span class="level-item tag">14</span>
                 </span>
             </a>
         </li>
@@ -1094,6 +1092,13 @@
                     <a class="tags has-addons" href="/tags/activemq/">
                         <span class="tag">activemq</span>
                         <span class="tag is-grey">3</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/aes-128/">
+                        <span class="tag">aes-128</span>
+                        <span class="tag is-grey">1</span>
                     </a>
                 </div>
                 
@@ -1296,6 +1301,25 @@
         
         <article class="media">
             
+            <a href="/aes-128/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="AES-128加解密">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-12-12T06:30:05.000Z">2019-12-12</time></div>
+                    <a href="/aes-128/" class="title has-link-black-ter is-size-6 has-text-weight-normal">AES-128加解密</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/java/">java</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
             <a href="/rsa-1024/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="/images/thumbnail.svg" alt="RSA-1024加解密">
@@ -1370,25 +1394,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/jar-manifest/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="manifest配置信息">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-12-06T02:56:12.000Z">2019-12-06</time></div>
-                    <a href="/jar-manifest/" class="title has-link-black-ter is-size-6 has-text-weight-normal">manifest配置信息</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/java/">java</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
     
@@ -1406,7 +1411,7 @@
                     <span class="level-item">十二月 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">13</span>
+                    <span class="level-item tag">14</span>
                 </span>
             </a>
         </li>
@@ -1439,6 +1444,13 @@
                     <a class="tags has-addons" href="/tags/activemq/">
                         <span class="tag">activemq</span>
                         <span class="tag is-grey">3</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/aes-128/">
+                        <span class="tag">aes-128</span>
+                        <span class="tag is-grey">1</span>
                     </a>
                 </div>
                 
