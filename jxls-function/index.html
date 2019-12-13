@@ -7,19 +7,19 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 
-<title>让flux重复执行的案例 - WeitangLi</title>
+<title>jxls之自定义函数 - WeitangLi</title>
 
 
-    <meta name="description" content="案例一:  当数据为空时, 重复执行 最多重复执行3次, 每次间隔1秒 默认值为-1">
-<meta name="keywords" content="reactor">
+    <meta name="description" content="http:&#x2F;&#x2F;jxls.sourceforge.net&#x2F;reference&#x2F;expression_language.html">
+<meta name="keywords" content="jxls">
 <meta property="og:type" content="article">
-<meta property="og:title" content="让flux重复执行的案例">
-<meta property="og:url" content="https:&#x2F;&#x2F;weitangli.github.io&#x2F;reactor-flux-repeat&#x2F;index.html">
+<meta property="og:title" content="jxls之自定义函数">
+<meta property="og:url" content="https:&#x2F;&#x2F;weitangli.github.io&#x2F;jxls-function&#x2F;index.html">
 <meta property="og:site_name" content="WeitangLi">
-<meta property="og:description" content="案例一:  当数据为空时, 重复执行 最多重复执行3次, 每次间隔1秒 默认值为-1">
+<meta property="og:description" content="http:&#x2F;&#x2F;jxls.sourceforge.net&#x2F;reference&#x2F;expression_language.html">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https:&#x2F;&#x2F;weitangli.github.io&#x2F;images&#x2F;og_image.png">
-<meta property="og:updated_time" content="2019-11-25T01:21:43.808Z">
+<meta property="og:updated_time" content="2019-12-13T10:16:06.041Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https:&#x2F;&#x2F;weitangli.github.io&#x2F;images&#x2F;og_image.png">
 
@@ -79,7 +79,7 @@
         <div class="navbar-brand is-flex-center">
             <a class="navbar-item navbar-logo" href="/">
             
-                <img src="/images/logo.svg" alt="让flux重复执行的案例" height="28">
+                <img src="/images/logo.svg" alt="jxls之自定义函数" height="28">
             
             </a>
         </div>
@@ -132,7 +132,7 @@
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-11-24T04:22:55.000Z">2019-11-24</time>
+                <time class="level-item has-text-grey" datetime="2019-12-13T10:05:58.000Z">2019-12-13</time>
                 
                 <div class="level-item">
                 <a class="has-link-grey -link" href="/categories/java/">java</a>
@@ -142,7 +142,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    1 分钟 读完 (大约 144 个字)
+                    2 分钟 读完 (大约 331 个字)
                 </span>
                 
                 
@@ -156,21 +156,27 @@
         
         <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
             
-                让flux重复执行的案例
+                jxls之自定义函数
             
         </h1>
         <div class="content">
-            <p>案例一:</p>
-<ul>
-<li>当数据为空时, 重复执行</li>
-<li>最多重复执行3次, 每次间隔1秒</li>
-<li>默认值为-1</li>
-</ul>
+            <blockquote>
+<p><a href="http://jxls.sourceforge.net/reference/expression_language.html" target="_blank" rel="noopener">http://jxls.sourceforge.net/reference/expression_language.html</a></p>
+</blockquote>
 <a id="more"></a>
 
-<figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-meta">@Test</span></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">repeatWhenEmpty</span><span class="hljs-params">()</span> <span class="hljs-keyword">throws</span> Exception </span>&#123;</span><br><span class="line">    Flux&lt;Integer&gt; flux = Flux.defer(</span><br><span class="line">            () -&gt; &#123;</span><br><span class="line">                log.info(<span class="hljs-string">"return empty flux"</span>);</span><br><span class="line">                <span class="hljs-keyword">return</span> Flux.&lt;Integer&gt;empty();</span><br><span class="line">            &#125;)</span><br><span class="line">            .repeatWhen(repeatFactory -&gt; &#123;</span><br><span class="line">                Integer maxCount = <span class="hljs-number">3</span>;</span><br><span class="line">                AtomicInteger counter = <span class="hljs-keyword">new</span> AtomicInteger(<span class="hljs-number">0</span>);</span><br><span class="line">                <span class="hljs-keyword">return</span> repeatFactory</span><br><span class="line">                        .takeWhile(size -&gt; &#123;</span><br><span class="line">                            <span class="hljs-comment">// 重复执行次数加1</span></span><br><span class="line">                            Integer count = counter.incrementAndGet();</span><br><span class="line">                            log.info(<span class="hljs-string">"count=&#123;&#125; size=&#123;&#125;"</span>, count, size);</span><br><span class="line"></span><br><span class="line">                            <span class="hljs-comment">// 当数据为空时, 重复执行</span></span><br><span class="line">                            <span class="hljs-keyword">if</span> (size == <span class="hljs-number">0</span>) &#123;</span><br><span class="line">                                <span class="hljs-comment">// 最多重复执行3次</span></span><br><span class="line">                                <span class="hljs-keyword">if</span> (count &gt;= maxCount) &#123;</span><br><span class="line">                                    <span class="hljs-keyword">return</span> <span class="hljs-keyword">false</span>;</span><br><span class="line">                                &#125;</span><br><span class="line">                                <span class="hljs-keyword">return</span> <span class="hljs-keyword">true</span>;</span><br><span class="line">                            &#125;</span><br><span class="line"></span><br><span class="line">                            <span class="hljs-keyword">return</span> <span class="hljs-keyword">false</span>;</span><br><span class="line">                        &#125;)</span><br><span class="line">                        <span class="hljs-comment">// 每次间隔1秒</span></span><br><span class="line">                        .delayElements(Duration.ofSeconds(<span class="hljs-number">1</span>));</span><br><span class="line">            &#125;)</span><br><span class="line">            .switchIfEmpty(Flux.just(-<span class="hljs-number">1</span>));</span><br><span class="line"></span><br><span class="line">    StepVerifier.create(flux)</span><br><span class="line">            .expectNext(-<span class="hljs-number">1</span>)</span><br><span class="line">            .verifyComplete();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>Excel模板文件:</p>
+<p><img src="/images/post/jxls-function.png" alt="jxls-function.png"></p>
+<ul>
+<li>A3单元格中的批注 <code>jx:if(condition=&quot;user.id != 3&quot; lastCell=&quot;C3&quot; areas=[&quot;A3:D3&quot;, &quot;A4:D4&quot;])</code> 表示满足 <code>condition</code> 条件的数据使用 <code>A3:D3</code> 获取数据，否则使用 <code>A4:D4</code>。</li>
+<li>D4单元格中的标签 <code>${date:format(user.birth, &quot;yyyy-MM-dd&quot;)}</code> 表示调用 <code>date</code> 域中的 <code>format</code> 方法。</li>
+</ul>
+<figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-meta">@Test</span></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">test</span><span class="hljs-params">()</span> <span class="hljs-keyword">throws</span> Exception </span>&#123;</span><br><span class="line">    String template = <span class="hljs-string">"jxls/jxls-function.xlsx"</span>;</span><br><span class="line">    String target = <span class="hljs-string">"target/jxls-function.xlsx"</span>;</span><br><span class="line">    <span class="hljs-keyword">try</span> (InputStream input = getClass().getClassLoader().getResourceAsStream(template)) &#123;</span><br><span class="line">        <span class="hljs-keyword">try</span> (OutputStream output = <span class="hljs-keyword">new</span> FileOutputStream(target)) &#123;</span><br><span class="line">            Context context = <span class="hljs-keyword">new</span> Context();</span><br><span class="line">            context.putVar(<span class="hljs-string">"users"</span>, listUser());</span><br><span class="line"></span><br><span class="line">            JxlsHelper jxlsHelper = JxlsHelper.getInstance();</span><br><span class="line">            Transformer transformer = jxlsHelper.createTransformer(input, output);</span><br><span class="line">            JexlExpressionEvaluator evaluator = (JexlExpressionEvaluator) transformer.getTransformationConfig().getExpressionEvaluator();</span><br><span class="line"></span><br><span class="line">            <span class="hljs-comment">// 自定义函数</span></span><br><span class="line">            Map&lt;String, Object&gt; functions = <span class="hljs-keyword">new</span> HashMap&lt;&gt;();</span><br><span class="line">            functions.put(JexlDateFunction.definition, <span class="hljs-keyword">new</span> JexlDateFunction());</span><br><span class="line">            evaluator.getJexlEngine().setFunctions(functions);</span><br><span class="line"></span><br><span class="line">            jxlsHelper.processTemplate(context, transformer);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">private</span> List&lt;User&gt; <span class="hljs-title">listUser</span><span class="hljs-params">()</span> </span>&#123;</span><br><span class="line">    List&lt;User&gt; list = <span class="hljs-keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">    list.add(<span class="hljs-keyword">new</span> User(<span class="hljs-number">1L</span>, <span class="hljs-string">"Elsa"</span>, <span class="hljs-string">"123456"</span>, <span class="hljs-keyword">new</span> Date()));</span><br><span class="line">    list.add(<span class="hljs-keyword">new</span> User(<span class="hljs-number">2L</span>, <span class="hljs-string">"Oleg"</span>, <span class="hljs-string">"123456"</span>, <span class="hljs-keyword">new</span> Date()));</span><br><span class="line">    list.add(<span class="hljs-keyword">new</span> User(<span class="hljs-number">3L</span>, <span class="hljs-string">"Neil"</span>, <span class="hljs-string">"123456"</span>, <span class="hljs-keyword">new</span> Date()));</span><br><span class="line">    list.add(<span class="hljs-keyword">new</span> User(<span class="hljs-number">4L</span>, <span class="hljs-string">"Maria"</span>, <span class="hljs-string">"123456"</span>, <span class="hljs-keyword">new</span> Date()));</span><br><span class="line">    list.add(<span class="hljs-keyword">new</span> User(<span class="hljs-number">5L</span>, <span class="hljs-string">"John"</span>, <span class="hljs-string">"123456"</span>, <span class="hljs-keyword">new</span> Date()));</span><br><span class="line">    <span class="hljs-keyword">return</span> list;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p>源代码: <a href="https://github.com/weitangli/java-sample/blob/master/reactor-sample/src/test/java/com/sample/FluxRepeatTests.java" target="_blank" rel="noopener">FluxRepeatTests.java</a></p>
+<p>自定义函数:</p>
+<figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">JexlDateFunction</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">final</span> String definition = <span class="hljs-string">"date"</span>;</span><br><span class="line"></span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">public</span> String <span class="hljs-title">format</span><span class="hljs-params">(Date date, String pattern)</span> </span>&#123;</span><br><span class="line">        <span class="hljs-keyword">if</span> (date == <span class="hljs-keyword">null</span>) &#123;</span><br><span class="line">            <span class="hljs-keyword">return</span> <span class="hljs-keyword">null</span>;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="hljs-keyword">if</span> (pattern == <span class="hljs-keyword">null</span>) &#123;</span><br><span class="line">            pattern = <span class="hljs-string">"yyyy-MM-dd HH:mm:ss"</span>;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        DateFormat dateFormat = <span class="hljs-keyword">new</span> SimpleDateFormat(pattern);</span><br><span class="line">        <span class="hljs-keyword">return</span> dateFormat.format(date);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>源代码:<br><a href="https://github.com/weitangli/java-sample/blob/master/jxls-sample/src/test/java/com/sample/JxlsFunctionTests.java" target="_blank" rel="noopener">JxlsFunctionTests.java</a><br><a href="https://github.com/weitangli/java-sample/blob/master/jxls-sample/src/main/java/com/sample/jxls/JexlDateFunction.java" target="_blank" rel="noopener">JexlDateFunction.java</a><br><a href="https://github.com/weitangli/java-sample/blob/master/jxls-sample/src/test/resources/jxls/jxls-function.xlsx" target="_blank" rel="noopener">jxls-function.xlsx</a></p>
 
         </div>
         
@@ -178,7 +184,7 @@
             <div class="level-start">
                 <div class="level-item">
                     <span class="is-size-6 has-text-grey has-mr-7">#</span>
-                    <a class="has-link-grey -link" href="/tags/reactor/" rel="tag">reactor</a>
+                    <a class="has-link-grey -link" href="/tags/jxls/" rel="tag">jxls</a>
                 </div>
             </div>
         </div>
@@ -224,17 +230,10 @@
 <div class="card card-transparent">
     <div class="level post-navigation is-flex-wrap is-mobile">
         
-        <div class="level-start">
-            <a class="level level-item has-link-grey  article-nav-prev" href="/reactor-flux-subscribe/">
-                <i class="level-item fas fa-chevron-left"></i>
-                <span class="level-item">flux的不同订阅方式</span>
-            </a>
-        </div>
-        
         
         <div class="level-end">
-            <a class="level level-item has-link-grey  article-nav-next" href="/cmd-chcp/">
-                <span class="level-item">快速解决cmd命令行乱码问题</span>
+            <a class="level level-item has-link-grey  article-nav-next" href="/jxls/">
+                <span class="level-item">Excel报表生成类库jxls</span>
                 <i class="level-item fas fa-chevron-right"></i>
             </a>
         </div>
@@ -255,7 +254,7 @@
     var gitalk = new Gitalk({
         clientID: 'a221d93af82dc4967493',
         clientSecret: '14cbb6054ee2e9bd2b68b59f52af0caadb62f934',
-        id: 'b36b5ae5e332e8f9b253d8f6170de250',
+        id: 'cb08ea2a449a09995188ad50f43b18e2',
         repo: 'weitangli.github.io',
         owner: 'weitangli',
         admin: "weitangli",
@@ -1233,7 +1232,7 @@
             <div class="level-start has-text-centered-mobile">
                 <a class="footer-logo is-block has-mb-6" href="/">
                 
-                    <img src="/images/logo.svg" alt="让flux重复执行的案例" height="28">
+                    <img src="/images/logo.svg" alt="jxls之自定义函数" height="28">
                 
                 </a>
                 <p class="is-size-7">
