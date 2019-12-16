@@ -7,13 +7,13 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 
-<title>标签: classloader - WeitangLi</title>
+<title>标签: jvm - WeitangLi</title>
 
 
     <meta name="description" content="记录工作中遇到的问题">
 <meta property="og:type" content="website">
 <meta property="og:title" content="WeitangLi">
-<meta property="og:url" content="https:&#x2F;&#x2F;weitangli.github.io&#x2F;tags&#x2F;classloader&#x2F;index.html">
+<meta property="og:url" content="https:&#x2F;&#x2F;weitangli.github.io&#x2F;tags&#x2F;jvm&#x2F;index.html">
 <meta property="og:site_name" content="WeitangLi">
 <meta property="og:description" content="记录工作中遇到的问题">
 <meta property="og:locale" content="zh-CN">
@@ -128,7 +128,7 @@
         <nav class="breadcrumb" aria-label="breadcrumbs">
         <ul>
             <li><a href="/tags">标签</a></li>
-            <li class="is-active"><a href="#" aria-current="page">classloader</a></li>
+            <li class="is-active"><a href="#" aria-current="page">jvm</a></li>
         </ul>
         </nav>
     </div>
@@ -141,7 +141,7 @@
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-12-16T07:45:46.000Z">2019-12-16</time>
+                <time class="level-item has-text-grey" datetime="2019-12-16T09:28:12.000Z">2019-12-16</time>
                 
                 <div class="level-item">
                 <a class="has-link-grey -link" href="/categories/java/">java</a>
@@ -151,7 +151,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    2 分钟 读完 (大约 365 个字)
+                    2 分钟 读完 (大约 225 个字)
                 </span>
                 
                 
@@ -160,76 +160,21 @@
         
         <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
             
-                <a class="has-link-black-ter" href="/classloader-custom/">自定义类加载器</a>
-            
-        </h1>
-        <div class="content">
-            <p>通常情况下，我们都是直接使用系统类加载器。但是，有的时候，我们也需要自定义类加载器。比如应用是通过网络来传输Java类的字节码，为保证安全性，这些字节码经过了加密处理，这时系统类加载器就无法对其进行加载，这样则需要自定义类加载器来实现。</p>
-<p>自定义类加载器一般都是继承自<code>ClassLoader</code>类，从上面对<code>loadClass</code>方法来分析来看，我们只需要重写<code>findClass</code>方法即可。</p>
-        </div>
-        
-        
-        <div class="level is-mobile">
-            <div class="level-start">
-                <div class="level-item">
-                <a class="button is-size-7 is-light" href="/classloader-custom/#more">阅读更多</a>
-                </div>
-            </div>
-        </div>
-        
-        
-    </div>
-</div>
-
-
-
-
-
-
-
-
-    
-<div class="card">
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-12-16T06:38:18.000Z">2019-12-16</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/java/">java</a>
-                </div>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    10 分钟 读完 (大约 1562 个字)
-                </span>
-                
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/classloader/">java类加载器</a>
+                <a class="has-link-black-ter" href="/jvm/">JVM内存结构</a>
             
         </h1>
         <div class="content">
             <blockquote>
-<p><a href="https://juejin.im/post/5a810b0e5188257a5c606a85" target="_blank" rel="noopener">https://juejin.im/post/5a810b0e5188257a5c606a85</a></p>
+<p><a href="https://www.hollischuang.com/archives/2509" target="_blank" rel="noopener">https://www.hollischuang.com/archives/2509</a></p>
 </blockquote>
-<h2 id="什么是类的加载"><a href="#什么是类的加载" class="headerlink" title="什么是类的加载"></a>什么是类的加载</h2><p>将<code>.class</code>中的二进制数据读入到方法区，并在堆区创建<code>java.lang.Class</code>对象，用来封装类在方法区内的数据结构，并且向Java程序员提供了访问该数据结构的接口。</p>
-<p><img src="/images/post/classloader-definition.png" alt="classloader-definition"></p>
+<p><img src="/images/post/jvm.png" alt="jvm.png"></p>
         </div>
         
         
         <div class="level is-mobile">
             <div class="level-start">
                 <div class="level-item">
-                <a class="button is-size-7 is-light" href="/classloader/#more">阅读更多</a>
+                <a class="button is-size-7 is-light" href="/jvm/#more">阅读更多</a>
                 </div>
             </div>
         </div>

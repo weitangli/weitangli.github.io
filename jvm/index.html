@@ -7,17 +7,19 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 
-<title>标签: classloader - WeitangLi</title>
+<title>JVM内存结构 - WeitangLi</title>
 
 
-    <meta name="description" content="记录工作中遇到的问题">
-<meta property="og:type" content="website">
-<meta property="og:title" content="WeitangLi">
-<meta property="og:url" content="https:&#x2F;&#x2F;weitangli.github.io&#x2F;tags&#x2F;classloader&#x2F;index.html">
+    <meta name="description" content="https:&#x2F;&#x2F;www.hollischuang.com&#x2F;archives&#x2F;2509">
+<meta name="keywords" content="jvm">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JVM内存结构">
+<meta property="og:url" content="https:&#x2F;&#x2F;weitangli.github.io&#x2F;jvm&#x2F;index.html">
 <meta property="og:site_name" content="WeitangLi">
-<meta property="og:description" content="记录工作中遇到的问题">
+<meta property="og:description" content="https:&#x2F;&#x2F;www.hollischuang.com&#x2F;archives&#x2F;2509">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https:&#x2F;&#x2F;weitangli.github.io&#x2F;images&#x2F;og_image.png">
+<meta property="og:updated_time" content="2019-12-16T09:34:38.094Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https:&#x2F;&#x2F;weitangli.github.io&#x2F;images&#x2F;og_image.png">
 
@@ -77,7 +79,7 @@
         <div class="navbar-brand is-flex-center">
             <a class="navbar-item navbar-logo" href="/">
             
-                <img src="/images/logo.svg" alt="WeitangLi" height="28">
+                <img src="/images/logo.svg" alt="JVM内存结构" height="28">
             
             </a>
         </div>
@@ -123,25 +125,14 @@
     <section class="section">
         <div class="container">
             <div class="columns">
-                <div class="column is-8-tablet is-8-desktop is-6-widescreen has-order-2 column-main"><div class="card">
-    <div class="card-content">
-        <nav class="breadcrumb" aria-label="breadcrumbs">
-        <ul>
-            <li><a href="/tags">标签</a></li>
-            <li class="is-active"><a href="#" aria-current="page">classloader</a></li>
-        </ul>
-        </nav>
-    </div>
-</div>
-
-    
+                <div class="column is-8-tablet is-8-desktop is-6-widescreen has-order-2 column-main">
 <div class="card">
     
     <div class="card-content article ">
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-12-16T07:45:46.000Z">2019-12-16</time>
+                <time class="level-item has-text-grey" datetime="2019-12-16T09:28:12.000Z">2019-12-16</time>
                 
                 <div class="level-item">
                 <a class="has-link-grey -link" href="/categories/java/">java</a>
@@ -151,88 +142,55 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    2 分钟 读完 (大约 365 个字)
+                    2 分钟 读完 (大约 225 个字)
                 </span>
                 
+                
+                <span class="level-item has-text-grey" id="busuanzi_container_page_pv">
+                    <i class="far fa-eye"></i>
+                    <span id="busuanzi_value_page_pv">0</span>次访问
+                </span>
                 
             </div>
         </div>
         
         <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
             
-                <a class="has-link-black-ter" href="/classloader-custom/">自定义类加载器</a>
-            
-        </h1>
-        <div class="content">
-            <p>通常情况下，我们都是直接使用系统类加载器。但是，有的时候，我们也需要自定义类加载器。比如应用是通过网络来传输Java类的字节码，为保证安全性，这些字节码经过了加密处理，这时系统类加载器就无法对其进行加载，这样则需要自定义类加载器来实现。</p>
-<p>自定义类加载器一般都是继承自<code>ClassLoader</code>类，从上面对<code>loadClass</code>方法来分析来看，我们只需要重写<code>findClass</code>方法即可。</p>
-        </div>
-        
-        
-        <div class="level is-mobile">
-            <div class="level-start">
-                <div class="level-item">
-                <a class="button is-size-7 is-light" href="/classloader-custom/#more">阅读更多</a>
-                </div>
-            </div>
-        </div>
-        
-        
-    </div>
-</div>
-
-
-
-
-
-
-
-
-    
-<div class="card">
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-12-16T06:38:18.000Z">2019-12-16</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/java/">java</a>
-                </div>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    10 分钟 读完 (大约 1562 个字)
-                </span>
-                
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/classloader/">java类加载器</a>
+                JVM内存结构
             
         </h1>
         <div class="content">
             <blockquote>
-<p><a href="https://juejin.im/post/5a810b0e5188257a5c606a85" target="_blank" rel="noopener">https://juejin.im/post/5a810b0e5188257a5c606a85</a></p>
+<p><a href="https://www.hollischuang.com/archives/2509" target="_blank" rel="noopener">https://www.hollischuang.com/archives/2509</a></p>
 </blockquote>
-<h2 id="什么是类的加载"><a href="#什么是类的加载" class="headerlink" title="什么是类的加载"></a>什么是类的加载</h2><p>将<code>.class</code>中的二进制数据读入到方法区，并在堆区创建<code>java.lang.Class</code>对象，用来封装类在方法区内的数据结构，并且向Java程序员提供了访问该数据结构的接口。</p>
-<p><img src="/images/post/classloader-definition.png" alt="classloader-definition"></p>
+<p><img src="/images/post/jvm.png" alt="jvm.png"></p>
+<a id="more"></a>
+
+<p><img src="/images/post/jvm-size.png" alt="jvm-size"></p>
+<ul>
+<li><code>-Xms</code> 设置堆的最小空间大小。空余堆内存小于（<code>-XX:MinHeapFreeRatio=40</code>）40%时，JVM就会增大堆直到<code>-Xmx</code>的最大限制</li>
+<li><code>-Xmx</code> 设置堆的最大空间大小。空余堆内存大于（<code>-XX:MaxHeapFreeRatio=70</code>）70%时，JVM就会减少堆直到<code>-Xms</code>的最小限制</li>
+<li><code>-Xmn</code> 设置新生代内存大小的最大值，包括E区和两个S区的总和</li>
+<li><code>-Xss</code> 设置每个线程的堆栈大小</li>
+<li><code>-XX:NewSize</code> 设置新生代最小空间大小</li>
+<li><code>-XX:MaxNewSize</code> 设置新生代最大空间大小</li>
+<li><code>-XX:PermSize</code> 设置永久代最小空间大小</li>
+<li><code>-XX:MaxPermSize</code> 设置永久代最大空间大小</li>
+<li><code>-XX:NewRatio=3</code> 设置Young与Old的比例，如为3，表示Young:Old=1:3</li>
+<li><code>-XX:SurvivorRatio=3</code> 设置Survivor与Eden的比例，如为3，表示From:To:Eden=1:1:3</li>
+</ul>
+
         </div>
         
-        
-        <div class="level is-mobile">
+        <div class="level is-size-7 is-uppercase">
             <div class="level-start">
                 <div class="level-item">
-                <a class="button is-size-7 is-light" href="/classloader/#more">阅读更多</a>
+                    <span class="is-size-6 has-text-grey has-mr-7">#</span>
+                    <a class="has-link-grey -link" href="/tags/jvm/" rel="tag">jvm</a>
                 </div>
             </div>
         </div>
+        
         
         
     </div>
@@ -240,11 +198,76 @@
 
 
 
+<div class="card">
+    <div class="card-content">
+        <h3 class="menu-label has-text-centered">喜欢这篇文章？打赏一下作者吧</h3>
+        <div class="buttons is-centered">
+            
+                
+<a class="button is-info donate">
+    <span class="icon is-small">
+        <i class="fab fa-alipay"></i>
+    </span>
+    <span>支付宝</span>
+    <div class="qrcode"><img src="/images/alipay.jpg" alt="支付宝"></div>
+</a>
+
+                
+                
+<a class="button is-success donate">
+    <span class="icon is-small">
+        <i class="fab fa-weixin"></i>
+    </span>
+    <span>微信</span>
+    <div class="qrcode"><img src="/images/wechat.jpg" alt="微信"></div>
+</a>
+
+                
+        </div>
+    </div>
+</div>
 
 
 
+<div class="card card-transparent">
+    <div class="level post-navigation is-flex-wrap is-mobile">
+        
+        
+        <div class="level-end">
+            <a class="level level-item has-link-grey  article-nav-next" href="/classloader-custom/">
+                <span class="level-item">自定义类加载器</span>
+                <i class="level-item fas fa-chevron-right"></i>
+            </a>
+        </div>
+        
+    </div>
+</div>
 
 
+
+<div class="card">
+    <div class="card-content">
+        <h3 class="title is-5 has-text-weight-normal">评论</h3>
+        
+<div id="comment-container"></div>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1.4.1/dist/gitalk.css">
+<script src="https://cdn.jsdelivr.net/npm/gitalk@1.4.1/dist/gitalk.min.js"></script>
+<script>
+    var gitalk = new Gitalk({
+        clientID: 'a221d93af82dc4967493',
+        clientSecret: '14cbb6054ee2e9bd2b68b59f52af0caadb62f934',
+        id: '6b482154107c96bc2319e723105ceb5d',
+        repo: 'weitangli.github.io',
+        owner: 'weitangli',
+        admin: "weitangli",
+        createIssueManually: false,
+        distractionFreeMode: false
+    })
+    gitalk.render('comment-container')
+</script>
+
+    </div>
+</div>
 </div>
                 
 
@@ -1239,7 +1262,7 @@
             <div class="level-start has-text-centered-mobile">
                 <a class="footer-logo is-block has-mb-6" href="/">
                 
-                    <img src="/images/logo.svg" alt="WeitangLi" height="28">
+                    <img src="/images/logo.svg" alt="JVM内存结构" height="28">
                 
                 </a>
                 <p class="is-size-7">
