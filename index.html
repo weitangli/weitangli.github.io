@@ -141,7 +141,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    2 分钟 读完 (大约 246 个字)
+                    2 分钟 读完 (大约 257 个字)
                 </span>
                 
                 
@@ -155,24 +155,17 @@
         </h1>
         <div class="content">
             <h2 id="Java-VisualVM-插件中心"><a href="#Java-VisualVM-插件中心" class="headerlink" title="Java VisualVM 插件中心"></a>Java VisualVM 插件中心</h2><p>若原地址无法访问，登录<code>https://visualvm.github.io/pluginscenters.html</code>，更新为相应的地址</p>
-<p><img src="jvisualvm-plugin-setting.png" alt="jvisualvm-plugin-setting"></p>
-<h4 id="Visual-GC"><a href="#Visual-GC" class="headerlink" title="Visual GC"></a>Visual GC</h4><p><img src="jvisualvm-plugin-visualgc.png" alt="jvisualvm-plugin-visualgc"></p>
-<p><img src="jvisualvm-visualgc.png" alt="jvisualvm-visualgc"></p>
-<h4 id="远程监听"><a href="#远程监听" class="headerlink" title="远程监听"></a>远程监听</h4><p>jstatd 服务可以查看【监视】页内容，包括堆、类、栈概况</p>
-<p>第一步：创建<code>jstatd.all.policy</code>文件</p>
- <figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">grant codebase &quot;file:$&#123;java.home&#125;/../lib/tools.jar&quot; &#123;</span><br><span class="line">    permission java.security.AllPermission;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
-<p>第二步：启动 jstatd 服务</p>
-<figure class="highlight shell hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-meta">#</span><span class="hljs-bash"> -p PORT 默认1099</span></span><br><span class="line"><span class="hljs-meta">#</span><span class="hljs-bash"> -J-Djava.security.policy=POLICY_FILENAME 指定配置文件</span></span><br><span class="line"><span class="hljs-meta">#</span><span class="hljs-bash"> -J-Djava.rmi.server.hostname=HOSTNAME 指定IP地址</span></span><br><span class="line"><span class="hljs-meta">#</span><span class="hljs-bash"> -J-Dcom.sun.management.jmxremote.port=PORT</span></span><br><span class="line"><span class="hljs-meta">#</span><span class="hljs-bash"> -J-Dcom.sun.management.jmxremote.ssl=<span class="hljs-literal">false</span></span></span><br><span class="line"><span class="hljs-meta">#</span><span class="hljs-bash"> -J-Dcom.sun.management.jmxremote.authenticate=<span class="hljs-literal">false</span></span></span><br><span class="line">jstatd -J-Djava.security.policy=jstatd.all.policy -J-Djava.rmi.server.hostname=192.168.198.187</span><br></pre></td></tr></table></figure>
-
-<p><img src="jvisualvm-add-jstatd.png" alt="jvisualvm-add-jstatd"></p>
-<h4 id="JMX-支持"><a href="#JMX-支持" class="headerlink" title="JMX 支持"></a>JMX 支持</h4><p>启动应用时，带上<code>com.sun.management.jmxremote</code>配置，启动JMX支持，可以查看更多内容</p>
-<figure class="highlight shell hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">java -Djava.rmi.server.hostname=192.168.198.187 -Dcom.sun.management.jmxremote.port=9888 -Dcom.sun.management.jmxremote.ssl=false -Dcom.sun.management.jmxremote.authenticate=false GCTest</span><br></pre></td></tr></table></figure>
-
-<p><img src="jvisualvm-add-jmx.png" alt="jvisualvm-add-jmx"></p>
-
+<p><img src="/images/post/jvisualvm-plugin-setting.png" alt="jvisualvm-plugin-setting"></p>
         </div>
         
+        
+        <div class="level is-mobile">
+            <div class="level-start">
+                <div class="level-item">
+                <a class="button is-size-7 is-light" href="/jvisualvm/#more">阅读更多</a>
+                </div>
+            </div>
+        </div>
         
         
     </div>

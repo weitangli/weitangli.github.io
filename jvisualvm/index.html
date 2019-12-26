@@ -10,16 +10,16 @@
 <title>JVisualVM - WeitangLi</title>
 
 
-    <meta name="description" content="Java VisualVM 插件中心若原地址无法访问，登录https:&#x2F;&#x2F;visualvm.github.io&#x2F;pluginscenters.html，更新为相应的地址  Visual GC  远程监听jstatd 服务可以查看【监视】页内容，包括堆、类、栈概况 第一步：创建jstatd.all.policy文件  123grant codebase &amp;quot;file:$&amp;#123;java.">
+    <meta name="description" content="Java VisualVM 插件中心若原地址无法访问，登录https:&#x2F;&#x2F;visualvm.github.io&#x2F;pluginscenters.html，更新为相应的地址">
 <meta name="keywords" content="jvisualvm">
 <meta property="og:type" content="article">
 <meta property="og:title" content="JVisualVM">
 <meta property="og:url" content="https:&#x2F;&#x2F;weitangli.github.io&#x2F;jvisualvm&#x2F;index.html">
 <meta property="og:site_name" content="WeitangLi">
-<meta property="og:description" content="Java VisualVM 插件中心若原地址无法访问，登录https:&#x2F;&#x2F;visualvm.github.io&#x2F;pluginscenters.html，更新为相应的地址  Visual GC  远程监听jstatd 服务可以查看【监视】页内容，包括堆、类、栈概况 第一步：创建jstatd.all.policy文件  123grant codebase &amp;quot;file:$&amp;#123;java.">
+<meta property="og:description" content="Java VisualVM 插件中心若原地址无法访问，登录https:&#x2F;&#x2F;visualvm.github.io&#x2F;pluginscenters.html，更新为相应的地址">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https:&#x2F;&#x2F;weitangli.github.io&#x2F;images&#x2F;og_image.png">
-<meta property="og:updated_time" content="2019-12-16T09:40:31.487Z">
+<meta property="og:updated_time" content="2019-12-26T01:35:24.306Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https:&#x2F;&#x2F;weitangli.github.io&#x2F;images&#x2F;og_image.png">
 
@@ -142,7 +142,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    2 分钟 读完 (大约 246 个字)
+                    2 分钟 读完 (大约 257 个字)
                 </span>
                 
                 
@@ -161,21 +161,23 @@
         </h1>
         <div class="content">
             <h2 id="Java-VisualVM-插件中心"><a href="#Java-VisualVM-插件中心" class="headerlink" title="Java VisualVM 插件中心"></a>Java VisualVM 插件中心</h2><p>若原地址无法访问，登录<code>https://visualvm.github.io/pluginscenters.html</code>，更新为相应的地址</p>
-<p><img src="jvisualvm-plugin-setting.png" alt="jvisualvm-plugin-setting"></p>
-<h4 id="Visual-GC"><a href="#Visual-GC" class="headerlink" title="Visual GC"></a>Visual GC</h4><p><img src="jvisualvm-plugin-visualgc.png" alt="jvisualvm-plugin-visualgc"></p>
-<p><img src="jvisualvm-visualgc.png" alt="jvisualvm-visualgc"></p>
-<h4 id="远程监听"><a href="#远程监听" class="headerlink" title="远程监听"></a>远程监听</h4><p>jstatd 服务可以查看【监视】页内容，包括堆、类、栈概况</p>
+<p><img src="/images/post/jvisualvm-plugin-setting.png" alt="jvisualvm-plugin-setting"></p>
+<a id="more"></a>
+
+<h2 id="Visual-GC"><a href="#Visual-GC" class="headerlink" title="Visual GC"></a>Visual GC</h2><p><img src="/images/post/jvisualvm-plugin-visualgc.png" alt="jvisualvm-plugin-visualgc"></p>
+<p><img src="/images/post/jvisualvm-visualgc.png" alt="jvisualvm-visualgc"></p>
+<h2 id="远程监听"><a href="#远程监听" class="headerlink" title="远程监听"></a>远程监听</h2><p>jstatd 服务可以查看【监视】页内容，包括堆、类、栈概况</p>
 <p>第一步：创建<code>jstatd.all.policy</code>文件</p>
  <figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">grant codebase &quot;file:$&#123;java.home&#125;/../lib/tools.jar&quot; &#123;</span><br><span class="line">    permission java.security.AllPermission;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 
 <p>第二步：启动 jstatd 服务</p>
 <figure class="highlight shell hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-meta">#</span><span class="hljs-bash"> -p PORT 默认1099</span></span><br><span class="line"><span class="hljs-meta">#</span><span class="hljs-bash"> -J-Djava.security.policy=POLICY_FILENAME 指定配置文件</span></span><br><span class="line"><span class="hljs-meta">#</span><span class="hljs-bash"> -J-Djava.rmi.server.hostname=HOSTNAME 指定IP地址</span></span><br><span class="line"><span class="hljs-meta">#</span><span class="hljs-bash"> -J-Dcom.sun.management.jmxremote.port=PORT</span></span><br><span class="line"><span class="hljs-meta">#</span><span class="hljs-bash"> -J-Dcom.sun.management.jmxremote.ssl=<span class="hljs-literal">false</span></span></span><br><span class="line"><span class="hljs-meta">#</span><span class="hljs-bash"> -J-Dcom.sun.management.jmxremote.authenticate=<span class="hljs-literal">false</span></span></span><br><span class="line">jstatd -J-Djava.security.policy=jstatd.all.policy -J-Djava.rmi.server.hostname=192.168.198.187</span><br></pre></td></tr></table></figure>
 
-<p><img src="jvisualvm-add-jstatd.png" alt="jvisualvm-add-jstatd"></p>
-<h4 id="JMX-支持"><a href="#JMX-支持" class="headerlink" title="JMX 支持"></a>JMX 支持</h4><p>启动应用时，带上<code>com.sun.management.jmxremote</code>配置，启动JMX支持，可以查看更多内容</p>
+<p><img src="/images/post/jvisualvm-add-jstatd.png" alt="jvisualvm-add-jstatd"></p>
+<h2 id="JMX-支持"><a href="#JMX-支持" class="headerlink" title="JMX 支持"></a>JMX 支持</h2><p>启动应用时，带上<code>com.sun.management.jmxremote</code>配置，启动JMX支持，可以查看更多内容</p>
 <figure class="highlight shell hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">java -Djava.rmi.server.hostname=192.168.198.187 -Dcom.sun.management.jmxremote.port=9888 -Dcom.sun.management.jmxremote.ssl=false -Dcom.sun.management.jmxremote.authenticate=false GCTest</span><br></pre></td></tr></table></figure>
 
-<p><img src="jvisualvm-add-jmx.png" alt="jvisualvm-add-jmx"></p>
+<p><img src="/images/post/jvisualvm-add-jmx.png" alt="jvisualvm-add-jmx"></p>
 
         </div>
         
