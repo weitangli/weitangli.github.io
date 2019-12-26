@@ -142,6 +142,67 @@
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2019-12-16T09:39:34.000Z">2019-12-16</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/java/">java</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    2 分钟 读完 (大约 246 个字)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/jvisualvm/">JVisualVM</a>
+            
+        </h1>
+        <div class="content">
+            <h2 id="Java-VisualVM-插件中心"><a href="#Java-VisualVM-插件中心" class="headerlink" title="Java VisualVM 插件中心"></a>Java VisualVM 插件中心</h2><p>若原地址无法访问，登录<code>https://visualvm.github.io/pluginscenters.html</code>，更新为相应的地址</p>
+<p><img src="jvisualvm-plugin-setting.png" alt="jvisualvm-plugin-setting"></p>
+<h4 id="Visual-GC"><a href="#Visual-GC" class="headerlink" title="Visual GC"></a>Visual GC</h4><p><img src="jvisualvm-plugin-visualgc.png" alt="jvisualvm-plugin-visualgc"></p>
+<p><img src="jvisualvm-visualgc.png" alt="jvisualvm-visualgc"></p>
+<h4 id="远程监听"><a href="#远程监听" class="headerlink" title="远程监听"></a>远程监听</h4><p>jstatd 服务可以查看【监视】页内容，包括堆、类、栈概况</p>
+<p>第一步：创建<code>jstatd.all.policy</code>文件</p>
+ <figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">grant codebase &quot;file:$&#123;java.home&#125;/../lib/tools.jar&quot; &#123;</span><br><span class="line">    permission java.security.AllPermission;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p>第二步：启动 jstatd 服务</p>
+<figure class="highlight shell hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-meta">#</span><span class="hljs-bash"> -p PORT 默认1099</span></span><br><span class="line"><span class="hljs-meta">#</span><span class="hljs-bash"> -J-Djava.security.policy=POLICY_FILENAME 指定配置文件</span></span><br><span class="line"><span class="hljs-meta">#</span><span class="hljs-bash"> -J-Djava.rmi.server.hostname=HOSTNAME 指定IP地址</span></span><br><span class="line"><span class="hljs-meta">#</span><span class="hljs-bash"> -J-Dcom.sun.management.jmxremote.port=PORT</span></span><br><span class="line"><span class="hljs-meta">#</span><span class="hljs-bash"> -J-Dcom.sun.management.jmxremote.ssl=<span class="hljs-literal">false</span></span></span><br><span class="line"><span class="hljs-meta">#</span><span class="hljs-bash"> -J-Dcom.sun.management.jmxremote.authenticate=<span class="hljs-literal">false</span></span></span><br><span class="line">jstatd -J-Djava.security.policy=jstatd.all.policy -J-Djava.rmi.server.hostname=192.168.198.187</span><br></pre></td></tr></table></figure>
+
+<p><img src="jvisualvm-add-jstatd.png" alt="jvisualvm-add-jstatd"></p>
+<h4 id="JMX-支持"><a href="#JMX-支持" class="headerlink" title="JMX 支持"></a>JMX 支持</h4><p>启动应用时，带上<code>com.sun.management.jmxremote</code>配置，启动JMX支持，可以查看更多内容</p>
+<figure class="highlight shell hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">java -Djava.rmi.server.hostname=192.168.198.187 -Dcom.sun.management.jmxremote.port=9888 -Dcom.sun.management.jmxremote.ssl=false -Dcom.sun.management.jmxremote.authenticate=false GCTest</span><br></pre></td></tr></table></figure>
+
+<p><img src="jvisualvm-add-jmx.png" alt="jvisualvm-add-jmx"></p>
+
+        </div>
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+    
+<div class="card">
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
                 <time class="level-item has-text-grey" datetime="2019-12-16T09:28:12.000Z">2019-12-16</time>
                 
                 <div class="level-item">
@@ -632,61 +693,6 @@
 
 
 
-    
-<div class="card">
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-12-05T13:21:46.000Z">2019-12-05</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/java/">java</a>
-                </div>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    2 分钟 读完 (大约 271 个字)
-                </span>
-                
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/jedis/">redis客户端jedis</a>
-            
-        </h1>
-        <div class="content">
-            <blockquote>
-<p><a href="https://github.com/xetorthio/jedis" target="_blank" rel="noopener">https://github.com/xetorthio/jedis</a></p>
-</blockquote>
-        </div>
-        
-        
-        <div class="level is-mobile">
-            <div class="level-start">
-                <div class="level-item">
-                <a class="button is-size-7 is-light" href="/jedis/#more">阅读更多</a>
-                </div>
-            </div>
-        </div>
-        
-        
-    </div>
-</div>
-
-
-
-
-
-
-
-
 
     
 <div class="card card-transparent">
@@ -752,7 +758,7 @@
                         文章
                     </p>
                     <p class="title has-text-weight-normal">
-                        44
+                        45
                     </p>
                 </div>
             </div>
@@ -772,7 +778,7 @@
                         标签
                     </p>
                     <p class="title has-text-weight-normal">
-                        30
+                        31
                     </p>
                 </div>
             </div>
@@ -919,7 +925,7 @@
                 <span class="level-item">java</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">27</span>
+                <span class="level-item tag">28</span>
             </span>
         </a></li><li>
         <a class="level is-marginless" href="/categories/redis/">
@@ -948,7 +954,7 @@
         <h3 class="menu-label">
             标签云
         </h3>
-        <a href="/tags/activemq/" style="font-size: 16.67px;">activemq</a> <a href="/tags/aes-128/" style="font-size: 10px;">aes-128</a> <a href="/tags/alibaba-canal/" style="font-size: 10px;">alibaba-canal</a> <a href="/tags/aliyun-log/" style="font-size: 10px;">aliyun-log</a> <a href="/tags/aliyun-ons/" style="font-size: 13.33px;">aliyun-ons</a> <a href="/tags/aliyun-oss/" style="font-size: 13.33px;">aliyun-oss</a> <a href="/tags/apache-commons/" style="font-size: 10px;">apache-commons</a> <a href="/tags/chcp/" style="font-size: 10px;">chcp</a> <a href="/tags/classloader/" style="font-size: 13.33px;">classloader</a> <a href="/tags/easemob-im/" style="font-size: 10px;">easemob-im</a> <a href="/tags/flume/" style="font-size: 13.33px;">flume</a> <a href="/tags/jackson/" style="font-size: 10px;">jackson</a> <a href="/tags/jar-manifest/" style="font-size: 10px;">jar-manifest</a> <a href="/tags/java-servlet/" style="font-size: 10px;">java-servlet</a> <a href="/tags/jedis/" style="font-size: 10px;">jedis</a> <a href="/tags/jiguang-push/" style="font-size: 10px;">jiguang-push</a> <a href="/tags/jooq/" style="font-size: 10px;">jooq</a> <a href="/tags/jvm/" style="font-size: 10px;">jvm</a> <a href="/tags/jwt/" style="font-size: 10px;">jwt</a> <a href="/tags/jxls/" style="font-size: 13.33px;">jxls</a> <a href="/tags/maven/" style="font-size: 10px;">maven</a> <a href="/tags/okhttp/" style="font-size: 10px;">okhttp</a> <a href="/tags/reactor/" style="font-size: 20px;">reactor</a> <a href="/tags/redis/" style="font-size: 13.33px;">redis</a> <a href="/tags/rocketmq/" style="font-size: 16.67px;">rocketmq</a> <a href="/tags/rsa-1024/" style="font-size: 10px;">rsa-1024</a> <a href="/tags/sorting-algorithms/" style="font-size: 10px;">sorting-algorithms</a> <a href="/tags/vertx/" style="font-size: 10px;">vertx</a> <a href="/tags/webmagic/" style="font-size: 10px;">webmagic</a> <a href="/tags/wechat-api/" style="font-size: 10px;">wechat-api</a>
+        <a href="/tags/activemq/" style="font-size: 16.67px;">activemq</a> <a href="/tags/aes-128/" style="font-size: 10px;">aes-128</a> <a href="/tags/alibaba-canal/" style="font-size: 10px;">alibaba-canal</a> <a href="/tags/aliyun-log/" style="font-size: 10px;">aliyun-log</a> <a href="/tags/aliyun-ons/" style="font-size: 13.33px;">aliyun-ons</a> <a href="/tags/aliyun-oss/" style="font-size: 13.33px;">aliyun-oss</a> <a href="/tags/apache-commons/" style="font-size: 10px;">apache-commons</a> <a href="/tags/chcp/" style="font-size: 10px;">chcp</a> <a href="/tags/classloader/" style="font-size: 13.33px;">classloader</a> <a href="/tags/easemob-im/" style="font-size: 10px;">easemob-im</a> <a href="/tags/flume/" style="font-size: 13.33px;">flume</a> <a href="/tags/jackson/" style="font-size: 10px;">jackson</a> <a href="/tags/jar-manifest/" style="font-size: 10px;">jar-manifest</a> <a href="/tags/java-servlet/" style="font-size: 10px;">java-servlet</a> <a href="/tags/jedis/" style="font-size: 10px;">jedis</a> <a href="/tags/jiguang-push/" style="font-size: 10px;">jiguang-push</a> <a href="/tags/jooq/" style="font-size: 10px;">jooq</a> <a href="/tags/jvisualvm/" style="font-size: 10px;">jvisualvm</a> <a href="/tags/jvm/" style="font-size: 10px;">jvm</a> <a href="/tags/jwt/" style="font-size: 10px;">jwt</a> <a href="/tags/jxls/" style="font-size: 13.33px;">jxls</a> <a href="/tags/maven/" style="font-size: 10px;">maven</a> <a href="/tags/okhttp/" style="font-size: 10px;">okhttp</a> <a href="/tags/reactor/" style="font-size: 20px;">reactor</a> <a href="/tags/redis/" style="font-size: 13.33px;">redis</a> <a href="/tags/rocketmq/" style="font-size: 16.67px;">rocketmq</a> <a href="/tags/rsa-1024/" style="font-size: 10px;">rsa-1024</a> <a href="/tags/sorting-algorithms/" style="font-size: 10px;">sorting-algorithms</a> <a href="/tags/vertx/" style="font-size: 10px;">vertx</a> <a href="/tags/webmagic/" style="font-size: 10px;">webmagic</a> <a href="/tags/wechat-api/" style="font-size: 10px;">wechat-api</a>
     </div>
 </div>
     
@@ -960,6 +966,25 @@
         <h3 class="menu-label">
             最新文章
         </h3>
+        
+        <article class="media">
+            
+            <a href="/jvisualvm/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="JVisualVM">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-12-16T09:39:34.000Z">2019-12-16</time></div>
+                    <a href="/jvisualvm/" class="title has-link-black-ter is-size-6 has-text-weight-normal">JVisualVM</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/java/">java</a>
+                    </p>
+                </div>
+            </div>
+        </article>
         
         <article class="media">
             
@@ -1037,25 +1062,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/jxls/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="Excel报表生成类库jxls">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-12-13T06:54:27.000Z">2019-12-13</time></div>
-                    <a href="/jxls/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Excel报表生成类库jxls</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/java/">java</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
         
@@ -1073,7 +1079,7 @@
                     <span class="level-item">十二月 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">19</span>
+                    <span class="level-item tag">20</span>
                 </span>
             </a>
         </li>
@@ -1217,6 +1223,13 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/jooq/">
                         <span class="tag">jooq</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/jvisualvm/">
+                        <span class="tag">jvisualvm</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>
@@ -1336,6 +1349,25 @@
         
         <article class="media">
             
+            <a href="/jvisualvm/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="JVisualVM">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-12-16T09:39:34.000Z">2019-12-16</time></div>
+                    <a href="/jvisualvm/" class="title has-link-black-ter is-size-6 has-text-weight-normal">JVisualVM</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/java/">java</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
             <a href="/jvm/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="/images/thumbnail.svg" alt="JVM内存结构">
@@ -1410,25 +1442,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/jxls/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="Excel报表生成类库jxls">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-12-13T06:54:27.000Z">2019-12-13</time></div>
-                    <a href="/jxls/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Excel报表生成类库jxls</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/java/">java</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
     
@@ -1446,7 +1459,7 @@
                     <span class="level-item">十二月 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">19</span>
+                    <span class="level-item tag">20</span>
                 </span>
             </a>
         </li>
@@ -1590,6 +1603,13 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/jooq/">
                         <span class="tag">jooq</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/jvisualvm/">
+                        <span class="tag">jvisualvm</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>
