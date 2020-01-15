@@ -7,13 +7,13 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 
-<title>分类: mongo - WeitangLi</title>
+<title>分类: database - WeitangLi</title>
 
 
     <meta name="description" content="记录工作中遇到的问题">
 <meta property="og:type" content="website">
 <meta property="og:title" content="WeitangLi">
-<meta property="og:url" content="https:&#x2F;&#x2F;weitangli.github.io&#x2F;categories&#x2F;mongo&#x2F;index.html">
+<meta property="og:url" content="https:&#x2F;&#x2F;weitangli.github.io&#x2F;categories&#x2F;database&#x2F;index.html">
 <meta property="og:site_name" content="WeitangLi">
 <meta property="og:description" content="记录工作中遇到的问题">
 <meta property="og:locale" content="zh-CN">
@@ -129,7 +129,7 @@
         <ul>
             <li><a href="/categories">分类</a></li>
             
-            <li class="is-active"><a href="#" aria-current="page">mongo</a></li>
+            <li class="is-active"><a href="#" aria-current="page">database</a></li>
         </ul>
         </nav>
     </div>
@@ -145,7 +145,7 @@
                 <time class="level-item has-text-grey" datetime="2020-01-12T10:27:57.000Z">2020-01-12</time>
                 
                 <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/mongo/">mongo</a>
+                <a class="has-link-grey -link" href="/categories/database/">database</a>
                 </div>
                 
                 
@@ -176,6 +176,310 @@
             <div class="level-start">
                 <div class="level-item">
                 <a class="button is-size-7 is-light" href="/mongo-install/#more">阅读更多</a>
+                </div>
+            </div>
+        </div>
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+    
+<div class="card">
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2020-01-12T05:17:10.000Z">2020-01-12</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/database/">database</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    1 分钟 读完 (大约 136 个字)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/redis-install/">快速安装Redis</a>
+            
+        </h1>
+        <div class="content">
+            <ul>
+<li>官方网站 <a href="https://redis.io" target="_blank" rel="noopener">https://redis.io</a></li>
+<li>中文网站 <a href="http://www.redis.cn" target="_blank" rel="noopener">http://www.redis.cn</a></li>
+</ul>
+<p>Redis是一种高级的Key-Value存储系统, 其中Value支持五种数据类型:</p>
+<ul>
+<li>string 字符串</li>
+<li>list 列表</li>
+<li>set 集合</li>
+<li>sorted set 有序集合</li>
+<li>hash 哈希</li>
+</ul>
+        </div>
+        
+        
+        <div class="level is-mobile">
+            <div class="level-start">
+                <div class="level-item">
+                <a class="button is-size-7 is-light" href="/redis-install/#more">阅读更多</a>
+                </div>
+            </div>
+        </div>
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+    
+<div class="card">
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2020-01-12T03:54:37.000Z">2020-01-12</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/database/">database</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    3 分钟 读完 (大约 451 个字)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/mysql-install/">快速安装MySQL</a>
+            
+        </h1>
+        <div class="content">
+            <blockquote>
+<p><a href="https://dev.mysql.com/doc/refman/5.7/en/" target="_blank" rel="noopener">https://dev.mysql.com/doc/refman/5.7/en/</a></p>
+</blockquote>
+<h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><figure class="highlight shell hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-meta">#</span><span class="hljs-bash"> 卸载旧版MySQL/MariaDB</span></span><br><span class="line">rpm -aq | grep mysql</span><br><span class="line">rpm -e --nodeps mysql</span><br><span class="line">rpm -aq | grep mariadb-libs</span><br><span class="line">rpm -e --nodeps mariadb-libs</span><br><span class="line"></span><br><span class="line"><span class="hljs-meta">#</span><span class="hljs-bash"> 清理残留配置文件</span></span><br><span class="line">rpm -aq | grep mysql</span><br><span class="line">rpm -e --nodeps mysql</span><br><span class="line">rpm -aq | grep mariadb-libs</span><br><span class="line">rpm -e --nodeps mariadb-libs</span><br></pre></td></tr></table></figure>
+        </div>
+        
+        
+        <div class="level is-mobile">
+            <div class="level-start">
+                <div class="level-item">
+                <a class="button is-size-7 is-light" href="/mysql-install/#more">阅读更多</a>
+                </div>
+            </div>
+        </div>
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+    
+<div class="card">
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2019-12-05T10:15:29.000Z">2019-12-05</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/database/">database</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    4 分钟 读完 (大约 530 个字)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/redis-questions/">Redis常见问题</a>
+            
+        </h1>
+        <div class="content">
+            <h2 id="Redis持久化"><a href="#Redis持久化" class="headerlink" title="Redis持久化"></a>Redis持久化</h2><p>redis提供了两种持久化的方式，分别是RDB（Redis DataBase）和AOF（Append Only File）。</p>
+<p>RDB，简而言之，就是在不同的时间点，将redis存储的数据生成快照并存储到磁盘等介质上；</p>
+<p>AOF，则是换了一个角度来实现持久化，那就是将redis执行过的所有写指令记录下来，在下次redis重新启动时，只要把这些写指令从前到后再重复执行一遍，就可以实现数据恢复了。</p>
+<p>其实RDB和AOF两种方式也可以同时使用，在这种情况下，如果redis重启的话，则会优先采用AOF方式来进行数据恢复，这是因为AOF方式的数据恢复完整度更高。</p>
+<p>如果你没有数据持久化的需求，也完全可以关闭RDB和AOF方式，这样的话，redis将变成一个纯内存数据库，就像memcache一样。</p>
+        </div>
+        
+        
+        <div class="level is-mobile">
+            <div class="level-start">
+                <div class="level-item">
+                <a class="button is-size-7 is-light" href="/redis-questions/#more">阅读更多</a>
+                </div>
+            </div>
+        </div>
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+    
+<div class="card">
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2019-12-05T08:48:52.000Z">2019-12-05</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/database/">database</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    1 分钟 读完 (大约 186 个字)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/redis-make/">编译安装Redis</a>
+            
+        </h1>
+        <div class="content">
+            <ul>
+<li>官方网站 <a href="https://redis.io" target="_blank" rel="noopener">https://redis.io</a></li>
+<li>中文网站 <a href="http://www.redis.cn" target="_blank" rel="noopener">http://www.redis.cn</a></li>
+</ul>
+<p>Redis是一种高级的Key-Value存储系统, 其中Value支持五种数据类型:</p>
+<ul>
+<li>string 字符串</li>
+<li>list 列表</li>
+<li>set 集合</li>
+<li>sorted set 有序集合</li>
+<li>hash 哈希</li>
+</ul>
+<p>Linux安装包下载地址: <a href="http://download.redis.io/releases/redis-4.0.14.tar.gz" target="_blank" rel="noopener">redis-4.0.14.tar.gz</a></p>
+        </div>
+        
+        
+        <div class="level is-mobile">
+            <div class="level-start">
+                <div class="level-item">
+                <a class="button is-size-7 is-light" href="/redis-make/#more">阅读更多</a>
+                </div>
+            </div>
+        </div>
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+    
+<div class="card">
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2019-11-27T05:15:14.000Z">2019-11-27</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/database/">database</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    2 分钟 读完 (大约 290 个字)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/alibaba-canal/">MySQL binlog增量订阅与消费组件</a>
+            
+        </h1>
+        <div class="content">
+            <blockquote>
+<p><a href="https://github.com/alibaba/canal/wiki" target="_blank" rel="noopener">https://github.com/alibaba/canal/wiki</a></p>
+</blockquote>
+<p>canal [kə’næl]，译意为水道/管道/沟渠，主要用途是基于 MySQL 数据库增量日志解析，提供增量数据订阅和消费</p>
+<p>工作原理：</p>
+<ul>
+<li>canal 模拟 MySQL slave 的交互协议，伪装自己为 MySQL slave ，向 MySQL master 发送 dump 协议</li>
+<li>MySQL master 收到 dump 请求，开始推送 binary log 给 slave (即 canal )</li>
+<li>canal 解析 binary log 对象(原始为 byte 流)</li>
+</ul>
+        </div>
+        
+        
+        <div class="level is-mobile">
+            <div class="level-start">
+                <div class="level-item">
+                <a class="button is-size-7 is-light" href="/alibaba-canal/#more">阅读更多</a>
                 </div>
             </div>
         </div>
@@ -245,7 +549,7 @@
                         分类
                     </p>
                     <p class="title has-text-weight-normal">
-                        11
+                        7
                     </p>
                 </div>
             </div>
@@ -357,22 +661,6 @@
             </h3>
             <ul class="menu-list">
             <li>
-        <a class="level is-marginless" href="/categories/activemq/">
-            <span class="level-start">
-                <span class="level-item">activemq</span>
-            </span>
-            <span class="level-end">
-                <span class="level-item tag">3</span>
-            </span>
-        </a></li><li>
-        <a class="level is-marginless" href="/categories/alibaba/">
-            <span class="level-start">
-                <span class="level-item">alibaba</span>
-            </span>
-            <span class="level-end">
-                <span class="level-item tag">1</span>
-            </span>
-        </a></li><li>
         <a class="level is-marginless" href="/categories/aliyun/">
             <span class="level-start">
                 <span class="level-item">aliyun</span>
@@ -387,6 +675,14 @@
             </span>
             <span class="level-end">
                 <span class="level-item tag">1</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/database/">
+            <span class="level-start">
+                <span class="level-item">database</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">6</span>
             </span>
         </a></li><li>
         <a class="level is-marginless" href="/categories/flume/">
@@ -405,36 +701,12 @@
                 <span class="level-item tag">39</span>
             </span>
         </a></li><li>
-        <a class="level is-marginless" href="/categories/mongo/">
+        <a class="level is-marginless" href="/categories/mq/">
             <span class="level-start">
-                <span class="level-item">mongo</span>
+                <span class="level-item">mq</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">1</span>
-            </span>
-        </a></li><li>
-        <a class="level is-marginless" href="/categories/mysql/">
-            <span class="level-start">
-                <span class="level-item">mysql</span>
-            </span>
-            <span class="level-end">
-                <span class="level-item tag">1</span>
-            </span>
-        </a></li><li>
-        <a class="level is-marginless" href="/categories/redis/">
-            <span class="level-start">
-                <span class="level-item">redis</span>
-            </span>
-            <span class="level-end">
-                <span class="level-item tag">3</span>
-            </span>
-        </a></li><li>
-        <a class="level is-marginless" href="/categories/rocketmq/">
-            <span class="level-start">
-                <span class="level-item">rocketmq</span>
-            </span>
-            <span class="level-end">
-                <span class="level-item tag">3</span>
+                <span class="level-item tag">6</span>
             </span>
         </a></li><li>
         <a class="level is-marginless" href="/categories/tools/">
@@ -500,7 +772,7 @@
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-01-12T10:27:57.000Z">2020-01-12</time></div>
                     <a href="/mongo-install/" class="title has-link-black-ter is-size-6 has-text-weight-normal">快速安装MongoDB</a>
                     <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/mongo/">mongo</a>
+                        <a class="has-link-grey -link" href="/categories/database/">database</a>
                     </p>
                 </div>
             </div>
@@ -1059,7 +1331,7 @@
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-01-12T10:27:57.000Z">2020-01-12</time></div>
                     <a href="/mongo-install/" class="title has-link-black-ter is-size-6 has-text-weight-normal">快速安装MongoDB</a>
                     <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/mongo/">mongo</a>
+                        <a class="has-link-grey -link" href="/categories/database/">database</a>
                     </p>
                 </div>
             </div>
