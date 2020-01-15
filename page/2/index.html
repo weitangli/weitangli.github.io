@@ -131,17 +131,17 @@
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-12-26T02:40:04.000Z">2019-12-26</time>
+                <time class="level-item has-text-grey" datetime="2020-01-12T03:54:37.000Z">2020-01-12</time>
                 
                 <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/java/">java</a>
+                <a class="has-link-grey -link" href="/categories/mysql/">mysql</a>
                 </div>
                 
                 
                 <span class="level-item has-text-grey">
                     
                     
-                    几秒 读完 (大约 21 个字)
+                    3 分钟 读完 (大约 451 个字)
                 </span>
                 
                 
@@ -150,68 +150,21 @@
         
         <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
             
-                <a class="has-link-black-ter" href="/btrace/">BTrace</a>
+                <a class="has-link-black-ter" href="/mysql-install/">快速安装MySQL</a>
             
         </h1>
         <div class="content">
             <blockquote>
-<p><a href="https://github.com/btraceio/btrace" target="_blank" rel="noopener">https://github.com/btraceio/btrace</a></p>
+<p><a href="https://dev.mysql.com/doc/refman/5.7/en/" target="_blank" rel="noopener">https://dev.mysql.com/doc/refman/5.7/en/</a></p>
 </blockquote>
-<p><code>BTrace</code>是一个安全，动态的Java追踪工具。</p>
-
-        </div>
-        
-        
-        
-    </div>
-</div>
-
-
-
-
-
-
-
-
-    
-<div class="card">
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-12-16T09:39:34.000Z">2019-12-16</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/java/">java</a>
-                </div>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    2 分钟 读完 (大约 257 个字)
-                </span>
-                
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/jvisualvm/">JVisualVM</a>
-            
-        </h1>
-        <div class="content">
-            <h2 id="Java-VisualVM-插件中心"><a href="#Java-VisualVM-插件中心" class="headerlink" title="Java VisualVM 插件中心"></a>Java VisualVM 插件中心</h2><p>若原地址无法访问，登录<code>https://visualvm.github.io/pluginscenters.html</code>，更新为相应的地址</p>
-<p><img src="/images/post/jvisualvm-plugin-setting.png" alt="jvisualvm-plugin-setting"></p>
+<h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><figure class="highlight shell hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-meta">#</span><span class="hljs-bash"> 卸载旧版MySQL/MariaDB</span></span><br><span class="line">rpm -aq | grep mysql</span><br><span class="line">rpm -e --nodeps mysql</span><br><span class="line">rpm -aq | grep mariadb-libs</span><br><span class="line">rpm -e --nodeps mariadb-libs</span><br><span class="line"></span><br><span class="line"><span class="hljs-meta">#</span><span class="hljs-bash"> 清理残留配置文件</span></span><br><span class="line">rpm -aq | grep mysql</span><br><span class="line">rpm -e --nodeps mysql</span><br><span class="line">rpm -aq | grep mariadb-libs</span><br><span class="line">rpm -e --nodeps mariadb-libs</span><br></pre></td></tr></table></figure>
         </div>
         
         
         <div class="level is-mobile">
             <div class="level-start">
                 <div class="level-item">
-                <a class="button is-size-7 is-light" href="/jvisualvm/#more">阅读更多</a>
+                <a class="button is-size-7 is-light" href="/mysql-install/#more">阅读更多</a>
                 </div>
             </div>
         </div>
@@ -234,7 +187,7 @@
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-12-16T09:28:12.000Z">2019-12-16</time>
+                <time class="level-item has-text-grey" datetime="2019-12-26T10:37:07.000Z">2019-12-26</time>
                 
                 <div class="level-item">
                 <a class="has-link-grey -link" href="/categories/java/">java</a>
@@ -244,7 +197,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    2 分钟 读完 (大约 225 个字)
+                    8 分钟 读完 (大约 1197 个字)
                 </span>
                 
                 
@@ -253,24 +206,74 @@
         
         <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
             
-                <a class="has-link-black-ter" href="/jvm/">JVM内存结构</a>
+                <a class="has-link-black-ter" href="/gc/">JVM垃圾回收</a>
+            
+        </h1>
+        <div class="content">
+            <h2 id="JVM-内存分配策略"><a href="#JVM-内存分配策略" class="headerlink" title="JVM 内存分配策略"></a>JVM 内存分配策略</h2><ul>
+<li>对象优先在Eden区分配</li>
+</ul>
+<p>如果Eden区不足分配对象，会做一个Young GC，存活对象被存入Survivor区，回收内存。</p>
+<p>然后再尝试分配对象，如果依然不足分配，才分配到Old区。</p>
+        </div>
+        
+        
+        <div class="level is-mobile">
+            <div class="level-start">
+                <div class="level-item">
+                <a class="button is-size-7 is-light" href="/gc/#more">阅读更多</a>
+                </div>
+            </div>
+        </div>
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+    
+<div class="card">
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2019-12-26T03:14:59.000Z">2019-12-26</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/java/">java</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    几秒 读完 (大约 68 个字)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/jinfo/">JDK命令行工具之jinfo</a>
             
         </h1>
         <div class="content">
             <blockquote>
-<p><a href="https://www.hollischuang.com/archives/2509" target="_blank" rel="noopener">https://www.hollischuang.com/archives/2509</a></p>
+<p><a href="http://lousama.com/2016/01/20/jdk命令行工具详解-jinfo/" target="_blank" rel="noopener">http://lousama.com/2016/01/20/jdk命令行工具详解-jinfo/</a></p>
 </blockquote>
-<p><img src="/images/post/jvm.png" alt="jvm.png"></p>
+<figure class="highlight shell hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-meta">#</span><span class="hljs-bash"> 实时查看和调整虚拟机运行参数</span></span><br><span class="line"><span class="hljs-meta">#</span><span class="hljs-bash"> option  操作参数</span></span><br><span class="line"><span class="hljs-meta">#</span><span class="hljs-bash">   -flag  输出/关闭/设置指定JVM参数</span></span><br><span class="line"><span class="hljs-meta">#</span><span class="hljs-bash">   -flags  输出所有JVM参数的值</span></span><br><span class="line"><span class="hljs-meta">#</span><span class="hljs-bash">   -sysprops  输出系统属性，等同于System.getProperties()</span></span><br><span class="line">jinfo -&lt;option&gt; &lt;vmid&gt;</span><br></pre></td></tr></table></figure>
+
         </div>
         
-        
-        <div class="level is-mobile">
-            <div class="level-start">
-                <div class="level-item">
-                <a class="button is-size-7 is-light" href="/jvm/#more">阅读更多</a>
-                </div>
-            </div>
-        </div>
         
         
     </div>
@@ -290,7 +293,7 @@
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-12-16T07:45:46.000Z">2019-12-16</time>
+                <time class="level-item has-text-grey" datetime="2019-12-26T03:13:36.000Z">2019-12-26</time>
                 
                 <div class="level-item">
                 <a class="has-link-grey -link" href="/categories/java/">java</a>
@@ -300,7 +303,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    2 分钟 读完 (大约 365 个字)
+                    几秒 读完 (大约 76 个字)
                 </span>
                 
                 
@@ -309,79 +312,17 @@
         
         <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
             
-                <a class="has-link-black-ter" href="/classloader-custom/">自定义类加载器</a>
-            
-        </h1>
-        <div class="content">
-            <p>通常情况下，我们都是直接使用系统类加载器。但是，有的时候，我们也需要自定义类加载器。比如应用是通过网络来传输Java类的字节码，为保证安全性，这些字节码经过了加密处理，这时系统类加载器就无法对其进行加载，这样则需要自定义类加载器来实现。</p>
-<p>自定义类加载器一般都是继承自<code>ClassLoader</code>类，从上面对<code>loadClass</code>方法来分析来看，我们只需要重写<code>findClass</code>方法即可。</p>
-        </div>
-        
-        
-        <div class="level is-mobile">
-            <div class="level-start">
-                <div class="level-item">
-                <a class="button is-size-7 is-light" href="/classloader-custom/#more">阅读更多</a>
-                </div>
-            </div>
-        </div>
-        
-        
-    </div>
-</div>
-
-
-
-
-
-
-
-
-    
-<div class="card">
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-12-16T06:38:18.000Z">2019-12-16</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/java/">java</a>
-                </div>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    10 分钟 读完 (大约 1562 个字)
-                </span>
-                
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/classloader/">java类加载器</a>
+                <a class="has-link-black-ter" href="/jps/">JDK命令行工具之jps</a>
             
         </h1>
         <div class="content">
             <blockquote>
-<p><a href="https://juejin.im/post/5a810b0e5188257a5c606a85" target="_blank" rel="noopener">https://juejin.im/post/5a810b0e5188257a5c606a85</a></p>
+<p><a href="http://lousama.com/2016/01/20/jdk命令行工具详解-jps/" target="_blank" rel="noopener">http://lousama.com/2016/01/20/jdk命令行工具详解-jps/</a></p>
 </blockquote>
-<h2 id="什么是类的加载"><a href="#什么是类的加载" class="headerlink" title="什么是类的加载"></a>什么是类的加载</h2><p>将<code>.class</code>中的二进制数据读入到方法区，并在堆区创建<code>java.lang.Class</code>对象，用来封装类在方法区内的数据结构，并且向Java程序员提供了访问该数据结构的接口。</p>
-<p><img src="/images/post/classloader-definition.png" alt="classloader-definition"></p>
+<figure class="highlight shell hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-meta">#</span><span class="hljs-bash"> 列出正在运行的虚拟机进程</span></span><br><span class="line"><span class="hljs-meta">#</span><span class="hljs-bash"> option  操作参数</span></span><br><span class="line"><span class="hljs-meta">#</span><span class="hljs-bash">   -l  输出主类全名或jar路径</span></span><br><span class="line"><span class="hljs-meta">#</span><span class="hljs-bash">   -q  只输出vmid</span></span><br><span class="line"><span class="hljs-meta">#</span><span class="hljs-bash">   -m  输出JVM启动时传递给main()的参数</span></span><br><span class="line"><span class="hljs-meta">#</span><span class="hljs-bash">   -v  输出JVM启动时显示指定的JVM参数</span></span><br><span class="line">jps -&lt;option&gt;</span><br></pre></td></tr></table></figure>
+
         </div>
         
-        
-        <div class="level is-mobile">
-            <div class="level-start">
-                <div class="level-item">
-                <a class="button is-size-7 is-light" href="/classloader/#more">阅读更多</a>
-                </div>
-            </div>
-        </div>
         
         
     </div>
@@ -401,7 +342,7 @@
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-12-13T10:05:58.000Z">2019-12-13</time>
+                <time class="level-item has-text-grey" datetime="2019-12-26T03:12:37.000Z">2019-12-26</time>
                 
                 <div class="level-item">
                 <a class="has-link-grey -link" href="/categories/java/">java</a>
@@ -411,7 +352,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    2 分钟 读完 (大约 331 个字)
+                    几秒 读完 (大约 49 个字)
                 </span>
                 
                 
@@ -420,23 +361,19 @@
         
         <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
             
-                <a class="has-link-black-ter" href="/jxls-function/">jxls之自定义函数</a>
+                <a class="has-link-black-ter" href="/jhat/">JDK命令行工具之jhat</a>
             
         </h1>
         <div class="content">
             <blockquote>
-<p><a href="http://jxls.sourceforge.net/reference/expression_language.html" target="_blank" rel="noopener">http://jxls.sourceforge.net/reference/expression_language.html</a></p>
+<p><a href="http://lousama.com/2016/01/20/jdk命令行工具详解-jhat/" target="_blank" rel="noopener">http://lousama.com/2016/01/20/jdk命令行工具详解-jhat/</a></p>
 </blockquote>
+<figure class="highlight shell hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-meta">#</span><span class="hljs-bash"> 与jmap搭配使用，用来分析jmap生成的dump</span></span><br><span class="line">jhat &lt;dumpfile&gt;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight shell hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-meta">#</span><span class="hljs-bash"> 分配512M内存去启动HTTP服务器</span></span><br><span class="line">jhat -J-Xmx512m dump.hprof</span><br></pre></td></tr></table></figure>
+
         </div>
         
-        
-        <div class="level is-mobile">
-            <div class="level-start">
-                <div class="level-item">
-                <a class="button is-size-7 is-light" href="/jxls-function/#more">阅读更多</a>
-                </div>
-            </div>
-        </div>
         
         
     </div>
@@ -456,7 +393,7 @@
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-12-13T06:54:27.000Z">2019-12-13</time>
+                <time class="level-item has-text-grey" datetime="2019-12-26T03:11:19.000Z">2019-12-26</time>
                 
                 <div class="level-item">
                 <a class="has-link-grey -link" href="/categories/java/">java</a>
@@ -466,7 +403,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    2 分钟 读完 (大约 268 个字)
+                    几秒 读完 (大约 50 个字)
                 </span>
                 
                 
@@ -475,25 +412,19 @@
         
         <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
             
-                <a class="has-link-black-ter" href="/jxls/">Excel报表生成类库jxls</a>
+                <a class="has-link-black-ter" href="/jmap/">JDK命令行工具之jmap</a>
             
         </h1>
         <div class="content">
             <blockquote>
-<p><a href="http://jxls.sourceforge.net" target="_blank" rel="noopener">http://jxls.sourceforge.net</a></p>
+<p><a href="http://lousama.com/2016/01/20/jdk命令行工具详解-jmap/" target="_blank" rel="noopener">http://lousama.com/2016/01/20/jdk命令行工具详解-jmap/</a></p>
 </blockquote>
-<p><code>Jxls</code>是一个小型<code>Java</code>库, 可简化Excel报表的生成.</p>
-<p><code>Jxls</code>在Excel模板中使用特殊的标记<a href="http://commons.apache.org/proper/commons-jexl/reference/syntax.html" target="_blank" rel="noopener">Apache Jexl</a>来定义输出格式和数据布局.</p>
+<figure class="highlight shell hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-meta">#</span><span class="hljs-bash"> 用于生成Heap Dump文件</span></span><br><span class="line">jmap -&lt;option&gt; &lt;vmid&gt;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight shell hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-meta">#</span><span class="hljs-bash"> .hprof  后缀是为了后续可以直接用MAT（Memory Anlysis Tool）</span></span><br><span class="line">jmap -dump:live,format=b,file=dump.hprof 8282</span><br></pre></td></tr></table></figure>
+
         </div>
         
-        
-        <div class="level is-mobile">
-            <div class="level-start">
-                <div class="level-item">
-                <a class="button is-size-7 is-light" href="/jxls/#more">阅读更多</a>
-                </div>
-            </div>
-        </div>
         
         
     </div>
@@ -513,7 +444,7 @@
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-12-12T06:30:05.000Z">2019-12-12</time>
+                <time class="level-item has-text-grey" datetime="2019-12-26T03:10:01.000Z">2019-12-26</time>
                 
                 <div class="level-item">
                 <a class="has-link-grey -link" href="/categories/java/">java</a>
@@ -523,7 +454,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    3 分钟 读完 (大约 522 个字)
+                    1 分钟 读完 (大约 157 个字)
                 </span>
                 
                 
@@ -532,24 +463,17 @@
         
         <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
             
-                <a class="has-link-black-ter" href="/aes-128/">AES-128加密解密</a>
+                <a class="has-link-black-ter" href="/jstack/">JDK命令行工具之jstack</a>
             
         </h1>
         <div class="content">
             <blockquote>
-<p><a href="https://www.it399.com/blog/web/201805211243" target="_blank" rel="noopener">https://www.it399.com/blog/web/201805211243</a></p>
+<p><a href="http://lousama.com/2016/01/20/jdk命令行工具详解-jstack/" target="_blank" rel="noopener">http://lousama.com/2016/01/20/jdk命令行工具详解-jstack/</a></p>
 </blockquote>
-<h2 id="密钥对转字符串"><a href="#密钥对转字符串" class="headerlink" title="密钥对转字符串"></a>密钥对转字符串</h2><figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-meta">@Test</span></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">encodeKey</span><span class="hljs-params">()</span> <span class="hljs-keyword">throws</span> Exception </span>&#123;</span><br><span class="line">    String algorithm = <span class="hljs-string">"AES"</span>;</span><br><span class="line">    Integer keySize = <span class="hljs-number">128</span>;</span><br><span class="line"></span><br><span class="line">    Base64.Encoder encoder = Base64.getEncoder();</span><br><span class="line"></span><br><span class="line">    KeyGenerator generator = KeyGenerator.getInstance(algorithm);</span><br><span class="line">    generator.init(keySize);</span><br><span class="line">    SecretKey secretKey = generator.generateKey();</span><br><span class="line"></span><br><span class="line">    String encodedSecretKey = encoder.encodeToString(secretKey.getEncoded());</span><br><span class="line">    log.info(<span class="hljs-string">"encodedSecretKey: &#123;&#125;"</span>, encodedSecretKey);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-meta">#</span><span class="hljs-bash"> 监视虚拟机运行时状态信息</span></span><br><span class="line"><span class="hljs-meta">#</span><span class="hljs-bash"> option  操作参数</span></span><br><span class="line"><span class="hljs-meta">#</span><span class="hljs-bash">   -dump  生成堆转储快照</span></span><br><span class="line"><span class="hljs-meta">#</span><span class="hljs-bash">   -finalizerinfo  显示在F-Queue队列等待Finalizer线程执行finalizer方法的对象</span></span><br><span class="line"><span class="hljs-meta">#</span><span class="hljs-bash">   -heap  显示Java堆使用情况，在CMS下会有几率导致进程中断，推荐使用jstat代替</span></span><br><span class="line"><span class="hljs-meta">#</span><span class="hljs-bash">   -histo  显示堆中对象的统计信息，加live关键字会强制做1次FULL GC</span></span><br><span class="line"><span class="hljs-meta">#</span><span class="hljs-bash">   -clstats  显示元空间内存状态，该口令是JDK8开始使用，之前是-permstat</span></span><br><span class="line"><span class="hljs-meta">#</span><span class="hljs-bash">   -F  当-dump没有响应时，强制生成dump快照</span></span><br><span class="line">jstack -&lt;option&gt; &lt;vmid&gt;</span><br></pre></td></tr></table></figure>
+
         </div>
         
-        
-        <div class="level is-mobile">
-            <div class="level-start">
-                <div class="level-item">
-                <a class="button is-size-7 is-light" href="/aes-128/#more">阅读更多</a>
-                </div>
-            </div>
-        </div>
         
         
     </div>
@@ -569,7 +493,7 @@
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-12-09T02:04:35.000Z">2019-12-09</time>
+                <time class="level-item has-text-grey" datetime="2019-12-26T03:05:33.000Z">2019-12-26</time>
                 
                 <div class="level-item">
                 <a class="has-link-grey -link" href="/categories/java/">java</a>
@@ -579,7 +503,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    3 分钟 读完 (大约 485 个字)
+                    4 分钟 读完 (大约 636 个字)
                 </span>
                 
                 
@@ -588,18 +512,21 @@
         
         <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
             
-                <a class="has-link-black-ter" href="/rsa-1024/">RSA-1024加密解密</a>
+                <a class="has-link-black-ter" href="/jstat/">JDK命令行工具之jstat</a>
             
         </h1>
         <div class="content">
-            <h2 id="密钥对转字符串"><a href="#密钥对转字符串" class="headerlink" title="密钥对转字符串"></a>密钥对转字符串</h2><figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-meta">@Test</span></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">encodeKey</span><span class="hljs-params">()</span> <span class="hljs-keyword">throws</span> Exception </span>&#123;</span><br><span class="line">    String algorithm = <span class="hljs-string">"RSA"</span>;</span><br><span class="line">    Integer keySize = <span class="hljs-number">1024</span>;</span><br><span class="line"></span><br><span class="line">    Base64.Encoder encoder = Base64.getEncoder();</span><br><span class="line"></span><br><span class="line">    KeyPairGenerator generator = KeyPairGenerator.getInstance(algorithm);</span><br><span class="line">    generator.initialize(keySize);</span><br><span class="line">    KeyPair keyPair = generator.generateKeyPair();</span><br><span class="line"></span><br><span class="line">    String encodedPublicKey = encoder.encodeToString(keyPair.getPublic().getEncoded());</span><br><span class="line">    log.info(<span class="hljs-string">"encodedPublicKey: &#123;&#125;"</span>, encodedPublicKey);</span><br><span class="line"></span><br><span class="line">    String encodedPrivateKey = encoder.encodeToString(keyPair.getPrivate().getEncoded());</span><br><span class="line">    log.info(<span class="hljs-string">"encodedPrivateKey: &#123;&#125;"</span>, encodedPrivateKey);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+            <blockquote>
+<p><a href="http://lousama.com/2016/01/20/jdk命令行工具详解-jstat/" target="_blank" rel="noopener">http://lousama.com/2016/01/20/jdk命令行工具详解-jstat/</a></p>
+</blockquote>
+<figure class="highlight shell hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-meta">#</span><span class="hljs-bash"> 监视虚拟机运行时状态信息</span></span><br><span class="line"><span class="hljs-meta">#</span><span class="hljs-bash"> option  操作参数</span></span><br><span class="line"><span class="hljs-meta">#</span><span class="hljs-bash"> vmid  本地虚拟机进程ID</span></span><br><span class="line"><span class="hljs-meta">#</span><span class="hljs-bash"> interval  连续输出的时间间隔</span></span><br><span class="line"><span class="hljs-meta">#</span><span class="hljs-bash"> count  连续输出的次数</span></span><br><span class="line">jstat -&lt;option&gt; &lt;vmid&gt; [&lt;interval&gt; [&lt;count&gt;]]</span><br></pre></td></tr></table></figure>
         </div>
         
         
         <div class="level is-mobile">
             <div class="level-start">
                 <div class="level-item">
-                <a class="button is-size-7 is-light" href="/rsa-1024/#more">阅读更多</a>
+                <a class="button is-size-7 is-light" href="/jstat/#more">阅读更多</a>
                 </div>
             </div>
         </div>
@@ -622,17 +549,17 @@
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-12-06T07:55:55.000Z">2019-12-06</time>
+                <time class="level-item has-text-grey" datetime="2019-12-26T02:51:22.000Z">2019-12-26</time>
                 
                 <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/aliyun/">aliyun</a>
+                <a class="has-link-grey -link" href="/categories/java/">java</a>
                 </div>
                 
                 
                 <span class="level-item has-text-grey">
                     
                     
-                    2 分钟 读完 (大约 371 个字)
+                    几秒 读完 (大约 28 个字)
                 </span>
                 
                 
@@ -641,23 +568,66 @@
         
         <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
             
-                <a class="has-link-black-ter" href="/aliyun-ons-transaction/">收发事务消息</a>
+                <a class="has-link-black-ter" href="/tprofiler/">TProfiler</a>
             
         </h1>
         <div class="content">
             <blockquote>
-<p><a href="https://help.aliyun.com/document_detail/29548.html" target="_blank" rel="noopener">https://help.aliyun.com/document_detail/29548.html</a></p>
+<p><a href="https://github.com/alibaba/TProfiler" target="_blank" rel="noopener">https://github.com/alibaba/TProfiler</a></p>
 </blockquote>
+<p><code>TProfiler</code>是一个可以在生产环境长期使用的性能分析工具。</p>
+
         </div>
         
         
-        <div class="level is-mobile">
-            <div class="level-start">
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+    
+<div class="card">
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2019-12-26T02:49:47.000Z">2019-12-26</time>
+                
                 <div class="level-item">
-                <a class="button is-size-7 is-light" href="/aliyun-ons-transaction/#more">阅读更多</a>
+                <a class="has-link-grey -link" href="/categories/java/">java</a>
                 </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    几秒 读完 (大约 50 个字)
+                </span>
+                
+                
             </div>
         </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/hpjmeter/">HPjmeter</a>
+            
+        </h1>
+        <div class="content">
+            <blockquote>
+<p><a href="http://www.javaperformancetuning.com/tools/hpjmeter/" target="_blank" rel="noopener">http://www.javaperformancetuning.com/tools/hpjmeter/</a></p>
+</blockquote>
+<p><code>HPjmeter</code>是免费的，受支持的Java性能分析工具，该工具以图形方式显示与Java应用程序性能相关的重要指标。</p>
+
+        </div>
+        
         
         
     </div>
@@ -690,7 +660,7 @@
             
             <li><span class="pagination-ellipsis has-text-black-ter">&hellip;</span></li>
             
-            <li><a class="pagination-link has-text-black-ter" href="/page/6/">6</a></li>
+            <li><a class="pagination-link has-text-black-ter" href="/page/7/">7</a></li>
             
         </ul>
     </nav>
@@ -739,7 +709,7 @@
                         文章
                     </p>
                     <p class="title has-text-weight-normal">
-                        56
+                        67
                     </p>
                 </div>
             </div>
@@ -749,7 +719,7 @@
                         分类
                     </p>
                     <p class="title has-text-weight-normal">
-                        8
+                        11
                     </p>
                 </div>
             </div>
@@ -759,7 +729,7 @@
                         标签
                     </p>
                     <p class="title has-text-weight-normal">
-                        44
+                        55
                     </p>
                 </div>
             </div>
@@ -909,12 +879,28 @@
                 <span class="level-item tag">39</span>
             </span>
         </a></li><li>
+        <a class="level is-marginless" href="/categories/mongo/">
+            <span class="level-start">
+                <span class="level-item">mongo</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/mysql/">
+            <span class="level-start">
+                <span class="level-item">mysql</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li><li>
         <a class="level is-marginless" href="/categories/redis/">
             <span class="level-start">
                 <span class="level-item">redis</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">2</span>
+                <span class="level-item tag">3</span>
             </span>
         </a></li><li>
         <a class="level is-marginless" href="/categories/rocketmq/">
@@ -923,6 +909,14 @@
             </span>
             <span class="level-end">
                 <span class="level-item tag">3</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/tools/">
+            <span class="level-start">
+                <span class="level-item">tools</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">8</span>
             </span>
         </a></li>
             </ul>
@@ -935,7 +929,7 @@
         <h3 class="menu-label">
             标签云
         </h3>
-        <a href="/tags/activemq/" style="font-size: 14px;">activemq</a> <a href="/tags/aes-128/" style="font-size: 10px;">aes-128</a> <a href="/tags/alibaba-canal/" style="font-size: 10px;">alibaba-canal</a> <a href="/tags/aliyun-log/" style="font-size: 10px;">aliyun-log</a> <a href="/tags/aliyun-ons/" style="font-size: 12px;">aliyun-ons</a> <a href="/tags/aliyun-oss/" style="font-size: 12px;">aliyun-oss</a> <a href="/tags/apache-commons/" style="font-size: 10px;">apache-commons</a> <a href="/tags/arthas/" style="font-size: 10px;">arthas</a> <a href="/tags/btrace/" style="font-size: 10px;">btrace</a> <a href="/tags/chcp/" style="font-size: 10px;">chcp</a> <a href="/tags/classloader/" style="font-size: 12px;">classloader</a> <a href="/tags/easemob-im/" style="font-size: 10px;">easemob-im</a> <a href="/tags/flume/" style="font-size: 12px;">flume</a> <a href="/tags/gc/" style="font-size: 10px;">gc</a> <a href="/tags/hpjmeter/" style="font-size: 10px;">hpjmeter</a> <a href="/tags/jackson/" style="font-size: 10px;">jackson</a> <a href="/tags/jar-manifest/" style="font-size: 10px;">jar-manifest</a> <a href="/tags/java-servlet/" style="font-size: 10px;">java-servlet</a> <a href="/tags/jdk-tools/" style="font-size: 20px;">jdk-tools</a> <a href="/tags/jedis/" style="font-size: 10px;">jedis</a> <a href="/tags/jhat/" style="font-size: 10px;">jhat</a> <a href="/tags/jiguang-push/" style="font-size: 10px;">jiguang-push</a> <a href="/tags/jinfo/" style="font-size: 10px;">jinfo</a> <a href="/tags/jmap/" style="font-size: 10px;">jmap</a> <a href="/tags/jooq/" style="font-size: 10px;">jooq</a> <a href="/tags/jps/" style="font-size: 10px;">jps</a> <a href="/tags/jstack/" style="font-size: 10px;">jstack</a> <a href="/tags/jstat/" style="font-size: 10px;">jstat</a> <a href="/tags/jvisualvm/" style="font-size: 10px;">jvisualvm</a> <a href="/tags/jvm/" style="font-size: 10px;">jvm</a> <a href="/tags/jvm-tools/" style="font-size: 16px;">jvm-tools</a> <a href="/tags/jwt/" style="font-size: 10px;">jwt</a> <a href="/tags/jxls/" style="font-size: 12px;">jxls</a> <a href="/tags/maven/" style="font-size: 10px;">maven</a> <a href="/tags/okhttp/" style="font-size: 10px;">okhttp</a> <a href="/tags/reactor/" style="font-size: 18px;">reactor</a> <a href="/tags/redis/" style="font-size: 12px;">redis</a> <a href="/tags/rocketmq/" style="font-size: 14px;">rocketmq</a> <a href="/tags/rsa-1024/" style="font-size: 10px;">rsa-1024</a> <a href="/tags/sorting-algorithms/" style="font-size: 10px;">sorting-algorithms</a> <a href="/tags/tprofiler/" style="font-size: 10px;">tprofiler</a> <a href="/tags/vertx/" style="font-size: 10px;">vertx</a> <a href="/tags/webmagic/" style="font-size: 10px;">webmagic</a> <a href="/tags/wechat-api/" style="font-size: 10px;">wechat-api</a>
+        <a href="/tags/activemq/" style="font-size: 14px;">activemq</a> <a href="/tags/aes-128/" style="font-size: 10px;">aes-128</a> <a href="/tags/alibaba-canal/" style="font-size: 10px;">alibaba-canal</a> <a href="/tags/aliyun-log/" style="font-size: 10px;">aliyun-log</a> <a href="/tags/aliyun-ons/" style="font-size: 12px;">aliyun-ons</a> <a href="/tags/aliyun-oss/" style="font-size: 12px;">aliyun-oss</a> <a href="/tags/apache-commons/" style="font-size: 10px;">apache-commons</a> <a href="/tags/arthas/" style="font-size: 10px;">arthas</a> <a href="/tags/btrace/" style="font-size: 10px;">btrace</a> <a href="/tags/chcp/" style="font-size: 10px;">chcp</a> <a href="/tags/classloader/" style="font-size: 12px;">classloader</a> <a href="/tags/easemob-im/" style="font-size: 10px;">easemob-im</a> <a href="/tags/flume/" style="font-size: 12px;">flume</a> <a href="/tags/gc/" style="font-size: 10px;">gc</a> <a href="/tags/hpjmeter/" style="font-size: 10px;">hpjmeter</a> <a href="/tags/jackson/" style="font-size: 10px;">jackson</a> <a href="/tags/jar-manifest/" style="font-size: 10px;">jar-manifest</a> <a href="/tags/java-servlet/" style="font-size: 10px;">java-servlet</a> <a href="/tags/jdk-tools/" style="font-size: 20px;">jdk-tools</a> <a href="/tags/jedis/" style="font-size: 10px;">jedis</a> <a href="/tags/jenkins/" style="font-size: 10px;">jenkins</a> <a href="/tags/jhat/" style="font-size: 10px;">jhat</a> <a href="/tags/jiguang-push/" style="font-size: 10px;">jiguang-push</a> <a href="/tags/jinfo/" style="font-size: 10px;">jinfo</a> <a href="/tags/jmap/" style="font-size: 10px;">jmap</a> <a href="/tags/jms/" style="font-size: 10px;">jms</a> <a href="/tags/jooq/" style="font-size: 10px;">jooq</a> <a href="/tags/jps/" style="font-size: 10px;">jps</a> <a href="/tags/jstack/" style="font-size: 10px;">jstack</a> <a href="/tags/jstat/" style="font-size: 10px;">jstat</a> <a href="/tags/jumpserver/" style="font-size: 10px;">jumpserver</a> <a href="/tags/jvisualvm/" style="font-size: 10px;">jvisualvm</a> <a href="/tags/jvm/" style="font-size: 10px;">jvm</a> <a href="/tags/jvm-tools/" style="font-size: 16px;">jvm-tools</a> <a href="/tags/jwt/" style="font-size: 10px;">jwt</a> <a href="/tags/jxls/" style="font-size: 12px;">jxls</a> <a href="/tags/ldapadmin/" style="font-size: 10px;">ldapadmin</a> <a href="/tags/ldapservice/" style="font-size: 10px;">ldapservice</a> <a href="/tags/maven/" style="font-size: 12px;">maven</a> <a href="/tags/mongo/" style="font-size: 10px;">mongo</a> <a href="/tags/mysql/" style="font-size: 10px;">mysql</a> <a href="/tags/nexus/" style="font-size: 10px;">nexus</a> <a href="/tags/nodebb/" style="font-size: 10px;">nodebb</a> <a href="/tags/okhttp/" style="font-size: 10px;">okhttp</a> <a href="/tags/openldap/" style="font-size: 14px;">openldap</a> <a href="/tags/reactor/" style="font-size: 18px;">reactor</a> <a href="/tags/redis/" style="font-size: 14px;">redis</a> <a href="/tags/rocketmq/" style="font-size: 14px;">rocketmq</a> <a href="/tags/rsa-1024/" style="font-size: 10px;">rsa-1024</a> <a href="/tags/sorting-algorithms/" style="font-size: 10px;">sorting-algorithms</a> <a href="/tags/tprofiler/" style="font-size: 10px;">tprofiler</a> <a href="/tags/vertx/" style="font-size: 10px;">vertx</a> <a href="/tags/webmagic/" style="font-size: 10px;">webmagic</a> <a href="/tags/wechat-api/" style="font-size: 10px;">wechat-api</a> <a href="/tags/wordpress/" style="font-size: 10px;">wordpress</a>
     </div>
 </div>
     
@@ -950,18 +944,18 @@
         
         <article class="media">
             
-            <a href="/gc/" class="media-left">
+            <a href="/nodebb/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="JVM垃圾回收">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="快速安装NodeBB">
                 </p>
             </a>
             
             <div class="media-content">
                 <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-12-26T10:37:07.000Z">2019-12-26</time></div>
-                    <a href="/gc/" class="title has-link-black-ter is-size-6 has-text-weight-normal">JVM垃圾回收</a>
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-01-15T07:38:34.000Z">2020-01-15</time></div>
+                    <a href="/nodebb/" class="title has-link-black-ter is-size-6 has-text-weight-normal">快速安装NodeBB</a>
                     <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/java/">java</a>
+                        <a class="has-link-grey -link" href="/categories/tools/">tools</a>
                     </p>
                 </div>
             </div>
@@ -969,18 +963,18 @@
         
         <article class="media">
             
-            <a href="/jinfo/" class="media-left">
+            <a href="/mongo-install/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="JDK命令行工具之jinfo">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="快速安装MongoDB">
                 </p>
             </a>
             
             <div class="media-content">
                 <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-12-26T03:14:59.000Z">2019-12-26</time></div>
-                    <a href="/jinfo/" class="title has-link-black-ter is-size-6 has-text-weight-normal">JDK命令行工具之jinfo</a>
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-01-12T10:27:57.000Z">2020-01-12</time></div>
+                    <a href="/mongo-install/" class="title has-link-black-ter is-size-6 has-text-weight-normal">快速安装MongoDB</a>
                     <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/java/">java</a>
+                        <a class="has-link-grey -link" href="/categories/mongo/">mongo</a>
                     </p>
                 </div>
             </div>
@@ -988,18 +982,18 @@
         
         <article class="media">
             
-            <a href="/jps/" class="media-left">
+            <a href="/ldapservice/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="JDK命令行工具之jps">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="LDAP自助服务">
                 </p>
             </a>
             
             <div class="media-content">
                 <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-12-26T03:13:36.000Z">2019-12-26</time></div>
-                    <a href="/jps/" class="title has-link-black-ter is-size-6 has-text-weight-normal">JDK命令行工具之jps</a>
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-01-12T09:28:44.000Z">2020-01-12</time></div>
+                    <a href="/ldapservice/" class="title has-link-black-ter is-size-6 has-text-weight-normal">LDAP自助服务</a>
                     <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/java/">java</a>
+                        <a class="has-link-grey -link" href="/categories/tools/">tools</a>
                     </p>
                 </div>
             </div>
@@ -1007,18 +1001,18 @@
         
         <article class="media">
             
-            <a href="/jhat/" class="media-left">
+            <a href="/ldapadmin/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="JDK命令行工具之jhat">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="LDAP管理工具">
                 </p>
             </a>
             
             <div class="media-content">
                 <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-12-26T03:12:37.000Z">2019-12-26</time></div>
-                    <a href="/jhat/" class="title has-link-black-ter is-size-6 has-text-weight-normal">JDK命令行工具之jhat</a>
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-01-12T09:05:50.000Z">2020-01-12</time></div>
+                    <a href="/ldapadmin/" class="title has-link-black-ter is-size-6 has-text-weight-normal">LDAP管理工具</a>
                     <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/java/">java</a>
+                        <a class="has-link-grey -link" href="/categories/tools/">tools</a>
                     </p>
                 </div>
             </div>
@@ -1026,18 +1020,18 @@
         
         <article class="media">
             
-            <a href="/jmap/" class="media-left">
+            <a href="/openldap/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="JDK命令行工具之jmap">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="快速安装OpenLDAP">
                 </p>
             </a>
             
             <div class="media-content">
                 <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-12-26T03:11:19.000Z">2019-12-26</time></div>
-                    <a href="/jmap/" class="title has-link-black-ter is-size-6 has-text-weight-normal">JDK命令行工具之jmap</a>
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-01-12T08:58:10.000Z">2020-01-12</time></div>
+                    <a href="/openldap/" class="title has-link-black-ter is-size-6 has-text-weight-normal">快速安装OpenLDAP</a>
                     <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/java/">java</a>
+                        <a class="has-link-grey -link" href="/categories/tools/">tools</a>
                     </p>
                 </div>
             </div>
@@ -1053,6 +1047,17 @@
             归档
         </h3>
         <ul class="menu-list">
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2020/01/">
+                <span class="level-start">
+                    <span class="level-item">一月 2020</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">11</span>
+                </span>
+            </a>
+        </li>
         
         <li>
             <a class="level is-marginless" href="/archives/2019/12/">
@@ -1230,6 +1235,13 @@
                 </div>
                 
                 <div class="control">
+                    <a class="tags has-addons" href="/tags/jenkins/">
+                        <span class="tag">jenkins</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
                     <a class="tags has-addons" href="/tags/jhat/">
                         <span class="tag">jhat</span>
                         <span class="tag is-grey">1</span>
@@ -1258,6 +1270,13 @@
                 </div>
                 
                 <div class="control">
+                    <a class="tags has-addons" href="/tags/jms/">
+                        <span class="tag">jms</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
                     <a class="tags has-addons" href="/tags/jooq/">
                         <span class="tag">jooq</span>
                         <span class="tag is-grey">1</span>
@@ -1281,6 +1300,13 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/jstat/">
                         <span class="tag">jstat</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/jumpserver/">
+                        <span class="tag">jumpserver</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>
@@ -1321,8 +1347,50 @@
                 </div>
                 
                 <div class="control">
+                    <a class="tags has-addons" href="/tags/ldapadmin/">
+                        <span class="tag">ldapadmin</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/ldapservice/">
+                        <span class="tag">ldapservice</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
                     <a class="tags has-addons" href="/tags/maven/">
                         <span class="tag">maven</span>
+                        <span class="tag is-grey">2</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/mongo/">
+                        <span class="tag">mongo</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/mysql/">
+                        <span class="tag">mysql</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/nexus/">
+                        <span class="tag">nexus</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/nodebb/">
+                        <span class="tag">nodebb</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>
@@ -1331,6 +1399,13 @@
                     <a class="tags has-addons" href="/tags/okhttp/">
                         <span class="tag">okhttp</span>
                         <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/openldap/">
+                        <span class="tag">openldap</span>
+                        <span class="tag is-grey">3</span>
                     </a>
                 </div>
                 
@@ -1344,7 +1419,7 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/redis/">
                         <span class="tag">redis</span>
-                        <span class="tag is-grey">2</span>
+                        <span class="tag is-grey">3</span>
                     </a>
                 </div>
                 
@@ -1393,6 +1468,13 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/wechat-api/">
                         <span class="tag">wechat-api</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/wordpress/">
+                        <span class="tag">wordpress</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>
@@ -1421,18 +1503,18 @@
         
         <article class="media">
             
-            <a href="/gc/" class="media-left">
+            <a href="/nodebb/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="JVM垃圾回收">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="快速安装NodeBB">
                 </p>
             </a>
             
             <div class="media-content">
                 <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-12-26T10:37:07.000Z">2019-12-26</time></div>
-                    <a href="/gc/" class="title has-link-black-ter is-size-6 has-text-weight-normal">JVM垃圾回收</a>
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-01-15T07:38:34.000Z">2020-01-15</time></div>
+                    <a href="/nodebb/" class="title has-link-black-ter is-size-6 has-text-weight-normal">快速安装NodeBB</a>
                     <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/java/">java</a>
+                        <a class="has-link-grey -link" href="/categories/tools/">tools</a>
                     </p>
                 </div>
             </div>
@@ -1440,18 +1522,18 @@
         
         <article class="media">
             
-            <a href="/jinfo/" class="media-left">
+            <a href="/mongo-install/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="JDK命令行工具之jinfo">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="快速安装MongoDB">
                 </p>
             </a>
             
             <div class="media-content">
                 <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-12-26T03:14:59.000Z">2019-12-26</time></div>
-                    <a href="/jinfo/" class="title has-link-black-ter is-size-6 has-text-weight-normal">JDK命令行工具之jinfo</a>
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-01-12T10:27:57.000Z">2020-01-12</time></div>
+                    <a href="/mongo-install/" class="title has-link-black-ter is-size-6 has-text-weight-normal">快速安装MongoDB</a>
                     <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/java/">java</a>
+                        <a class="has-link-grey -link" href="/categories/mongo/">mongo</a>
                     </p>
                 </div>
             </div>
@@ -1459,18 +1541,18 @@
         
         <article class="media">
             
-            <a href="/jps/" class="media-left">
+            <a href="/ldapservice/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="JDK命令行工具之jps">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="LDAP自助服务">
                 </p>
             </a>
             
             <div class="media-content">
                 <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-12-26T03:13:36.000Z">2019-12-26</time></div>
-                    <a href="/jps/" class="title has-link-black-ter is-size-6 has-text-weight-normal">JDK命令行工具之jps</a>
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-01-12T09:28:44.000Z">2020-01-12</time></div>
+                    <a href="/ldapservice/" class="title has-link-black-ter is-size-6 has-text-weight-normal">LDAP自助服务</a>
                     <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/java/">java</a>
+                        <a class="has-link-grey -link" href="/categories/tools/">tools</a>
                     </p>
                 </div>
             </div>
@@ -1478,18 +1560,18 @@
         
         <article class="media">
             
-            <a href="/jhat/" class="media-left">
+            <a href="/ldapadmin/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="JDK命令行工具之jhat">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="LDAP管理工具">
                 </p>
             </a>
             
             <div class="media-content">
                 <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-12-26T03:12:37.000Z">2019-12-26</time></div>
-                    <a href="/jhat/" class="title has-link-black-ter is-size-6 has-text-weight-normal">JDK命令行工具之jhat</a>
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-01-12T09:05:50.000Z">2020-01-12</time></div>
+                    <a href="/ldapadmin/" class="title has-link-black-ter is-size-6 has-text-weight-normal">LDAP管理工具</a>
                     <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/java/">java</a>
+                        <a class="has-link-grey -link" href="/categories/tools/">tools</a>
                     </p>
                 </div>
             </div>
@@ -1497,18 +1579,18 @@
         
         <article class="media">
             
-            <a href="/jmap/" class="media-left">
+            <a href="/openldap/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="JDK命令行工具之jmap">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="快速安装OpenLDAP">
                 </p>
             </a>
             
             <div class="media-content">
                 <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-12-26T03:11:19.000Z">2019-12-26</time></div>
-                    <a href="/jmap/" class="title has-link-black-ter is-size-6 has-text-weight-normal">JDK命令行工具之jmap</a>
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-01-12T08:58:10.000Z">2020-01-12</time></div>
+                    <a href="/openldap/" class="title has-link-black-ter is-size-6 has-text-weight-normal">快速安装OpenLDAP</a>
                     <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/java/">java</a>
+                        <a class="has-link-grey -link" href="/categories/tools/">tools</a>
                     </p>
                 </div>
             </div>
@@ -1524,6 +1606,17 @@
             归档
         </h3>
         <ul class="menu-list">
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2020/01/">
+                <span class="level-start">
+                    <span class="level-item">一月 2020</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">11</span>
+                </span>
+            </a>
+        </li>
         
         <li>
             <a class="level is-marginless" href="/archives/2019/12/">
@@ -1701,6 +1794,13 @@
                 </div>
                 
                 <div class="control">
+                    <a class="tags has-addons" href="/tags/jenkins/">
+                        <span class="tag">jenkins</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
                     <a class="tags has-addons" href="/tags/jhat/">
                         <span class="tag">jhat</span>
                         <span class="tag is-grey">1</span>
@@ -1729,6 +1829,13 @@
                 </div>
                 
                 <div class="control">
+                    <a class="tags has-addons" href="/tags/jms/">
+                        <span class="tag">jms</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
                     <a class="tags has-addons" href="/tags/jooq/">
                         <span class="tag">jooq</span>
                         <span class="tag is-grey">1</span>
@@ -1752,6 +1859,13 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/jstat/">
                         <span class="tag">jstat</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/jumpserver/">
+                        <span class="tag">jumpserver</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>
@@ -1792,8 +1906,50 @@
                 </div>
                 
                 <div class="control">
+                    <a class="tags has-addons" href="/tags/ldapadmin/">
+                        <span class="tag">ldapadmin</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/ldapservice/">
+                        <span class="tag">ldapservice</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
                     <a class="tags has-addons" href="/tags/maven/">
                         <span class="tag">maven</span>
+                        <span class="tag is-grey">2</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/mongo/">
+                        <span class="tag">mongo</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/mysql/">
+                        <span class="tag">mysql</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/nexus/">
+                        <span class="tag">nexus</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/nodebb/">
+                        <span class="tag">nodebb</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>
@@ -1802,6 +1958,13 @@
                     <a class="tags has-addons" href="/tags/okhttp/">
                         <span class="tag">okhttp</span>
                         <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/openldap/">
+                        <span class="tag">openldap</span>
+                        <span class="tag is-grey">3</span>
                     </a>
                 </div>
                 
@@ -1815,7 +1978,7 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/redis/">
                         <span class="tag">redis</span>
-                        <span class="tag is-grey">2</span>
+                        <span class="tag is-grey">3</span>
                     </a>
                 </div>
                 
@@ -1868,6 +2031,13 @@
                     </a>
                 </div>
                 
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/wordpress/">
+                        <span class="tag">wordpress</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
             </div>
         </div>
     </div>
@@ -1889,7 +2059,7 @@
                 
                 </a>
                 <p class="is-size-7">
-                &copy; 2019 WeitangLi&nbsp;
+                &copy; 2020 WeitangLi&nbsp;
                 Powered by <a href="https://hexo.io/" target="_blank">Hexo</a> & <a
                         href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank">Icarus</a>
                 

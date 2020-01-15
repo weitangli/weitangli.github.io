@@ -10,16 +10,16 @@
 <title>快速安装Redis - WeitangLi</title>
 
 
-    <meta name="description" content="官方网站 https:&#x2F;&#x2F;redis.io 中文网站 http:&#x2F;&#x2F;www.redis.cn  Redis是一种高级的Key-Value存储系统, 其中Value支持五种数据类型:  string 字符串 list 列表 set 集合 sorted set 有序集合 hash 哈希  Linux安装包下载地址: redis-4.0.14.tar.gz">
+    <meta name="description" content="官方网站 https:&#x2F;&#x2F;redis.io 中文网站 http:&#x2F;&#x2F;www.redis.cn  Redis是一种高级的Key-Value存储系统, 其中Value支持五种数据类型:  string 字符串 list 列表 set 集合 sorted set 有序集合 hash 哈希">
 <meta name="keywords" content="redis">
 <meta property="og:type" content="article">
 <meta property="og:title" content="快速安装Redis">
 <meta property="og:url" content="https:&#x2F;&#x2F;weitangli.github.io&#x2F;redis-install&#x2F;index.html">
 <meta property="og:site_name" content="WeitangLi">
-<meta property="og:description" content="官方网站 https:&#x2F;&#x2F;redis.io 中文网站 http:&#x2F;&#x2F;www.redis.cn  Redis是一种高级的Key-Value存储系统, 其中Value支持五种数据类型:  string 字符串 list 列表 set 集合 sorted set 有序集合 hash 哈希  Linux安装包下载地址: redis-4.0.14.tar.gz">
+<meta property="og:description" content="官方网站 https:&#x2F;&#x2F;redis.io 中文网站 http:&#x2F;&#x2F;www.redis.cn  Redis是一种高级的Key-Value存储系统, 其中Value支持五种数据类型:  string 字符串 list 列表 set 集合 sorted set 有序集合 hash 哈希">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https:&#x2F;&#x2F;weitangli.github.io&#x2F;images&#x2F;og_image.png">
-<meta property="og:updated_time" content="2019-12-05T10:26:54.374Z">
+<meta property="og:updated_time" content="2020-01-15T07:35:13.858Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https:&#x2F;&#x2F;weitangli.github.io&#x2F;images&#x2F;og_image.png">
 
@@ -112,10 +112,6 @@
                     
                 
                 
-                <a class="navbar-item is-hidden-tablet catalogue" title="目录" href="javascript:;">
-                    <i class="fas fa-list-ul"></i>
-                </a>
-                
                 
                 <a class="navbar-item search" title="搜索" href="javascript:;">
                     <i class="fas fa-search"></i>
@@ -136,7 +132,7 @@
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-12-05T08:48:52.000Z">2019-12-05</time>
+                <time class="level-item has-text-grey" datetime="2020-01-12T05:17:10.000Z">2020-01-12</time>
                 
                 <div class="level-item">
                 <a class="has-link-grey -link" href="/categories/redis/">redis</a>
@@ -146,7 +142,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    1 分钟 读完 (大约 186 个字)
+                    1 分钟 读完 (大约 136 个字)
                 </span>
                 
                 
@@ -176,16 +172,10 @@
 <li>sorted set 有序集合</li>
 <li>hash 哈希</li>
 </ul>
-<p>Linux安装包下载地址: <a href="http://download.redis.io/releases/redis-4.0.14.tar.gz" target="_blank" rel="noopener">redis-4.0.14.tar.gz</a></p>
 <a id="more"></a>
 
-<h2 id="目录结构"><a href="#目录结构" class="headerlink" title="目录结构"></a>目录结构</h2><figure class="highlight shell hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">├── deps</span><br><span class="line">├── src</span><br><span class="line">├── tests</span><br><span class="line">├── utils</span><br><span class="line">├── 00-RELEASENOTES</span><br><span class="line">├── BUGS</span><br><span class="line">├── CONTRIBUTING</span><br><span class="line">├── COPYING</span><br><span class="line">├── INSTALL</span><br><span class="line">├── Makefile</span><br><span class="line">├── MANIFESTO</span><br><span class="line">├── README.md</span><br><span class="line">├── redis.conf</span><br><span class="line">├── runtest</span><br><span class="line">├── runtest-cluster</span><br><span class="line">├── runtest-sentinel</span><br><span class="line">└── sentinel.conf</span><br></pre></td></tr></table></figure>
-
-<h2 id="编译安装"><a href="#编译安装" class="headerlink" title="编译安装"></a>编译安装</h2><figure class="highlight shell hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[root@centos redis-4.0.14]# make</span><br></pre></td></tr></table></figure>
-
-<h2 id="启动Server"><a href="#启动Server" class="headerlink" title="启动Server"></a>启动Server</h2><figure class="highlight shell hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[root@centos redis-4.0.14]# src/redis-server</span><br></pre></td></tr></table></figure>
-
-<h2 id="打开Client"><a href="#打开Client" class="headerlink" title="打开Client"></a>打开Client</h2><figure class="highlight shell hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[root@centos redis-4.0.14]# src/redis-cli</span><br><span class="line">127.0.0.1:6379&gt; keys *</span><br></pre></td></tr></table></figure>
+<p>使用YUM源安装Redis:</p>
+<figure class="highlight shell hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-meta">#</span><span class="hljs-bash"> 安装YUM源</span></span><br><span class="line">yum install http://rpms.remirepo.net/enterprise/remi-release-7.rpm</span><br><span class="line"></span><br><span class="line"><span class="hljs-meta">#</span><span class="hljs-bash"> 查看可以版本</span></span><br><span class="line">yum list redis --showduplicates</span><br><span class="line"></span><br><span class="line"><span class="hljs-meta">#</span><span class="hljs-bash"> 安装Redis</span></span><br><span class="line">yum install redis</span><br><span class="line"></span><br><span class="line"><span class="hljs-meta">#</span><span class="hljs-bash"> 启动Redis</span></span><br><span class="line">systemctl start redis</span><br><span class="line"></span><br><span class="line"><span class="hljs-meta">#</span><span class="hljs-bash"> 开机启动</span></span><br><span class="line">systemctl enable redis</span><br><span class="line"></span><br><span class="line"><span class="hljs-meta">#</span><span class="hljs-bash"> 卸载YUM源</span></span><br><span class="line">rpm -aq | grep remi-release</span><br><span class="line">yum remove remi-release-7.7-1.el7.remi.noarch</span><br><span class="line">rpm -aq | grep epel-release</span><br><span class="line">yum remove epel-release-7-12.noarch</span><br></pre></td></tr></table></figure>
 
         </div>
         
@@ -240,16 +230,16 @@
     <div class="level post-navigation is-flex-wrap is-mobile">
         
         <div class="level-start">
-            <a class="level level-item has-link-grey  article-nav-prev" href="/redis-questions/">
+            <a class="level level-item has-link-grey  article-nav-prev" href="/jenkins/">
                 <i class="level-item fas fa-chevron-left"></i>
-                <span class="level-item">Redis常见问题</span>
+                <span class="level-item">快速安装Jenkins</span>
             </a>
         </div>
         
         
         <div class="level-end">
-            <a class="level level-item has-link-grey  article-nav-next" href="/flume-simple/">
-                <span class="level-item">输出日志到Flume</span>
+            <a class="level level-item has-link-grey  article-nav-next" href="/mysql-install/">
+                <span class="level-item">快速安装MySQL</span>
                 <i class="level-item fas fa-chevron-right"></i>
             </a>
         </div>
@@ -326,7 +316,7 @@
                         文章
                     </p>
                     <p class="title has-text-weight-normal">
-                        56
+                        67
                     </p>
                 </div>
             </div>
@@ -336,7 +326,7 @@
                         分类
                     </p>
                     <p class="title has-text-weight-normal">
-                        8
+                        11
                     </p>
                 </div>
             </div>
@@ -346,7 +336,7 @@
                         标签
                     </p>
                     <p class="title has-text-weight-normal">
-                        44
+                        55
                     </p>
                 </div>
             </div>
@@ -402,32 +392,6 @@
 </div>
     
         
-<div class="card widget" id="toc">
-    <div class="card-content">
-        <div class="menu">
-            <h3 class="menu-label">
-                目录
-            </h3>
-            <ul class="menu-list"><li>
-        <a class="is-flex" href="#目录结构">
-        <span class="has-mr-6">1</span>
-        <span>目录结构</span>
-        </a></li><li>
-        <a class="is-flex" href="#编译安装">
-        <span class="has-mr-6">2</span>
-        <span>编译安装</span>
-        </a></li><li>
-        <a class="is-flex" href="#启动Server">
-        <span class="has-mr-6">3</span>
-        <span>启动Server</span>
-        </a></li><li>
-        <a class="is-flex" href="#打开Client">
-        <span class="has-mr-6">4</span>
-        <span>打开Client</span>
-        </a></li></ul>
-        </div>
-    </div>
-</div>
     
         <div class="card widget">
     <div class="card-content">
@@ -522,12 +486,28 @@
                 <span class="level-item tag">39</span>
             </span>
         </a></li><li>
+        <a class="level is-marginless" href="/categories/mongo/">
+            <span class="level-start">
+                <span class="level-item">mongo</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/mysql/">
+            <span class="level-start">
+                <span class="level-item">mysql</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li><li>
         <a class="level is-marginless" href="/categories/redis/">
             <span class="level-start">
                 <span class="level-item">redis</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">2</span>
+                <span class="level-item tag">3</span>
             </span>
         </a></li><li>
         <a class="level is-marginless" href="/categories/rocketmq/">
@@ -536,6 +516,14 @@
             </span>
             <span class="level-end">
                 <span class="level-item tag">3</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/tools/">
+            <span class="level-start">
+                <span class="level-item">tools</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">8</span>
             </span>
         </a></li>
             </ul>
@@ -548,7 +536,7 @@
         <h3 class="menu-label">
             标签云
         </h3>
-        <a href="/tags/activemq/" style="font-size: 14px;">activemq</a> <a href="/tags/aes-128/" style="font-size: 10px;">aes-128</a> <a href="/tags/alibaba-canal/" style="font-size: 10px;">alibaba-canal</a> <a href="/tags/aliyun-log/" style="font-size: 10px;">aliyun-log</a> <a href="/tags/aliyun-ons/" style="font-size: 12px;">aliyun-ons</a> <a href="/tags/aliyun-oss/" style="font-size: 12px;">aliyun-oss</a> <a href="/tags/apache-commons/" style="font-size: 10px;">apache-commons</a> <a href="/tags/arthas/" style="font-size: 10px;">arthas</a> <a href="/tags/btrace/" style="font-size: 10px;">btrace</a> <a href="/tags/chcp/" style="font-size: 10px;">chcp</a> <a href="/tags/classloader/" style="font-size: 12px;">classloader</a> <a href="/tags/easemob-im/" style="font-size: 10px;">easemob-im</a> <a href="/tags/flume/" style="font-size: 12px;">flume</a> <a href="/tags/gc/" style="font-size: 10px;">gc</a> <a href="/tags/hpjmeter/" style="font-size: 10px;">hpjmeter</a> <a href="/tags/jackson/" style="font-size: 10px;">jackson</a> <a href="/tags/jar-manifest/" style="font-size: 10px;">jar-manifest</a> <a href="/tags/java-servlet/" style="font-size: 10px;">java-servlet</a> <a href="/tags/jdk-tools/" style="font-size: 20px;">jdk-tools</a> <a href="/tags/jedis/" style="font-size: 10px;">jedis</a> <a href="/tags/jhat/" style="font-size: 10px;">jhat</a> <a href="/tags/jiguang-push/" style="font-size: 10px;">jiguang-push</a> <a href="/tags/jinfo/" style="font-size: 10px;">jinfo</a> <a href="/tags/jmap/" style="font-size: 10px;">jmap</a> <a href="/tags/jooq/" style="font-size: 10px;">jooq</a> <a href="/tags/jps/" style="font-size: 10px;">jps</a> <a href="/tags/jstack/" style="font-size: 10px;">jstack</a> <a href="/tags/jstat/" style="font-size: 10px;">jstat</a> <a href="/tags/jvisualvm/" style="font-size: 10px;">jvisualvm</a> <a href="/tags/jvm/" style="font-size: 10px;">jvm</a> <a href="/tags/jvm-tools/" style="font-size: 16px;">jvm-tools</a> <a href="/tags/jwt/" style="font-size: 10px;">jwt</a> <a href="/tags/jxls/" style="font-size: 12px;">jxls</a> <a href="/tags/maven/" style="font-size: 10px;">maven</a> <a href="/tags/okhttp/" style="font-size: 10px;">okhttp</a> <a href="/tags/reactor/" style="font-size: 18px;">reactor</a> <a href="/tags/redis/" style="font-size: 12px;">redis</a> <a href="/tags/rocketmq/" style="font-size: 14px;">rocketmq</a> <a href="/tags/rsa-1024/" style="font-size: 10px;">rsa-1024</a> <a href="/tags/sorting-algorithms/" style="font-size: 10px;">sorting-algorithms</a> <a href="/tags/tprofiler/" style="font-size: 10px;">tprofiler</a> <a href="/tags/vertx/" style="font-size: 10px;">vertx</a> <a href="/tags/webmagic/" style="font-size: 10px;">webmagic</a> <a href="/tags/wechat-api/" style="font-size: 10px;">wechat-api</a>
+        <a href="/tags/activemq/" style="font-size: 14px;">activemq</a> <a href="/tags/aes-128/" style="font-size: 10px;">aes-128</a> <a href="/tags/alibaba-canal/" style="font-size: 10px;">alibaba-canal</a> <a href="/tags/aliyun-log/" style="font-size: 10px;">aliyun-log</a> <a href="/tags/aliyun-ons/" style="font-size: 12px;">aliyun-ons</a> <a href="/tags/aliyun-oss/" style="font-size: 12px;">aliyun-oss</a> <a href="/tags/apache-commons/" style="font-size: 10px;">apache-commons</a> <a href="/tags/arthas/" style="font-size: 10px;">arthas</a> <a href="/tags/btrace/" style="font-size: 10px;">btrace</a> <a href="/tags/chcp/" style="font-size: 10px;">chcp</a> <a href="/tags/classloader/" style="font-size: 12px;">classloader</a> <a href="/tags/easemob-im/" style="font-size: 10px;">easemob-im</a> <a href="/tags/flume/" style="font-size: 12px;">flume</a> <a href="/tags/gc/" style="font-size: 10px;">gc</a> <a href="/tags/hpjmeter/" style="font-size: 10px;">hpjmeter</a> <a href="/tags/jackson/" style="font-size: 10px;">jackson</a> <a href="/tags/jar-manifest/" style="font-size: 10px;">jar-manifest</a> <a href="/tags/java-servlet/" style="font-size: 10px;">java-servlet</a> <a href="/tags/jdk-tools/" style="font-size: 20px;">jdk-tools</a> <a href="/tags/jedis/" style="font-size: 10px;">jedis</a> <a href="/tags/jenkins/" style="font-size: 10px;">jenkins</a> <a href="/tags/jhat/" style="font-size: 10px;">jhat</a> <a href="/tags/jiguang-push/" style="font-size: 10px;">jiguang-push</a> <a href="/tags/jinfo/" style="font-size: 10px;">jinfo</a> <a href="/tags/jmap/" style="font-size: 10px;">jmap</a> <a href="/tags/jms/" style="font-size: 10px;">jms</a> <a href="/tags/jooq/" style="font-size: 10px;">jooq</a> <a href="/tags/jps/" style="font-size: 10px;">jps</a> <a href="/tags/jstack/" style="font-size: 10px;">jstack</a> <a href="/tags/jstat/" style="font-size: 10px;">jstat</a> <a href="/tags/jumpserver/" style="font-size: 10px;">jumpserver</a> <a href="/tags/jvisualvm/" style="font-size: 10px;">jvisualvm</a> <a href="/tags/jvm/" style="font-size: 10px;">jvm</a> <a href="/tags/jvm-tools/" style="font-size: 16px;">jvm-tools</a> <a href="/tags/jwt/" style="font-size: 10px;">jwt</a> <a href="/tags/jxls/" style="font-size: 12px;">jxls</a> <a href="/tags/ldapadmin/" style="font-size: 10px;">ldapadmin</a> <a href="/tags/ldapservice/" style="font-size: 10px;">ldapservice</a> <a href="/tags/maven/" style="font-size: 12px;">maven</a> <a href="/tags/mongo/" style="font-size: 10px;">mongo</a> <a href="/tags/mysql/" style="font-size: 10px;">mysql</a> <a href="/tags/nexus/" style="font-size: 10px;">nexus</a> <a href="/tags/nodebb/" style="font-size: 10px;">nodebb</a> <a href="/tags/okhttp/" style="font-size: 10px;">okhttp</a> <a href="/tags/openldap/" style="font-size: 14px;">openldap</a> <a href="/tags/reactor/" style="font-size: 18px;">reactor</a> <a href="/tags/redis/" style="font-size: 14px;">redis</a> <a href="/tags/rocketmq/" style="font-size: 14px;">rocketmq</a> <a href="/tags/rsa-1024/" style="font-size: 10px;">rsa-1024</a> <a href="/tags/sorting-algorithms/" style="font-size: 10px;">sorting-algorithms</a> <a href="/tags/tprofiler/" style="font-size: 10px;">tprofiler</a> <a href="/tags/vertx/" style="font-size: 10px;">vertx</a> <a href="/tags/webmagic/" style="font-size: 10px;">webmagic</a> <a href="/tags/wechat-api/" style="font-size: 10px;">wechat-api</a> <a href="/tags/wordpress/" style="font-size: 10px;">wordpress</a>
     </div>
 </div>
     
@@ -563,18 +551,18 @@
         
         <article class="media">
             
-            <a href="/gc/" class="media-left">
+            <a href="/nodebb/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="JVM垃圾回收">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="快速安装NodeBB">
                 </p>
             </a>
             
             <div class="media-content">
                 <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-12-26T10:37:07.000Z">2019-12-26</time></div>
-                    <a href="/gc/" class="title has-link-black-ter is-size-6 has-text-weight-normal">JVM垃圾回收</a>
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-01-15T07:38:34.000Z">2020-01-15</time></div>
+                    <a href="/nodebb/" class="title has-link-black-ter is-size-6 has-text-weight-normal">快速安装NodeBB</a>
                     <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/java/">java</a>
+                        <a class="has-link-grey -link" href="/categories/tools/">tools</a>
                     </p>
                 </div>
             </div>
@@ -582,18 +570,18 @@
         
         <article class="media">
             
-            <a href="/jinfo/" class="media-left">
+            <a href="/mongo-install/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="JDK命令行工具之jinfo">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="快速安装MongoDB">
                 </p>
             </a>
             
             <div class="media-content">
                 <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-12-26T03:14:59.000Z">2019-12-26</time></div>
-                    <a href="/jinfo/" class="title has-link-black-ter is-size-6 has-text-weight-normal">JDK命令行工具之jinfo</a>
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-01-12T10:27:57.000Z">2020-01-12</time></div>
+                    <a href="/mongo-install/" class="title has-link-black-ter is-size-6 has-text-weight-normal">快速安装MongoDB</a>
                     <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/java/">java</a>
+                        <a class="has-link-grey -link" href="/categories/mongo/">mongo</a>
                     </p>
                 </div>
             </div>
@@ -601,18 +589,18 @@
         
         <article class="media">
             
-            <a href="/jps/" class="media-left">
+            <a href="/ldapservice/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="JDK命令行工具之jps">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="LDAP自助服务">
                 </p>
             </a>
             
             <div class="media-content">
                 <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-12-26T03:13:36.000Z">2019-12-26</time></div>
-                    <a href="/jps/" class="title has-link-black-ter is-size-6 has-text-weight-normal">JDK命令行工具之jps</a>
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-01-12T09:28:44.000Z">2020-01-12</time></div>
+                    <a href="/ldapservice/" class="title has-link-black-ter is-size-6 has-text-weight-normal">LDAP自助服务</a>
                     <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/java/">java</a>
+                        <a class="has-link-grey -link" href="/categories/tools/">tools</a>
                     </p>
                 </div>
             </div>
@@ -620,18 +608,18 @@
         
         <article class="media">
             
-            <a href="/jhat/" class="media-left">
+            <a href="/ldapadmin/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="JDK命令行工具之jhat">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="LDAP管理工具">
                 </p>
             </a>
             
             <div class="media-content">
                 <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-12-26T03:12:37.000Z">2019-12-26</time></div>
-                    <a href="/jhat/" class="title has-link-black-ter is-size-6 has-text-weight-normal">JDK命令行工具之jhat</a>
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-01-12T09:05:50.000Z">2020-01-12</time></div>
+                    <a href="/ldapadmin/" class="title has-link-black-ter is-size-6 has-text-weight-normal">LDAP管理工具</a>
                     <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/java/">java</a>
+                        <a class="has-link-grey -link" href="/categories/tools/">tools</a>
                     </p>
                 </div>
             </div>
@@ -639,18 +627,18 @@
         
         <article class="media">
             
-            <a href="/jmap/" class="media-left">
+            <a href="/openldap/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="JDK命令行工具之jmap">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="快速安装OpenLDAP">
                 </p>
             </a>
             
             <div class="media-content">
                 <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-12-26T03:11:19.000Z">2019-12-26</time></div>
-                    <a href="/jmap/" class="title has-link-black-ter is-size-6 has-text-weight-normal">JDK命令行工具之jmap</a>
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-01-12T08:58:10.000Z">2020-01-12</time></div>
+                    <a href="/openldap/" class="title has-link-black-ter is-size-6 has-text-weight-normal">快速安装OpenLDAP</a>
                     <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/java/">java</a>
+                        <a class="has-link-grey -link" href="/categories/tools/">tools</a>
                     </p>
                 </div>
             </div>
@@ -666,6 +654,17 @@
             归档
         </h3>
         <ul class="menu-list">
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2020/01/">
+                <span class="level-start">
+                    <span class="level-item">一月 2020</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">11</span>
+                </span>
+            </a>
+        </li>
         
         <li>
             <a class="level is-marginless" href="/archives/2019/12/">
@@ -843,6 +842,13 @@
                 </div>
                 
                 <div class="control">
+                    <a class="tags has-addons" href="/tags/jenkins/">
+                        <span class="tag">jenkins</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
                     <a class="tags has-addons" href="/tags/jhat/">
                         <span class="tag">jhat</span>
                         <span class="tag is-grey">1</span>
@@ -871,6 +877,13 @@
                 </div>
                 
                 <div class="control">
+                    <a class="tags has-addons" href="/tags/jms/">
+                        <span class="tag">jms</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
                     <a class="tags has-addons" href="/tags/jooq/">
                         <span class="tag">jooq</span>
                         <span class="tag is-grey">1</span>
@@ -894,6 +907,13 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/jstat/">
                         <span class="tag">jstat</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/jumpserver/">
+                        <span class="tag">jumpserver</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>
@@ -934,8 +954,50 @@
                 </div>
                 
                 <div class="control">
+                    <a class="tags has-addons" href="/tags/ldapadmin/">
+                        <span class="tag">ldapadmin</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/ldapservice/">
+                        <span class="tag">ldapservice</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
                     <a class="tags has-addons" href="/tags/maven/">
                         <span class="tag">maven</span>
+                        <span class="tag is-grey">2</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/mongo/">
+                        <span class="tag">mongo</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/mysql/">
+                        <span class="tag">mysql</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/nexus/">
+                        <span class="tag">nexus</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/nodebb/">
+                        <span class="tag">nodebb</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>
@@ -944,6 +1006,13 @@
                     <a class="tags has-addons" href="/tags/okhttp/">
                         <span class="tag">okhttp</span>
                         <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/openldap/">
+                        <span class="tag">openldap</span>
+                        <span class="tag is-grey">3</span>
                     </a>
                 </div>
                 
@@ -957,7 +1026,7 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/redis/">
                         <span class="tag">redis</span>
-                        <span class="tag is-grey">2</span>
+                        <span class="tag is-grey">3</span>
                     </a>
                 </div>
                 
@@ -1006,6 +1075,13 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/wechat-api/">
                         <span class="tag">wechat-api</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/wordpress/">
+                        <span class="tag">wordpress</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>
@@ -1034,18 +1110,18 @@
         
         <article class="media">
             
-            <a href="/gc/" class="media-left">
+            <a href="/nodebb/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="JVM垃圾回收">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="快速安装NodeBB">
                 </p>
             </a>
             
             <div class="media-content">
                 <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-12-26T10:37:07.000Z">2019-12-26</time></div>
-                    <a href="/gc/" class="title has-link-black-ter is-size-6 has-text-weight-normal">JVM垃圾回收</a>
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-01-15T07:38:34.000Z">2020-01-15</time></div>
+                    <a href="/nodebb/" class="title has-link-black-ter is-size-6 has-text-weight-normal">快速安装NodeBB</a>
                     <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/java/">java</a>
+                        <a class="has-link-grey -link" href="/categories/tools/">tools</a>
                     </p>
                 </div>
             </div>
@@ -1053,18 +1129,18 @@
         
         <article class="media">
             
-            <a href="/jinfo/" class="media-left">
+            <a href="/mongo-install/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="JDK命令行工具之jinfo">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="快速安装MongoDB">
                 </p>
             </a>
             
             <div class="media-content">
                 <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-12-26T03:14:59.000Z">2019-12-26</time></div>
-                    <a href="/jinfo/" class="title has-link-black-ter is-size-6 has-text-weight-normal">JDK命令行工具之jinfo</a>
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-01-12T10:27:57.000Z">2020-01-12</time></div>
+                    <a href="/mongo-install/" class="title has-link-black-ter is-size-6 has-text-weight-normal">快速安装MongoDB</a>
                     <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/java/">java</a>
+                        <a class="has-link-grey -link" href="/categories/mongo/">mongo</a>
                     </p>
                 </div>
             </div>
@@ -1072,18 +1148,18 @@
         
         <article class="media">
             
-            <a href="/jps/" class="media-left">
+            <a href="/ldapservice/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="JDK命令行工具之jps">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="LDAP自助服务">
                 </p>
             </a>
             
             <div class="media-content">
                 <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-12-26T03:13:36.000Z">2019-12-26</time></div>
-                    <a href="/jps/" class="title has-link-black-ter is-size-6 has-text-weight-normal">JDK命令行工具之jps</a>
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-01-12T09:28:44.000Z">2020-01-12</time></div>
+                    <a href="/ldapservice/" class="title has-link-black-ter is-size-6 has-text-weight-normal">LDAP自助服务</a>
                     <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/java/">java</a>
+                        <a class="has-link-grey -link" href="/categories/tools/">tools</a>
                     </p>
                 </div>
             </div>
@@ -1091,18 +1167,18 @@
         
         <article class="media">
             
-            <a href="/jhat/" class="media-left">
+            <a href="/ldapadmin/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="JDK命令行工具之jhat">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="LDAP管理工具">
                 </p>
             </a>
             
             <div class="media-content">
                 <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-12-26T03:12:37.000Z">2019-12-26</time></div>
-                    <a href="/jhat/" class="title has-link-black-ter is-size-6 has-text-weight-normal">JDK命令行工具之jhat</a>
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-01-12T09:05:50.000Z">2020-01-12</time></div>
+                    <a href="/ldapadmin/" class="title has-link-black-ter is-size-6 has-text-weight-normal">LDAP管理工具</a>
                     <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/java/">java</a>
+                        <a class="has-link-grey -link" href="/categories/tools/">tools</a>
                     </p>
                 </div>
             </div>
@@ -1110,18 +1186,18 @@
         
         <article class="media">
             
-            <a href="/jmap/" class="media-left">
+            <a href="/openldap/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="JDK命令行工具之jmap">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="快速安装OpenLDAP">
                 </p>
             </a>
             
             <div class="media-content">
                 <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-12-26T03:11:19.000Z">2019-12-26</time></div>
-                    <a href="/jmap/" class="title has-link-black-ter is-size-6 has-text-weight-normal">JDK命令行工具之jmap</a>
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-01-12T08:58:10.000Z">2020-01-12</time></div>
+                    <a href="/openldap/" class="title has-link-black-ter is-size-6 has-text-weight-normal">快速安装OpenLDAP</a>
                     <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/java/">java</a>
+                        <a class="has-link-grey -link" href="/categories/tools/">tools</a>
                     </p>
                 </div>
             </div>
@@ -1137,6 +1213,17 @@
             归档
         </h3>
         <ul class="menu-list">
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2020/01/">
+                <span class="level-start">
+                    <span class="level-item">一月 2020</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">11</span>
+                </span>
+            </a>
+        </li>
         
         <li>
             <a class="level is-marginless" href="/archives/2019/12/">
@@ -1314,6 +1401,13 @@
                 </div>
                 
                 <div class="control">
+                    <a class="tags has-addons" href="/tags/jenkins/">
+                        <span class="tag">jenkins</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
                     <a class="tags has-addons" href="/tags/jhat/">
                         <span class="tag">jhat</span>
                         <span class="tag is-grey">1</span>
@@ -1342,6 +1436,13 @@
                 </div>
                 
                 <div class="control">
+                    <a class="tags has-addons" href="/tags/jms/">
+                        <span class="tag">jms</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
                     <a class="tags has-addons" href="/tags/jooq/">
                         <span class="tag">jooq</span>
                         <span class="tag is-grey">1</span>
@@ -1365,6 +1466,13 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/jstat/">
                         <span class="tag">jstat</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/jumpserver/">
+                        <span class="tag">jumpserver</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>
@@ -1405,8 +1513,50 @@
                 </div>
                 
                 <div class="control">
+                    <a class="tags has-addons" href="/tags/ldapadmin/">
+                        <span class="tag">ldapadmin</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/ldapservice/">
+                        <span class="tag">ldapservice</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
                     <a class="tags has-addons" href="/tags/maven/">
                         <span class="tag">maven</span>
+                        <span class="tag is-grey">2</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/mongo/">
+                        <span class="tag">mongo</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/mysql/">
+                        <span class="tag">mysql</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/nexus/">
+                        <span class="tag">nexus</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/nodebb/">
+                        <span class="tag">nodebb</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>
@@ -1415,6 +1565,13 @@
                     <a class="tags has-addons" href="/tags/okhttp/">
                         <span class="tag">okhttp</span>
                         <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/openldap/">
+                        <span class="tag">openldap</span>
+                        <span class="tag is-grey">3</span>
                     </a>
                 </div>
                 
@@ -1428,7 +1585,7 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/redis/">
                         <span class="tag">redis</span>
-                        <span class="tag is-grey">2</span>
+                        <span class="tag is-grey">3</span>
                     </a>
                 </div>
                 
@@ -1481,6 +1638,13 @@
                     </a>
                 </div>
                 
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/wordpress/">
+                        <span class="tag">wordpress</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
             </div>
         </div>
     </div>
@@ -1502,7 +1666,7 @@
                 
                 </a>
                 <p class="is-size-7">
-                &copy; 2019 WeitangLi&nbsp;
+                &copy; 2020 WeitangLi&nbsp;
                 Powered by <a href="https://hexo.io/" target="_blank">Hexo</a> & <a
                         href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank">Icarus</a>
                 

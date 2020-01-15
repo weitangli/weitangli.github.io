@@ -131,7 +131,7 @@
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-11-27T06:58:12.000Z">2019-11-27</time>
+                <time class="level-item has-text-grey" datetime="2019-12-02T01:42:40.000Z">2019-12-02</time>
                 
                 <div class="level-item">
                 <a class="has-link-grey -link" href="/categories/java/">java</a>
@@ -141,7 +141,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    1 分钟 读完 (大约 131 个字)
+                    4 分钟 读完 (大约 622 个字)
                 </span>
                 
                 
@@ -150,21 +150,18 @@
         
         <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
             
-                <a class="has-link-black-ter" href="/easemob-im/">环信即时通讯云IM</a>
+                <a class="has-link-black-ter" href="/sorting-algorithms/">排序算法</a>
             
         </h1>
         <div class="content">
-            <ul>
-<li>开发文档 <a href="https://docs-im.easemob.com/start/start" target="_blank" rel="noopener">https://docs-im.easemob.com/start/start</a></li>
-<li>官方示例 <a href="https://github.com/easemob/emchat-server-examples" target="_blank" rel="noopener">https://github.com/easemob/emchat-server-examples</a></li>
-</ul>
+            <h2 id="冒泡排序"><a href="#冒泡排序" class="headerlink" title="冒泡排序"></a>冒泡排序</h2><figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-meta">@Test</span></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">bubble</span><span class="hljs-params">()</span> </span>&#123;</span><br><span class="line">    <span class="hljs-keyword">int</span>[] numbers = &#123;<span class="hljs-number">3</span>, <span class="hljs-number">2</span>, <span class="hljs-number">1</span>, <span class="hljs-number">5</span>, <span class="hljs-number">4</span>&#125;;</span><br><span class="line">    log.info(<span class="hljs-string">"numbers: &#123;&#125;"</span>, numbers);</span><br><span class="line"></span><br><span class="line">    sort(numbers);</span><br><span class="line">    log.info(<span class="hljs-string">"after sort: &#123;&#125;"</span>, numbers);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">/**</span></span><br><span class="line"><span class="hljs-comment"> * 冒泡法排序 O(n2)</span></span><br><span class="line"><span class="hljs-comment"> * 比较相邻的元素。如果第一个比第二个大，就交换他们两个。</span></span><br><span class="line"><span class="hljs-comment"> * 对每一对相邻元素作同样的工作，从开始第一对到结尾的最后一对。在这一点，最后的元素应该会是最大的数。</span></span><br><span class="line"><span class="hljs-comment"> * 针对所有的元素重复以上的步骤，除了最后一个。</span></span><br><span class="line"><span class="hljs-comment"> * 持续每次对越来越少的元素重复上面的步骤，直到没有任何一对数字需要比较。</span></span><br><span class="line"><span class="hljs-comment"> *</span></span><br><span class="line"><span class="hljs-comment"> * <span class="hljs-doctag">@param</span> numbers 需要排序的整型数组</span></span><br><span class="line"><span class="hljs-comment"> */</span></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">sort</span><span class="hljs-params">(<span class="hljs-keyword">int</span>[] numbers)</span> </span>&#123;</span><br><span class="line">    <span class="hljs-keyword">int</span> temp; <span class="hljs-comment">// 记录临时中间值</span></span><br><span class="line">    <span class="hljs-keyword">int</span> size = numbers.length; <span class="hljs-comment">// 数组大小</span></span><br><span class="line">    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; size - <span class="hljs-number">1</span>; i++) &#123;</span><br><span class="line">        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> j = i + <span class="hljs-number">1</span>; j &lt; size; j++) &#123;</span><br><span class="line">            <span class="hljs-keyword">if</span> (numbers[i] &lt; numbers[j]) &#123; <span class="hljs-comment">// 交换两数的位置</span></span><br><span class="line">                temp = numbers[i];</span><br><span class="line">                numbers[i] = numbers[j];</span><br><span class="line">                numbers[j] = temp;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
         </div>
         
         
         <div class="level is-mobile">
             <div class="level-start">
                 <div class="level-item">
-                <a class="button is-size-7 is-light" href="/easemob-im/#more">阅读更多</a>
+                <a class="button is-size-7 is-light" href="/sorting-algorithms/#more">阅读更多</a>
                 </div>
             </div>
         </div>
@@ -187,17 +184,17 @@
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-11-27T05:15:14.000Z">2019-11-27</time>
+                <time class="level-item has-text-grey" datetime="2019-12-02T01:13:06.000Z">2019-12-02</time>
                 
                 <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/alibaba/">alibaba</a>
+                <a class="has-link-grey -link" href="/categories/java/">java</a>
                 </div>
                 
                 
                 <span class="level-item has-text-grey">
                     
                     
-                    2 分钟 读完 (大约 290 个字)
+                    几秒 读完 (大约 20 个字)
                 </span>
                 
                 
@@ -206,19 +203,393 @@
         
         <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
             
-                <a class="has-link-black-ter" href="/alibaba-canal/">MySQL binlog增量订阅与消费组件</a>
+                <a class="has-link-black-ter" href="/vertx/">JVM应用平台vertx</a>
             
         </h1>
         <div class="content">
             <blockquote>
-<p><a href="https://github.com/alibaba/canal/wiki" target="_blank" rel="noopener">https://github.com/alibaba/canal/wiki</a></p>
+<p><a href="https://vertx.io" target="_blank" rel="noopener">https://vertx.io</a></p>
 </blockquote>
-<p>canal [kə’næl]，译意为水道/管道/沟渠，主要用途是基于 MySQL 数据库增量日志解析，提供增量数据订阅和消费</p>
-<p>工作原理：</p>
+<p>Vert.x是一个轻量级的高性能JVM应用平台.</p>
+
+        </div>
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+    
+<div class="card">
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2019-11-29T10:24:41.000Z">2019-11-29</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/java/">java</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    1 分钟 读完 (大约 144 个字)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/jsonwebtoken/">Json Web Token工具</a>
+            
+        </h1>
+        <div class="content">
+            <blockquote>
+<p><a href="https://github.com/jwtk/jjwt" target="_blank" rel="noopener">https://github.com/jwtk/jjwt</a></p>
+</blockquote>
+        </div>
+        
+        
+        <div class="level is-mobile">
+            <div class="level-start">
+                <div class="level-item">
+                <a class="button is-size-7 is-light" href="/jsonwebtoken/#more">阅读更多</a>
+                </div>
+            </div>
+        </div>
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+    
+<div class="card">
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2019-11-29T09:47:46.000Z">2019-11-29</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/rocketmq/">rocketmq</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    几秒 读完 (大约 12 个字)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/rocketmq-console/">RocketMQ Web管理工具</a>
+            
+        </h1>
+        <div class="content">
+            <blockquote>
+<p><a href="https://github.com/apache/rocketmq-externals/tree/release-rocketmq-console-1.0.0/rocketmq-console" target="_blank" rel="noopener">https://github.com/apache/rocketmq-externals/tree/release-rocketmq-console-1.0.0/rocketmq-console</a></p>
+</blockquote>
+
+        </div>
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+    
+<div class="card">
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2019-11-29T09:32:40.000Z">2019-11-29</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/rocketmq/">rocketmq</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    1 分钟 读完 (大约 212 个字)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/rocketmq-simple/">使用RocketMQ收发信息</a>
+            
+        </h1>
+        <div class="content">
+            <blockquote>
+<p><a href="https://rocketmq.apache.org/docs/simple-example" target="_blank" rel="noopener">https://rocketmq.apache.org/docs/simple-example</a></p>
+</blockquote>
+        </div>
+        
+        
+        <div class="level is-mobile">
+            <div class="level-start">
+                <div class="level-item">
+                <a class="button is-size-7 is-light" href="/rocketmq-simple/#more">阅读更多</a>
+                </div>
+            </div>
+        </div>
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+    
+<div class="card">
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2019-11-29T09:14:39.000Z">2019-11-29</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/rocketmq/">rocketmq</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    3 分钟 读完 (大约 474 个字)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/rocketmq-install/">快速安装RocketMQ</a>
+            
+        </h1>
+        <div class="content">
+            <blockquote>
+<p><a href="https://rocketmq.apache.org" target="_blank" rel="noopener">https://rocketmq.apache.org</a></p>
+</blockquote>
+<p>安装RocketMQ之前, 我们得先安装Java运行环境.</p>
+<p>Linux安装包下载地址: <a href="https://archive.apache.org/dist/rocketmq/4.2.0/rocketmq-all-4.2.0-bin-release.zip" target="_blank" rel="noopener">rocketmq-all-4.2.0-bin-release.zip</a></p>
+        </div>
+        
+        
+        <div class="level is-mobile">
+            <div class="level-start">
+                <div class="level-item">
+                <a class="button is-size-7 is-light" href="/rocketmq-install/#more">阅读更多</a>
+                </div>
+            </div>
+        </div>
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+    
+<div class="card">
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2019-11-28T05:40:35.000Z">2019-11-28</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/java/">java</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    1 分钟 读完 (大约 170 个字)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/jooq/">ORM框架jooq</a>
+            
+        </h1>
+        <div class="content">
+            <blockquote>
+<p><a href="https://www.jooq.org" target="_blank" rel="noopener">https://www.jooq.org</a></p>
+</blockquote>
+        </div>
+        
+        
+        <div class="level is-mobile">
+            <div class="level-start">
+                <div class="level-item">
+                <a class="button is-size-7 is-light" href="/jooq/#more">阅读更多</a>
+                </div>
+            </div>
+        </div>
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+    
+<div class="card">
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2019-11-28T03:26:12.000Z">2019-11-28</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/java/">java</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    2 分钟 读完 (大约 373 个字)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/jackson/">JSON解析工具jackson</a>
+            
+        </h1>
+        <div class="content">
+            <blockquote>
+<p><a href="https://github.com/FasterXML/jackson-databind" target="_blank" rel="noopener">https://github.com/FasterXML/jackson-databind</a></p>
+</blockquote>
+        </div>
+        
+        
+        <div class="level is-mobile">
+            <div class="level-start">
+                <div class="level-item">
+                <a class="button is-size-7 is-light" href="/jackson/#more">阅读更多</a>
+                </div>
+            </div>
+        </div>
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+    
+<div class="card">
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2019-11-27T09:46:52.000Z">2019-11-27</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/java/">java</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    2 分钟 读完 (大约 247 个字)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/webmagic/">爬虫框架webmagic</a>
+            
+        </h1>
+        <div class="content">
+            <blockquote>
+<p><a href="https://webmagic.io" target="_blank" rel="noopener">https://webmagic.io</a></p>
+</blockquote>
+<p>WebMagic是一个简单灵活的Java爬虫框架。基于WebMagic，你可以快速开发出一个高效、易维护的爬虫。</p>
+<p>特性：</p>
 <ul>
-<li>canal 模拟 MySQL slave 的交互协议，伪装自己为 MySQL slave ，向 MySQL master 发送 dump 协议</li>
-<li>MySQL master 收到 dump 请求，开始推送 binary log 给 slave (即 canal )</li>
-<li>canal 解析 binary log 对象(原始为 byte 流)</li>
+<li>简单的API，可快速上手</li>
+<li>模块化的结构，可轻松扩展</li>
+<li>提供多线程和分布式支持</li>
 </ul>
         </div>
         
@@ -226,7 +597,7 @@
         <div class="level is-mobile">
             <div class="level-start">
                 <div class="level-item">
-                <a class="button is-size-7 is-light" href="/alibaba-canal/#more">阅读更多</a>
+                <a class="button is-size-7 is-light" href="/webmagic/#more">阅读更多</a>
                 </div>
             </div>
         </div>
@@ -249,7 +620,7 @@
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-11-26T09:27:06.000Z">2019-11-26</time>
+                <time class="level-item has-text-grey" datetime="2019-11-27T09:27:07.000Z">2019-11-27</time>
                 
                 <div class="level-item">
                 <a class="has-link-grey -link" href="/categories/java/">java</a>
@@ -259,7 +630,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    2 分钟 读完 (大约 269 个字)
+                    1 分钟 读完 (大约 138 个字)
                 </span>
                 
                 
@@ -268,404 +639,21 @@
         
         <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
             
-                <a class="has-link-black-ter" href="/apache-commons-beanutils/">Apache Commons之JavaBeans工具包beanutils</a>
-            
-        </h1>
-        <div class="content">
-            <p><code>commons-beanutils</code>是Apache开源组织提供的用于操作JavaBeans的工具包.</p>
-<p>使用它, 我们可以很方便的在对象之间复制数据.</p>
-        </div>
-        
-        
-        <div class="level is-mobile">
-            <div class="level-start">
-                <div class="level-item">
-                <a class="button is-size-7 is-light" href="/apache-commons-beanutils/#more">阅读更多</a>
-                </div>
-            </div>
-        </div>
-        
-        
-    </div>
-</div>
-
-
-
-
-
-
-
-
-    
-<div class="card">
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-11-26T08:18:13.000Z">2019-11-26</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/java/">java</a>
-                </div>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    2 分钟 读完 (大约 283 个字)
-                </span>
-                
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/maven-assembly/">Apache Maven打包插件Assembly</a>
-            
-        </h1>
-        <div class="content">
-            <p>Apache Maven项目提供的Maven插件Assembly能够将Maven应用的输出及其依赖库整合打包为一个压缩包, 以便于应用的分发使用.</p>
-        </div>
-        
-        
-        <div class="level is-mobile">
-            <div class="level-start">
-                <div class="level-item">
-                <a class="button is-size-7 is-light" href="/maven-assembly/#more">阅读更多</a>
-                </div>
-            </div>
-        </div>
-        
-        
-    </div>
-</div>
-
-
-
-
-
-
-
-
-    
-<div class="card">
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-11-26T07:19:19.000Z">2019-11-26</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/aliyun/">aliyun</a>
-                </div>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    2 分钟 读完 (大约 243 个字)
-                </span>
-                
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/aliyun-oss-sts/">STS临时授权访问OSS</a>
+                <a class="has-link-black-ter" href="/okhttp/">网络请求工具okhttp</a>
             
         </h1>
         <div class="content">
             <blockquote>
-<p><a href="https://help.aliyun.com/document_detail/100624.html" target="_blank" rel="noopener">https://help.aliyun.com/document_detail/100624.html</a></p>
+<p><a href="https://github.com/square/okhttp" target="_blank" rel="noopener">https://github.com/square/okhttp</a></p>
 </blockquote>
-<p>OSS可以通过阿里云STS（Security Token Service）进行临时授权访问。</p>
-<p>阿里云STS是为云计算用户提供临时访问令牌的Web服务。</p>
-<p>通过STS，您可以为第三方应用或子用户（即用户身份由您自己管理的用户）颁发一个自定义时效和权限的访问凭证。</p>
+<h2 id="发送Get请求"><a href="#发送Get请求" class="headerlink" title="发送Get请求"></a>发送Get请求</h2><figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-meta">@Test</span></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">get</span><span class="hljs-params">()</span> <span class="hljs-keyword">throws</span> Exception </span>&#123;</span><br><span class="line">    String url = <span class="hljs-string">"https://api.github.com/repos/square/okhttp/contributors"</span>;</span><br><span class="line"></span><br><span class="line">    Request request = <span class="hljs-keyword">new</span> Request.Builder().url(url).build();</span><br><span class="line">    Response response = <span class="hljs-keyword">new</span> OkHttpClient().newCall(request).execute();</span><br><span class="line"></span><br><span class="line">    ResponseBody responseBody = response.body();</span><br><span class="line">    log.info(<span class="hljs-string">"responseBody: &#123;&#125;"</span>, responseBody.string());</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
         </div>
         
         
         <div class="level is-mobile">
             <div class="level-start">
                 <div class="level-item">
-                <a class="button is-size-7 is-light" href="/aliyun-oss-sts/#more">阅读更多</a>
-                </div>
-            </div>
-        </div>
-        
-        
-    </div>
-</div>
-
-
-
-
-
-
-
-
-    
-<div class="card">
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-11-26T07:05:27.000Z">2019-11-26</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/aliyun/">aliyun</a>
-                </div>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    3 分钟 读完 (大约 402 个字)
-                </span>
-                
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/aliyun-oss/">快速入门对象存储OSS</a>
-            
-        </h1>
-        <div class="content">
-            <blockquote>
-<p><a href="https://help.aliyun.com/document_detail/32011.html" target="_blank" rel="noopener">https://help.aliyun.com/document_detail/32011.html</a></p>
-</blockquote>
-<p>介绍如何快速使用OSS Java SDK完成常见操作，如创建存储空间（Bucket）、上传/下载文件（Object）等。</p>
-        </div>
-        
-        
-        <div class="level is-mobile">
-            <div class="level-start">
-                <div class="level-item">
-                <a class="button is-size-7 is-light" href="/aliyun-oss/#more">阅读更多</a>
-                </div>
-            </div>
-        </div>
-        
-        
-    </div>
-</div>
-
-
-
-
-
-
-
-
-    
-<div class="card">
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-11-26T05:14:46.000Z">2019-11-26</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/aliyun/">aliyun</a>
-                </div>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    5 分钟 读完 (大约 676 个字)
-                </span>
-                
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/aliyun-loghub/">日志服务之通过消费组消费日志</a>
-            
-        </h1>
-        <div class="content">
-            <blockquote>
-<p><a href="https://help.aliyun.com/document_detail/28998.html" target="_blank" rel="noopener">https://help.aliyun.com/document_detail/28998.html</a></p>
-</blockquote>
-<p>与使用SDK消费数据相比，使用消费组（ConsumerGroup）消费日志数据的优点在于，用户无需关心日志服务的实现细节和消费者之间的负载均衡、failover等，只需要专注于业务逻辑即可。</p>
-        </div>
-        
-        
-        <div class="level is-mobile">
-            <div class="level-start">
-                <div class="level-item">
-                <a class="button is-size-7 is-light" href="/aliyun-loghub/#more">阅读更多</a>
-                </div>
-            </div>
-        </div>
-        
-        
-    </div>
-</div>
-
-
-
-
-
-
-
-
-    
-<div class="card">
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-11-25T13:14:58.000Z">2019-11-25</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/activemq/">activemq</a>
-                </div>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    2 分钟 读完 (大约 285 个字)
-                </span>
-                
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/activemq-queue/">ActiveMQ之点对点模型</a>
-            
-        </h1>
-        <div class="content">
-            <p>点对点模型(Point to Point)使用队列(Queue)作为消息通信载体, 满足生产者与消费者模式.</p>
-<p>一条消息只能被一个消费者使用, 未被消费的消息在队列中保留直到被消费或超时.</p>
-        </div>
-        
-        
-        <div class="level is-mobile">
-            <div class="level-start">
-                <div class="level-item">
-                <a class="button is-size-7 is-light" href="/activemq-queue/#more">阅读更多</a>
-                </div>
-            </div>
-        </div>
-        
-        
-    </div>
-</div>
-
-
-
-
-
-
-
-
-    
-<div class="card">
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-11-25T08:34:36.000Z">2019-11-25</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/activemq/">activemq</a>
-                </div>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    2 分钟 读完 (大约 296 个字)
-                </span>
-                
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/activemq-topic/">ActiveMQ之发布订阅模型</a>
-            
-        </h1>
-        <div class="content">
-            <p>发布订阅模型(Pub/Sub)使用主题(Topic)作为消息通信载体, 类似于广播模式.</p>
-<p>发布者发布一条消息, 该消息通过主题传递给所有的订阅者, 在一条消息广播之后才订阅的用户则是收不到该条消息的.</p>
-        </div>
-        
-        
-        <div class="level is-mobile">
-            <div class="level-start">
-                <div class="level-item">
-                <a class="button is-size-7 is-light" href="/activemq-topic/#more">阅读更多</a>
-                </div>
-            </div>
-        </div>
-        
-        
-    </div>
-</div>
-
-
-
-
-
-
-
-
-    
-<div class="card">
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-11-25T06:00:13.000Z">2019-11-25</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/activemq/">activemq</a>
-                </div>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    2 分钟 读完 (大约 331 个字)
-                </span>
-                
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/activemq-install/">ActiveMQ的简易安装</a>
-            
-        </h1>
-        <div class="content">
-            <p>安装ActiveMQ之前, 我们得先安装Java运行环境.</p>
-<p>Linux安装包下载地址: <a href="https://archive.apache.org/dist/activemq/5.14.5/apache-activemq-5.14.5-bin.tar.gz" target="_blank" rel="noopener">apache-activemq-5.14.5-bin.tar.gz</a></p>
-        </div>
-        
-        
-        <div class="level is-mobile">
-            <div class="level-start">
-                <div class="level-item">
-                <a class="button is-size-7 is-light" href="/activemq-install/#more">阅读更多</a>
+                <a class="button is-size-7 is-light" href="/okhttp/#more">阅读更多</a>
                 </div>
             </div>
         </div>
@@ -702,6 +690,8 @@
             <li><a class="pagination-link is-current" href="/page/5/">5</a></li>
             
             <li><a class="pagination-link has-text-black-ter" href="/page/6/">6</a></li>
+            
+            <li><a class="pagination-link has-text-black-ter" href="/page/7/">7</a></li>
             
         </ul>
     </nav>
@@ -750,7 +740,7 @@
                         文章
                     </p>
                     <p class="title has-text-weight-normal">
-                        56
+                        67
                     </p>
                 </div>
             </div>
@@ -760,7 +750,7 @@
                         分类
                     </p>
                     <p class="title has-text-weight-normal">
-                        8
+                        11
                     </p>
                 </div>
             </div>
@@ -770,7 +760,7 @@
                         标签
                     </p>
                     <p class="title has-text-weight-normal">
-                        44
+                        55
                     </p>
                 </div>
             </div>
@@ -920,12 +910,28 @@
                 <span class="level-item tag">39</span>
             </span>
         </a></li><li>
+        <a class="level is-marginless" href="/categories/mongo/">
+            <span class="level-start">
+                <span class="level-item">mongo</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/mysql/">
+            <span class="level-start">
+                <span class="level-item">mysql</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li><li>
         <a class="level is-marginless" href="/categories/redis/">
             <span class="level-start">
                 <span class="level-item">redis</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">2</span>
+                <span class="level-item tag">3</span>
             </span>
         </a></li><li>
         <a class="level is-marginless" href="/categories/rocketmq/">
@@ -934,6 +940,14 @@
             </span>
             <span class="level-end">
                 <span class="level-item tag">3</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/tools/">
+            <span class="level-start">
+                <span class="level-item">tools</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">8</span>
             </span>
         </a></li>
             </ul>
@@ -946,7 +960,7 @@
         <h3 class="menu-label">
             标签云
         </h3>
-        <a href="/tags/activemq/" style="font-size: 14px;">activemq</a> <a href="/tags/aes-128/" style="font-size: 10px;">aes-128</a> <a href="/tags/alibaba-canal/" style="font-size: 10px;">alibaba-canal</a> <a href="/tags/aliyun-log/" style="font-size: 10px;">aliyun-log</a> <a href="/tags/aliyun-ons/" style="font-size: 12px;">aliyun-ons</a> <a href="/tags/aliyun-oss/" style="font-size: 12px;">aliyun-oss</a> <a href="/tags/apache-commons/" style="font-size: 10px;">apache-commons</a> <a href="/tags/arthas/" style="font-size: 10px;">arthas</a> <a href="/tags/btrace/" style="font-size: 10px;">btrace</a> <a href="/tags/chcp/" style="font-size: 10px;">chcp</a> <a href="/tags/classloader/" style="font-size: 12px;">classloader</a> <a href="/tags/easemob-im/" style="font-size: 10px;">easemob-im</a> <a href="/tags/flume/" style="font-size: 12px;">flume</a> <a href="/tags/gc/" style="font-size: 10px;">gc</a> <a href="/tags/hpjmeter/" style="font-size: 10px;">hpjmeter</a> <a href="/tags/jackson/" style="font-size: 10px;">jackson</a> <a href="/tags/jar-manifest/" style="font-size: 10px;">jar-manifest</a> <a href="/tags/java-servlet/" style="font-size: 10px;">java-servlet</a> <a href="/tags/jdk-tools/" style="font-size: 20px;">jdk-tools</a> <a href="/tags/jedis/" style="font-size: 10px;">jedis</a> <a href="/tags/jhat/" style="font-size: 10px;">jhat</a> <a href="/tags/jiguang-push/" style="font-size: 10px;">jiguang-push</a> <a href="/tags/jinfo/" style="font-size: 10px;">jinfo</a> <a href="/tags/jmap/" style="font-size: 10px;">jmap</a> <a href="/tags/jooq/" style="font-size: 10px;">jooq</a> <a href="/tags/jps/" style="font-size: 10px;">jps</a> <a href="/tags/jstack/" style="font-size: 10px;">jstack</a> <a href="/tags/jstat/" style="font-size: 10px;">jstat</a> <a href="/tags/jvisualvm/" style="font-size: 10px;">jvisualvm</a> <a href="/tags/jvm/" style="font-size: 10px;">jvm</a> <a href="/tags/jvm-tools/" style="font-size: 16px;">jvm-tools</a> <a href="/tags/jwt/" style="font-size: 10px;">jwt</a> <a href="/tags/jxls/" style="font-size: 12px;">jxls</a> <a href="/tags/maven/" style="font-size: 10px;">maven</a> <a href="/tags/okhttp/" style="font-size: 10px;">okhttp</a> <a href="/tags/reactor/" style="font-size: 18px;">reactor</a> <a href="/tags/redis/" style="font-size: 12px;">redis</a> <a href="/tags/rocketmq/" style="font-size: 14px;">rocketmq</a> <a href="/tags/rsa-1024/" style="font-size: 10px;">rsa-1024</a> <a href="/tags/sorting-algorithms/" style="font-size: 10px;">sorting-algorithms</a> <a href="/tags/tprofiler/" style="font-size: 10px;">tprofiler</a> <a href="/tags/vertx/" style="font-size: 10px;">vertx</a> <a href="/tags/webmagic/" style="font-size: 10px;">webmagic</a> <a href="/tags/wechat-api/" style="font-size: 10px;">wechat-api</a>
+        <a href="/tags/activemq/" style="font-size: 14px;">activemq</a> <a href="/tags/aes-128/" style="font-size: 10px;">aes-128</a> <a href="/tags/alibaba-canal/" style="font-size: 10px;">alibaba-canal</a> <a href="/tags/aliyun-log/" style="font-size: 10px;">aliyun-log</a> <a href="/tags/aliyun-ons/" style="font-size: 12px;">aliyun-ons</a> <a href="/tags/aliyun-oss/" style="font-size: 12px;">aliyun-oss</a> <a href="/tags/apache-commons/" style="font-size: 10px;">apache-commons</a> <a href="/tags/arthas/" style="font-size: 10px;">arthas</a> <a href="/tags/btrace/" style="font-size: 10px;">btrace</a> <a href="/tags/chcp/" style="font-size: 10px;">chcp</a> <a href="/tags/classloader/" style="font-size: 12px;">classloader</a> <a href="/tags/easemob-im/" style="font-size: 10px;">easemob-im</a> <a href="/tags/flume/" style="font-size: 12px;">flume</a> <a href="/tags/gc/" style="font-size: 10px;">gc</a> <a href="/tags/hpjmeter/" style="font-size: 10px;">hpjmeter</a> <a href="/tags/jackson/" style="font-size: 10px;">jackson</a> <a href="/tags/jar-manifest/" style="font-size: 10px;">jar-manifest</a> <a href="/tags/java-servlet/" style="font-size: 10px;">java-servlet</a> <a href="/tags/jdk-tools/" style="font-size: 20px;">jdk-tools</a> <a href="/tags/jedis/" style="font-size: 10px;">jedis</a> <a href="/tags/jenkins/" style="font-size: 10px;">jenkins</a> <a href="/tags/jhat/" style="font-size: 10px;">jhat</a> <a href="/tags/jiguang-push/" style="font-size: 10px;">jiguang-push</a> <a href="/tags/jinfo/" style="font-size: 10px;">jinfo</a> <a href="/tags/jmap/" style="font-size: 10px;">jmap</a> <a href="/tags/jms/" style="font-size: 10px;">jms</a> <a href="/tags/jooq/" style="font-size: 10px;">jooq</a> <a href="/tags/jps/" style="font-size: 10px;">jps</a> <a href="/tags/jstack/" style="font-size: 10px;">jstack</a> <a href="/tags/jstat/" style="font-size: 10px;">jstat</a> <a href="/tags/jumpserver/" style="font-size: 10px;">jumpserver</a> <a href="/tags/jvisualvm/" style="font-size: 10px;">jvisualvm</a> <a href="/tags/jvm/" style="font-size: 10px;">jvm</a> <a href="/tags/jvm-tools/" style="font-size: 16px;">jvm-tools</a> <a href="/tags/jwt/" style="font-size: 10px;">jwt</a> <a href="/tags/jxls/" style="font-size: 12px;">jxls</a> <a href="/tags/ldapadmin/" style="font-size: 10px;">ldapadmin</a> <a href="/tags/ldapservice/" style="font-size: 10px;">ldapservice</a> <a href="/tags/maven/" style="font-size: 12px;">maven</a> <a href="/tags/mongo/" style="font-size: 10px;">mongo</a> <a href="/tags/mysql/" style="font-size: 10px;">mysql</a> <a href="/tags/nexus/" style="font-size: 10px;">nexus</a> <a href="/tags/nodebb/" style="font-size: 10px;">nodebb</a> <a href="/tags/okhttp/" style="font-size: 10px;">okhttp</a> <a href="/tags/openldap/" style="font-size: 14px;">openldap</a> <a href="/tags/reactor/" style="font-size: 18px;">reactor</a> <a href="/tags/redis/" style="font-size: 14px;">redis</a> <a href="/tags/rocketmq/" style="font-size: 14px;">rocketmq</a> <a href="/tags/rsa-1024/" style="font-size: 10px;">rsa-1024</a> <a href="/tags/sorting-algorithms/" style="font-size: 10px;">sorting-algorithms</a> <a href="/tags/tprofiler/" style="font-size: 10px;">tprofiler</a> <a href="/tags/vertx/" style="font-size: 10px;">vertx</a> <a href="/tags/webmagic/" style="font-size: 10px;">webmagic</a> <a href="/tags/wechat-api/" style="font-size: 10px;">wechat-api</a> <a href="/tags/wordpress/" style="font-size: 10px;">wordpress</a>
     </div>
 </div>
     
@@ -961,18 +975,18 @@
         
         <article class="media">
             
-            <a href="/gc/" class="media-left">
+            <a href="/nodebb/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="JVM垃圾回收">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="快速安装NodeBB">
                 </p>
             </a>
             
             <div class="media-content">
                 <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-12-26T10:37:07.000Z">2019-12-26</time></div>
-                    <a href="/gc/" class="title has-link-black-ter is-size-6 has-text-weight-normal">JVM垃圾回收</a>
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-01-15T07:38:34.000Z">2020-01-15</time></div>
+                    <a href="/nodebb/" class="title has-link-black-ter is-size-6 has-text-weight-normal">快速安装NodeBB</a>
                     <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/java/">java</a>
+                        <a class="has-link-grey -link" href="/categories/tools/">tools</a>
                     </p>
                 </div>
             </div>
@@ -980,18 +994,18 @@
         
         <article class="media">
             
-            <a href="/jinfo/" class="media-left">
+            <a href="/mongo-install/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="JDK命令行工具之jinfo">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="快速安装MongoDB">
                 </p>
             </a>
             
             <div class="media-content">
                 <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-12-26T03:14:59.000Z">2019-12-26</time></div>
-                    <a href="/jinfo/" class="title has-link-black-ter is-size-6 has-text-weight-normal">JDK命令行工具之jinfo</a>
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-01-12T10:27:57.000Z">2020-01-12</time></div>
+                    <a href="/mongo-install/" class="title has-link-black-ter is-size-6 has-text-weight-normal">快速安装MongoDB</a>
                     <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/java/">java</a>
+                        <a class="has-link-grey -link" href="/categories/mongo/">mongo</a>
                     </p>
                 </div>
             </div>
@@ -999,18 +1013,18 @@
         
         <article class="media">
             
-            <a href="/jps/" class="media-left">
+            <a href="/ldapservice/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="JDK命令行工具之jps">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="LDAP自助服务">
                 </p>
             </a>
             
             <div class="media-content">
                 <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-12-26T03:13:36.000Z">2019-12-26</time></div>
-                    <a href="/jps/" class="title has-link-black-ter is-size-6 has-text-weight-normal">JDK命令行工具之jps</a>
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-01-12T09:28:44.000Z">2020-01-12</time></div>
+                    <a href="/ldapservice/" class="title has-link-black-ter is-size-6 has-text-weight-normal">LDAP自助服务</a>
                     <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/java/">java</a>
+                        <a class="has-link-grey -link" href="/categories/tools/">tools</a>
                     </p>
                 </div>
             </div>
@@ -1018,18 +1032,18 @@
         
         <article class="media">
             
-            <a href="/jhat/" class="media-left">
+            <a href="/ldapadmin/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="JDK命令行工具之jhat">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="LDAP管理工具">
                 </p>
             </a>
             
             <div class="media-content">
                 <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-12-26T03:12:37.000Z">2019-12-26</time></div>
-                    <a href="/jhat/" class="title has-link-black-ter is-size-6 has-text-weight-normal">JDK命令行工具之jhat</a>
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-01-12T09:05:50.000Z">2020-01-12</time></div>
+                    <a href="/ldapadmin/" class="title has-link-black-ter is-size-6 has-text-weight-normal">LDAP管理工具</a>
                     <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/java/">java</a>
+                        <a class="has-link-grey -link" href="/categories/tools/">tools</a>
                     </p>
                 </div>
             </div>
@@ -1037,18 +1051,18 @@
         
         <article class="media">
             
-            <a href="/jmap/" class="media-left">
+            <a href="/openldap/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="JDK命令行工具之jmap">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="快速安装OpenLDAP">
                 </p>
             </a>
             
             <div class="media-content">
                 <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-12-26T03:11:19.000Z">2019-12-26</time></div>
-                    <a href="/jmap/" class="title has-link-black-ter is-size-6 has-text-weight-normal">JDK命令行工具之jmap</a>
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-01-12T08:58:10.000Z">2020-01-12</time></div>
+                    <a href="/openldap/" class="title has-link-black-ter is-size-6 has-text-weight-normal">快速安装OpenLDAP</a>
                     <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/java/">java</a>
+                        <a class="has-link-grey -link" href="/categories/tools/">tools</a>
                     </p>
                 </div>
             </div>
@@ -1064,6 +1078,17 @@
             归档
         </h3>
         <ul class="menu-list">
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2020/01/">
+                <span class="level-start">
+                    <span class="level-item">一月 2020</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">11</span>
+                </span>
+            </a>
+        </li>
         
         <li>
             <a class="level is-marginless" href="/archives/2019/12/">
@@ -1241,6 +1266,13 @@
                 </div>
                 
                 <div class="control">
+                    <a class="tags has-addons" href="/tags/jenkins/">
+                        <span class="tag">jenkins</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
                     <a class="tags has-addons" href="/tags/jhat/">
                         <span class="tag">jhat</span>
                         <span class="tag is-grey">1</span>
@@ -1269,6 +1301,13 @@
                 </div>
                 
                 <div class="control">
+                    <a class="tags has-addons" href="/tags/jms/">
+                        <span class="tag">jms</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
                     <a class="tags has-addons" href="/tags/jooq/">
                         <span class="tag">jooq</span>
                         <span class="tag is-grey">1</span>
@@ -1292,6 +1331,13 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/jstat/">
                         <span class="tag">jstat</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/jumpserver/">
+                        <span class="tag">jumpserver</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>
@@ -1332,8 +1378,50 @@
                 </div>
                 
                 <div class="control">
+                    <a class="tags has-addons" href="/tags/ldapadmin/">
+                        <span class="tag">ldapadmin</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/ldapservice/">
+                        <span class="tag">ldapservice</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
                     <a class="tags has-addons" href="/tags/maven/">
                         <span class="tag">maven</span>
+                        <span class="tag is-grey">2</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/mongo/">
+                        <span class="tag">mongo</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/mysql/">
+                        <span class="tag">mysql</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/nexus/">
+                        <span class="tag">nexus</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/nodebb/">
+                        <span class="tag">nodebb</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>
@@ -1342,6 +1430,13 @@
                     <a class="tags has-addons" href="/tags/okhttp/">
                         <span class="tag">okhttp</span>
                         <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/openldap/">
+                        <span class="tag">openldap</span>
+                        <span class="tag is-grey">3</span>
                     </a>
                 </div>
                 
@@ -1355,7 +1450,7 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/redis/">
                         <span class="tag">redis</span>
-                        <span class="tag is-grey">2</span>
+                        <span class="tag is-grey">3</span>
                     </a>
                 </div>
                 
@@ -1404,6 +1499,13 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/wechat-api/">
                         <span class="tag">wechat-api</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/wordpress/">
+                        <span class="tag">wordpress</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>
@@ -1432,18 +1534,18 @@
         
         <article class="media">
             
-            <a href="/gc/" class="media-left">
+            <a href="/nodebb/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="JVM垃圾回收">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="快速安装NodeBB">
                 </p>
             </a>
             
             <div class="media-content">
                 <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-12-26T10:37:07.000Z">2019-12-26</time></div>
-                    <a href="/gc/" class="title has-link-black-ter is-size-6 has-text-weight-normal">JVM垃圾回收</a>
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-01-15T07:38:34.000Z">2020-01-15</time></div>
+                    <a href="/nodebb/" class="title has-link-black-ter is-size-6 has-text-weight-normal">快速安装NodeBB</a>
                     <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/java/">java</a>
+                        <a class="has-link-grey -link" href="/categories/tools/">tools</a>
                     </p>
                 </div>
             </div>
@@ -1451,18 +1553,18 @@
         
         <article class="media">
             
-            <a href="/jinfo/" class="media-left">
+            <a href="/mongo-install/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="JDK命令行工具之jinfo">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="快速安装MongoDB">
                 </p>
             </a>
             
             <div class="media-content">
                 <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-12-26T03:14:59.000Z">2019-12-26</time></div>
-                    <a href="/jinfo/" class="title has-link-black-ter is-size-6 has-text-weight-normal">JDK命令行工具之jinfo</a>
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-01-12T10:27:57.000Z">2020-01-12</time></div>
+                    <a href="/mongo-install/" class="title has-link-black-ter is-size-6 has-text-weight-normal">快速安装MongoDB</a>
                     <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/java/">java</a>
+                        <a class="has-link-grey -link" href="/categories/mongo/">mongo</a>
                     </p>
                 </div>
             </div>
@@ -1470,18 +1572,18 @@
         
         <article class="media">
             
-            <a href="/jps/" class="media-left">
+            <a href="/ldapservice/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="JDK命令行工具之jps">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="LDAP自助服务">
                 </p>
             </a>
             
             <div class="media-content">
                 <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-12-26T03:13:36.000Z">2019-12-26</time></div>
-                    <a href="/jps/" class="title has-link-black-ter is-size-6 has-text-weight-normal">JDK命令行工具之jps</a>
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-01-12T09:28:44.000Z">2020-01-12</time></div>
+                    <a href="/ldapservice/" class="title has-link-black-ter is-size-6 has-text-weight-normal">LDAP自助服务</a>
                     <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/java/">java</a>
+                        <a class="has-link-grey -link" href="/categories/tools/">tools</a>
                     </p>
                 </div>
             </div>
@@ -1489,18 +1591,18 @@
         
         <article class="media">
             
-            <a href="/jhat/" class="media-left">
+            <a href="/ldapadmin/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="JDK命令行工具之jhat">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="LDAP管理工具">
                 </p>
             </a>
             
             <div class="media-content">
                 <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-12-26T03:12:37.000Z">2019-12-26</time></div>
-                    <a href="/jhat/" class="title has-link-black-ter is-size-6 has-text-weight-normal">JDK命令行工具之jhat</a>
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-01-12T09:05:50.000Z">2020-01-12</time></div>
+                    <a href="/ldapadmin/" class="title has-link-black-ter is-size-6 has-text-weight-normal">LDAP管理工具</a>
                     <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/java/">java</a>
+                        <a class="has-link-grey -link" href="/categories/tools/">tools</a>
                     </p>
                 </div>
             </div>
@@ -1508,18 +1610,18 @@
         
         <article class="media">
             
-            <a href="/jmap/" class="media-left">
+            <a href="/openldap/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="JDK命令行工具之jmap">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="快速安装OpenLDAP">
                 </p>
             </a>
             
             <div class="media-content">
                 <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-12-26T03:11:19.000Z">2019-12-26</time></div>
-                    <a href="/jmap/" class="title has-link-black-ter is-size-6 has-text-weight-normal">JDK命令行工具之jmap</a>
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-01-12T08:58:10.000Z">2020-01-12</time></div>
+                    <a href="/openldap/" class="title has-link-black-ter is-size-6 has-text-weight-normal">快速安装OpenLDAP</a>
                     <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/java/">java</a>
+                        <a class="has-link-grey -link" href="/categories/tools/">tools</a>
                     </p>
                 </div>
             </div>
@@ -1535,6 +1637,17 @@
             归档
         </h3>
         <ul class="menu-list">
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2020/01/">
+                <span class="level-start">
+                    <span class="level-item">一月 2020</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">11</span>
+                </span>
+            </a>
+        </li>
         
         <li>
             <a class="level is-marginless" href="/archives/2019/12/">
@@ -1712,6 +1825,13 @@
                 </div>
                 
                 <div class="control">
+                    <a class="tags has-addons" href="/tags/jenkins/">
+                        <span class="tag">jenkins</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
                     <a class="tags has-addons" href="/tags/jhat/">
                         <span class="tag">jhat</span>
                         <span class="tag is-grey">1</span>
@@ -1740,6 +1860,13 @@
                 </div>
                 
                 <div class="control">
+                    <a class="tags has-addons" href="/tags/jms/">
+                        <span class="tag">jms</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
                     <a class="tags has-addons" href="/tags/jooq/">
                         <span class="tag">jooq</span>
                         <span class="tag is-grey">1</span>
@@ -1763,6 +1890,13 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/jstat/">
                         <span class="tag">jstat</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/jumpserver/">
+                        <span class="tag">jumpserver</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>
@@ -1803,8 +1937,50 @@
                 </div>
                 
                 <div class="control">
+                    <a class="tags has-addons" href="/tags/ldapadmin/">
+                        <span class="tag">ldapadmin</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/ldapservice/">
+                        <span class="tag">ldapservice</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
                     <a class="tags has-addons" href="/tags/maven/">
                         <span class="tag">maven</span>
+                        <span class="tag is-grey">2</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/mongo/">
+                        <span class="tag">mongo</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/mysql/">
+                        <span class="tag">mysql</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/nexus/">
+                        <span class="tag">nexus</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/nodebb/">
+                        <span class="tag">nodebb</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>
@@ -1813,6 +1989,13 @@
                     <a class="tags has-addons" href="/tags/okhttp/">
                         <span class="tag">okhttp</span>
                         <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/openldap/">
+                        <span class="tag">openldap</span>
+                        <span class="tag is-grey">3</span>
                     </a>
                 </div>
                 
@@ -1826,7 +2009,7 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/redis/">
                         <span class="tag">redis</span>
-                        <span class="tag is-grey">2</span>
+                        <span class="tag is-grey">3</span>
                     </a>
                 </div>
                 
@@ -1879,6 +2062,13 @@
                     </a>
                 </div>
                 
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/wordpress/">
+                        <span class="tag">wordpress</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
             </div>
         </div>
     </div>
@@ -1900,7 +2090,7 @@
                 
                 </a>
                 <p class="is-size-7">
-                &copy; 2019 WeitangLi&nbsp;
+                &copy; 2020 WeitangLi&nbsp;
                 Powered by <a href="https://hexo.io/" target="_blank">Hexo</a> & <a
                         href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank">Icarus</a>
                 
