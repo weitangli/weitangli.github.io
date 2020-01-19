@@ -7,19 +7,17 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 
-<title>manifest配置信息 - WeitangLi</title>
+<title>标签: java.util.concurrent - WeitangLi</title>
 
 
-    <meta name="description" content="example.jar目录结构如下: 123├── META-INF│   └── MANIFEST.MF# 省略其它文件">
-<meta name="keywords" content="jar-manifest">
-<meta property="og:type" content="article">
-<meta property="og:title" content="manifest配置信息">
-<meta property="og:url" content="https:&#x2F;&#x2F;weitangli.github.io&#x2F;jar-manifest&#x2F;index.html">
+    <meta name="description" content="记录工作中遇到的问题">
+<meta property="og:type" content="website">
+<meta property="og:title" content="WeitangLi">
+<meta property="og:url" content="https:&#x2F;&#x2F;weitangli.github.io&#x2F;tags&#x2F;java-util-concurrent&#x2F;index.html">
 <meta property="og:site_name" content="WeitangLi">
-<meta property="og:description" content="example.jar目录结构如下: 123├── META-INF│   └── MANIFEST.MF# 省略其它文件">
+<meta property="og:description" content="记录工作中遇到的问题">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https:&#x2F;&#x2F;weitangli.github.io&#x2F;images&#x2F;og_image.png">
-<meta property="og:updated_time" content="2019-12-06T02:56:22.156Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https:&#x2F;&#x2F;weitangli.github.io&#x2F;images&#x2F;og_image.png">
 
@@ -79,7 +77,7 @@
         <div class="navbar-brand is-flex-center">
             <a class="navbar-item navbar-logo" href="/">
             
-                <img src="/images/logo.svg" alt="manifest配置信息" height="28">
+                <img src="/images/logo.svg" alt="WeitangLi" height="28">
             
             </a>
         </div>
@@ -125,14 +123,25 @@
     <section class="section">
         <div class="container">
             <div class="columns">
-                <div class="column is-8-tablet is-8-desktop is-6-widescreen has-order-2 column-main">
+                <div class="column is-8-tablet is-8-desktop is-6-widescreen has-order-2 column-main"><div class="card">
+    <div class="card-content">
+        <nav class="breadcrumb" aria-label="breadcrumbs">
+        <ul>
+            <li><a href="/tags">标签</a></li>
+            <li class="is-active"><a href="#" aria-current="page">java.util.concurrent</a></li>
+        </ul>
+        </nav>
+    </div>
+</div>
+
+    
 <div class="card">
     
     <div class="card-content article ">
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-12-06T02:56:12.000Z">2019-12-06</time>
+                <time class="level-item has-text-grey" datetime="2020-01-19T07:08:26.000Z">2020-01-19</time>
                 
                 <div class="level-item">
                 <a class="has-link-grey -link" href="/categories/java/">java</a>
@@ -142,43 +151,24 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    1 分钟 读完 (大约 128 个字)
+                    几秒 读完 (大约 40 个字)
                 </span>
                 
-                
-                <span class="level-item has-text-grey" id="busuanzi_container_page_pv">
-                    <i class="far fa-eye"></i>
-                    <span id="busuanzi_value_page_pv">0</span>次访问
-                </span>
                 
             </div>
         </div>
         
         <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
             
-                manifest配置信息
+                <a class="has-link-black-ter" href="/concurrent/">并发工具包concurrent</a>
             
         </h1>
         <div class="content">
-            <p><code>example.jar</code>目录结构如下:</p>
-<figure class="highlight shell hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">├── META-INF</span><br><span class="line">│   └── MANIFEST.MF</span><br><span class="line"><span class="hljs-meta">#</span><span class="hljs-bash"> 省略其它文件</span></span><br></pre></td></tr></table></figure>
+            <blockquote>
+<p><a href="http://tutorials.jenkov.com/java-util-concurrent/index.html" target="_blank" rel="noopener">http://tutorials.jenkov.com/java-util-concurrent/index.html</a></p>
+</blockquote>
+<p>来自于<code>Java 1.5</code>的java.util.concurrent工具包是Doug Lea的作品。他是对Java影响力最大的个人。</p>
 
-<a id="more"></a>
-
-<p>读取MANIFEST.MF信息:</p>
-<figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-meta">@Test</span></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">manifest</span><span class="hljs-params">()</span> <span class="hljs-keyword">throws</span> Exception </span>&#123;</span><br><span class="line">    String file = <span class="hljs-string">"example.jar"</span>;</span><br><span class="line">    <span class="hljs-keyword">try</span> (InputStream input = getClass().getClassLoader().getResourceAsStream(file)) &#123;</span><br><span class="line">        JarInputStream jar = <span class="hljs-keyword">new</span> JarInputStream(input, <span class="hljs-keyword">true</span>);</span><br><span class="line">        Manifest manifest = jar.getManifest();</span><br><span class="line"></span><br><span class="line">        <span class="hljs-keyword">for</span> (Map.Entry&lt;Object, Object&gt; attributes : manifest.getMainAttributes().entrySet()) &#123;</span><br><span class="line">            log.info(<span class="hljs-string">"main attributes: key=&#123;&#125; value=&#123;&#125;"</span>, attributes.getKey(), attributes.getValue());</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="hljs-keyword">for</span> (Map.Entry&lt;String, Attributes&gt; entry : manifest.getEntries().entrySet()) &#123;</span><br><span class="line">            log.info(<span class="hljs-string">"name: &#123;&#125;"</span>, entry.getKey());</span><br><span class="line">            <span class="hljs-keyword">for</span> (Map.Entry&lt;Object, Object&gt; attributes : entry.getValue().entrySet()) &#123;</span><br><span class="line">                log.info(<span class="hljs-string">"attributes: key=&#123;&#125; value=&#123;&#125;"</span>, attributes.getKey(), attributes.getValue());</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>源代码: <a href="https://github.com/weitangli/java-sample/blob/master/manifest-sample/src/test/java/com/sample/ManifestTests.java" target="_blank" rel="noopener">ManifestTests.java</a></p>
-
-        </div>
-        
-        <div class="level is-size-7 is-uppercase">
-            <div class="level-start">
-                <div class="level-item">
-                    <span class="is-size-6 has-text-grey has-mr-7">#</span>
-                    <a class="has-link-grey -link" href="/tags/jar-manifest/" rel="tag">jar-manifest</a>
-                </div>
-            </div>
         </div>
         
         
@@ -188,83 +178,11 @@
 
 
 
-<div class="card">
-    <div class="card-content">
-        <h3 class="menu-label has-text-centered">喜欢这篇文章？打赏一下作者吧</h3>
-        <div class="buttons is-centered">
-            
-                
-<a class="button is-info donate">
-    <span class="icon is-small">
-        <i class="fab fa-alipay"></i>
-    </span>
-    <span>支付宝</span>
-    <div class="qrcode"><img src="/images/alipay.jpg" alt="支付宝"></div>
-</a>
-
-                
-                
-<a class="button is-success donate">
-    <span class="icon is-small">
-        <i class="fab fa-weixin"></i>
-    </span>
-    <span>微信</span>
-    <div class="qrcode"><img src="/images/wechat.jpg" alt="微信"></div>
-</a>
-
-                
-        </div>
-    </div>
-</div>
 
 
 
-<div class="card card-transparent">
-    <div class="level post-navigation is-flex-wrap is-mobile">
-        
-        <div class="level-start">
-            <a class="level level-item has-link-grey  article-nav-prev" href="/servlet/">
-                <i class="level-item fas fa-chevron-left"></i>
-                <span class="level-item">Java Servlet</span>
-            </a>
-        </div>
-        
-        
-        <div class="level-end">
-            <a class="level level-item has-link-grey  article-nav-next" href="/jedis/">
-                <span class="level-item">redis客户端jedis</span>
-                <i class="level-item fas fa-chevron-right"></i>
-            </a>
-        </div>
-        
-    </div>
-</div>
 
 
-
-<div class="card">
-    <div class="card-content">
-        <h3 class="title is-5 has-text-weight-normal">评论</h3>
-        
-<div id="comment-container"></div>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1.4.1/dist/gitalk.css">
-<script src="https://cdn.jsdelivr.net/npm/gitalk@1.4.1/dist/gitalk.min.js"></script>
-<script>
-    var gitalk = new Gitalk({
-        clientID: 'a221d93af82dc4967493',
-        clientSecret: '14cbb6054ee2e9bd2b68b59f52af0caadb62f934',
-        id: '887d4ddd7ca1fe521e4c49d27f65072b',
-        repo: 'weitangli.github.io',
-        owner: 'weitangli',
-        admin: "weitangli",
-        createIssueManually: false,
-        distractionFreeMode: false
-    })
-    gitalk.render('comment-container')
-</script>
-
-    </div>
-</div>
 </div>
                 
 
@@ -1637,7 +1555,7 @@
             <div class="level-start has-text-centered-mobile">
                 <a class="footer-logo is-block has-mb-6" href="/">
                 
-                    <img src="/images/logo.svg" alt="manifest配置信息" height="28">
+                    <img src="/images/logo.svg" alt="WeitangLi" height="28">
                 
                 </a>
                 <p class="is-size-7">
